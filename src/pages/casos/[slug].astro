@@ -1,0 +1,115 @@
+---
+import Header from "../../components/Header.astro";
+import Navbar from "../../components/Navbar.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const casos = await getCollection("casos");
+
+  return casos.map(caso => ({
+    params: { slug: caso.slug },
+    props: { caso }
+  }));
+}
+
+const { caso } = Astro.props;
+const project = caso.data;
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title={`${project.title} | JJ Montalban`} />
+  <body class="page-casos">
+    <Navbar />
+
+    <main class="main">
+      <div class="container">
+
+        <div class="back-nav-container">
+          <a href="/casos" class="back-nav-button">
+            <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
+            <span>Volver</span>
+          </a>
+        </div>
+
+        <section class="content-container">
+
+          <h1>{project.title}</h1>
+
+          {project.desc && project.desc.map(item => (
+            <p class="lead">{item}</p>
+          ))}
+
+          {project.image && (
+            <div class="case-hero">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          <section class="case-detail">
+
+            {project.companySector && (
+              <div class="case-detail-section">
+                <span class="mini-label">Empresa / Sector</span>
+                <p>{project.companySector}</p>
+              </div>
+            )}
+
+            {project.problem && (
+              <div class="case-detail-section">
+                <h3>El problema</h3>
+                <p>{project.problem}</p>
+              </div>
+            )}
+
+            {project.solution && (
+              <div class="case-detail-section">
+                <h3>La solución</h3>
+                <p>{project.solution}</p>
+              </div>
+            )}
+
+            {project.result && (
+              <div class="case-detail-section">
+                <h3>Resultado</h3>
+                <p>{project.result}</p>
+              </div>
+            )}
+
+            {project.contribution && (
+              <div class="case-detail-section">
+                <h3>Mi aporte</h3>
+                <p>{project.contribution}</p>
+              </div>
+            )}
+
+            {project.tech?.length > 0 && (
+              <div class="case-detail-section">
+                <h3>Tecnologías</h3>
+                <ul class="case-tech">
+                  {project.tech.map(tech => (
+                    <li>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {project.quote && (
+              <div class="case-detail-section case-quote">
+                <p class="case-quote-text">“{project.quote.text}”</p>
+                <p class="case-quote-author">— {project.quote.author}</p>
+              </div>
+            )}
+
+          </section>
+
+        </section>
+
+      </div>
+    </main>
+  </body>
+</html>

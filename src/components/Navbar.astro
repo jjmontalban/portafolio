@@ -1,0 +1,24 @@
+---
+const { current } = Astro.props;
+---
+
+<nav class="navbar">
+  <a href="/">
+    <img class="site-logo" src="/assets/jj.png" alt="JJ" />
+  </a>
+
+  <button class="burger" aria-label="Abrir menú">☰</button>
+
+  <div class="nav-links">
+    <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
+    <a href="/servicios" class:list={{ selected: current === "servicios" }}>Servicios</a>
+    <a href="/casos" class:list={{ selected: current === "casos" }}>Casos</a>
+    <a href="/plugins" class:list={{ selected: current === "plugins" }}>Plugins</a>
+    <a href="/contacto" class:list={{ selected: current === "contacto" }}>Contacto</a>
+  </div>
+</nav>
+
+<script>
+  document.body.classList.add("is-loaded");
+</script>
+

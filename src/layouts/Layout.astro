@@ -1,0 +1,48 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+  page?: string; // page-home, page-servicios, etc.
+}
+
+const { title, page = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Iconos -->
+    <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
+
+    <!-- Tu CSS global -->
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+
+  <!-- Se aplica class="page-home" / "page-contacto", etc. -->
+  <body class={page}>
+    <Navbar />
+
+    <main class="main">
+      <slot />
+    </main>
+    <script>
+      document.documentElement.classList.remove("page-enter");
+      requestAnimationFrame(() => {
+        document.documentElement.classList.add("page-enter");
+      });
+    </script>
+  </body>
+</html>

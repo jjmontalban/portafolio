@@ -1,0 +1,92 @@
+---
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
+
+const plugins = [
+  {
+    title: "Woo Product Quantity Settings",
+    image: "/assets/plugins/quantity-settings.png",
+    desc: "Permite definir cantidades mínimas, máximas o rangos en productos WooCommerce sin escribir código.",
+    tech: ["WordPress", "WooCommerce", "PHP", "JavaScript"],
+    github: null,
+    link: "https://wordpress.org/plugins/product-quantity-settings/",
+  },
+  {
+    title: "Simple EU VAT Number",
+    image: "/assets/plugins/eu-vat.png",
+    desc: "Gestión automática del IVA intracomunitario en WooCommerce con validación de VAT.",
+    tech: ["WordPress", "WooCommerce", "PHP", "JavaScript"],
+    github: null,
+    link: "https://wordpress.org/plugins/eu-vat-number/",
+  },
+  {
+    title: "Idealista Feed",
+    image: "/assets/plugins/idealista-feed.png",
+    desc: "Exporta inmuebles desde WordPress a Idealista mediante feed XML automático.",
+    tech: ["WordPress", "PHP", "WP REST API", "XML"],
+    github: null,
+    link: "https://wordpress.org/plugins/idealista-feed-pro/",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Plugins publicados | JJ Montalban" />
+  <body class="page-plugins">
+    <Navbar current="plugins" />
+
+    <main class="main">
+      <div class="container">
+
+        <div class="back-nav-container">
+          <a href="/" class="back-nav-button">
+            <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
+            <span>Volver</span>
+          </a>
+        </div>
+
+        <section class="content-container">
+          <h1>Plugins publicados</h1>
+
+          <p class="lead">
+            Plugins desarrollados para resolver necesidades reales en WordPress y WooCommerce.
+            Código mantenible, estable y orientado a producción.
+          </p>
+
+          <div class="plugins-grid">
+            {plugins.map(plugin => (
+              <article class="plugin-card">
+                <img
+                  src={plugin.image}
+                  alt={plugin.title}
+                  class="plugin-image"
+                />
+
+                <div class="plugin-body">
+                  <h3>{plugin.title}</h3>
+
+                  <p class="plugin-tech">
+                    {plugin.tech.join(" · ")}
+                  </p>
+
+                  <p class="plugin-desc">
+                    {plugin.desc}
+                  </p>
+
+                  <div class="plugin-links">
+                    {plugin.github && (
+                      <a href={plugin.github} target="_blank">GitHub</a>
+                    )}
+                    <a href={plugin.link} target="_blank">WordPress.org</a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </body>
+</html>

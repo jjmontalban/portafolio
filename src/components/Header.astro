@@ -1,0 +1,32 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+interface HeaderProps { title: string }
+const { title } = Astro.props as HeaderProps;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <ViewTransitions />
+  <meta content={title} property="og:title" />
+  <meta content={title} property="twitter:title" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Correct Google Fonts import for Geist -->
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Your CSS AFTER the font -->
+  <link href="/assets/styles.css" rel="stylesheet" />
+
+  <script>
+    !(function (o, c) {
+      var n = c.documentElement, t = " w-mod-";
+      n.className += t + "js";
+      ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
+        (n.className += t + "touch");
+    })(window, document);
+  </script>
+
+  <link href="/assets/favicon-32x32.png" rel="shortcut icon" />
+  <link href="/assets/favicon-32x32.png" rel="apple-touch-icon" />
+</head>
