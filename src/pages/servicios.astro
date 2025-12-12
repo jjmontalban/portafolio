@@ -1,4 +1,5 @@
 ---
+import ContactCTA from "../components/contactCTA.astro";
 import Header from "../components/Header.astro";
 import Navbar from "../components/Navbar.astro";
 ---
@@ -93,15 +94,10 @@ import Navbar from "../components/Navbar.astro";
             </article>
 
           </section>
-
-          <!-- CTA FINAL -->
-          <section class="items-container">
-            <p class="lead">
-              ¿Quieres mejorar tu WordPress sin reconstruirlo entero?
-              <a href="/contacto" class="cta">Cuéntame qué necesitas</a>
-            </p>
-          </section>
-
+        <ContactCTA
+          title="¿Necesitas una solución a medida?"
+          text="Cuéntame qué problema técnico tienes y vemos cómo resolverlo."
+        />
         </div>
       </div>
     </main>

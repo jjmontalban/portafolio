@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  button?: string;
+}
+
+const {
+  title,
+  text,
+  button = "Hablemos"
+} = Astro.props;
+---
+
+<section class="contact-cta">
+  <h3>{title}</h3>
+  <p>{text}</p>
+  <a class="cta" href="/contacto">{button}</a>
+</section>

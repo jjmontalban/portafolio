@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Navbar from "../components/Navbar.astro";
+import ContactCTA from "../components/contactCTA.astro";
 ---
 
 <!DOCTYPE html>
@@ -102,13 +103,10 @@ import Navbar from "../components/Navbar.astro";
           </p>
           <a class="cta" href="/casos">Ver casos</a>
         </section>
-
-        <!-- CTA FINAL -->
-        <section>
-          <p>¿Quieres mejorar tu WordPress sin rehacerlo desde cero?</p>
-          <a class="cta" href="/contacto">Hablemos</a>
-        </section>
-
+      <ContactCTA
+        title="¿Hablamos de tu proyecto?"
+        text="Puedo ayudarte a mejorar tu WordPress sin rehacerlo desde cero."
+      />
       </div>
     </main>
   </body>
