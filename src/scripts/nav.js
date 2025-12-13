@@ -1,21 +1,35 @@
 export function setupNav() {
-  const navButton = document.querySelector('.navbar-icon-button');
-  const navMenu = document.querySelector('.w-nav-menu');
+  const navButton = document.querySelector('.burger');
+  const navMenu = document.querySelector('.nav-links');
 
   if (!navButton || !navMenu) return;
 
-  const toggleNav = () => {
-    const isOpen = navMenu.classList.contains('is-open');
+  const closeNav = () => {
+    navMenu.classList.remove('open');
+    navButton.setAttribute('aria-expanded', 'false');
+  };
 
-    navMenu.classList.toggle('is-visible', !isOpen);
-    setTimeout(
-      () => {
-        navMenu.classList.toggle('is-open', !isOpen);
-      },
-      isOpen ? 300 : 10
-    );
+  const toggleNav = () => {
+    const isOpen = navMenu.classList.contains('open');
+
+    navMenu.classList.toggle('open', !isOpen);
+    navButton.setAttribute('aria-expanded', String(!isOpen));
   };
 
   navButton.addEventListener('click', toggleNav);
-  return () => navButton.removeEventListener('click', toggleNav);
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeNav);
+  });
+
+  return () => {
+    navButton.removeEventListener('click', toggleNav);
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.removeEventListener('click', closeNav);
+    });
+  };
+}
+
+if (typeof window !== 'undefined') {
+  setupNav();
 }
