@@ -7,7 +7,7 @@ const { current } = Astro.props;
     <img class="site-logo" src="/assets/jj.png" alt="JJ" />
   </a>
 
-  <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
 
   <div class="nav-links">
     <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
@@ -21,7 +21,14 @@ const { current } = Astro.props;
 <script type="module">
   import { setupNav } from "../scripts/nav.js";
 
-  document.body.classList.add("is-loaded");
-  setupNav();
-</script>
+  const initNav = () => {
+    document.body.classList.add("is-loaded");
+    setupNav();
+  };
 
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNav, { once: true });
+  } else {
+    initNav();
+  }
+</script>
