@@ -7,7 +7,7 @@ const { current } = Astro.props;
     <img class="site-logo" src="/assets/jj.png" alt="JJ" />
   </a>
 
-  <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
 
   <div class="nav-links">
     <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
@@ -18,10 +18,63 @@ const { current } = Astro.props;
   </div>
 </nav>
 
-<script type="module">
-  import { setupNav } from "../scripts/nav.js";
+<script is:inline>
+  const setupNav = () => {
+    const navButton = document.querySelector('.burger');
+    const navMenu = document.querySelector('.nav-links');
 
-  document.body.classList.add("is-loaded");
-  setupNav();
-</script>
+    if (!navButton || !navMenu) return () => {};
 
+    const closeNav = () => {
+      navMenu.classList.remove('open');
+      navButton.setAttribute('aria-expanded', 'false');
+    };
+
+    const toggleNav = () => {
+      const isOpen = navMenu.classList.contains('open');
+
+      navMenu.classList.toggle('open', !isOpen);
+      navButton.setAttribute('aria-expanded', String(!isOpen));
+    };
+
+    navButton.addEventListener('click', toggleNav);
+
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeNav);
+    });
+
+    return () => {
+      navButton.removeEventListener('click', toggleNav);
+      navMenu.querySelectorAll('a').forEach((link) => {
+        link.removeEventListener('click', closeNav);
+      });
+    };
+  };
+
+  const runNavSetup = () => {
+    document.body.classList.add('is-loaded');
+    cleanupNav?.();
+    cleanupNav = setupNav();
+  };
+
+  let cleanupNav = null;
+
+  const initNav = () => {
+    // Wait a tick to ensure the nav exists after any transition swap
+    requestAnimationFrame(runNavSetup);
+  };
+
+  const attachNavHandlers = () => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNav, { once: true });
+    } else {
+      initNav();
+    }
+
+    // Re-apply after Astro page transitions or bfcache restores
+    window.addEventListener('astro:page-load', initNav);
+    window.addEventListener('pageshow', initNav);
+  };
+
+  attachNavHandlers();
+  </script>

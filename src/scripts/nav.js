@@ -29,7 +29,3 @@ export function setupNav() {
     });
   };
 }
-
-if (typeof window !== 'undefined') {
-  setupNav();
-}
