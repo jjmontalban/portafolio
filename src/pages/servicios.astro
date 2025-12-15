@@ -1,105 +1,97 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import Header from "../components/Header.astro";
-import Navbar from "../components/Navbar.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-  <Header title="Servicios | JJ Montalban" />
-  <body class="page-servicios">
-    <Navbar current="servicios" />
+<Layout title="Servicios | JJ Montalban" page="page-servicios">
+  <div class="container">
 
-    <main class="main">
-      <div class="container">
+    <!-- Botón volver -->
+    <div class="back-nav-container">
+      <a href="/" class="back-nav-button">
+        <img src="/assets/back.svg" loading="lazy" alt="Volver" class="back-nav-img" />
+        <div>Volver</div>
+      </a>
+    </div>
 
-        <!-- Botón volver -->
-        <div class="back-nav-container">
-          <a href="/" class="back-nav-button">
-            <img src="/assets/back.svg" loading="lazy" alt="Volver" class="back-nav-img" />
-            <div>Volver</div>
-          </a>
-        </div>
+    <div class="content-container">
+      <h1>Servicios</h1>
 
-        <div class="content-container">
-          <h1>Servicios</h1>
+      <p class="lead">
+        Soluciones WordPress a medida diseñadas para mejorar tu plataforma actual sin necesidad de reconstruirla.
+        Trabajo sobre tu infraestructura real para crear un sistema más funcional, estable y preparado para crecer.
+      </p>
 
-          <p class="lead">
-            Soluciones WordPress a medida diseñadas para mejorar tu plataforma actual sin necesidad de reconstruirla.
-            Trabajo sobre tu infraestructura real para crear un sistema más funcional, estable y preparado para crecer.
+      <!-- GRID DE SERVICIOS -->
+      <section class="services-grid">
+
+        <article class="service-card">
+          <h2>Plugins WordPress a medida</h2>
+          <p>
+            Desarrollo funcionalidades específicas totalmente integradas con tu WordPress.
+            No necesitas cambiar de tema ni sustituir plugins clave: el desarrollo se adapta a tu sistema actual.
           </p>
+          <h3>Incluye:</h3>
+          <ul>
+            <li>Campos personalizados y flujos específicos</li>
+            <li>Módulos y bloques ACF personalizados</li>
+            <li>Integración con el editor</li>
+            <li>Controles avanzados para administradores</li>
+            <li>Funcionalidades internas y automatización de procesos</li>
+          </ul>
+        </article>
 
-          <!-- GRID DE SERVICIOS -->
-          <section class="services-grid">
+        <article class="service-card">
+          <h2>Mejoras sobre WordPress existente</h2>
+          <p>
+            Tu sitio no necesita empezar de cero.
+            Puedo ampliar, mejorar o estabilizar lo que ya tienes manteniendo tu diseño, tu contenido y tu estructura actual.
+          </p>
+          <h3>Incluye:</h3>
+          <ul>
+            <li>Nuevas secciones o capacidades sobre tu tema actual</li>
+            <li>Refactor técnico para evitar errores futuros</li>
+            <li>Limpieza de código y optimización</li>
+            <li>Ajustes orientados a escalabilidad y mantenimiento</li>
+          </ul>
+        </article>
 
-            <article class="service-card">
-              <h2>Plugins WordPress a medida</h2>
-              <p>
-                Desarrollo funcionalidades específicas totalmente integradas con tu WordPress.
-                No necesitas cambiar de tema ni sustituir plugins clave: el desarrollo se adapta a tu sistema actual.
-              </p>
-              <h3>Incluye:</h3>
-              <ul>
-                <li>Campos personalizados y flujos específicos</li>
-                <li>Módulos y bloques ACF personalizados</li>
-                <li>Integración con el editor</li>
-                <li>Controles avanzados para administradores</li>
-                <li>Funcionalidades internas y automatización de procesos</li>
-              </ul>
-            </article>
+        <article class="service-card">
+          <h2>Integraciones y automatización</h2>
+          <p>
+            Conecto tu página con los servicios que necesita tu negocio.
+            Automatizo tareas y sincronizo información para que tu WordPress trabaje por ti.
+          </p>
+          <h3>Incluye:</h3>
+          <ul>
+            <li>Integración con APIs externas</li>
+            <li>Conexión con CRMs y plataformas inmobiliarias como Pisos.com</li>
+            <li>Procesos automáticos de importación/exportación</li>
+            <li>Automatización de emails, flujos y notificaciones</li>
+          </ul>
+        </article>
 
-            <article class="service-card">
-              <h2>Mejoras sobre WordPress existente</h2>
-              <p>
-                Tu sitio no necesita empezar de cero.
-                Puedo ampliar, mejorar o estabilizar lo que ya tienes manteniendo tu diseño, tu contenido y tu estructura actual.
-              </p>
-              <h3>Incluye:</h3>
-              <ul>
-                <li>Nuevas secciones o capacidades sobre tu tema actual</li>
-                <li>Refactor técnico para evitar errores futuros</li>
-                <li>Limpieza de código y optimización</li>
-                <li>Ajustes orientados a escalabilidad y mantenimiento</li>
-              </ul>
-            </article>
+        <article class="service-card">
+          <h2>Rendimiento y seguridad</h2>
+          <p>
+            Estabilizo tu sitio para que funcione rápido y sin incidencias.
+            Me centro en rendimiento, seguridad y buenas prácticas.
+          </p>
+          <h3>Incluye:</h3>
+          <ul>
+            <li>Optimización WPO y mejora de tiempos de carga</li>
+            <li>Configuración avanzada de CSP</li>
+            <li>Mitigación de vulnerabilidades</li>
+            <li>Auditorías técnicas y recomendaciones reales</li>
+          </ul>
+        </article>
 
-            <article class="service-card">
-              <h2>Integraciones y automatización</h2>
-              <p>
-                Conecto tu página con los servicios que necesita tu negocio.
-                Automatizo tareas y sincronizo información para que tu WordPress trabaje por ti.
-              </p>
-              <h3>Incluye:</h3>
-              <ul>
-                <li>Integración con APIs externas</li>
-                <li>Conexión con CRMs y plataformas inmobiliarias como Pisos.com</li>
-                <li>Procesos automáticos de importación/exportación</li>
-                <li>Automatización de emails, flujos y notificaciones</li>
-              </ul>
-            </article>
+      </section>
 
-            <article class="service-card">
-              <h2>Rendimiento y seguridad</h2>
-              <p>
-                Estabilizo tu sitio para que funcione rápido y sin incidencias.
-                Me centro en rendimiento, seguridad y buenas prácticas.
-              </p>
-              <h3>Incluye:</h3>
-              <ul>
-                <li>Optimización WPO y mejora de tiempos de carga</li>
-                <li>Configuración avanzada de CSP</li>
-                <li>Mitigación de vulnerabilidades</li>
-                <li>Auditorías técnicas y recomendaciones reales</li>
-              </ul>
-            </article>
-
-          </section>
-        <ContactCTA
-          title="¿Necesitas una solución a medida?"
-          text="Cuéntame qué problema técnico tienes y vemos cómo resolverlo."
-        />
-        </div>
-      </div>
-    </main>
-  </body>
-</html>
+      <ContactCTA
+        title="¿Necesitas una solución a medida?"
+        text="Cuéntame qué problema técnico tienes y vemos cómo resolverlo."
+      />
+    </div>
+  </div>
+</Layout>

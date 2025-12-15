@@ -1,7 +1,6 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import Header from "../components/Header.astro";
-import Navbar from "../components/Navbar.astro";
 
 const plugins = [
   {
@@ -31,67 +30,60 @@ const plugins = [
 ];
 ---
 
-<!DOCTYPE html>
-<html>
-  <Header title="Plugins publicados | JJ Montalban" />
-  <body class="page-plugins">
-    <Navbar current="plugins" />
+<Layout title="Plugins publicados | JJ Montalban" page="page-plugins">
+  <div class="container">
 
-    <main class="main">
-      <div class="container">
+    <div class="back-nav-container">
+      <a href="/" class="back-nav-button">
+        <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
+        <span>Volver</span>
+      </a>
+    </div>
 
-        <div class="back-nav-container">
-          <a href="/" class="back-nav-button">
-            <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
-            <span>Volver</span>
-          </a>
-        </div>
+    <section class="content-container">
+      <h1>Plugins publicados</h1>
 
-        <section class="content-container">
-          <h1>Plugins publicados</h1>
+      <p class="lead">
+        Plugins desarrollados para resolver necesidades reales en WordPress y WooCommerce.
+        Código mantenible, estable y orientado a producción.
+      </p>
 
-          <p class="lead">
-            Plugins desarrollados para resolver necesidades reales en WordPress y WooCommerce.
-            Código mantenible, estable y orientado a producción.
-          </p>
+      <div class="plugins-grid">
+        {plugins.map(plugin => (
+          <article class="plugin-card">
+            <img
+              src={plugin.image}
+              alt={plugin.title}
+              class="plugin-image"
+            />
 
-          <div class="plugins-grid">
-            {plugins.map(plugin => (
-              <article class="plugin-card">
-                <img
-                  src={plugin.image}
-                  alt={plugin.title}
-                  class="plugin-image"
-                />
+            <div class="plugin-body">
+              <h3>{plugin.title}</h3>
 
-                <div class="plugin-body">
-                  <h3>{plugin.title}</h3>
+              <p class="plugin-tech">
+                {plugin.tech.join(" · ")}
+              </p>
 
-                  <p class="plugin-tech">
-                    {plugin.tech.join(" · ")}
-                  </p>
+              <p class="plugin-desc">
+                {plugin.desc}
+              </p>
 
-                  <p class="plugin-desc">
-                    {plugin.desc}
-                  </p>
-
-                  <div class="plugin-links">
-                    {plugin.github && (
-                      <a href={plugin.github} target="_blank">GitHub</a>
-                    )}
-                    <a href={plugin.link} target="_blank">WordPress.org</a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      <ContactCTA
-        title="¿Tienes una idea de plugin?"
-        text="Diseño y desarrollo plugins WordPress estables y mantenibles."
-        button="Cuéntame tu idea"
-      />
+              <div class="plugin-links">
+                {plugin.github && (
+                  <a href={plugin.github} target="_blank">GitHub</a>
+                )}
+                <a href={plugin.link} target="_blank">WordPress.org</a>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
-    </main>
-  </body>
-</html>
+    </section>
+
+    <ContactCTA
+      title="¿Tienes una idea de plugin?"
+      text="Diseño y desarrollo plugins WordPress estables y mantenibles."
+      button="Cuéntame tu idea"
+    />
+  </div>
+</Layout>

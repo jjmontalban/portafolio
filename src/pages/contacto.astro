@@ -1,77 +1,64 @@
 ---
-import Header from '../components/Header.astro';
-import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-  <Header title="Contacto | JJ Montalban" />
-  <body class="page-contacto">
-    <Navbar current="contacto" />
+<Layout title="Contacto | JJ Montalban" page="page-contacto">
+  <div class="container">
 
-    <main class="main">
-      <div class="container">
+    <div class="back-nav-container">
+      <a href="/" class="back-nav-button">
+        <img src="/assets/back.svg" loading="lazy" alt="Volver" class="back-nav-img" />
+        <div>Volver</div>
+      </a>
+    </div>
 
-        <!-- Botón volver -->
-        <div class="back-nav-container">
-          <a href="/" class="back-nav-button">
-            <img src="/assets/back.svg" loading="lazy" alt="Volver" class="back-nav-img" />
-            <div>Volver</div>
-          </a>
+    <div class="content-container">
+      <h1>Contacto</h1>
+
+      <p class="lead">
+        Cuéntame qué necesitas mejorar en tu WordPress y te responderé con una
+        propuesta clara y adaptada a tu situación real.
+      </p>
+
+      <section class="items-container">
+        <div class="contact-card">
+          <form class="contact-form">
+
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Tu nombre"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="tu@email.com"
+              required
+            />
+
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Cuéntame sobre tu proyecto"
+              required
+            ></textarea>
+
+            <button type="submit" class="button">
+              Enviar
+            </button>
+
+          </form>
         </div>
+      </section>
+    </div>
 
-        <div class="content-container">
-          <h1>Contacto</h1>
-
-          <p class="lead">
-            Cuéntame qué necesitas mejorar en tu WordPress y te responderé con una propuesta clara y adaptada a tu situación real.
-            Trabajo con proyectos nuevos y con sitios ya existentes que requieren mejoras, estabilización o funcionalidades avanzadas.
-          </p>
-
-          <section class="items-container">
-            <div class="contact-card">
-              <form class="contact-form">
-
-                <label class="form-label" for="name">Nombre</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  class="text-field w-input"
-                  placeholder="Tu nombre"
-                  required
-                />
-
-                <label class="form-label" for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  class="text-field w-input"
-                  placeholder="tu@email.com"
-                  required
-                />
-
-                <label class="form-label" for="message">Mensaje</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="text-field w-input"
-                  placeholder="Cuéntame sobre tu proyecto"
-                  rows="5"
-                  required
-                ></textarea>
-
-                <button type="submit" class="button w-button">
-                  Enviar
-                </button>
-
-              </form>
-            </div>
-          </section>
-        </div>
-
-      </div>
-    </main>
-  </body>
-</html>
+  </div>
+</Layout>

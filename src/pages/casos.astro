@@ -1,7 +1,6 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import Header from "../components/Header.astro";
-import Navbar from "../components/Navbar.astro";
 import { getCollection } from "astro:content";
 
 const casos = (await getCollection("casos"))
@@ -12,113 +11,104 @@ const otrosCasos = (await getCollection("otros-casos"))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<!DOCTYPE html>
-<html>
-  <Header title="Casos de éxito | JJ Montalban" />
-  <body class="page-casos">
-    <Navbar current="casos" />
+<Layout title="Casos de éxito | JJ Montalban" page="page-casos">
+  <div class="container">
 
-    <main class="main">
-      <div class="container">
+    <div class="back-nav-container">
+      <a href="/" class="back-nav-button">
+        <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
+        <span>Volver</span>
+      </a>
+    </div>
 
-        <div class="back-nav-container">
-          <a href="/" class="back-nav-button">
-            <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
-            <span>Volver</span>
-          </a>
-        </div>
+    <section class="content-container">
+      <h1>Casos de éxito</h1>
 
-        <section class="content-container">
-          <h1>Casos de éxito</h1>
+      <p class="lead">
+        Proyectos reales desarrollados sobre WordPress: integraciones, ampliaciones,
+        automatización y arquitectura técnica pensada para producción.
+      </p>
 
-          <p class="lead">
-            Proyectos reales desarrollados sobre WordPress: integraciones, ampliaciones,
-            automatización y arquitectura técnica pensada para producción.
-          </p>
+      <div class="cases-list">
+        {casos.map(({ slug, data }, index) => (
+          <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+            <div class="case-image">
+              {data.image && (
+                <img
+                  src={data.image}
+                  alt={data.title}
+                  loading="lazy"
+                />
+              )}
+            </div>
 
-          <div class="cases-list">
-            {casos.map(({ slug, data }, index) => (
-              <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
-                
-                <div class="case-image">
-                  {data.image && (
-                    <img
-                      src={data.image}
-                      alt={data.title}
-                      loading="lazy"
-                    />
-                  )}
-                </div>
+            <div class="case-content">
+              <h2>{data.title}</h2>
 
-                <div class="case-content">
-                  <h2>{data.title}</h2>
+              {data.desc.map(item => (
+                <p class="case-desc">{item}</p>
+              ))}
 
-                  {data.desc.map(item => (
-                    <p class="case-desc">{item}</p>
-                  ))}
+              <ul class="case-tech">
+                {data.tech.map(tech => (
+                  <li>{tech}</li>
+                ))}
+              </ul>
 
-                  <ul class="case-tech">
-                    {data.tech.map(tech => (
-                      <li>{tech}</li>
-                    ))}
-                  </ul>
+              <div class="case-actions">
+                {data.link && (
+                  <a
+                    href={data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="case-icon"
+                    aria-label="Ver proyecto online"
+                  >
+                    🌐
+                  </a>
+                )}
 
-                  <div class="case-actions">
-                    {data.link && (
-                      <a
-                        href={data.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="case-icon"
-                        aria-label="Ver proyecto online"
-                      >
-                        🌐
-                      </a>
-                    )}
-
-                    <a href={`/casos/${slug}`} class="cta">
-                      Ver caso
-                    </a>
-                  </div>
-                </div>
-
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section class="other-cases">
-          <h2>Otros casos</h2>
-
-          <div class="other-cases-grid">
-            {otrosCasos.map(({ data }) => (
-              <a
-                href={data.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="other-case-card"
-              >
-                <div class="other-case-image">
-                  <img
-                    src={data.image}
-                    alt={data.title}
-                    loading="lazy"
-                  />
-                </div>
-
-                <div class="other-case-content">
-                  <h3>{data.title}</h3>
-                  <p>{data.excerpt}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
-      <ContactCTA
-        title="¿Quieres resultados similares?"
-        text="Estos proyectos partieron de una conversación como esta."
-      />
+                <a href={`/casos/${slug}`} class="cta">
+                  Ver caso
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
-    </main>
-  </body>
-</html>
+    </section>
+
+    <section class="other-cases">
+      <h2>Otros casos</h2>
+
+      <div class="other-cases-grid">
+        {otrosCasos.map(({ data }) => (
+          <a
+            href={data.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="other-case-card"
+          >
+            <div class="other-case-image">
+              <img
+                src={data.image}
+                alt={data.title}
+                loading="lazy"
+              />
+            </div>
+
+            <div class="other-case-content">
+              <h3>{data.title}</h3>
+              <p>{data.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <ContactCTA
+      title="¿Quieres resultados similares?"
+      text="Estos proyectos partieron de una conversación como esta."
+    />
+  </div>
+</Layout>
