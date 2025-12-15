@@ -62,7 +62,6 @@ a:hover {
   border-radius: 8px;
   transition: background-color .25s ease, color .25s ease, transform .25s ease;
   color: inherit;
-  border: 2px solid currentColor;
 }
 
 .cta:hover {
@@ -620,13 +619,11 @@ img {
 /* ========================================================= */
 
 .contact-cta {
-  margin-top: 120px;
   padding: 64px 32px;
-  border-radius: 24px;
-  text-align: center;
-  background-image: url("/contact-bg-vector.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100vw;
+  margin-top: 3em;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);  text-align: center;
 }
 
 .contact-cta h3 {
@@ -638,4 +635,20 @@ img {
   max-width: 520px;
   margin: 0 auto 32px;
   line-height: 1.6;
+}
+
+.page-servicios .contact-cta {
+  background-color: #0f766e;
+}
+
+.page-plugins .contact-cta {
+  background-color: #7c2d12;
+}
+
+.page-casos .contact-cta {
+  background-color: #6b21a8;
+}
+
+.page-contacto .contact-cta {
+  background-color: #854d0e;
 }
