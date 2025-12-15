@@ -4,9 +4,21 @@ import Navbar from "../components/Navbar.astro";
 interface Props {
   title:string;
   page?:string; // page-home, page-contacto...
+  description?:string;
+  canonical?:string;
+  ogImage?:string;
 }
 
-const { title, page = "" } = Astro.props;
+const {
+  title,
+  page = "",
+  description = "Desarrollador WordPress especializado en plugins a medida, integraciones avanzadas y soluciones técnicas orientadas a negocio.",
+  canonical = "https://jjmontalban.github.io",
+  ogImage = "https://jjmontalban.github.io/assets/og-profile.jpg",
+} = Astro.props as Props;
+
+const currentPath = Astro.url?.pathname ?? "/";
+const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
 ---
 
 <!doctype html>
@@ -14,18 +26,57 @@ const { title, page = "" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="JJMontalban" />
+    <meta name="theme-color" content="#111111" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="JJMontalban" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300..900&display=swap"
-  rel="stylesheet"
-/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap"  rel="stylesheet" />
     <!-- Icons -->
     <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
     <!-- Global CSS -->
     <link rel="stylesheet" href="/assets/styles.css" />
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "JJMontalban",
+        "jobTitle": "Desarrollador de aplicaciones web",
+        "url": "https://jjmontalban.github.io/",
+        "sameAs": [
+          "https://github.com/jjmontalban",
+          "https://www.linkedin.com/in/jjmontalban/",
+          "https://profiles.wordpress.org/jjmontalban/"
+        ],
+        "image": "https://jjmontalban.github.io/images/profile.jpg",
+        "description": "Desarrollador de aplicaciones web con WordPress especializado en plugins a medida, automatización e integraciones API.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chipiona",
+          "addressRegion": "Andalucía",
+          "addressCountry": "España"
+        },
+        "knowsLanguage": ["es", "en"]
+      }
+    </script>
   </head>
 
   <body class={page}>

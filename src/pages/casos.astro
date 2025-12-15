@@ -11,9 +11,12 @@ const otrosCasos = (await getCollection("otros-casos"))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Casos de éxito | JJ Montalban" page="page-casos">
+<Layout
+  title="Casos de éxito | JJMontalban"
+  page="page-casos"
+  description="Casos reales de proyectos WordPress: integraciones avanzadas, plugins a medida, automatización y soluciones técnicas en producción."
+>
   <div class="container">
-
     <div class="back-nav-container">
       <a href="/" class="back-nav-button">
         <img src="/assets/back.svg" alt="Volver" class="back-nav-img" />
