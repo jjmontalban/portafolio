@@ -7,9 +7,9 @@ const { current } = Astro.props;
     <img class="site-logo" src="/assets/jj.png" alt="JJ" />
   </a>
 
-  <button class="burger" aria-label="Abrir menú" aria-expanded="false" type="button">☰</button>
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
 
-  <div class="nav-links">
+  <div id="site-navigation" class="nav-links" role="navigation">
     <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
     <a href="/servicios" class:list={{ selected: current === "servicios" }}>Servicios</a>
     <a href="/casos" class:list={{ selected: current === "casos" }}>Casos</a>
@@ -18,17 +18,19 @@ const { current } = Astro.props;
   </div>
 </nav>
 
-<script type="module">
-  import { setupNav } from "../scripts/nav.js";
-
-  const initNav = () => {
-    document.body.classList.add("is-loaded");
-    setupNav();
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initNav, { once: true });
-  } else {
-    initNav();
+<script>
+  // Fallback loader: if the external nav script didn't run, load it.
+  if (typeof window !== 'undefined' && !window.__jj_nav_delegated) {
+    const existing = document.querySelector('script[src="/scripts/nav.js"]');
+    if (!existing) {
+      const s = document.createElement('script');
+      s.src = '/scripts/nav.js';
+      s.defer = true;
+      document.head.appendChild(s);
+    }
   }
 </script>
+
+
+
+
