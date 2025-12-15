@@ -1,6 +1,3 @@
-// Navigation handler: accessible, idempotent, static asset
-console.debug('[nav.js] executing');
-
 if (!window.__jj_nav_delegated) {
   window.__jj_nav_delegated = true;
 
@@ -15,24 +12,28 @@ if (!window.__jj_nav_delegated) {
     return document.getElementById(NAV_ID) || document.querySelector('.nav-links');
   }
 
-  function openNav() {
-    const nav = getNav();
-    const burger = getBurger();
-    if (!nav) return;
-    nav.classList.add('open');
-    if (burger) burger.setAttribute('aria-expanded', 'true');
-    const first = nav.querySelector('a');
-    if (first && typeof first.focus === 'function') first.focus();
-  }
+    function openNav() {
+        const nav = getNav();
+        const burger = getBurger();
+        if (!nav) return;
 
-  function closeNav() {
-    const nav = getNav();
-    const burger = getBurger();
-    if (!nav) return;
-    nav.classList.remove('open');
-    if (burger) burger.setAttribute('aria-expanded', 'false');
-    if (burger && typeof burger.focus === 'function') burger.focus();
-  }
+        nav.classList.add('open');
+        document.body.classList.add('menu-open');
+
+        if (burger) burger.setAttribute('aria-expanded','true');
+    }
+
+    function closeNav() {
+        const nav = getNav();
+        const burger = getBurger();
+        if (!nav) return;
+
+        nav.classList.remove('open');
+        document.body.classList.remove('menu-open');
+
+        if (burger) burger.setAttribute('aria-expanded','false');
+    }
+
 
   function toggleNav() {
     const nav = getNav();

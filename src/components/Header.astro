@@ -11,18 +11,7 @@ const { title } = Astro.props as HeaderProps;
   <meta content={title} property="og:title" />
   <meta content={title} property="twitter:title" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Your CSS AFTER the font -->
   <link href="/assets/styles.css" rel="stylesheet" />
-
-  <script>
-    !(function (o, c) {
-      var n = c.documentElement, t = " w-mod-";
-      n.className += t + "js";
-      ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
-        (n.className += t + "touch");
-    })(window, document);
-  </script>
-
   <link href="/assets/favicon-32x32.png" rel="shortcut icon" />
   <link href="/assets/favicon-32x32.png" rel="apple-touch-icon" />
 </head>

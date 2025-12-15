@@ -2,8 +2,6 @@
 /*  TIPOGRAFÍA GLOBAL                                                */
 /* ================================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&display=swap");
-
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -11,18 +9,20 @@ html {
 }
 
 body {
-  font-family: "Google Sans Flex", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 350;
   font-size: 16px;
   line-height: 1.6;
   max-width: 88%;
   margin: auto;
 
-  /* Only background + text color here */
   transition: background-color .35s ease, color .35s ease;
 }
 
-/* Texto global */
+body.menu-open {
+  overflow: hidden;
+}
+
 p, li, span, a {
   font-family: inherit;
   font-weight: 350;
@@ -30,11 +30,13 @@ p, li, span, a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 750;
-  letter-spacing: -0.02em;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
   margin: 0 0 1rem 0;
 }
+
 
 /* ================================================================= */
 /*  ENLACES                                                          */
@@ -206,19 +208,30 @@ body[class^="page-"] * {
 /* Responsive */
 @media (max-width: 991px) {
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,.2);
-    backdrop-filter: blur(6px);
+    display: flex;
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    gap: 24px;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity .25s ease, transform .25s ease;
+
+    position: fixed;
+    inset: 0;
+    top: 0;
+    padding-top: 96px;
+
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
   }
 
   .nav-links.open {
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   .burger {
