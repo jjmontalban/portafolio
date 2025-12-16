@@ -29,14 +29,18 @@ p, li, span, a {
   line-height: 1.55;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Inter", sans-serif;
+h1, h2 {
+  font-family: "Bowlby One SC", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.01em;
   margin: 0 0 1rem 0;
 }
 
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
 
 /* ================================================================= */
 /*  ENLACES                                                          */
@@ -103,34 +107,83 @@ body.page-plugins .cta:hover    { background: #cef3ec; }
 /*  COLORES POR PÁGINA                                               */
 /* ================================================================= */
 
-/* HOME */
+/* --- HOME --- */
 body.page-home {
   background-color: #ffffff;
   color: #111111;
 }
 
-/* SERVICIOS */
+body.page-home h1, 
+body.page-home h2 {
+  color: #ffffff; 
+  text-shadow:
+	/* Border */
+	-1px -1px 0 #111111,
+	1px -1px 0 #111111,
+	-1px 1px 0 #111111,
+	1px 1px 0 #111111,
+	/* Shadow steps */
+	1px 0px 0 #111111,
+	2px -2px 0 #111111,
+	3px -2px 0 #111111,
+	4px -2px 0 #111111,
+	5px -1px 0 #111111,
+	6px -1px 0 #111111,
+	7px -1px 0 #111111,
+	8px 0px 0 #111111;
+}
+
+/* --- SERVICIOS --- */
 body.page-servicios {
   background-color: #6a00f4;
   color: #ffffff;
 }
 
-/* CASOS */
+body.page-servicios h1, 
+body.page-servicios h2 {
+  color: #6a00f4; 
+  text-shadow:
+	-1px -1px 0 #ffffff,
+	1px -1px 0 #ffffff,
+	-1px 1px 0 #ffffff,
+	1px 0px 0 #ffffff,
+	2px -2px 0 #ffffff;
+}
+
+/* --- CASOS --- */
 body.page-casos {
   background-color: #111827;
   color: #ffffff;
 }
 
-/* CONTACTO */
+body.page-casos h1, 
+body.page-casos h2 {
+  color: #111827; 
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
+}
+
+/* --- CONTACTO --- */
 body.page-contacto {
   background-color: #7f1d1d;
   color: #ffffff;
 }
 
-/* PLUGINS */
+body.page-contacto h1, 
+body.page-contacto h2 {
+  color: #7f1d1d; 
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
+}
+
+/* --- PLUGINS --- */
 body.page-plugins {
   background-color: #0f766e;
   color: #ffffff;
+}
+
+body.page-plugins h1, 
+body.page-plugins h2 {
+  color: #0f766e; 
+  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
 }
 
 /* Herencia controlada */
@@ -276,36 +329,6 @@ body[class^="page-"] * {
 }
 
 /* ================================================================= */
-/*  BOTON VOLVER                                                     */
-/* ================================================================= */
-.back-nav-container {
-  display: flex;
-  align-items: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.back-nav-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color .12s ease, backdrop-filter .12s ease;
-}
-
-.back-nav-button:hover {
-  backdrop-filter: blur(4px);
-  background-color: rgba(8, 8, 8, 0.24);
-}
-
-.back-nav-img {
-  width: 18px;
-}
-
-/* ================================================================= */
 /*  IMÁGENES                                                         */
 /* ================================================================= */
 
@@ -378,17 +401,6 @@ img {
   border-radius: 16px;
   background-color: rgba(255,255,255,.08);
   backdrop-filter: blur(2px);
-}
-
-.service-card h2 {
-  margin-bottom: 12px;
-}
-
-.service-card h3 {
-  margin-top: 20px;
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: 600;
 }
 
 .service-card ul {
@@ -620,7 +632,6 @@ img {
 
 .contact-cta {
   padding: 64px 32px;
-  width: 100vw;
   margin-top: 3em;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);  text-align: center;
@@ -638,7 +649,8 @@ img {
 }
 
 .page-servicios .contact-cta {
-  background-color: #0f766e;
+  background-color: #F2F0F2;
+  color: #6b21a8;
 }
 
 .page-plugins .contact-cta {
@@ -646,7 +658,7 @@ img {
 }
 
 .page-casos .contact-cta {
-  background-color: #6b21a8;
+
 }
 
 .page-contacto .contact-cta {
