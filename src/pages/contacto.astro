@@ -18,55 +18,48 @@ import Layout from "../layouts/Layout.astro";
 
       <section class="items-container">
         <div class="contact-card">
-          
-            <form
-  class="contact-form"
-  action="https://formspree.io/f/mzdbogkk"
-  method="POST"
->
-  <label for="name">Nombre</label>
-  <input
-    id="name"
-    name="name"
-    type="text"
-    placeholder="Tu nombre"
-    required
-  />
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/mzdbogkk"
+            method="POST"
+          >
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Tu nombre"
+              required
+            />
 
-  <label for="email">Email</label>
-  <input
-    id="email"
-    name="email"
-    type="email"
-    placeholder="tu@email.com"
-    required
-  />
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="_replyto"
+              type="email"
+              placeholder="tu@email.com"
+              required
+            />
 
-  <label for="message">Mensaje</label>
-  <textarea
-    id="message"
-    name="message"
-    rows="5"
-    placeholder="Cuéntame sobre tu proyecto"
-    required
-  ></textarea>
+            <label for="message">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Cuéntame sobre tu proyecto"
+              required
+            ></textarea>
 
-  <!-- Protección básica antispam -->
-  <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
+            <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
+            <input type="text" name="_gotcha" style="display:none" />
 
-  <!-- Asunto del email -->
-  <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
-
-  <!-- Redirección tras envío -->
-  <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
-
-  <button type="submit" class="button">
-    Enviar
-  </button>
-</form>
+            <button type="submit" class="button">
+              Enviar
+            </button>
+          </form>
         </div>
       </section>
     </div>
-
   </div>
 </Layout>
