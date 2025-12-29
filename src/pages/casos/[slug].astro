@@ -59,35 +59,35 @@ const project = caso.data;
 
         {project.problem && (
           <div class="case-detail-section">
-            <h3>El problema</h3>
+            <h2>El problema</h2>
             <p>{project.problem}</p>
           </div>
         )}
 
         {project.solution && (
           <div class="case-detail-section">
-            <h3>La solución</h3>
+            <h2>La solución</h2>
             <p>{project.solution}</p>
           </div>
         )}
 
         {project.result && (
           <div class="case-detail-section">
-            <h3>Resultado</h3>
+            <h2>Resultado</h2>
             <p>{project.result}</p>
           </div>
         )}
 
         {project.contribution && (
           <div class="case-detail-section">
-            <h3>Mi aporte</h3>
+            <h2>Mi aporte</h2>
             <p>{project.contribution}</p>
           </div>
         )}
 
         {project.tech?.length > 0 && (
           <div class="case-detail-section">
-            <h3>Tecnologías</h3>
+            <h2>Tecnologías</h2>
             <ul class="case-tech">
               {project.tech.map(tech => (
                 <li>{tech}</li>

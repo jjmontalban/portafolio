@@ -1,4 +1,32 @@
 /* ================================================================= */
+/*  FUENTES                                                          */
+/* ================================================================= */
+@font-face {
+  font-family: 'Cubano';
+  src: url('/fonts/cubano.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ================================================================= */
 /*  TIPOGRAFÍA GLOBAL                                                */
 /* ================================================================= */
 
@@ -9,7 +37,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 350;
   font-size: 16px;
   line-height: 1.6;
@@ -29,16 +57,20 @@ p, li, span, a {
   line-height: 1.55;
 }
 
-h1, h2 {
-  font-family: "Bowlby One SC", sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+h1 {
+  font-family: "Cubano", sans-serif;
+  font-size: 3em;
+  margin: 0 0 1rem 0;
+}
+
+h2 {
+  font-family: "Cubano", sans-serif;
+  font-size: 2em;
   margin: 0 0 1rem 0;
 }
 
 h3 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 900;
 }
 
@@ -60,12 +92,12 @@ a:hover {
 /*  BOTÓN CTA DINÁMICO POR PÁGINA                                    */
 /* ================================================================= */
 .cta {
-  display: inline-block;
-  padding: 12px 20px;
+  font-family: "Cubano", sans-serif;
+  font-size: 1.25em;
+  padding: 9px 14px;
   font-weight: 600;
   border-radius: 8px;
   transition: background-color .25s ease, color .25s ease, transform .25s ease;
-  color: inherit;
 }
 
 .cta:hover {
@@ -113,25 +145,16 @@ body.page-home {
   color: #111111;
 }
 
-body.page-home h1, 
+body.page-home h1,
 body.page-home h2 {
-  color: #ffffff; 
+  color: #ffffff;
   text-shadow:
-	/* Border */
-	-1px -1px 0 #111111,
-	1px -1px 0 #111111,
-	-1px 1px 0 #111111,
-	1px 1px 0 #111111,
-	/* Shadow steps */
-	1px 0px 0 #111111,
-	2px -2px 0 #111111,
-	3px -2px 0 #111111,
-	4px -2px 0 #111111,
-	5px -1px 0 #111111,
-	6px -1px 0 #111111,
-	7px -1px 0 #111111,
-	8px 0px 0 #111111;
+    /* borde fino */
+    -1px 0 #000, 1px 0 #000, 0 -1px #000, 0  1px #000,
+       /* profundidad diagonal */
+    -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
 }
+
 
 /* --- SERVICIOS --- */
 body.page-servicios {
@@ -143,11 +166,10 @@ body.page-servicios h1,
 body.page-servicios h2 {
   color: #6a00f4; 
   text-shadow:
-	-1px -1px 0 #ffffff,
-	1px -1px 0 #ffffff,
-	-1px 1px 0 #ffffff,
-	1px 0px 0 #ffffff,
-	2px -2px 0 #ffffff;
+    /* borde fino */
+    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
+    /* profundidad diagonal */
+    -2px 2px #FFF;
 }
 
 /* --- CASOS --- */
@@ -159,7 +181,11 @@ body.page-casos {
 body.page-casos h1, 
 body.page-casos h2 {
   color: #111827; 
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
+  text-shadow:
+    /* borde fino */
+    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
+    /* profundidad diagonal */
+    -2px 2px #FFF;
 }
 
 /* --- CONTACTO --- */
@@ -171,7 +197,11 @@ body.page-contacto {
 body.page-contacto h1, 
 body.page-contacto h2 {
   color: #7f1d1d; 
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
+  text-shadow:
+    /* borde fino */
+    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
+    /* profundidad diagonal */
+    -2px 2px #FFF;
 }
 
 /* --- PLUGINS --- */
@@ -183,7 +213,11 @@ body.page-plugins {
 body.page-plugins h1, 
 body.page-plugins h2 {
   color: #0f766e; 
-  text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 0px 0 #ffffff, 2px -2px 0 #ffffff;
+  text-shadow:
+    /* borde fino */
+    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
+    /* profundidad diagonal */
+    -2px 2px #FFF;
 }
 
 /* Herencia controlada */
