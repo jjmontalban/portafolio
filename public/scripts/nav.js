@@ -46,6 +46,11 @@ if (!window.__jj_nav_delegated) {
     const target = e.target && (e.target.nodeType === 1 ? e.target : e.target.parentElement);
     if (!target) return;
 
+    if (target.closest && target.closest('.nav-close')) {
+      closeNav();
+      return;
+    }
+
     if (target.closest && target.closest(BURGER_SELECTOR)) {
       toggleNav();
       return;

@@ -1,5 +1,6 @@
 ---
 const { current } = Astro.props;
+import CloseIcon from "../icons/x.svg";
 ---
 
 <nav class="navbar">
@@ -10,6 +11,9 @@ const { current } = Astro.props;
   <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
 
   <div id="site-navigation" class="nav-links" role="navigation">
+    <button class="nav-close" aria-label="Cerrar menú" type="button">
+      <CloseIcon class="nav-close-icon" />
+    </button>
     <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
     <a href="/servicios" class:list={{ selected: current === "servicios" }}>Servicios</a>
     <a href="/casos" class:list={{ selected: current === "casos" }}>Casos</a>
@@ -17,7 +21,6 @@ const { current } = Astro.props;
     <a href="/contacto" class:list={{ selected: current === "contacto" }}>Contacto</a>
   </div>
 </nav>
-
 
 
 
