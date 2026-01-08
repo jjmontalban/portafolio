@@ -291,6 +291,14 @@ body[class^="page-"] * {
   color: inherit;
 }
 
+.nav-close {
+  display: none;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .nav-links {
@@ -312,6 +320,23 @@ body[class^="page-"] * {
     background: rgba(0,0,0,.35);
     backdrop-filter: blur(8px);
     z-index: 1000;
+  }
+
+  .nav-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 6px;
+  }
+
+  .nav-close-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    fill: currentColor;
   }
 
   .nav-links a {
