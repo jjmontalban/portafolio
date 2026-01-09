@@ -1,4 +1,14 @@
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
+import compress from 'astro-compress';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [
+    compress({
+      html: true,
+      css: true,
+      js: true,
+      img: false,
+    }),
+  ],
+});
