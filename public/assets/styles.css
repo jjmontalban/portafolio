@@ -661,8 +661,27 @@ body.page-servicios .service-card ul {
 }
 
 .plugin-tech {
-  font-size: 13px;
-  opacity: 0.8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.plugin-tech-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+}
+
+.plugin-tech-icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  fill: currentColor;
 }
 
 .plugin-desc {
@@ -676,9 +695,27 @@ body.page-servicios .service-card ul {
   margin-top: auto;
 }
 
-.plugin-links a {
-  font-weight: 500;
-  border-bottom: 1px solid currentColor;
+.plugin-links .plugin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+}
+
+.plugin-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plugin-link-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: currentColor;
 }
 
 /* ================================================================= */
@@ -864,7 +901,32 @@ body.page-servicios .service-card ul {
 }
 
 .page-plugins .contact-cta {
-  background-color: #7c2d12;
+  background-color: #ffffff;
+  color: #0f766e;
+}
+
+.page-plugins .contact-cta h2 {
+  color: #ffffff;
+  text-shadow:
+    -1px 0 #0f766e, 1px 0 #0f766e,
+     0 -1px #0f766e, 0 1px #0f766e,
+    -2px 2px #0f766e;
+}
+
+.page-plugins .contact-cta p {
+  color: #0f766e;
+}
+
+.page-plugins .contact-cta .cta {
+  background-color: #0f766e;
+  color: #ffffff;
+  border: 2px solid #0f766e;
+}
+
+.page-plugins .contact-cta .cta:hover {
+  background-color: #ffffff;
+  color: #0f766e;
+  border-color: #0f766e;
 }
 
 .page-casos .contact-cta {
