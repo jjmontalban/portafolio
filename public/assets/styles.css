@@ -727,27 +727,34 @@ body.page-servicios .service-card ul {
 .case-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   padding: 0;
-  margin: 8px 0 16px;
+  margin: 0;
 }
 
-.case-tech li {
-  font-size: 13px;
-  padding: 4px 10px;
+.case-tech-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   background: rgba(255,255,255,0.12);
 }
 
-.case-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.case-tech-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: currentColor;
 }
 
-.case-icon {
-  font-size: 20px;
+.case-tech-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 /* Responsive */
@@ -861,7 +868,18 @@ body.page-servicios .service-card ul {
 }
 
 .page-casos .contact-cta {
+  background-color: #ffffff;
+  color: #111827;
+}
 
+.page-casos .contact-cta .cta {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.page-casos .contact-cta .cta:hover {
+  background-color: #ffffff;
+  color: #111827;
 }
 
 .page-contacto .contact-cta {
