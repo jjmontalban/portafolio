@@ -89,33 +89,150 @@ a:hover {
 }
 
 /* ================================================================= */
-/*  BOTÓN CTA DINÁMICO POR PÁGINA                                    */
+/*  BOTÓN CTA – BASE                                                 */
 /* ================================================================= */
+
 .cta {
+  font-family: "Cubano", sans-serif;
+  font-size: 1.05em;
+  padding: 9px 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  margin-top: 2rem;
+
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+/* ================================================================= */
+/*  HOME – CTA                                                       */
+/* ================================================================= */
+
+/* CTA principal del hero */
+body.page-home .cta-primary {
+  font-size: 1.25em;          /* tamaño original */
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+}
+
+body.page-home .cta-primary:hover {
+  background: #fff;
+  color: #111;
+}
+
+body.page-home .contact-cta {
+  background-color: #111;
+  color: #ffffff;
+}
+
+/* Título con contraste inverso */
+body.page-home .contact-cta h2 {
+  color: #000;
+  text-shadow:
+    -1px 0 #fff, 1px 0 #fff,
+     0 -1px #fff, 0 1px #fff,
+    -2px 2px #fff;
+}
+
+/* Texto normal */
+body.page-home .contact-cta p {
+  color: #ffffff;
+}
+
+/* CTA dentro de Contact CTA (HOME) */
+body.page-home .contact-cta .cta {
+  all: revert;
   font-family: "Cubano", sans-serif;
   font-size: 1.25em;
   padding: 9px 14px;
   font-weight: 600;
   border-radius: 8px;
-  transition: background-color .25s ease, color .25s ease, transform .25s ease;
+  display: inline-block;
+  margin-top: 2rem;
+
+  background: #ffffff;
+  color: #111;
+  border: 2px solid #fff;
+  text-decoration: none;
+  
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .25s ease;
 }
 
-.cta:hover {
+body.page-home .contact-cta .cta:hover {
+  background: #111;
+  color: #fff;
   transform: translateY(-3px);
-  opacity: .9;
 }
 
-body.page-home .cta       { background: #111; color: #fff; }
+
+/* ================================================================= */
+/*  HOME – ENLACES INLINE DE SECCIÓN                                 */
+/* ================================================================= */
+
+body.page-home .section-link {
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color .25s ease, text-decoration .25s ease;
+}
+
+/* Servicios */
+body.page-home .section-link-services {
+  color: #6a00f4;
+}
+
+body.page-home .section-link-services:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Plugins y herramientas */
+body.page-home .section-link-plugins {
+  color: #0f766e;
+}
+
+body.page-home .section-link-plugins:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Casos de éxito */
+body.page-home .section-link-cases {
+  color: #111827;
+}
+
+body.page-home .section-link-cases:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* ================================================================= */
+/*  RESTO DE PÁGINAS                                                 */
+/* ================================================================= */
+
 body.page-servicios .cta  { background: #fff; color: #6a00f4; }
 body.page-casos .cta      { background: #fff; color: #111827; }
 body.page-contacto .cta   { background: #000; color: #ffc300; }
 body.page-plugins .cta    { background: #fff; color: #0f766e; }
 
-body.page-home .cta:hover       { background: #000; }
 body.page-servicios .cta:hover  { background: #e1d4ff; }
 body.page-casos .cta:hover      { background: #d1d5db; }
 body.page-contacto .cta:hover   { background: #222; }
 body.page-plugins .cta:hover    { background: #cef3ec; }
+
 
 /* ================================================================= */
 /*  UTILIDADES                                                       */
