@@ -601,6 +601,33 @@ img {
   }
 }
 
+body.page-servicios .service-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  display: block;
+  fill: currentColor;
+  color: #ffffff;
+}
+
+/* Título centrado */
+body.page-servicios .service-card > h2 {
+  text-align: center;
+}
+
+/* Texto descriptivo alineado a la izquierda */
+body.page-servicios .service-card > p {
+  text-align: left;
+}
+
+
+/* Listas SIEMPRE alineadas a la izquierda */
+body.page-servicios .service-card ul {
+  text-align: left;
+  margin-top: 24px;
+}
+
+
 /* ================================================================= */
 /*  PLUGINS                                                          */
 /* ================================================================= */
