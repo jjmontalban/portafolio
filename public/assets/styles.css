@@ -554,10 +554,65 @@ img {
   background-color: #fff;
 }
 
-/* Botón enviar (no CTA global) */
-.contact-form .button {
+/* Botón enviar */
+.contact-form .cta {
   align-self: flex-start;
   margin-top: 12px;
+}
+
+.contact-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form legend {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.optional-note {
+  font-size: 13px;
+  color: rgba(17, 24, 39, 0.75);
+  margin: 0;
+}
+
+.toggle-optional {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color .25s ease, border-color .25s ease;
+}
+
+.toggle-optional:hover {
+  background-color: rgba(0,0,0,.05);
+  border-color: rgba(0,0,0,.5);
+}
+
+.optional-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 0 4px;
+}
+
+.optional-dependent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 0 16px;
+  }
 }
 
 
