@@ -50,11 +50,157 @@ import Layout from "../layouts/Layout.astro";
               required
             ></textarea>
 
+            <p class="optional-note">
+              Campos opcionales: puedes enviar el formulario sin completarlos.
+            </p>
+            <button
+              type="button"
+              class="cta toggle-optional"
+              aria-expanded="false"
+              aria-controls="optional-fields"
+            >
+              Añadir más detalles del proyecto (opcional)
+            </button>
+
+            <div id="optional-fields" class="optional-fields" hidden>
+              <fieldset class="optional-group">
+                <legend>Tipo de proyecto</legend>
+                <label class="option-label">
+                  <input type="checkbox" name="project_type[]" value="Web corporativa" />
+                  Web corporativa
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="project_type[]" value="E-commerce" />
+                  E-commerce
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="project_type[]" value="Plugin / desarrollo a medida" />
+                  Plugin / desarrollo a medida
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="project_type[]" value="Aplicación web / sistema a medida" />
+                  Aplicación web / sistema a medida
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="project_type[]" value="No lo tengo claro" />
+                  No lo tengo claro
+                </label>
+              </fieldset>
+
+              <fieldset class="optional-group">
+                <legend>¿Tienes ya una web?</legend>
+                <label class="option-label">
+                  <input type="radio" name="has_website" value="Sí" />
+                  Sí
+                </label>
+                <label class="option-label">
+                  <input type="radio" name="has_website" value="No" />
+                  No
+                </label>
+                <label class="option-label">
+                  <input type="radio" name="has_website" value="En desarrollo" />
+                  En desarrollo
+                </label>
+              </fieldset>
+
+              <div class="optional-dependent" data-show="has-website" hidden>
+                <label for="current-url">URL del sitio actual</label>
+                <input id="current-url" name="current_url" type="url" />
+              </div>
+
+              <div class="optional-dependent" data-show="has-website" hidden>
+                <label for="current-hosting">Hosting actual</label>
+                <input
+                  id="current-hosting"
+                  name="current_hosting"
+                  type="text"
+                  placeholder="Ej: SiteGround, Raiola, OVH, desconocido"
+                />
+              </div>
+
+              <div class="optional-dependent" data-show="has-website" hidden>
+                <label for="experience-level">
+                  Nivel de experiencia gestionando tu web actual
+                </label>
+                <div class="optional-group">
+                  <label class="option-label">
+                    <input type="radio" name="experience_level" value="Ninguna" />
+                    Ninguna
+                  </label>
+                  <label class="option-label">
+                    <input
+                      type="radio"
+                      name="experience_level"
+                      value="Básica (publicar contenidos)"
+                    />
+                    Básica (publicar contenidos)
+                  </label>
+                  <label class="option-label">
+                    <input
+                      type="radio"
+                      name="experience_level"
+                      value="Media (edición, ajustes, plugins)"
+                    />
+                    Media (edición, ajustes, plugins)
+                  </label>
+                  <label class="option-label">
+                    <input type="radio" name="experience_level" value="Avanzada" />
+                    Avanzada
+                  </label>
+                </div>
+              </div>
+
+              <fieldset class="optional-group">
+                <legend>¿Trabajaremos junto a una agencia o estudio de diseño?</legend>
+                <label class="option-label">
+                  <input type="radio" name="agency_collaboration" value="Sí" />
+                  Sí
+                </label>
+                <label class="option-label">
+                  <input type="radio" name="agency_collaboration" value="No" />
+                  No
+                </label>
+              </fieldset>
+
+              <div class="optional-dependent" data-show="agency-yes" hidden>
+                <label for="agency-name">Nombre de la agencia o estudio</label>
+                <input id="agency-name" name="agency_name" type="text" />
+              </div>
+
+              <fieldset class="optional-group optional-dependent" data-show="agency-no" hidden>
+                <legend>Material corporativo disponible</legend>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Logotipo" />
+                  Logotipo
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Colores corporativos" />
+                  Colores corporativos
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Tipografías" />
+                  Tipografías
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Manual de marca" />
+                  Manual de marca
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Fotografías profesionales" />
+                  Fotografías profesionales
+                </label>
+                <label class="option-label">
+                  <input type="checkbox" name="brand_assets[]" value="Ninguno / por definir" />
+                  Ninguno / por definir
+                </label>
+              </fieldset>
+            </div>
+
             <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
             <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
             <input type="text" name="_gotcha" style="display:none" />
 
-            <button type="submit" class="button">
+            <button type="submit" class="cta">
               Enviar
             </button>
           </form>
@@ -62,4 +208,66 @@ import Layout from "../layouts/Layout.astro";
       </section>
     </div>
   </div>
+
+  <script>
+    const toggleButton = document.querySelector(".toggle-optional");
+    const optionalFields = document.getElementById("optional-fields");
+    const hasWebsiteOptions = document.querySelectorAll('input[name="has_website"]');
+    const agencyOptions = document.querySelectorAll('input[name="agency_collaboration"]');
+
+    const getCheckedValue = (nodeList) => {
+      const selected = Array.from(nodeList).find((option) => option.checked);
+      return selected?.value ?? "";
+    };
+
+    const updateWebsiteDependencies = () => {
+      if (!hasWebsiteOptions.length) {
+        return;
+      }
+      const selection = getCheckedValue(hasWebsiteOptions);
+      const shouldShow = ["Sí", "En desarrollo"].includes(selection);
+      document
+        .querySelectorAll('[data-show="has-website"]')
+        .forEach((field) => field.toggleAttribute("hidden", !shouldShow));
+    };
+
+    const updateAgencyDependencies = () => {
+      if (!agencyOptions.length) {
+        return;
+      }
+      const selection = getCheckedValue(agencyOptions);
+      const isYes = selection === "Sí";
+      document
+        .querySelectorAll('[data-show="agency-yes"]')
+        .forEach((field) => field.toggleAttribute("hidden", !isYes));
+      document
+        .querySelectorAll('[data-show="agency-no"]')
+        .forEach((field) => field.toggleAttribute("hidden", isYes || !selection));
+    };
+
+    if (toggleButton && optionalFields) {
+      toggleButton.addEventListener("click", () => {
+        const isHidden = optionalFields.toggleAttribute("hidden");
+        toggleButton.textContent = isHidden
+          ? "Añadir más detalles del proyecto (opcional)"
+          : "Ocultar detalles del proyecto";
+        toggleButton.setAttribute("aria-expanded", String(!isHidden));
+        if (!isHidden) {
+          updateWebsiteDependencies();
+          updateAgencyDependencies();
+        }
+      });
+    }
+
+    hasWebsiteOptions.forEach((option) => {
+      option.addEventListener("change", updateWebsiteDependencies);
+    });
+
+    agencyOptions.forEach((option) => {
+      option.addEventListener("change", updateAgencyDependencies);
+    });
+
+    updateWebsiteDependencies();
+    updateAgencyDependencies();
+  </script>
 </Layout>
