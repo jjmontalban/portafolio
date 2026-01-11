@@ -1,0 +1,44 @@
+---
+const socialLinks = [
+  {
+    label: "WordPress",
+    href: "https://profiles.wordpress.org/jjmontalban/",
+    icon: "simple-icons:wordpress",
+  },
+  {
+    label: "Behance",
+    href: "https://www.behance.net/jjmontalban",
+    icon: "simple-icons:behance",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/jjmontalban",
+    icon: "simple-icons:github",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/jjmontalban/",
+    icon: "simple-icons:linkedin",
+  },
+  {
+    label: "Twitter",
+    href: "https://x.com/jjmontalban",
+    icon: "simple-icons:twitter",
+  },
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="site-footer__text">Conecta conmigo en mis perfiles profesionales</p>
+    <ul class="site-footer__social" aria-label="Perfiles sociales">
+      {socialLinks.map((link) => (
+        <li>
+          <a class="site-footer__link" href={link.href} aria-label={link.label} rel="me">
+            <iconify-icon icon={link.icon} aria-hidden="true" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

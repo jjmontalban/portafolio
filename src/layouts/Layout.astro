@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title:string;
@@ -81,6 +82,8 @@ const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
     <main class="main">
       <slot />
     </main>
+
+    <Footer />
 
     <script>
       document.documentElement.classList.remove("page-enter");
