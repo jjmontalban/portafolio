@@ -74,6 +74,13 @@ h3 {
   font-weight: 900;
 }
 
+h1,
+h2 {
+  color:var(--heading-color);
+  text-shadow:var(--heading-shadow);
+}
+
+
 /* ================================================================= */
 /*  ENLACES                                                          */
 /* ================================================================= */
@@ -89,18 +96,18 @@ a:hover {
 }
 
 /* ================================================================= */
-/*  BOTÓN CTA – BASE                                                 */
+/*  CTA – BASE (USO REAL)                                            */
 /* ================================================================= */
 
 .cta {
-  font-family: "Cubano", sans-serif;
-  font-size: 1.05em;
-  padding: 9px 14px;
-  font-weight: 600;
-  border-radius: 8px;
-  background: transparent;
-  color: inherit;
-  margin-top: 2rem;
+  font-family:"Cubano",sans-serif;
+  font-size:1.05em;
+  padding:9px 14px;
+  font-weight:600;
+  border-radius:8px;
+  display:inline-block;
+  margin-top:2rem;
+  text-decoration:none;
 
   transition:
     background-color .25s ease,
@@ -109,281 +116,434 @@ a:hover {
 }
 
 .cta:hover {
-  transform: translateY(-3px);
-  opacity: 1;
+  transform:translateY(-3px);
+  opacity:1;
 }
 
 /* ================================================================= */
-/*  HOME – CTA                                                       */
+/*  HOME – CTA PRINCIPAL                                             */
 /* ================================================================= */
 
-/* CTA principal del hero */
 body.page-home .cta-primary {
-  font-size: 1.25em;          /* tamaño original */
-  background: #111;
-  color: #fff;
-  border: 2px solid #111;
+  font-size:1.25em;
+  background:#111;
+  color:#fff;
+  border:2px solid #111;
 }
 
 body.page-home .cta-primary:hover {
-  background: #fff;
-  color: #111;
+  background:#fff;
+  color:#111;
 }
+
+
+
+/* ================================================================= */
+/*  HOME – CONTACT CTA                                               */
+/* ================================================================= */
 
 body.page-home .contact-cta {
-  background-color: #111;
-  color: #ffffff;
+  background-color:#111;
+  color:#fff;
 }
 
-/* Título con contraste inverso */
 body.page-home .contact-cta h2 {
-  color: #000;
+  color:#000;
   text-shadow:
     -1px 0 #fff, 1px 0 #fff,
-     0 -1px #fff, 0 1px #fff,
+    0 -1px #fff, 0 1px #fff,
     -2px 2px #fff;
 }
 
-/* Texto normal */
 body.page-home .contact-cta p {
-  color: #ffffff;
-}
-
-/* CTA dentro de Contact CTA (HOME) */
-body.page-home .contact-cta .cta {
-  all: revert;
-  font-family: "Cubano", sans-serif;
-  font-size: 1.25em;
-  padding: 9px 14px;
-  font-weight: 600;
-  border-radius: 8px;
-  display: inline-block;
-  margin-top: 2rem;
-
-  background: #ffffff;
-  color: #111;
-  border: 2px solid #fff;
-  text-decoration: none;
-  
-  transition:
-    background-color .25s ease,
-    color .25s ease,
-    transform .25s ease;
-}
-
-body.page-home .contact-cta .cta:hover {
-  background: #111;
-  color: #fff;
-  transform: translateY(-3px);
+  color:#fff;
 }
 
 
-/* ================================================================= */
-/*  HOME – ENLACES INLINE DE SECCIÓN                                 */
-/* ================================================================= */
+/* ========================================================= */
+/* CONTACT CTA                                               */
+/* ========================================================= */
 
-body.page-home .section-link {
-  font-weight: 600;
-  text-decoration: underline;
-  transition: color .25s ease, text-decoration .25s ease;
+/* Base layout (no colors here) */
+.contact-cta {
+  padding:64px 32px;
+  margin-top:3em;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  text-align:center;
+
+  background-color:var(--contact-bg);
+  color:var(--contact-fg);
 }
+
+.contact-cta h3 {
+  font-size:32px;
+  margin-bottom:16px;
+}
+
+.contact-cta p {
+  max-width:520px;
+  margin:0 auto 32px;
+  line-height:1.6;
+  color:inherit;
+}
+
+/* Title effect (uses the same 2-color rule) */
+.contact-cta h2 {
+  color:var(--contact-title-color);
+  text-shadow:var(--contact-title-shadow);
+}
+
+/* Button inside contact-cta (2 colors, invert on hover) */
+.contact-cta .cta {
+  background-color:var(--contact-btn-bg);
+  color:var(--contact-btn-fg);
+  border:2px solid var(--contact-btn-border);
+}
+
+.contact-cta .cta:hover {
+  background-color:var(--contact-btn-bg-hover);
+  color:var(--contact-btn-fg-hover);
+  border-color:var(--contact-btn-border-hover);
+}
+
+/* ========================= */
+/* DEFAULT (HOME)            */
+/* ========================= */
+/* HOME: section bg dark, text white, h2 black with white outline,
+   button white -> hover dark (same as your current behavior) */
+body.page-home {
+  --contact-bg:#111111;
+  --contact-fg:#ffffff;
+
+  --contact-title-color:#000000;
+  --contact-title-shadow:
+    -1px 0 #ffffff, 1px 0 #ffffff,
+    0 -1px #ffffff, 0 1px #ffffff,
+    -2px 2px #ffffff;
+
+  --contact-btn-bg:#ffffff;
+  --contact-btn-fg:#111111;
+  --contact-btn-border:#ffffff;
+
+  --contact-btn-bg-hover:#111111;
+  --contact-btn-fg-hover:#ffffff;
+  --contact-btn-border-hover:#ffffff;
+}
+
+/* ========================= */
+/* OTHER PAGES: 2 COLORS     */
+/* ========================= */
+/* Rule: only white + page color (var(--page-bg)) */
 
 /* Servicios */
+body.page-servicios {
+  --contact-bg:#ffffff;
+  --contact-fg:var(--page-bg);
+
+  --contact-title-color:#ffffff;
+  --contact-title-shadow:
+    -1px 0 var(--page-bg), 1px 0 var(--page-bg),
+    0 -1px var(--page-bg), 0 1px var(--page-bg),
+    -2px 2px var(--page-bg);
+
+  --contact-btn-bg:var(--page-bg);
+  --contact-btn-fg:#ffffff;
+  --contact-btn-border:var(--page-bg);
+
+  --contact-btn-bg-hover:#ffffff;
+  --contact-btn-fg-hover:var(--page-bg);
+  --contact-btn-border-hover:var(--page-bg);
+}
+
+/* Plugins */
+body.page-plugins {
+  --contact-bg:#ffffff;
+  --contact-fg:var(--page-bg);
+
+  --contact-title-color:#ffffff;
+  --contact-title-shadow:
+    -1px 0 var(--page-bg), 1px 0 var(--page-bg),
+    0 -1px var(--page-bg), 0 1px var(--page-bg),
+    -2px 2px var(--page-bg);
+
+  --contact-btn-bg:var(--page-bg);
+  --contact-btn-fg:#ffffff;
+  --contact-btn-border:var(--page-bg);
+
+  --contact-btn-bg-hover:#ffffff;
+  --contact-btn-fg-hover:var(--page-bg);
+  --contact-btn-border-hover:var(--page-bg);
+}
+
+/* Casos */
+body.page-casos {
+  --contact-bg:#ffffff;
+  --contact-fg:var(--page-bg);
+
+  --contact-title-color:#ffffff;
+  --contact-title-shadow:
+    -1px 0 var(--page-bg), 1px 0 var(--page-bg),
+    0 -1px var(--page-bg), 0 1px var(--page-bg),
+    -2px 2px var(--page-bg);
+
+  --contact-btn-bg:var(--page-bg);
+  --contact-btn-fg:#ffffff;
+  --contact-btn-border:var(--page-bg);
+
+  --contact-btn-bg-hover:#ffffff;
+  --contact-btn-fg-hover:var(--page-bg);
+  --contact-btn-border-hover:var(--page-bg);
+}
+
+/* Contacto (section bg is the page color, text white) */
+body.page-contacto {
+  --contact-bg:var(--page-bg);
+  --contact-fg:#ffffff;
+
+  --contact-title-color:var(--page-bg);
+  --contact-title-shadow:
+    -1px 0 #ffffff, 1px 0 #ffffff,
+    0 -1px #ffffff, 0 1px #ffffff,
+    -2px 2px #ffffff;
+
+  --contact-btn-bg:#ffffff;
+  --contact-btn-fg:var(--page-bg);
+  --contact-btn-border:#ffffff;
+
+  --contact-btn-bg-hover:var(--page-bg);
+  --contact-btn-fg-hover:#ffffff;
+  --contact-btn-border-hover:var(--page-bg);
+}
+
+
+/* ================================================================= */
+/*  INLINE SECTION LINKS                                             */
+/* ================================================================= */
+
+/* Base */
+.section-link {
+  font-weight:600;
+  text-decoration:underline;
+  color:var(--section-link-color);
+  transition:color .25s ease, text-decoration .25s ease;
+}
+
+.section-link:hover {
+  color:var(--section-link-hover-color,#000);
+  text-decoration:none;
+}
+
+/* ================================================================= */
+/*  HOME – SECTION LINK COLORS                                       */
+/* ================================================================= */
+
+body.page-home {
+  --section-link-services:#6a00f4;
+  --section-link-plugins:#0f766e;
+  --section-link-cases:#111827;
+}
+
+/* Variants */
 body.page-home .section-link-services {
-  color: #6a00f4;
+  --section-link-color:var(--section-link-services);
 }
 
-body.page-home .section-link-services:hover {
-  color: #000;
-  text-decoration: none;
-}
-
-/* Plugins y herramientas */
 body.page-home .section-link-plugins {
-  color: #0f766e;
+  --section-link-color:var(--section-link-plugins);
 }
 
-body.page-home .section-link-plugins:hover {
-  color: #000;
-  text-decoration: none;
-}
-
-/* Casos de éxito */
 body.page-home .section-link-cases {
-  color: #111827;
-}
-
-body.page-home .section-link-cases:hover {
-  color: #000;
-  text-decoration: none;
+  --section-link-color:var(--section-link-cases);
 }
 
 
 /* ================================================================= */
-/*  RESTO DE PÁGINAS                                                 */
+/*  UTILITIES                                                        */
 /* ================================================================= */
 
-body.page-servicios .cta  { background: #fff; color: #6a00f4; }
-body.page-casos .cta      { background: #fff; color: #111827; }
-body.page-contacto .cta   { background: #000; color: #ffc300; }
-body.page-plugins .cta    { background: #fff; color: #0f766e; }
-
-body.page-servicios .cta:hover  { background: #e1d4ff; }
-body.page-casos .cta:hover      { background: #d1d5db; }
-body.page-contacto .cta:hover   { background: #222; }
-body.page-plugins .cta:hover    { background: #cef3ec; }
-
+.text-white  { color:#fff!important; }
+.text-black  { color:#000!important; }
+.text-gray   { color:#a8a8a8!important; }
+.text-accent { color:#ffc300!important; }
+.text-bold   { font-weight:700!important; }
+.italic      { font-style:italic!important; }
 
 /* ================================================================= */
-/*  UTILIDADES                                                       */
+/*  FOOTER                                                           */
 /* ================================================================= */
 
-.text-white  { color: #ffffff !important; }
-.text-black  { color: #000000 !important; }
-.text-gray   { color: #a8a8a8 !important; }
-.text-accent { color: #ffc300 !important; }
-.text-bold   { font-weight: 700 !important; }
-.italic      { font-style: italic !important; }
-
-/* Footer */
 .site-footer {
-  padding: 48px 24px 56px;
-  text-align: center;
+  padding:48px 24px 56px;
+  text-align:center;
 }
 
 .site-footer__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
 }
 
 .site-footer__text {
-  margin: 0;
-  font-size: 1rem;
+  margin:0;
+  font-size:1rem;
 }
 
 .site-footer__social {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 0;
-  margin: 0;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:0;
+  margin:0;
 }
 
 .site-footer__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  border:1px solid currentColor;
+  transition:transform .2s ease, opacity .2s ease;
 }
 
 .site-footer__link:hover {
-  transform: translateY(-2px);
-  opacity: 0.85;
+  transform:translateY(-2px);
+  opacity:.85;
 }
 
-/* Iconos (Iconify) */
+/* Iconify */
 .iconify {
-  font-size: 28px;
-  vertical-align: middle;
-  color: inherit;
+  font-size:28px;
+  vertical-align:middle;
+  color:inherit;
 }
 
+
+
 /* ================================================================= */
-/*  COLORES POR PÁGINA                                               */
+/*  PAGE COLOR SYSTEM                                                */
 /* ================================================================= */
 
-/* --- HOME --- */
+/* Shadows reutilizables */
+:root {
+  --shadow-deep-black:
+    -1px 0 #000, 1px 0 #000, 0 -1px #000, 0 1px #000,
+    -2px 2px #000, -3px 3px #000, -4px 4px #000,
+    -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
+
+
+ --shadow-outline-white:
+    -1px 0 #FFF, 1px 0 #FFF,
+     0 -1px #FFF, 0 1px #FFF,
+    -2px 2px #FFF;
+}
+
+/* ============================ */
+/*  HOME                        */
+/* =============================*/
+
 body.page-home {
-  background-color: #ffffff;
-  color: #111111;
+  --page-bg:#ffffff;
+  --page-fg:#111111;
+
+  --heading-color:#ffffff;
+  --heading-shadow:var(--shadow-deep-black);
+
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-deep-black);
+
+  background-color:var(--page-bg);
+  color:var(--page-fg);
 }
 
-body.page-home h1,
-body.page-home h2 {
-  color: #ffffff;
-  text-shadow:
-    /* borde fino */
-    -1px 0 #000, 1px 0 #000, 0 -1px #000, 0  1px #000,
-       /* profundidad diagonal */
-    -2px 2px #000, -3px 3px #000, -4px 4px #000, -5px 5px #000, -6px 6px #000, -7px 7px #000, -8px 8px #000;
-}
 
 
-/* --- SERVICIOS --- */
+/* ================= */
+/*  SERVICIOS        */
+/* ==================*/
+
 body.page-servicios {
-  background-color: #6a00f4;
-  color: #ffffff;
+  --page-bg:#6a00f4;
+  --page-fg:#ffffff;
+  --heading-color:var(--page-bg);
+  --heading-shadow:var(--shadow-outline-white);
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-outline-white);
+  background-color:var(--page-bg);
+  color:var(--page-fg);
 }
 
-body.page-servicios h1, 
-body.page-servicios h2 {
-  color: #6a00f4; 
-  text-shadow:
-    /* borde fino */
-    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
-    /* profundidad diagonal */
-    -2px 2px #FFF;
-}
+/* ======================= */
+/*  CASOS                  */
+/* ======================= */
 
-/* --- CASOS --- */
 body.page-casos {
-  background-color: #111827;
-  color: #ffffff;
+  --page-bg:#111827;
+  --page-fg:#ffffff;
+
+  --heading-color:var(--page-bg);
+  --heading-shadow:var(--shadow-outline-white);
+
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-outline-white);
+
+  background-color:var(--page-bg);
+  color:var(--page-fg);
 }
 
-body.page-casos h1, 
-body.page-casos h2 {
-  color: #111827; 
-  text-shadow:
-    /* borde fino */
-    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
-    /* profundidad diagonal */
-    -2px 2px #FFF;
-}
+/* ==================== */
+/*  CONTACTO            */
+/* ==================== */
 
-/* --- CONTACTO --- */
 body.page-contacto {
-  background-color: #7f1d1d;
-  color: #ffffff;
+  --page-bg:#7f1d1d;
+  --page-fg:#ffffff;
+
+  --heading-color:var(--page-bg);
+
+  --heading-shadow:var(--shadow-outline-white);
+
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-outline-white);
+
+  background-color:var(--page-bg);
+  color:var(--page-fg);
 }
 
-body.page-contacto h1, 
-body.page-contacto h2 {
-  color: #7f1d1d; 
-  text-shadow:
-    /* borde fino */
-    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
-    /* profundidad diagonal */
-    -2px 2px #FFF;
-}
+/* ====================== */
+/*  PLUGINS               */
+/* ====================== */
 
-/* --- PLUGINS --- */
 body.page-plugins {
-  background-color: #0f766e;
-  color: #ffffff;
+  --page-bg:#0f766e;
+  --page-fg:#ffffff;
+
+  --heading-color:var(--page-bg);
+
+  --heading-shadow:var(--shadow-outline-white);
+
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-outline-white);
+
+  background-color:var(--page-bg);
+  color:var(--page-fg);
 }
 
-body.page-plugins h1, 
-body.page-plugins h2 {
-  color: #0f766e; 
-  text-shadow:
-    /* borde fino */
-    -1px 0 #FFF, 1px 0 #FFF, 0 -1px #FFF, 0  1px #FFF,
-    /* profundidad diagonal */
-    -2px 2px #FFF;
-}
 
 /* Herencia controlada */
-body[class^="page-"] * {
+body[class^="page-"] p,
+body[class^="page-"] li,
+body[class^="page-"] span,
+body[class^="page-"] a {
   color: inherit;
+}
+
+body[class^="page-"] * {
   border-color: inherit;
 }
 
@@ -393,6 +553,7 @@ body[class^="page-"] * {
 /* ================================================================= */
 
 .navbar {
+  font-family: "Cubano", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -410,9 +571,12 @@ body[class^="page-"] * {
   position: relative;
   padding: 8px 12px;
   font-weight: 400;
+  color:var(--nav-text-color) !important;
+  text-shadow:var(--nav-text-shadow);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.selected {
   opacity: 1;
 }
 
@@ -430,6 +594,7 @@ body[class^="page-"] * {
   transition: transform .25s ease;
 }
 
+.nav-links a:hover::after,
 .nav-links a.selected::after {
   transform: scaleX(1);
 }
@@ -969,80 +1134,4 @@ body.page-servicios .service-card ul {
 .page-plugins .site-logo,
 .page-contacto .site-logo {
   filter: invert(1);
-}
-
-
-/* ========================================================= */
-/* CONTACT CTA                                               */
-/* ========================================================= */
-
-.contact-cta {
-  padding: 64px 32px;
-  margin-top: 3em;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);  text-align: center;
-}
-
-.contact-cta h3 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.contact-cta p {
-  max-width: 520px;
-  margin: 0 auto 32px;
-  line-height: 1.6;
-}
-
-.page-servicios .contact-cta {
-  background-color: #F2F0F2;
-  color: #6b21a8;
-}
-
-.page-plugins .contact-cta {
-  background-color: #ffffff;
-  color: #0f766e;
-}
-
-.page-plugins .contact-cta h2 {
-  color: #ffffff;
-  text-shadow:
-    -1px 0 #0f766e, 1px 0 #0f766e,
-     0 -1px #0f766e, 0 1px #0f766e,
-    -2px 2px #0f766e;
-}
-
-.page-plugins .contact-cta p {
-  color: #0f766e;
-}
-
-.page-plugins .contact-cta .cta {
-  background-color: #0f766e;
-  color: #ffffff;
-  border: 2px solid #0f766e;
-}
-
-.page-plugins .contact-cta .cta:hover {
-  background-color: #ffffff;
-  color: #0f766e;
-  border-color: #0f766e;
-}
-
-.page-casos .contact-cta {
-  background-color: #ffffff;
-  color: #111827;
-}
-
-.page-casos .contact-cta .cta {
-  background-color: #111827;
-  color: #ffffff;
-}
-
-.page-casos .contact-cta .cta:hover {
-  background-color: #ffffff;
-  color: #111827;
-}
-
-.page-contacto .contact-cta {
-  background-color: #854d0e;
 }
