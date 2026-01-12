@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import ContactCTA from "../../components/ContactCTA.astro";
 
 export async function getStaticPaths() {
   const casos = await getCollection("casos");
@@ -18,9 +19,8 @@ const project = caso.data;
 <Layout
   title={`${project.title} | JJ Montalban`}
   page="page-casos"
-  description="Caso de éxito desarrollado con WordPress, integración a medida y arquitectura técnica orientada a producción."}
-/>
-
+  description="Caso de éxito desarrollado con WordPress, integraciones a medida y arquitectura técnica orientada a producción."
+>
   <div class="container">
 
     <div class="back-nav-container">
@@ -34,28 +34,17 @@ const project = caso.data;
 
       <h1>{project.title}</h1>
 
-      {project.desc && project.desc.map(item => (
+      {project.intro?.map(item => (
         <p class="lead">{item}</p>
       ))}
 
       {project.image && (
         <div class="case-hero">
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-          />
+          <img src={project.image} alt={project.title} loading="lazy" />
         </div>
       )}
 
       <section class="case-detail">
-
-        {project.companySector && (
-          <div class="case-detail-section">
-            <span class="mini-label">Empresa / Sector</span>
-            <p>{project.companySector}</p>
-          </div>
-        )}
 
         {project.problem && (
           <div class="case-detail-section">
@@ -78,24 +67,6 @@ const project = caso.data;
           </div>
         )}
 
-        {project.contribution && (
-          <div class="case-detail-section">
-            <h2>Mi aporte</h2>
-            <p>{project.contribution}</p>
-          </div>
-        )}
-
-        {project.tech?.length > 0 && (
-          <div class="case-detail-section">
-            <h2>Tecnologías</h2>
-            <ul class="case-tech">
-              {project.tech.map(tech => (
-                <li>{tech}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {project.quote && (
           <div class="case-detail-section case-quote">
             <p class="case-quote-text">“{project.quote.text}”</p>
@@ -106,5 +77,10 @@ const project = caso.data;
       </section>
 
     </section>
+  </div>
+      <ContactCTA
+      title="¿Quieres resultados similares?"
+      text="Estos proyectos partieron de una conversación como esta."
+    />
   </div>
 </Layout>

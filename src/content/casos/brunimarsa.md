@@ -2,23 +2,20 @@
 title: "Brunimarsa"
 order: 1
 link: "https://brunimarsa.com"
-desc:
-  - "Plugin a medida para sincronizar más de 20 formularios de Contact Form 7 con Mailchimp."
-  - "Captura automática de leads con campos personalizados, registro de errores y panel para administración."
-  - "Sincronización sin cargas manuales y mejor segmentación para el equipo sanitario."
-tech:
-  - "WordPress"
-  - "Contact Form 7"
-  - "PHP"
-  - "Mailchimp API"
-  - "Custom plugin"
-image: "/assets/casos/brunimarsa.png"
-companySector: "Brunimarsa — Servicio de asistencia sanitaria domiciliaria en Madrid."
-problem: "Brunimarsa usaba más de 20 formularios personalizados con Contact Form 7. Sin una integración adecuada con Mailchimp, el proceso era manual, lento y lleno de errores. La gestión de leads se convertía en una tarea repetitiva para el equipo de marketing."
-solution: "Creamos un plugin a medida que conecta todos esos formularios con sus respectivas listas de Mailchimp. Soporta campos personalizados, múltiples formularios, registros de errores y todo integrado en el panel de WordPress."
-result: "Ahora los datos se sincronizan automáticamente, los leads llegan limpios a Mailchimp y el equipo ya no pierde tiempo ni comete errores. La automatización ha mejorado la segmentación y la eficiencia operativa."
+
+intro:
+  - "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid que captaba leads desde más de veinte formularios distintos."
+  - "La falta de una integración fiable con Mailchimp hacía que el proceso fuera manual, lento y propenso a errores para el equipo de marketing."
+
+image: "/assets/casos/brunimarsa.webp"
+
+problem: "La empresa utilizaba más de 20 formularios personalizados con Contact Form 7, cada uno con campos distintos. Sin una integración automática con Mailchimp, los datos se volcaban manualmente, provocando errores, duplicados y una pérdida constante de tiempo."
+
+solution: "Se desarrolló un plugin a medida para WordPress que sincroniza automáticamente todos los formularios con sus listas correspondientes en Mailchimp. El sistema soporta campos personalizados, múltiples formularios, registro de errores y un panel de control dentro del administrador para supervisar el estado de las sincronizaciones."
+
+result: "La captura de leads pasó a ser completamente automática y fiable. Los datos llegan limpios a Mailchimp, el equipo eliminó tareas manuales y la segmentación mejoró notablemente, aumentando la eficiencia operativa."
+
 quote:
-  text: "Gestionábamos más de veinte formularios y sincronizar con Mailchimp era un reto. El plugin que desarrolló JJ resolvió el problema de forma automática y fiable."
+  text: "Gestionábamos más de veinte formularios y sincronizar con Mailchimp era un reto constante. El plugin resolvió el problema de forma automática y fiable."
   author: "Enrique Aguilar, Fundador de Brunimarsa"
-contribution: "Desarrollo del plugin, integración completa, documentación clara y soporte continuo."
 ---

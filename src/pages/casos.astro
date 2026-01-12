@@ -67,6 +67,39 @@ const techIcons = {
   },
 };
 
+const caseStacks = {
+  chipicasa: [
+    "WordPress",
+    "PHP",
+    "MySQL",
+    "WP REST API",
+    "Custom plugins",
+    "XML portal feeds",
+  ],
+  brunimarsa: [
+    "WordPress",
+    "PHP",
+    "Contact Form 7",
+    "Mailchimp API",
+    "Custom plugin",
+  ],
+  caramelotattoo: [
+    "WordPress",
+    "PHP",
+    "Google Calendar API",
+    "Custom plugin",
+  ],
+  eresagua: [
+    "WordPress",
+    "WooCommerce",
+    "PHP",
+    "JavaScript",
+    "WP REST API",
+  ],
+};
+
+
+
 // Simple Icons no incluye: Contact Form 7, Storefront, Custom plugin, Custom plugins, Custom theme,
 // Responsive design, XML portal feeds, WP REST API, REST API.
 
@@ -76,22 +109,22 @@ const getTechIcon = tech => techIcons[tech];
 <Layout
   title="Casos de éxito | JJMontalban"
   page="page-casos"
-  description="Casos reales de proyectos WordPress: integraciones avanzadas, plugins a medida, automatización y soluciones técnicas en producción."
+  description="Casos reales de proyectos WordPress: integraciones avanzadas, plugins a medida y soluciones técnicas en producción."
 >
   <div class="container">
     <section class="content-container">
       <h1>Casos de éxito</h1>
 
       <p class="lead">
-        Proyectos reales de desarrollo a medida: integraciones complejas, soluciones técnicas
-        y arquitectura estable para producto en producción.
+        Proyectos reales de desarrollo a medida: integraciones complejas,
+        soluciones técnicas y arquitectura estable en producción.
       </p>
 
       <div class="cases-list">
-        {casos.map(({ slug, data }, index) => (
-          <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+        {casos.map(({slug,data},index)=>(
+          <article class={`case-item ${index%2!==0?"reverse":""}`}>
             <div class="case-image">
-              {data.image && (
+              {data.image&&(
                 <img
                   src={data.image}
                   alt={data.title}
@@ -103,16 +136,22 @@ const getTechIcon = tech => techIcons[tech];
             <div class="case-content">
               <h2>{data.title}</h2>
 
-              {data.desc.map(item => (
+              {data.intro?.map(item=>(
                 <p class="case-desc">{item}</p>
               ))}
 
               <div class="case-tech-row">
+                {caseStacks[slug]?.length && (
                 <ul class="case-tech">
-                  {data.tech.map(tech => {
+                  {caseStacks[slug].map(tech => {
                     const icon = getTechIcon(tech);
+
                     return icon ? (
-                      <li class="case-tech-icon" title={tech} aria-label={tech}>
+                      <li
+                        class="case-tech-icon"
+                        title={tech}
+                        aria-label={tech}
+                      >
                         <svg viewBox={icon.viewBox} aria-hidden="true">
                           <path d={icon.path} />
                         </svg>
@@ -120,6 +159,7 @@ const getTechIcon = tech => techIcons[tech];
                     ) : null;
                   })}
                 </ul>
+              )}
 
                 <a href={`/casos/${slug}`} class="cta">
                   Ver detalle del proyecto
@@ -135,7 +175,7 @@ const getTechIcon = tech => techIcons[tech];
       <h2>Otros casos</h2>
 
       <div class="other-cases-grid">
-        {otrosCasos.map(({ data }) => (
+        {otrosCasos.map(({data})=>(
           <a
             href={data.link}
             target="_blank"
