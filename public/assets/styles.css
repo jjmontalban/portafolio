@@ -95,7 +95,7 @@ a:hover {
   font-family:"Cubano",sans-serif;
   font-size:1.05em;
   padding:9px 14px;
-  font-weight:600;
+  font-weight:500;
   border-radius:8px;
   display:inline-block;
   margin-top:2rem;
@@ -333,7 +333,7 @@ body.page-contacto {
 body.page-home {
   --section-link-services:#6a00f4;
   --section-link-plugins:#0f766e;
-  --section-link-cases:#111827;
+  --section-link-cases:#254ea5;
 }
 
 /* Variants */
@@ -475,7 +475,7 @@ body.page-servicios {
 /* ======================= */
 
 body.page-casos {
-  --page-bg:#111827;
+  --page-bg:#254ea5;
   --page-fg:#ffffff;
 
   --heading-color:var(--page-bg);
@@ -532,6 +532,7 @@ body[class^="page-"] p,
 body[class^="page-"] li,
 body[class^="page-"] span,
 body[class^="page-"] a {
+  font-size: larger;
   color: inherit;
 }
 
@@ -555,8 +556,8 @@ body[class^="page-"] * {
 }
 
 .nav-links {
+  font-size: 25px;
   display: flex;
-  gap: 20px;
 }
 
 .nav-links a {
@@ -567,37 +568,6 @@ body[class^="page-"] * {
   text-shadow:var(--nav-text-shadow);
 }
 
-.nav-links a:hover,
-.nav-links a.selected {
-  opacity: 1;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.selected::after {
-  transform: scaleX(1);
-}
-
-.nav-links a.selected {
-  font-weight: 600;
-}
-
-.nav-links a:hover::after {
-  transform: scaleX(1);
-}
 
 /* Burger */
 .burger {
@@ -618,7 +588,20 @@ body[class^="page-"] * {
 }
 
 /* Responsive */
-@media (max-width: 991px) {
+@media (min-width: 991px) {
+
+  .nav-links a[href="/contacto"]{
+    display:none;
+  }
+
+  .nav-links a[href="/"]{
+    display:none;
+  }
+
+}
+
+
+  @media (max-width: 991px) {
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -871,7 +854,7 @@ img {
 
 .service-card li {
   margin-bottom: 6px;
-  font-size: 14px;
+  font-size: 16px !important;
 }
 
 /* Responsive */
@@ -903,6 +886,7 @@ body.page-servicios .service-card > h2 {
 
 /* Texto descriptivo alineado a la izquierda */
 body.page-servicios .service-card > p {
+  font-size: ;
   text-align: left;
 }
 
