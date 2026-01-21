@@ -398,19 +398,29 @@ body.page-home a.section-link-cases {
   height:42px;
   border-radius:999px;
   border:1px solid currentColor;
+  color:inherit;
   transition:transform .2s ease, opacity .2s ease;
 }
 
 .site-footer__link:hover {
   transform:translateY(-2px);
   opacity:.85;
+  color:#ffc300;
 }
 
-/* Iconify */
-.iconify {
-  font-size:28px;
-  vertical-align:middle;
-  color:inherit;
+.site-footer__link svg {
+  width:22px;
+  height:22px;
+  fill:currentColor;
+}
+
+.site-footer__icon {
+  width:22px;
+  height:22px;
+  display:inline-block;
+  background-color:currentColor;
+  mask: var(--icon-url) no-repeat center / contain;
+  -webkit-mask: var(--icon-url) no-repeat center / contain;
 }
 
 

@@ -3,27 +3,27 @@ const socialLinks = [
   {
     label: "WordPress",
     href: "https://profiles.wordpress.org/jjmontalban/",
-    icon: "simple-icons:wordpress",
+    iconUrl: "/icons/wordpress.svg",
   },
   {
     label: "Behance",
     href: "https://www.behance.net/jjmontalban",
-    icon: "simple-icons:behance",
+    iconUrl: "/icons/behance.svg",
   },
   {
     label: "GitHub",
     href: "https://github.com/jjmontalban",
-    icon: "simple-icons:github",
+    iconUrl: "/icons/github.svg",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/jjmontalban/",
-    icon: "simple-icons:linkedin",
+    iconUrl: "/icons/linkedin.svg",
   },
   {
-    label: "Twitter",
+    label: "X",
     href: "https://x.com/jjmontalban",
-    icon: "simple-icons:twitter",
+    iconUrl: "/icons/x.svg",
   },
 ];
 ---
@@ -35,7 +35,11 @@ const socialLinks = [
       {socialLinks.map((link) => (
         <li>
           <a class="site-footer__link" href={link.href} aria-label={link.label} rel="me">
-            <iconify-icon icon={link.icon} aria-hidden="true" />
+            <span
+              class="site-footer__icon"
+              style={`--icon-url: url('${link.iconUrl}')`}
+              aria-hidden="true"
+            ></span>
           </a>
         </li>
       ))}
