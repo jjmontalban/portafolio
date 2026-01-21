@@ -758,9 +758,29 @@ img {
   color: #111;
 }
 
+/* Select */
+.contact-form select {
+  width: 100%;
+  padding: 12px 14px;
+  padding-right: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.25);
+  font-family: inherit;
+  font-size: 14px;
+  background-color: rgba(255,255,255,.9);
+  color: #111;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23111' d='M4.5 6l3.5 4 3.5-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
 /* Focus */
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   outline: none;
   border-color: currentColor;
   background-color: #fff;
@@ -819,6 +839,29 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* Checkboxes personalizados */
+.contact-form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: opacity .2s ease;
+}
+
+.contact-form fieldset label:hover {
+  opacity: .8;
+}
+
+.contact-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  cursor: pointer;
+  accent-color: currentColor;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
