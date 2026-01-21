@@ -222,6 +222,13 @@ import Layout from "../layouts/Layout.astro";
         if (!isHidden) {
           updateWebsiteDependencies();
           updateAgencyDependencies();
+        } else {
+          // Cuando se oculta, resetear los selects y ocultar campos dependientes
+          if (hasWebsiteSelect) hasWebsiteSelect.value = "";
+          if (agencySelect) agencySelect.value = "";
+          document
+            .querySelectorAll('.optional-dependent')
+            .forEach((field) => field.setAttribute("hidden", ""));
         }
       });
     }
@@ -234,7 +241,9 @@ import Layout from "../layouts/Layout.astro";
       agencySelect.addEventListener("change", updateAgencyDependencies);
     }
 
-    updateWebsiteDependencies();
-    updateAgencyDependencies();
+    // Asegurar que los campos condicionales estén ocultos al cargar la página
+    document
+      .querySelectorAll('.optional-dependent')
+      .forEach((field) => field.setAttribute("hidden", ""));
   </script>
 </Layout>
