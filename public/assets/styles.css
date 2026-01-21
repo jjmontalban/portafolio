@@ -330,23 +330,21 @@ body.page-contacto {
 /*  HOME – SECTION LINK COLORS                                       */
 /* ================================================================= */
 
-body.page-home {
-  --section-link-services:#6a00f4;
-  --section-link-plugins:#0f766e;
-  --section-link-cases:#254ea5;
+body.page-home a{
+text-decoration: none;
 }
 
 /* Variants */
-body.page-home .section-link-services {
-  --section-link-color:var(--section-link-services);
+body.page-home a.section-link-services{
+  color:#6a00f4;
 }
 
-body.page-home .section-link-plugins {
-  --section-link-color:var(--section-link-plugins);
+body.page-home a.section-link-plugins {
+  color:#0f766e;
 }
 
-body.page-home .section-link-cases {
-  --section-link-color:var(--section-link-cases);
+body.page-home a.section-link-cases {
+  color:#254ea5;
 }
 
 
@@ -532,7 +530,7 @@ body[class^="page-"] p,
 body[class^="page-"] li,
 body[class^="page-"] span,
 body[class^="page-"] a {
-  font-size: larger;
+  font-size: 20px;
   color: inherit;
 }
 
