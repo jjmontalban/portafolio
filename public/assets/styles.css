@@ -835,10 +835,18 @@ img {
   padding: 12px 0 4px;
 }
 
+.optional-fields[hidden] {
+  display: none;
+}
+
 .optional-dependent {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.optional-dependent[hidden] {
+  display: none;
 }
 
 /* Checkboxes personalizados */
