@@ -8,22 +8,7 @@ import { icons as simpleIcons } from "@iconify-json/simple-icons";
 /* ICONS                                                     */
 /* ========================================================= */
 const wordpress = iconToSVG(getIconData(simpleIcons, "wordpress"), { width:24 });
-const woocommerce = iconToSVG(getIconData(simpleIcons, "woocommerce"), { width:24 });
-const php = iconToSVG(getIconData(simpleIcons, "php"), { width:24 });
-const javascript = iconToSVG(getIconData(simpleIcons, "javascript"), { width:24 });
-const prestashop = iconToSVG(getIconData(simpleIcons, "prestashop"), { width:24 });
-const vue = iconToSVG(getIconData(simpleIcons, "vuejs"), { width:24 });
 const github = iconToSVG(getIconData(simpleIcons, "github"), { width:24 });
-
-const techIcons = {
-  "WordPress": wordpress,
-  "WordPress (API)": wordpress,
-  "WooCommerce": woocommerce,
-  "PHP": php,
-  "JavaScript": javascript,
-  "PrestaShop": prestashop,
-  "Vue.js": vue,
-};
 
 const plugins = [
   {
@@ -64,8 +49,6 @@ const plugins = [
 ];
 ---
 
----
-
 <Layout
   title="Plugins y herramientas | JJ Montalban"
   page="page-plugins"
@@ -92,18 +75,6 @@ const plugins = [
 
               <div class="plugin-body">
                 <h2>{plugin.title}</h2>
-
-                <div class="plugin-tech">
-                  {plugin.tech.map((tech) => {
-                    const icon = techIcons[tech];
-                    return icon ? (
-                      <span class="plugin-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={icon.body} />
-                        <span class="sr-only">{tech}</span>
-                      </span>
-                    ) : null;
-                  })}
-                </div>
 
                 <p class="plugin-desc">
                   {plugin.desc}
