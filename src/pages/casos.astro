@@ -2,21 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 import { getCollection } from "astro:content";
-
-import { getIconData, iconToSVG } from "@iconify/utils";
-import { icons as simpleIcons } from "@iconify-json/simple-icons";
-
-/* ========================================================= */
-/* ICONS                                                     */
-/* ========================================================= */
-
-const wordpress = iconToSVG(getIconData(simpleIcons, "wordpress"), { width:24 });
-const php = iconToSVG(getIconData(simpleIcons, "php"), { width:24 });
-const mysql = iconToSVG(getIconData(simpleIcons, "mysql"), { width:24 });
-const javascript = iconToSVG(getIconData(simpleIcons, "javascript"), { width:24 });
-const woocommerce = iconToSVG(getIconData(simpleIcons, "woocommerce"), { width:24 });
-const mailchimp = iconToSVG(getIconData(simpleIcons, "mailchimp"), { width:24 });
-const googlecalendar = iconToSVG(getIconData(simpleIcons, "googlecalendar"), { width:24 });
+import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar } from "../lib/icons";
 
 /* ========================================================= */
 /* CONTENT                                                   */
