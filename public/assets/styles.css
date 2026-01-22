@@ -745,6 +745,7 @@ img {
 .contact-form textarea {
   width: 100%;
   padding: 12px 14px;
+  padding-right: 40px;
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,.25);
   font-family: inherit;
@@ -785,6 +786,13 @@ img {
 .contact-form .cta {
   align-self: flex-start;
   margin-top: 12px;
+}
+
+/* Botón enviar en página de contacto */
+body.page-contacto .contact-form .cta {
+  background: transparent;
+  color: white;
+  border-color: white;
 }
 
 .contact-form fieldset {
@@ -856,6 +864,15 @@ img {
 
 .contact-form fieldset label:hover {
   opacity: .8;
+}
+
+/* Checkboxes "Tipo de proyecto" con fondo claro */
+.contact-form .optional-group legend + label,
+.contact-form .optional-group legend ~ label {
+  background-color: rgba(255,255,255,.9);
+  color: #111;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
 .contact-form input[type="checkbox"] {
