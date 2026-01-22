@@ -10,7 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/simple-icons": "^1.2.67",
+    "@iconify/icons-simple-icons": "^1.2.74",
+    "@iconify/utils": "^3.1.0",
     "astro": "^5.1.5",
-    "astro-compress": "^2.3.8"
+    "astro-compress": "^2.3.8",
+    "simple-icons": "^16.6.0"
   }
 }

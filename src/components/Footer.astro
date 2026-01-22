@@ -1,44 +1,38 @@
 ---
-const socialLinks = [
-  {
-    label: "WordPress",
-    href: "https://profiles.wordpress.org/jjmontalban/",
-    icon: "simple-icons:wordpress",
-  },
-  {
-    label: "Behance",
-    href: "https://www.behance.net/jjmontalban",
-    icon: "simple-icons:behance",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/jjmontalban",
-    icon: "simple-icons:github",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/jjmontalban/",
-    icon: "simple-icons:linkedin",
-  },
-  {
-    label: "Twitter",
-    href: "https://x.com/jjmontalban",
-    icon: "simple-icons:twitter",
-  },
-];
+import { getIconData, iconToSVG } from '@iconify/utils';
+import { icons as simpleIcons } from '@iconify-json/simple-icons';
+
+const wordpress = iconToSVG(getIconData(simpleIcons, 'wordpress'), { width: 24 });
+const behance = iconToSVG(getIconData(simpleIcons, 'behance'), { width: 24 });
+const github = iconToSVG(getIconData(simpleIcons, 'github'), { width: 24 });
+const linkedin = iconToSVG(getIconData(simpleIcons, 'linkedin'), { width: 24 });
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
     <p class="site-footer__text">Conecta conmigo en mis perfiles profesionales</p>
     <ul class="site-footer__social" aria-label="Perfiles sociales">
-      {socialLinks.map((link) => (
-        <li>
-          <a class="site-footer__link" href={link.href} aria-label={link.label} rel="me">
-            <iconify-icon icon={link.icon} aria-hidden="true" />
-          </a>
-        </li>
-      ))}
+      <li>
+        <a class="site-footer__link" href="https://profiles.wordpress.org/jjmontalban/" aria-label="WordPress" rel="me">
+          <svg viewBox="0 0 24 24" set:html={wordpress.body} />
+        </a>
+      </li>
+      <li>
+        <a class="site-footer__link" href="https://www.behance.net/jjmontalban" aria-label="Behance" rel="me">
+          <svg viewBox="0 0 24 24" set:html={behance.body} />
+        </a>
+      </li>
+      <li>
+        <a class="site-footer__link" href="https://github.com/jjmontalban" aria-label="GitHub" rel="me">
+          <svg viewBox="0 0 24 24" set:html={github.body} />
+        </a>
+      </li>
+      <li>
+        <a class="site-footer__link" href="https://www.linkedin.com/in/jjmontalban/" aria-label="LinkedIn" rel="me">
+          <svg viewBox="0 0 24 24" set:html={linkedin.body} />
+        </a>
+      </li>
     </ul>
   </div>
 </footer>
+
