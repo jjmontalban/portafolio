@@ -364,7 +364,7 @@ body.page-home a.section-link-cases {
 /* ================================================================= */
 
 .site-footer {
-  padding:48px 24px 56px;
+  padding:5px 0 40px;
   text-align:center;
 }
 
@@ -394,10 +394,7 @@ body.page-home a.section-link-cases {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:42px;
-  height:42px;
-  border-radius:999px;
-  border:1px solid currentColor;
+  /* Quitar: border-radius:999px; border:1px solid currentColor; */
   transition:transform .2s ease, opacity .2s ease;
 }
 
@@ -406,14 +403,13 @@ body.page-home a.section-link-cases {
   opacity:.85;
 }
 
-/* Iconify */
-.iconify {
-  font-size:28px;
-  vertical-align:middle;
-  color:inherit;
+/* Estilos para el SVG en el footer, similar a .service-icon */
+.site-footer__link svg {
+  width: 50px; /* Ajusta tamaño si quieres más pequeño que 56px de servicios */
+  height: 50px;
+  /* fill: currentColor; */
+  /* color: inherit; */ /* Hereda el color del enlace */
 }
-
-
 
 /* ================================================================= */
 /*  PAGE COLOR SYSTEM                                                */
@@ -554,11 +550,11 @@ body[class^="page-"] * {
 }
 
 .nav-links {
-  font-size: 25px;
   display: flex;
 }
 
 .nav-links a {
+  font-size: 2.5em !important;
   position: relative;
   padding: 8px 12px;
   font-weight: 400;
@@ -585,7 +581,7 @@ body[class^="page-"] * {
   cursor: pointer;
 }
 
-/* Responsive */
+/* Responsive ocultar contacto y inicio en desktop */
 @media (min-width: 991px) {
 
   .nav-links a[href="/contacto"]{
@@ -639,7 +635,6 @@ body[class^="page-"] * {
   }
 
   .nav-links a {
-    font-size: 1.5em;
     font-weight: 800;
     text-transform: uppercase;
   }
@@ -1021,7 +1016,6 @@ body.page-servicios .service-card ul {
 .case-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .case-desc {
