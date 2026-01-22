@@ -1,8 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import { siWordpress, siVsco, siZapier, siSpeedtest } from 'simple-icons';
+
+import { getIconData, iconToSVG } from "@iconify/utils";
+import { icons as simpleIcons } from "@iconify-json/simple-icons";
+
+const wordpress = iconToSVG(getIconData(simpleIcons, "wordpress"), { width:24 });
+const extensions = iconToSVG(getIconData(simpleIcons, "visualstudiocode"), { width:24 });
+const integrations = iconToSVG(getIconData(simpleIcons, "zapier"), { width:24 });
+const performance = iconToSVG(getIconData(simpleIcons, "speedtest"), { width:24 });
 ---
+
+
 
 <Layout
   title="Servicios | JJMontalban"
@@ -19,80 +28,79 @@ import { siWordpress, siVsco, siZapier, siSpeedtest } from 'simple-icons';
         mejorar estabilidad y preparar el proyecto para crecer sin reconstruirlo desde cero.
       </p>
 
-      <!-- GRID DE SERVICIOS -->
-      <section class="services-grid">
+        <section class="services-grid">
 
-        <article class="service-card service-wordpress">
-          <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d={siWordpress.path} />
-          </svg>
-          
-          <h2>Plugins WordPress a medida</h2>
-          <p>
-            Desarrollo plugins WordPress personalizados adaptados a la lógica real de tu proyecto.
-            El código se integra con tu instalación actual, sin sustituir plugins clave ni forzar cambios innecesarios.
-          </p>
-          <ul>
-            <li>Campos personalizados y flujos específicos</li>
-            <li>Módulos y bloques ACF personalizados</li>
-            <li>Integración con el editor</li>
-            <li>Controles avanzados para administradores</li>
-            <li>Funcionalidades internas y automatización de procesos</li>
-          </ul>
-        </article>
-        
-        <article class="service-card service-extensions">
-          <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d={siVsco.path} />
-          </svg>   
-          <h2>Mejoras sobre proyectos existentes</h2>
-          <p>
-            Tu sitio no necesita empezar de cero.
-            Puedo ampliar, mejorar o estabilizar lo que ya tienes manteniendo tu diseño, tu contenido y tu estructura actual.
-          </p>
-          <ul>
-            <li>Nuevas secciones o capacidades sobre tu tema actual</li>
-            <li>Refactor técnico para evitar errores futuros</li>
-            <li>Limpieza de código y optimización</li>
-            <li>Ajustes orientados a escalabilidad y mantenimiento</li>
-          </ul>
-        </article>
-        
-        <article class="service-card service-integrations">
-          <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d={siZapier.path} />
-          </svg>
-          <h2>Integraciones y automatización</h2>
-          <p>
-            Conecto tu página con los servicios que necesita tu negocio.
-            Automatizo tareas y sincronizo información para que tu WordPress trabaje por ti.
-          </p>
-          <ul>
-            <li>Integración con APIs externas</li>
-            <li>Conexión con CRMs y plataformas inmobiliarias como Pisos.com</li>
-            <li>Procesos automáticos de importación/exportación</li>
-            <li>Automatización de emails, flujos y notificaciones</li>
-          </ul>
-        </article>
-        
-        <article class="service-card service-performance">
-          <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d={siSpeedtest.path} />
-          </svg>
-          <h2>Rendimiento y seguridad</h2>
-          <p>
-            Estabilizo tu sitio para que funcione rápido y sin incidencias.
-            Me centro en rendimiento, seguridad y buenas prácticas.
-          </p>
-          <ul>
-            <li>Optimización WPO y mejora de tiempos de carga</li>
-            <li>Configuración avanzada de CSP</li>
-            <li>Mitigación de vulnerabilidades</li>
-            <li>Auditorías técnicas y recomendaciones reales</li>
-          </ul>
-        </article>
+          <article class="service-card service-wordpress">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={wordpress.body} />
+            <span class="sr-only">wordpress</span>
 
-      </section>
+            <h2>Plugins WordPress a medida</h2>
+            <p>
+              Desarrollo plugins WordPress personalizados adaptados a la lógica real de tu proyecto.
+              El código se integra con tu instalación actual, sin sustituir plugins clave ni forzar cambios innecesarios.
+            </p>
+            <ul>
+              <li>Campos personalizados y flujos específicos</li>
+              <li>Módulos y bloques ACF personalizados</li>
+              <li>Integración con el editor</li>
+              <li>Controles avanzados para administradores</li>
+              <li>Funcionalidades internas y automatización de procesos</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-wordpress">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={wordpress.body} />
+            <span class="sr-only">wordpress</span>
+
+            <h2>Mejoras sobre proyectos existentes</h2>
+            <p>
+              Tu sitio no necesita empezar de cero.
+              Puedo ampliar, mejorar o estabilizar lo que ya tienes manteniendo tu diseño, tu contenido y tu estructura actual.
+            </p>
+            <ul>
+              <li>Nuevas secciones o capacidades sobre tu tema actual</li>
+              <li>Refactor técnico para evitar errores futuros</li>
+              <li>Limpieza de código y optimización</li>
+              <li>Ajustes orientados a escalabilidad y mantenimiento</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-integrations">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={integrations.body} />
+            <span class="sr-only">integrations</span>
+
+            <h2>Integraciones y automatización</h2>
+            <p>
+              Conecto tu página con los servicios que necesita tu negocio.
+              Automatizo tareas y sincronizo información para que tu WordPress trabaje por ti.
+            </p>
+            <ul>
+              <li>Integración con APIs externas</li>
+              <li>Conexión con CRMs y plataformas inmobiliarias</li>
+              <li>Procesos automáticos de importación/exportación</li>
+              <li>Automatización de emails, flujos y notificaciones</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-performance">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={performance.body} />
+            <span class="sr-only">performance</span>
+
+            <h2>Rendimiento y seguridad</h2>
+            <p>
+              Estabilizo tu sitio para que funcione rápido y sin incidencias.
+              Me centro en rendimiento, seguridad y buenas prácticas.
+            </p>
+            <ul>
+              <li>Optimización WPO y mejora de tiempos de carga</li>
+              <li>Configuración avanzada de CSP</li>
+              <li>Mitigación de vulnerabilidades</li>
+              <li>Auditorías técnicas y recomendaciones reales</li>
+            </ul>
+          </article>
+
+</section>
+
 
       <ContactCTA
         title="¿Necesitas una solución a medida?"
@@ -101,3 +109,4 @@ import { siWordpress, siVsco, siZapier, siSpeedtest } from 'simple-icons';
     </div>
   </div>
 </Layout>
+
