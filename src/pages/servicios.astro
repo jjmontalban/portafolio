@@ -1,14 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-
-import { getIconData, iconToSVG } from "@iconify/utils";
-import { icons as simpleIcons } from "@iconify-json/simple-icons";
-
-const wordpress = iconToSVG(getIconData(simpleIcons, "wordpress"), { width:24 });
-const extensions = iconToSVG(getIconData(simpleIcons, "visualstudiocode"), { width:24 });
-const integrations = iconToSVG(getIconData(simpleIcons, "zapier"), { width:24 });
-const performance = iconToSVG(getIconData(simpleIcons, "speedtest"), { width:24 });
+import { wordpress, extensions, integrations, performance } from "../lib/icons";
 ---
 
 
