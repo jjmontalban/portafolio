@@ -869,7 +869,7 @@ img {
 
 @media (max-width: 768px) {
   .contact-card {
-    padding: 0 16px;
+    padding-right: 10px;
   }
 }
 
