@@ -1,5 +1,5 @@
 ---
-title: "Caramelo Tattoo"
+title: "Caramelotattoo.com"
 order: 3
 link: "https://caramelotattoo.com"
 
