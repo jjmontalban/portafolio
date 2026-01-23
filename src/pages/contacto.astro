@@ -41,21 +41,12 @@ import Layout from "../layouts/Layout.astro";
               required
             />
 
-            <label for="message">Mensaje</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Cuéntame sobre tu proyecto"
-              required
-            ></textarea>
-
             <p class="optional-note">
               Me cuentas algo más? (Campos opcionales).
             </p>
             <button
               type="button"
-              class="toggle-optional"
+              class="toggle-optional cta"
               aria-expanded="false"
               aria-controls="optional-fields"
             >
@@ -168,6 +159,14 @@ import Layout from "../layouts/Layout.astro";
                   Ninguno / por definir
                 </label>
               </fieldset>
+
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Cuéntame sobre tu proyecto"
+              ></textarea>
             </div>
 
             <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
