@@ -1,5 +1,5 @@
 ---
-title: "Brunimarsa"
+title: "Brunimarsa.es"
 order: 1
 link: "https://brunimarsa.com"
 
