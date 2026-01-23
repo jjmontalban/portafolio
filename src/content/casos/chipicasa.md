@@ -1,5 +1,5 @@
 ---
-title: "Chipicasa"
+title: "chipicasa.com"
 order: 2
 link: "https://chipicasa.com"
 
