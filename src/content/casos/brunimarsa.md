@@ -3,9 +3,9 @@ title: "Brunimarsa.es"
 order: 1
 link: "https://brunimarsa.com"
 
-intro:
-  - "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid que captaba leads desde más de veinte formularios distintos."
-  - "La falta de una integración fiable con Mailchimp hacía que el proceso fuera manual, lento y propenso a errores para el equipo de marketing."
+intro: "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid que captaba leads desde más de veinte formularios distintos."
+
+intro-detail: "La falta de una integración fiable con Mailchimp hacía que el proceso fuera manual, lento y propenso a errores para el equipo de marketing."
 
 image: "/assets/casos/brunimarsa.webp"
 
