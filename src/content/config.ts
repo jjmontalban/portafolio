@@ -8,7 +8,8 @@ const casosCollection = defineCollection({
     link:z.string().url().optional(),
 
     image:z.string().optional(),
-    intro:z.array(z.string()).optional(),
+    intro:z.string().optional(),
+    intro-detail:z.string().optional(),
 
     tech:z.array(z.string()).optional(),
 
