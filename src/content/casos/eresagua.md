@@ -3,9 +3,9 @@ title: "Eresagua.com"
 order: 4
 link: "https://eresagua.com"
 
-intro:
-  - "EresAgua es un proyecto de venta directa de un único producto distribuido en tres packs."
-  - "El objetivo era maximizar la conversión eliminando el flujo tradicional de tienda y reduciendo al mínimo los clics hasta el pago."
+intro: "EresAgua es un proyecto de venta directa de un único producto distribuido en tres packs."
+
+intro-detail: "El objetivo era maximizar la conversión eliminando el flujo tradicional de tienda y reduciendo al mínimo los clics hasta el pago."
 
 image: "/assets/casos/eresagua.webp"
 
