@@ -3,9 +3,9 @@ title: "Caramelotattoo.com"
 order: 3
 link: "https://caramelotattoo.com"
 
-intro:
-  - "Caramelo Tattoo es un estudio de tatuajes que necesitaba una web con identidad visual potente y coherente con su estilo artístico."
-  - "Además, requerían un sistema de reservas online sincronizado en tiempo real y optimizado para usuarios que llegan desde redes sociales."
+intro: "Caramelo Tattoo es un estudio de tatuajes que necesitaba una web con identidad visual potente y coherente con su estilo artístico."
+
+intro-detail: "Además, requerían un sistema de reservas online sincronizado en tiempo real y optimizado para usuarios que llegan desde redes sociales."
 
 image: "/assets/casos/caramelotattoo.webp"
 

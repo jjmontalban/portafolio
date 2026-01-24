@@ -3,9 +3,9 @@ title: "chipicasa.com"
 order: 2
 link: "https://chipicasa.com"
 
-intro:
-  - "Chipicasa es una agencia inmobiliaria en Chipiona que necesitaba un sistema centralizado para gestionar propiedades, clientes y propietarios."
-  - "Se desarrolló un CRM inmobiliario sobre WordPress con plugins y paneles a medida para el seguimiento de leads, informes y correos automatizados. Incluye feeds automáticos a Idealista, Fotocasa y Pisos.com para mantener los anuncios sincronizados."
+intro: "Chipicasa es una agencia inmobiliaria en Chipiona que necesitaba un sistema centralizado para gestionar propiedades, clientes y propietarios."
+
+intro-detail: "Se desarrolló un CRM inmobiliario sobre WordPress con plugins y paneles a medida para el seguimiento de leads, informes y correos automatizados. Incluye feeds automáticos a Idealista, Fotocasa y Pisos.com para mantener los anuncios sincronizados."
 
 image: "/assets/casos/chipicasa.webp"
 
