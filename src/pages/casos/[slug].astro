@@ -33,7 +33,7 @@ const project = caso.data;
     <section class="content-container">
 
       <h1>{project.title}</h1>
-      <p class="lead">{project.intro-detail}</p>
+      <p class="lead">{project["intro-detail"]}</p>
       {project.image && (
         <div class="case-hero">
           <img src={project.image} alt={project.title} loading="lazy" />

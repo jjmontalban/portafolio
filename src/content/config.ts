@@ -9,7 +9,7 @@ const casosCollection = defineCollection({
 
     image:z.string().optional(),
     intro:z.string().optional(),
-    intro-detail:z.string().optional(),
+    "intro-detail":z.string().optional(),
 
     tech:z.array(z.string()).optional(),
 
