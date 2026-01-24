@@ -40,9 +40,9 @@ const otrosCasos = (await getCollection("otros-casos"))
             <div class="case-content">
               <h2>{data.title}</h2>
 
-              {data.intro?.map(item => (
-                <p class="case-desc">{item}</p>
-              ))}
+              {data.intro && (
+                <p class="case-desc">{data.intro}</p>
+              )}
 
               <div class="case-tech-row">
                 <ul class="case-tech">
