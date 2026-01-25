@@ -13,6 +13,6 @@ export const javascript = iconToSVG(getIconData(simpleIcons, "javascript"), { wi
 export const woocommerce = iconToSVG(getIconData(simpleIcons, "woocommerce"), { width: 24 });
 export const mailchimp = iconToSVG(getIconData(simpleIcons, "mailchimp"), { width: 24 });
 export const googlecalendar = iconToSVG(getIconData(simpleIcons, "googlecalendar"), { width: 24 });
-export const extensions = iconToSVG(getIconData(simpleIcons, "visualstudiocode"), { width: 24 });
+export const extensions = iconToSVG(getIconData(simpleIcons, "diaspora"), { width: 24 });
 export const integrations = iconToSVG(getIconData(simpleIcons, "ray"), { width: 24 });
 export const performance = iconToSVG(getIconData(simpleIcons, "pagespeedinsights"), { width: 24 });
