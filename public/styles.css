@@ -1065,29 +1065,6 @@ body.page-servicios .service-card ul {
   justify-content:space-between;
 }
 
-.case-tech {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-
-.case-tech-icon {
-  width:36px;
-  height:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.case-tech-icon svg {
-  width:100%;
-  height:100%;
-  fill:currentColor;
-}
-
 .case-tech-row .cta {
   margin-top:0;
  background:#fff;
@@ -1189,4 +1166,44 @@ body.page-servicios .service-card ul {
   clip:rect(0,0,0,0);
   white-space:nowrap;
   border:0;
+}
+
+
+/* =============================== */
+/* CASE – TECH ICONS (DETAIL)      */
+/* =============================== */
+
+.case-tech-centered {
+  margin-top:64px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:24px;
+}
+
+.case-tech {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.case-tech li {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.case-tech li svg {
+  width:44px;
+  height:44px;
+}
+
+.case-tech-text {
+  font-size:16px;
+  opacity:.85;
+  text-align:center;
 }

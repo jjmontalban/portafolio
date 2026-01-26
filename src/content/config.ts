@@ -15,6 +15,7 @@ const casosCollection = defineCollection({
 
     problem:z.string().optional(),
     solution:z.string().optional(),
+    "solution-image":z.string().optional(),
     result:z.string().optional(),
 
     quote:z.object({

@@ -1,32 +1,44 @@
 ---
 import { dev, wordpress, behance, github, linkedin } from "../lib/icons";
 ---
-
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <p class="site-footer__text"><svg {...dev.attributes} set:html={dev.body} /> por JJ</p>
+
+    <p class="site-footer__text">
+      <svg {...dev.attributes} set:html={dev.body} />
+      <span class="sr-only">Developer</span>
+      por JJ
+    </p>
+
     <ul class="site-footer__social" aria-label="Perfiles sociales">
       <li>
         <a class="site-footer__link" href="https://profiles.wordpress.org/jjmontalban/" aria-label="WordPress" rel="me">
           <svg {...wordpress.attributes} set:html={wordpress.body} />
+          <span class="sr-only">WordPress profile</span>
         </a>
       </li>
+
       <li>
         <a class="site-footer__link" href="https://www.behance.net/jjmontalban" aria-label="Behance" rel="me">
           <svg {...behance.attributes} set:html={behance.body} />
+          <span class="sr-only">Behance profile</span>
         </a>
       </li>
+
       <li>
         <a class="site-footer__link" href="https://github.com/jjmontalban" aria-label="GitHub" rel="me">
           <svg {...github.attributes} set:html={github.body} />
+          <span class="sr-only">GitHub profile</span>
         </a>
       </li>
+
       <li>
         <a class="site-footer__link" href="https://www.linkedin.com/in/jjmontalban/" aria-label="LinkedIn" rel="me">
           <svg {...linkedin.attributes} set:html={linkedin.body} />
+          <span class="sr-only">LinkedIn profile</span>
         </a>
       </li>
     </ul>
+
   </div>
 </footer>
-

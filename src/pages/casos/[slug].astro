@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ContactCTA from "../../components/ContactCTA.astro";
+import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under } from "../../lib/icons";
 
 export async function getStaticPaths() {
   const casos = await getCollection("casos");
@@ -14,6 +15,8 @@ export async function getStaticPaths() {
 
 const { caso } = Astro.props;
 const project = caso.data;
+const ICONS = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar , under };
+
 ---
 
 <Layout
@@ -52,6 +55,11 @@ const project = caso.data;
           <div class="case-detail-section">
             <h2>La solución</h2>
             <p>{project.solution}</p>
+            {project["solution-image"] && (
+              <div class="case-hero">
+                <img src={project["solution-image"]} alt={`Solución ${project.title}`} loading="lazy" />
+              </div>
+            )}
           </div>
         )}
 
@@ -66,6 +74,29 @@ const project = caso.data;
           <div class="case-detail-section case-quote">
             <p class="case-quote-text">“{project.quote.text}”</p>
             <p class="case-quote-author">— {project.quote.author}</p>
+          </div>
+        )}
+
+        {project.tech && (
+          <div class="case-tech-centered">
+
+            <ul class="case-tech">
+              {project.tech.map((key) => (
+                ICONS[key] && (
+                  <li>
+                    <svg {...ICONS[key].attributes} set:html={ICONS[key].body} />
+                    <span class="sr-only">{key}</span>
+                  </li>
+                )
+              ))}
+            </ul>
+
+            <p class="case-tech-text">Proyecto en producción</p>
+
+            <a class="case-external-cta" href={project.link} target="_blank" rel="noopener noreferrer">
+              Ver sitio online
+            </a>
+
           </div>
         )}
 

@@ -1,5 +1,6 @@
 import { getIconData, iconToSVG } from "@iconify/utils";
 import { icons as simpleIcons } from "@iconify-json/simple-icons";
+import { icons as mdiIcons } from "@iconify-json/mdi";
 
 /* ========================================================= */
 /* ICONOS CENTRALIZADOS                                      */
@@ -19,4 +20,5 @@ export const x = iconToSVG(getIconData(simpleIcons, "nextra") );
 export const behance = iconToSVG(getIconData(simpleIcons, 'behance') );
 export const linkedin = iconToSVG(getIconData(simpleIcons, 'linkedin') );
 export const dev = iconToSVG(getIconData(simpleIcons, 'devbox') );
-export const sitio = iconToSVG(getIconData(simpleIcons, 'inductiveautomation') );
+export const sitio = iconToSVG(getIconData(mdiIcons, "web-refresh"));
+export const under = iconToSVG(getIconData(mdiIcons, "underscoredotjs"));
