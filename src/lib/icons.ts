@@ -4,7 +4,6 @@ import { icons as simpleIcons } from "@iconify-json/simple-icons";
 /* ========================================================= */
 /* ICONOS CENTRALIZADOS                                      */
 /* ========================================================= */
-
 export const wordpress = iconToSVG(getIconData(simpleIcons, "wordpress") );
 export const github = iconToSVG(getIconData(simpleIcons, "github") );
 export const php = iconToSVG(getIconData(simpleIcons, "php") );

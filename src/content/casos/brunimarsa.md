@@ -7,7 +7,7 @@ intro: "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid
 
 intro-detail: "La falta de una integración fiable con Mailchimp hacía que el proceso fuera manual, lento y propenso a errores para el equipo de marketing."
 
-image: "/assets/casos/brunimarsa.webp"
+image: "/images/casos/brunimarsa-1.webp"
 
 problem: "La empresa utilizaba más de 20 formularios personalizados con Contact Form 7, cada uno con campos distintos. Sin una integración automática con Mailchimp, los datos se volcaban manualmente, provocando errores, duplicados y una pérdida constante de tiempo."
 

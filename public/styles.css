@@ -953,9 +953,7 @@ body.page-servicios .service-card ul {
 }
 
 .plugin-image {
-  width: 100%;
-  height: auto;
-  display: block;
+  margin: 5px;
 }
 
 .plugin-body {
