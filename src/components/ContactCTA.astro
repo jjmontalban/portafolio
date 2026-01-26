@@ -1,19 +1,24 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
 interface Props {
   title: string;
   text: string;
   button?: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
   title,
   text,
-  button = "Hablemos"
+  button = t('cta.default')
 } = Astro.props;
 ---
 
 <section class="contact-cta">
   <h2>{title}</h2>
   <p>{text}</p>
-  <a class="cta" href="/contacto">{button}</a>
+  <a class="cta" href={`/${lang}/contacto`}>{button}</a>
 </section>

@@ -2,7 +2,8 @@
 title: "FloresJoseRomero.com"
 order: 2
 image: "/images/casos/floresjoseromero.png"
-excerpt: "Diseño y desarrollo de tema a medida de página corporativa."
+excerpt:
+  es: "Diseño y desarrollo de tema a medida de página corporativa."
+  en: "Custom theme design and development for corporate website."
 link: "https://floresjoseromero.com"
 ---
-    

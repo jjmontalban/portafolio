@@ -578,14 +578,85 @@ body[class^="page-"] * {
 /* Responsive ocultar contacto y inicio en desktop */
 @media (min-width: 991px) {
 
-  .nav-links a[href="/contacto"]{
+  .nav-links a[href$="/contacto"]{
     display:none;
   }
 
-  .nav-links a[href="/"]{
+  .nav-links a[href="/es"],
+  .nav-links a[href="/en"]{
     display:none;
   }
 
+}
+
+/* ================================================================= */
+/*  LANGUAGE SWITCH                                                   */
+/* ================================================================= */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.lang-option {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--nav-text-color, inherit);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.lang-option:hover {
+  opacity: 1;
+}
+
+.lang-option.active {
+  opacity: 1;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.lang-separator {
+  color: var(--nav-text-color, inherit);
+  opacity: 0.4;
+}
+
+/* Desktop: mostrar a la derecha del navbar */
+.nav-lang-desktop {
+  display: flex;
+  align-items: center;
+}
+
+/* Móvil: ocultar el desktop switch */
+.nav-lang-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  /* Ocultar desktop switch en móvil */
+  .nav-lang-desktop {
+    display: none;
+  }
+
+  /* Mostrar móvil switch arriba de los nav-links */
+  .nav-lang-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .nav-lang-mobile .lang-switch {
+    font-size: 1.2em;
+    gap: 12px;
+  }
+
+  .nav-lang-mobile .lang-option {
+    padding: 8px 16px;
+  }
 }
 
 
