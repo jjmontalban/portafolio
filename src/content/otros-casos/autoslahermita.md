@@ -1,7 +1,7 @@
 ---
-title: "Autos La Hermita"
+title: "Autoslahermita.com"
 order: 1
 image: "/images/casos/autoslahermita.png"
-excerpt: "Aplicación de planificación de eventos con funcionalidades básicas de gestión y participación."
-link: "https://github.com/mashish584/fullstack-ep-app"
+excerpt: "Tema WP a medida con tipo de contenido auto."
+link: "https://autoslahermita.com"
 ---
