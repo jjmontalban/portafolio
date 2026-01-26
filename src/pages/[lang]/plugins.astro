@@ -1,21 +1,31 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ContactCTA from "../components/ContactCTA.astro";
-import { wordpress, sitio, github } from "../lib/icons";
+import Layout from "../../layouts/Layout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { wordpress, sitio, github } from "../../lib/icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-  title="Plugins y herramientas | JJ Montalban"
+  title={t('plugins.meta.title')}
   page="page-plugins"
-  description="Plugins y herramientas para WordPress, WooCommerce, JavaScript y frameworks modernos. Soluciones reales con enfoque técnico."
+  description={t('plugins.meta.description')}
 >
   <div class="container">
     <section class="content-container">
-      <h1>Herramientas libres</h1>
+      <h1>{t('plugins.title')}</h1>
 
       <p class="lead">
-        Herramientas que resuelven problemas reales: para PrestaShop, WordPress y WooCommerce.
-        Usando JavaScript y frameworks modernos.
+        {t('plugins.lead')}
       </p>
 
       <div class="plugins-grid">
@@ -25,16 +35,16 @@ import { wordpress, sitio, github } from "../lib/icons";
           <img src="/images/plugins/plugin-quantity-settings-1.jpg" alt="Woocommerce Quantity" class="plugin-image" />
 
           <div class="plugin-body">
-            <h2>Woo Quantity</h2>
+            <h2>{t('plugins.wooQuantity.title')}</h2>
 
             <p class="plugin-desc">
-              Permite definir cantidades mínimas, máximas o rangos en WooCommerce.
+              {t('plugins.wooQuantity.desc')}
             </p>
 
             <div>
-              <a class="plugin-link-icon" target="_blank"> 
-                <svg {...github.attributes} set:html={github.body} /> 
-                <span class="sr-only">GitHub</span> 
+              <a class="plugin-link-icon" target="_blank">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
               </a>
               <a class="plugin-link-icon" href="https://wordpress.org/plugins/product-quantity-settings/" target="_blank" class="plugin-link">
                 <svg {...wordpress.attributes} set:html={wordpress.body} />
@@ -50,11 +60,11 @@ import { wordpress, sitio, github } from "../lib/icons";
           <img src="/images/plugins/eu-vat-number.jpg" alt="EU VAT Number" class="plugin-image" />
           <div class="plugin-body">
 
-            <h2>EU VAT Number</h2>
+            <h2>{t('plugins.euVat.title')}</h2>
             <p class="plugin-desc">
-              Gestión y validación automática del IVA intracomunitario VAT en WooCommerce.
+              {t('plugins.euVat.desc')}
             </p>
-            
+
             <div>
               <a href="#" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -75,9 +85,9 @@ import { wordpress, sitio, github } from "../lib/icons";
 
           <div class="plugin-body">
 
-            <h2>Idealista Feed</h2>
+            <h2>{t('plugins.idealista.title')}</h2>
             <p class="plugin-desc">
-              Sincroniza propiedades entre WordPress e Idealista automáticamente.
+              {t('plugins.idealista.desc')}
             </p>
 
             <div>
@@ -100,9 +110,9 @@ import { wordpress, sitio, github } from "../lib/icons";
           <img src="/images/casos/galacticblum-1.webp" alt="PS WhatsApp" class="plugin-image" />
 
           <div class="plugin-body">
-            <h2>PS WhatsApp</h2>
-            <p class="plugin-desc"> Integra WhatsApp con PrestaShop 8. Compatible con multitienda. </p>
-            
+            <h2>{t('plugins.psWhatsapp.title')}</h2>
+            <p class="plugin-desc">{t('plugins.psWhatsapp.desc')}</p>
+
             <div>
               <a href="#" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -119,9 +129,9 @@ import { wordpress, sitio, github } from "../lib/icons";
           <img src="/images/plugins/filmder.jpg" alt="Filmder" class="plugin-image" />
 
           <div class="plugin-body">
-            <h2>Filmder</h2>
-            <p class="plugin-desc">WordPress headless + API de IMDB con Vuejs en el frontend.</p>
-            
+            <h2>{t('plugins.filmder.title')}</h2>
+            <p class="plugin-desc">{t('plugins.filmder.desc')}</p>
+
             <div>
               <a href="https://github.com/jjmontalban/filmder-front" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -145,9 +155,9 @@ import { wordpress, sitio, github } from "../lib/icons";
     </section>
 
     <ContactCTA
-      title="¿Tienes una idea?"
-      text="Te la diseño y desarrollo."
-      button="Cuéntame"
+      title={t('plugins.cta.title')}
+      text={t('plugins.cta.text')}
+      button={t('plugins.cta.button')}
     />
   </div>
 </Layout>

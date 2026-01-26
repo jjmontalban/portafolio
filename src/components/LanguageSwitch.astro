@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, getRouteFromUrl, getAlternateLanguage, translatePath } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const route = getRouteFromUrl(Astro.url);
+const alternateLang = getAlternateLanguage(lang);
+const alternateUrl = translatePath(route, alternateLang);
+---
+
+<div class="lang-switch">
+  <a
+    href={`/es${route}`}
+    class:list={['lang-option', { active: lang === 'es' }]}
+    aria-label="Cambiar a Español"
+  >
+    ES
+  </a>
+  <span class="lang-separator">/</span>
+  <a
+    href={`/en${route}`}
+    class:list={['lang-option', { active: lang === 'en' }]}
+    aria-label="Switch to English"
+  >
+    EN
+  </a>
+</div>

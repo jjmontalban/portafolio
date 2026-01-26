@@ -1,0 +1,102 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { wordpress, extensions, integrations, performance } from "../../lib/icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { languages } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('servicios.meta.title')}
+  page="page-servicios"
+  description={t('servicios.meta.description')}
+>
+  <div class="container">
+    <div class="content-container">
+      <h1>{t('servicios.title')}</h1>
+
+      <p class="lead">
+        {t('servicios.lead')}
+      </p>
+
+        <section class="services-grid">
+
+          <article class="service-card service-wordpress">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={wordpress.body} />
+            <span class="sr-only">wordpress</span>
+
+            <h2>{t('servicios.wordpress.title')}</h2>
+            <p>
+              {t('servicios.wordpress.desc')}
+            </p>
+            <ul>
+              <li>{t('servicios.wordpress.li1')}</li>
+              <li>{t('servicios.wordpress.li2')}</li>
+              <li>{t('servicios.wordpress.li3')}</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-wordpress">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={extensions.body} />
+            <span class="sr-only">wordpress</span>
+
+            <h2>{t('servicios.mejoras.title')}</h2>
+            <p>
+              {t('servicios.mejoras.desc')}
+            </p>
+            <ul>
+              <li>{t('servicios.mejoras.li1')}</li>
+              <li>{t('servicios.mejoras.li2')}</li>
+              <li>{t('servicios.mejoras.li3')}</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-integrations">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={integrations.body} />
+            <span class="sr-only">integrations</span>
+
+            <h2>{t('servicios.integraciones.title')}</h2>
+            <p>
+              {t('servicios.integraciones.desc')}
+            </p>
+            <ul>
+              <li>{t('servicios.integraciones.li1')}</li>
+              <li>{t('servicios.integraciones.li2')}</li>
+              <li>{t('servicios.integraciones.li3')}</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-performance">
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={performance.body} />
+            <span class="sr-only">performance</span>
+
+            <h2>{t('servicios.rendimiento.title')}</h2>
+            <p>
+              {t('servicios.rendimiento.desc')}
+            </p>
+            <ul>
+              <li>{t('servicios.rendimiento.li1')}</li>
+              <li>{t('servicios.rendimiento.li2')}</li>
+              <li>{t('servicios.rendimiento.li3')}</li>
+            </ul>
+          </article>
+
+</section>
+
+
+      <ContactCTA
+        title={t('servicios.cta.title')}
+        text={t('servicios.cta.text')}
+      />
+    </div>
+  </div>
+</Layout>

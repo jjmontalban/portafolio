@@ -1,26 +1,43 @@
 ---
-const { current } = Astro.props;
 import { x } from "../lib/icons";
+import LanguageSwitch from "./LanguageSwitch.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <nav class="navbar">
-  <a href="/">
+  <a href={`/${lang}`}>
     <img class="site-logo" src="/images/jj.png" alt="JJ" />
   </a>
 
-  <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
+  <button class="burger" aria-label={t('nav.openMenu')} aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
 
   <div id="site-navigation" class="nav-links" role="navigation">
-    <button class="nav-close" aria-label="Cerrar menú" type="button">
+    <button class="nav-close" aria-label={t('nav.closeMenu')} type="button">
       <svg class="nav-close-icon" viewBox="0 0 24 24" set:html={x.body} />
     </button>
-    <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
-    <a href="/servicios" class:list={{ selected: current === "servicios" }}>Servicios</a>
-    <a href="/casos" class:list={{ selected: current === "casos" }}>Casos</a>
-    <a href="/plugins" class:list={{ selected: current === "plugins" }}>Plugins</a>
-    <a href="/contacto" class:list={{ selected: current === "contacto" }}>Contacto</a>
+
+    <!-- Language switch en móvil (arriba del todo) -->
+    <div class="nav-lang-mobile">
+      <LanguageSwitch />
+    </div>
+
+    <a href={`/${lang}`} class:list={{ selected: current === "home" }}>{t('nav.inicio')}</a>
+    <a href={`/${lang}/servicios`} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
+    <a href={`/${lang}/casos`} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
+    <a href={`/${lang}/plugins`} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
+    <a href={`/${lang}/contacto`} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
+  </div>
+
+  <!-- Language switch en desktop (a la derecha) -->
+  <div class="nav-lang-desktop">
+    <LanguageSwitch />
   </div>
 </nav>
-
-
-

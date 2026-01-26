@@ -1,29 +1,38 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations, translatePath } from '../i18n/utils';
 
 interface Props {
-  title:string;
-  page?:string;
-  description?:string;
-  canonical?:string;
-  ogImage?:string;
+  title: string;
+  page?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const {
   title,
   page = "",
-  description = "Desarrollador WordPress especializado en plugins a medida, integraciones avanzadas y soluciones técnicas orientadas a negocio.",
+  description = t('meta.description'),
   canonical = "https://jjmontalban.github.io",
   ogImage = "https://jjmontalban.github.io/assets/og-profile.jpg",
 } = Astro.props as Props;
 
 const currentPath = Astro.url?.pathname ?? "/";
 const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
+
+// Alternate language URL for hreflang
+const alternateLang = lang === 'es' ? 'en' : 'es';
+const alternatePath = translatePath(currentPath, alternateLang);
+const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -34,6 +43,10 @@ const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
     <meta name="theme-color" content="#111111" />
 
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={lang} href={canonicalUrl} />
+    <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonical + "/es"} />
+
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -41,37 +54,40 @@ const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="JJMontalban" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="/styles.css" />
+
     <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "JJMontalban",
-        "jobTitle": "Desarrollador de aplicaciones web",
-        "url": "https://jjmontalban.github.io/",
-        "sameAs": [
-          "https://github.com/jjmontalban",
-          "https://www.linkedin.com/in/jjmontalban/",
-          "https://profiles.wordpress.org/jjmontalban/"
-        ],
-        "image": "https://jjmontalban.github.io/images/profile.jpg",
-        "description": "Desarrollador de aplicaciones web con WordPress especializado en plugins a medida, automatización e integraciones API.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Chipiona",
-          "addressRegion": "Andalucía",
-          "addressCountry": "España"
-        },
-        "knowsLanguage": ["es", "en"]
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "JJMontalban",
+      "jobTitle": t('meta.jobTitle'),
+      "url": "https://jjmontalban.github.io/",
+      "sameAs": [
+        "https://github.com/jjmontalban",
+        "https://www.linkedin.com/in/jjmontalban/",
+        "https://profiles.wordpress.org/jjmontalban/"
+      ],
+      "image": "https://jjmontalban.github.io/images/profile.jpg",
+      "description": t('meta.jobDescription'),
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chipiona",
+        "addressRegion": "Andalucía",
+        "addressCountry": lang === 'es' ? "España" : "Spain"
+      },
+      "knowsLanguage": ["es", "en"]
+    })} />
   </head>
 
   <body class={page}>
