@@ -7,7 +7,7 @@ intro: "Caramelo Tattoo es un estudio de tatuajes que necesitaba una web con ide
 
 intro-detail: "Además, requerían un sistema de reservas online sincronizado en tiempo real y optimizado para usuarios que llegan desde redes sociales."
 
-image: "/images/casos/caramelotattoo-1.webp"
+image: "/images/casos/caramelotattoo.png"
 
 problem: "El estudio necesitaba diferenciarse visualmente y ofrecer un sistema de reservas que evitara solapamientos de citas. La mayoría de visitas llegaban desde Instagram, por lo que la experiencia móvil debía ser rápida, directa y sin fricción."
 

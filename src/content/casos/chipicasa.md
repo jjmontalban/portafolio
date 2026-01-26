@@ -7,7 +7,7 @@ intro: "Chipicasa es una agencia inmobiliaria en Chipiona que necesitaba un sist
 
 intro-detail: "Se desarrolló un CRM inmobiliario sobre WordPress con plugins y paneles a medida para el seguimiento de leads, informes y correos automatizados. Incluye feeds automáticos a Idealista, Fotocasa y Pisos.com para mantener los anuncios sincronizados."
 
-image: "/images/casos/chipicasa-1.webp"
+image: "/images/casos/chipicasa.png"
 
 problem: "La agencia necesitaba un sistema centralizado para gestionar propiedades, leads y propietarios, además de publicar en portales externos sin duplicar trabajo. Las herramientas habituales no cubrían su operativa ni ofrecían un CRM adaptado a su negocio."
 

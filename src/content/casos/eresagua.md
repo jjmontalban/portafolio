@@ -7,7 +7,7 @@ intro: "EresAgua es un proyecto de venta directa de un único producto distribui
 
 intro-detail: "El objetivo era maximizar la conversión eliminando el flujo tradicional de tienda y reduciendo al mínimo los clics hasta el pago."
 
-image: "/images/casos/eresagua-1.webp"
+image: "/images/casos/eresagua.png"
 
 problem: "El modelo clásico de eCommerce con catálogo y carrito no encajaba con un producto único. Era necesario diseñar una experiencia de compra directa, especialmente optimizada para móvil, que llevase al usuario del impacto inicial al pago en el menor número de pasos posible."
 

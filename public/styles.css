@@ -1043,11 +1043,19 @@ body.page-servicios .service-card ul {
   direction: ltr;
 }
 
-.case-image img {
-  width: 100%;
-  border-radius: 16px;
-  display: block;
+.case-image {
+  aspect-ratio:1340 / 746;
+  overflow:hidden;
 }
+
+.case-image img {
+  width:100%;
+  height:100%;
+  object-fit:fill;
+}
+
+
+
 
 .case-content {
   display: flex;
