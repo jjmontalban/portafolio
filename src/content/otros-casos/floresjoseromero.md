@@ -1,8 +1,8 @@
 ---
-title: "Flores Jose Romero"
+title: "FloresJoseRomero.com"
 order: 2
 image: "/images/casos/floresjoseromero.png"
-excerpt: "E-commerce de comida con funcionalidades básicas construido con GraphQL y Apollo."
-link: "https://github.com/mashish584/foooooodies"
+excerpt: "Diseño y desarrollo de tema a medida de página corporativa."
+link: "https://floresjoseromero.com"
 ---
     
