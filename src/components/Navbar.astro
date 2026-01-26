@@ -1,18 +1,18 @@
 ---
 const { current } = Astro.props;
-import CloseIcon from "../icons/x.svg";
+import { x } from "../lib/icons";
 ---
 
 <nav class="navbar">
   <a href="/">
-    <img class="site-logo" src="/assets/jj.png" alt="JJ" />
+    <img class="site-logo" src="/images/jj.png" alt="JJ" />
   </a>
 
   <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
 
   <div id="site-navigation" class="nav-links" role="navigation">
     <button class="nav-close" aria-label="Cerrar menú" type="button">
-      <CloseIcon class="nav-close-icon" />
+      <svg class="nav-close-icon" viewBox="0 0 24 24" set:html={x.body} />
     </button>
     <a href="/" class:list={{ selected: current === "home" }}>Inicio</a>
     <a href="/servicios" class:list={{ selected: current === "servicios" }}>Servicios</a>

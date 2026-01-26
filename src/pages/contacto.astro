@@ -10,52 +10,21 @@ import Layout from "../layouts/Layout.astro";
   <div class="container">
     <div class="content-container">
       <h1>Hablemos</h1>
-
-      <p class="lead">
-        Cuéntame qué necesitas y te responderé con una
-        propuesta clara.
-      </p>
+      <p>Cuéntame qué necesitas y te responderé con unapropuesta clara.</p>
 
       <section class="items-container">
         <div class="contact-card">
-          <form
-            class="contact-form"
-            action="https://formspree.io/f/mzdbogkk"
-            method="POST"
-          >
+          <form class="contact-form" action="https://formspree.io/f/mzdbogkk" method="POST" >
             <label for="name">Nombre</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Tu nombre"
-              required
-            />
-
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
             <label for="email">Email</label>
-            <input
-              id="email"
-              name="_replyto"
-              type="email"
-              placeholder="tu@email.com"
-              required
-            />
-
-            <p class="optional-note">
-              Me cuentas algo más? (Campos opcionales).
-            </p>
-            <button
-              type="button"
-              class="toggle-optional cta"
-              aria-expanded="false"
-              aria-controls="optional-fields"
-            >
-              Añadir más detalles del proyecto (opcional)
+            <input id="email" name="_replyto" type="email" placeholder="tu@email.com" required />
+            <button type="button" class="toggle-optional cta" aria-expanded="false" aria-controls="optional-fields" >
+              Me cuentas algo más? (opcional)
             </button>
-
             <div id="optional-fields" class="optional-fields" hidden>
+              <label for="email">Tipo de proyecto</label>
               <fieldset class="optional-group">
-                <legend>Tipo de proyecto</legend>
                 <label>
                   <input type="checkbox" name="project_type[]" value="Web corporativa" />
                   Web corporativa
@@ -132,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
                 <input id="agency-name" name="agency_name" type="text" />
               </div>
 
-              <fieldset class="optional-group optional-dependent" data-show="agency-no" hidden>
+              <fieldset class="optional-dependent" data-show="agency-no" hidden>
                 <legend>Material corporativo disponible</legend>
                 <label>
                   <input type="checkbox" name="brand_assets[]" value="Logotipo" />
@@ -172,7 +141,7 @@ import Layout from "../layouts/Layout.astro";
             <input type="hidden" name="_subject" value="Nuevo mensaje desde la web" />
             <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
             <input type="text" name="_gotcha" style="display:none" />
-
+            <label id="quick-submit-label" for="message">O bien, ya dale a</label>
             <button type="submit" class="cta">
               Enviar
             </button>
@@ -187,6 +156,7 @@ import Layout from "../layouts/Layout.astro";
     const optionalFields = document.getElementById("optional-fields");
     const hasWebsiteSelect = document.getElementById("has-website");
     const agencySelect = document.getElementById("agency-collab");
+    const quickSubmitLabel = document.getElementById("quick-submit-label");
 
     const updateWebsiteDependencies = () => {
       if (!hasWebsiteSelect) {
@@ -211,26 +181,31 @@ import Layout from "../layouts/Layout.astro";
         .forEach((field) => field.toggleAttribute("hidden", isYes || !agencySelect.value));
     };
 
-    if (toggleButton && optionalFields) {
+    if (toggleButton && optionalFields && quickSubmitLabel) {
       toggleButton.addEventListener("click", () => {
-        const isHidden = optionalFields.toggleAttribute("hidden");
-        toggleButton.textContent = isHidden
-          ? "Añadir más detalles del proyecto (opcional)"
-          : "Ocultar detalles del proyecto";
-        toggleButton.setAttribute("aria-expanded", String(!isHidden));
-        if (!isHidden) {
-          updateWebsiteDependencies();
-          updateAgencyDependencies();
-        } else {
-          // Cuando se oculta, resetear los selects y ocultar campos dependientes
-          if (hasWebsiteSelect) hasWebsiteSelect.value = "";
-          if (agencySelect) agencySelect.value = "";
-          document
-            .querySelectorAll('.optional-dependent')
-            .forEach((field) => field.setAttribute("hidden", ""));
-        }
-      });
-    }
+          const isHidden = optionalFields.toggleAttribute("hidden");
+
+          // Optional fields
+          toggleButton.textContent = isHidden
+            ? "Añadir más detalles (opcional)"
+            : "Ocultar detalles";
+          toggleButton.setAttribute("aria-expanded", String(!isHidden));
+
+          // Inverse behavior
+          quickSubmitLabel.toggleAttribute("hidden", !isHidden);
+
+          if (!isHidden) {
+            updateWebsiteDependencies();
+            updateAgencyDependencies();
+          } else {
+            if (hasWebsiteSelect) hasWebsiteSelect.value="";
+            if (agencySelect) agencySelect.value="";
+            document
+              .querySelectorAll(".optional-dependent")
+              .forEach((field) => field.setAttribute("hidden",""));
+          }
+        });
+      }
 
     if (hasWebsiteSelect) {
       hasWebsiteSelect.addEventListener("change", updateWebsiteDependencies);

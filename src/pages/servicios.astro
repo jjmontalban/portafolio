@@ -1,10 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import { wordpress, extensiones, integrations, performance } from "../lib/icons";
+import { wordpress, extensions, integrations, performance } from "../lib/icons";
 ---
-
-
 
 <Layout
   title="Servicios | JJMontalban"
@@ -38,7 +36,7 @@ import { wordpress, extensiones, integrations, performance } from "../lib/icons"
           </article>
 
           <article class="service-card service-wordpress">
-            <svg class="service-icon" viewBox="0 0 24 24" set:html={wordpress.body} />
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={extensions.body} />
             <span class="sr-only">wordpress</span>
 
             <h2>Mejoras sobre proyectos existentes</h2>
@@ -54,7 +52,7 @@ import { wordpress, extensiones, integrations, performance } from "../lib/icons"
           </article>
 
           <article class="service-card service-integrations">
-            <svg class="service-icon" viewBox="0 0 24 24" set:html={ray.body} />
+            <svg class="service-icon" viewBox="0 0 24 24" set:html={integrations.body} />
             <span class="sr-only">integrations</span>
 
             <h2>Integraciones y automatización</h2>

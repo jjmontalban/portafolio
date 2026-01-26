@@ -50,15 +50,15 @@ const otrosCasos = (await getCollection("otros-casos"))
                   {slug === "chipicasa" && (
                     <>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={wordpress.body} />
+                        <svg {...wordpress.attributes} set:html={wordpress.body} />
                         <span class="sr-only">wordpress</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={php.body} />
+                        <svg {...php.attributes} set:html={php.body} />
                         <span class="sr-only">php</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={mysql.body} />
+                        <svg {...mysql.attributes} set:html={mysql.body} />
                         <span class="sr-only">mysql</span>
                       </li>
                     </>
@@ -67,15 +67,15 @@ const otrosCasos = (await getCollection("otros-casos"))
                   {slug === "brunimarsa" && (
                     <>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={wordpress.body} />
+                        <svg {...wordpress.attributes} set:html={wordpress.body} />
                         <span class="sr-only">wordpress</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={php.body} />
+                        <svg {...php.attributes} set:html={php.body} />
                         <span class="sr-only">php</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={mailchimp.body} />
+                        <svg {...mailchimp.attributes} set:html={mailchimp.body} />
                         <span class="sr-only">mailchimp api</span>
                       </li>
                     </>
@@ -84,15 +84,15 @@ const otrosCasos = (await getCollection("otros-casos"))
                   {slug === "caramelotattoo" && (
                     <>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={wordpress.body} />
+                        <svg {...wordpress.attributes} set:html={wordpress.body} />
                         <span class="sr-only">wordpress</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={php.body} />
+                        <svg {...php.attributes} set:html={php.body} />
                         <span class="sr-only">php</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={googlecalendar.body} />
+                        <svg {...googlecalendar.attributes} set:html={googlecalendar.body} />
                         <span class="sr-only">google calendar api</span>
                       </li>
                     </>
@@ -101,15 +101,15 @@ const otrosCasos = (await getCollection("otros-casos"))
                   {slug === "eresagua" && (
                     <>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={wordpress.body} />
+                        <svg {...wordpress.attributes} set:html={wordpress.body} />
                         <span class="sr-only">wordpress</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={woocommerce.body} />
+                        <svg {...woocommerce.attributes} set:html={woocommerce.body} />
                         <span class="sr-only">woocommerce</span>
                       </li>
                       <li class="case-tech-icon">
-                        <svg viewBox="0 0 24 24" set:html={javascript.body} />
+                        <svg {...javascript.attributes} set:html={javascript.body} />
                         <span class="sr-only">javascript</span>
                       </li>
                     </>

@@ -1,45 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import { wordpress, github } from "../lib/icons";
-
-const plugins = [
-  {
-    title: "Woocommerce Quantity",
-    image: "/assets/plugins/plugin-quantity-settings.webp",
-    desc: "Permite definir cantidades mínimas, máximas o rangos en WooCommerce.",
-    github: "#",
-    link: "https://wordpress.org/plugins/product-quantity-settings/",
-  },
-  {
-    title: "EU VAT Number",
-    image: "/assets/plugins/plugin-vat.webp",
-    desc: "Gestión y validación automática del IVA intracomunitario VAT en WooCommerce.",
-    github: "#",
-    link: "https://wordpress.org/plugins/eu-vat-number/",
-  },
-  {
-    title: "Idealista Feed",
-    image: "/assets/plugins/plugin-idealista.webp",
-    desc: "Sincroniza propiedades entre WordPress e Idealista automáticamente.",
-    github: "#",
-    link: "https://wordpress.org/plugins/idealista-feed-pro/",
-  },
-  {
-    title: "Ps WhatsApp",
-    image: "/assets/plugins/modulo-whatsapp.webp",
-    desc: "Integra WhatsApp con PrestaShop 8. Compatible con multitienda.", 
-    github: "#",
-    link: "#",
-  },
-  {
-    title: "Filmder",
-    image: "/assets/plugins/movie-match.webp",
-    desc: "WordPress headless + API de IMDB con Vuejs en el frontend.",
-    github: "#",
-    link: "#",
-  },
-];
+import { wordpress, sitio, github } from "../lib/icons";
 ---
 
 <Layout
@@ -48,58 +10,143 @@ const plugins = [
   description="Plugins y herramientas para WordPress, WooCommerce, JavaScript y frameworks modernos. Soluciones reales con enfoque técnico."
 >
   <div class="container">
-
     <section class="content-container">
       <h1>Herramientas libres</h1>
 
-      <p class="lead">Herramientas que resuelven problemas reales: para PrestaShop, WordPress y WooCommerce. Usando JavaScript y frameworks modernos.
+      <p class="lead">
+        Herramientas que resuelven problemas reales: para PrestaShop, WordPress y WooCommerce.
+        Usando JavaScript y frameworks modernos.
       </p>
 
-        <div class="plugins-grid">
-          {plugins.map(plugin => (
-            <article class="plugin-card">
-              <img
-                src={plugin.image}
-                alt={plugin.title}
-                class="plugin-image"
-              />
+      <div class="plugins-grid">
 
-              <div class="plugin-body">
-                <h2>{plugin.title}</h2>
+        <!-- WooCommerce Quantity -->
+        <article class="plugin-card">
+          <img src="/assets/plugins/plugin-quantity-settings.webp" alt="Woocommerce Quantity" class="plugin-image" />
 
-                <p class="plugin-desc">
-                  {plugin.desc}
-                </p>
+          <div class="plugin-body">
+            <h2>Woocommerce Quantity</h2>
 
-                <div class="plugin-links">
-                  <a
-                    href={plugin.github}
-                    target="_blank"
-                    class="plugin-link"
-                  >
-                    <svg viewBox="0 0 24 24" set:html={github.body} />
-                    <span class="sr-only">github</span>
-                  </a>
+            <p class="plugin-desc">
+              Permite definir cantidades mínimas, máximas o rangos en WooCommerce.
+            </p>
 
-                  <a
-                    href={plugin.link}
-                    target="_blank"
-                    class="plugin-link"
-                  >
-                    <svg viewBox="0 0 24 24" set:html={wordpress.body} />
-                    <span class="sr-only">wordpress plugin</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+            <div>
+              <a class="plugin-link-icon" target="_blank"> 
+                <svg {...github.attributes} set:html={github.body} /> 
+                <span class="sr-only">GitHub</span> 
+              </a>
+              <a class="plugin-link-icon" href="https://wordpress.org/plugins/product-quantity-settings/" target="_blank" class="plugin-link">
+                <svg {...wordpress.attributes} set:html={wordpress.body} />
+                <span class="sr-only">WordPress</span>
+              </a>
+            </div>
 
+          </div>
+        </article>
+
+        <!-- EU VAT Number -->
+        <article class="plugin-card">
+          <img src="/assets/plugins/plugin-vat.webp" alt="EU VAT Number" class="plugin-image" />
+          <div class="plugin-body">
+
+            <h2>EU VAT Number</h2>
+            <p class="plugin-desc">
+              Gestión y validación automática del IVA intracomunitario VAT en WooCommerce.
+            </p>
+            
+            <div>
+              <a href="#" target="_blank" class="plugin-link-icon">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://wordpress.org/plugins/eu-vat-number/" target="_blank" class="plugin-link-icon">
+                <svg {...wordpress.attributes} set:html={wordpress.body} />
+                <span class="sr-only">WordPress</span>
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Idealista Feed -->
+        <article class="plugin-card">
+          <img src="/assets/plugins/plugin-idealista.webp" alt="Idealista Feed" class="plugin-image" />
+
+          <div class="plugin-body">
+
+            <h2>Idealista Feed</h2>
+            <p class="plugin-desc">
+              Sincroniza propiedades entre WordPress e Idealista automáticamente.
+            </p>
+
+            <div>
+              <a href="#" target="_blank" class="plugin-link-icon">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://wordpress.org/plugins/idealista-feed-pro/" target="_blank" class="plugin-link-icon">
+                <svg {...wordpress.attributes} set:html={wordpress.body} />
+                <span class="sr-only">WordPress</span>
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- PS WhatsApp -->
+        <article class="plugin-card">
+          <img src="/assets/plugins/modulo-whatsapp.webp" alt="PS WhatsApp" class="plugin-image" />
+
+          <div class="plugin-body">
+            <h2>PS WhatsApp</h2>
+            <p class="plugin-desc"> Integra WhatsApp con PrestaShop 8. Compatible con multitienda. </p>
+            
+            <div>
+              <a href="#" target="_blank" class="plugin-link-icon">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Filmder -->
+        <article class="plugin-card">
+
+          <img src="/assets/plugins/movie-match.webp" alt="Filmder" class="plugin-image" />
+
+          <div class="plugin-body">
+            <h2>Filmder</h2>
+            <p class="plugin-desc">WordPress headless + API de IMDB con Vuejs en el frontend.</p>
+            
+            <div>
+              <a href="https://github.com/jjmontalban/filmder-front" target="_blank" class="plugin-link-icon">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://github.com/jjmontalban/filmder-back" target="_blank" class="plugin-link-icon">
+                <svg {...github.attributes} set:html={github.body} />
+                <span class="sr-only">GitHub</span>
+              </a>
+              <a href="https://filmder-front-jjmontalban.vercel.app/" target="_blank" class="plugin-link-icon">
+                <svg {...sitio.attributes} set:html={sitio.body} />
+                <span class="sr-only">Web</span>
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
     </section>
 
     <ContactCTA
-      title="¿Tienes una idea de plugin?"
-      text="Diseño y desarrollo esa idea."
+      title="¿Tienes una idea?"
+      text="Te la diseño y desarrollo."
       button="Cuéntame"
     />
   </div>

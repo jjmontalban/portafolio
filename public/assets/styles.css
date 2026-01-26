@@ -405,10 +405,9 @@ body.page-home a.section-link-cases {
 
 /* Estilos para el SVG en el footer, similar a .service-icon */
 .site-footer__link svg {
-  width: 50px; /* Ajusta tamaño si quieres más pequeño que 56px de servicios */
+  width: 50px;
   height: 50px;
-  /* fill: currentColor; */
-  /* color: inherit; */ /* Hereda el color del enlace */
+
 }
 
 /* ================================================================= */
@@ -630,8 +629,6 @@ body[class^="page-"] * {
   .nav-close-icon {
     width: 24px;
     height: 24px;
-    display: block;
-    fill: currentColor;
   }
 
   .nav-links a {
@@ -811,33 +808,18 @@ body.page-contacto .contact-form .cta {
   font-weight: 600;
 }
 
-.optional-note {
-  font-size: 13px;
-  color: rgba(17, 24, 39, 0.75);
-  margin: 0;
-}
-
-.toggle-optional {
-  align-self: flex-start;
-  background: transparent;
-  border: 1px solid rgba(0,0,0,.3);
-  border-radius: 6px;
-  padding: 10px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color .25s ease, border-color .25s ease;
-}
-
-.toggle-optional:hover {
-  background-color: rgba(0,0,0,.05);
-  border-color: rgba(0,0,0,.5);
-}
-
 .optional-fields {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 12px 0 4px;
+}
+
+.optional-group {
+  background-color: rgba(255,255,255,.9);
+  color: #111;
+  padding: 8px 12px !important;
+  border-radius: 6px;
 }
 
 .optional-fields[hidden] {
@@ -869,14 +851,6 @@ body.page-contacto .contact-form .cta {
 }
 
 /* Checkboxes "Tipo de proyecto" con fondo claro */
-.contact-form .optional-group legend + label,
-.contact-form .optional-group legend ~ label {
-  background-color: rgba(255,255,255,.9);
-  color: #111;
-  padding: 8px 12px;
-  border-radius: 6px;
-}
-
 .contact-form input[type="checkbox"] {
   width: 18px;
   height: 18px;
@@ -938,8 +912,6 @@ body.page-servicios .service-icon {
   height: 56px;
   margin: 0 auto 24px;
   display: block;
-  fill: currentColor;
-  color: #ffffff;
 }
 
 /* Título centrado */
@@ -1013,8 +985,6 @@ body.page-servicios .service-card ul {
 .plugin-tech-icon svg {
   width: 14px;
   height: 14px;
-  display: block;
-  fill: currentColor;
 }
 
 .plugin-desc {
@@ -1045,10 +1015,8 @@ body.page-servicios .service-card ul {
 }
 
 .plugin-link-icon svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-  fill: currentColor;
+  width: 35px;
+  height: 35px;
 }
 
 /* ================================================================= */
