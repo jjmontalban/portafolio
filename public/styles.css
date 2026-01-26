@@ -375,11 +375,6 @@ body.page-home a.section-link-cases {
   gap:16px;
 }
 
-.site-footer__text {
-  margin:0;
-  font-size:1rem;
-}
-
 .site-footer__social {
   list-style:none;
   display:flex;
@@ -961,6 +956,11 @@ body.page-servicios .service-card ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.plugin-body h2,
+.plugin-body p {
+  margin: 0;
 }
 
 .plugin-tech {
