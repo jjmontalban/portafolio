@@ -1,4 +1,31 @@
 ---
-// Redirect root to default language
-return Astro.redirect('/es');
+// This page redirects to the correct language based on browser preference
+// For static sites, we need client-side detection
 ---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      const supportedLangs = ['es', 'en'];
+      const defaultLang = 'es';
+
+      // Get browser language (e.g., "es-ES" -> "es")
+      const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
+
+      // Check if browser language is supported, otherwise use default
+      const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
+
+      // Redirect immediately
+      window.location.replace('/' + targetLang + '/');
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/es/">
+  </noscript>
+</head>
+<body></body>
+</html>
