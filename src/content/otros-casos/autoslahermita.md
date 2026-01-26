@@ -1,5 +1,5 @@
 ---
-title: "Autoslahermita.com"
+title: "autoshermita.com"
 order: 1
 image: "/images/casos/autoslahermita.png"
 excerpt: "Tema WP a medida con tipo de contenido auto."
