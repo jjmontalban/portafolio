@@ -1,5 +1,5 @@
 ---
-title: "Galacticblum"
+title: "Galacticblum.com"
 order: 3
 image: "/images/casos/galacticblum.png"
 excerpt:

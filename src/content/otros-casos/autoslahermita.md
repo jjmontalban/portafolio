@@ -1,5 +1,5 @@
 ---
-title: "Autos Hermita"
+title: "autoslahermita.com"
 order: 1
 image: "/images/casos/autoslahermita.png"
 excerpt:

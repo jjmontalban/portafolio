@@ -1,5 +1,5 @@
 ---
-title: "José Romero"
+title: "floresjromero.com"
 order: 2
 image: "/images/casos/floresjoseromero.png"
 excerpt:

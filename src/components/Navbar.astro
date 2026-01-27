@@ -24,7 +24,7 @@ const t = useTranslations(lang);
       <svg class="nav-close-icon" viewBox="0 0 24 24" set:html={x.body} />
     </button>
 
-    <!-- Language switch en móvil (arriba del todo) -->
+    <!-- Language switch MÓVIL (solo en menú móvil) -->
     <div class="nav-lang-mobile">
       <LanguageSwitch />
     </div>
@@ -34,10 +34,10 @@ const t = useTranslations(lang);
     <a href={`/${lang}/casos`} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
     <a href={`/${lang}/plugins`} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
     <a href={`/${lang}/contacto`} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
-  </div>
 
-  <!-- Language switch en desktop (a la derecha) -->
-  <div class="nav-lang-desktop">
-    <LanguageSwitch />
+    <!-- Language switch DESKTOP (al final de los enlaces) -->
+    <div class="nav-lang-desktop">
+      <LanguageSwitch />
+    </div>
   </div>
 </nav>

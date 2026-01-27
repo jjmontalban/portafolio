@@ -1,27 +1,65 @@
 ---
-import { getLangFromUrl, getRouteFromUrl, getAlternateLanguage, translatePath } from '../i18n/utils';
-import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const route = getRouteFromUrl(Astro.url);
-const alternateLang = getAlternateLanguage(lang);
-const alternateUrl = translatePath(route, alternateLang);
+const currentPath = Astro.url.pathname;
+
+// Determinar la ruta alternativa
+const getAlternatePath = () => {
+  if (currentPath.startsWith('/es')) {
+    return currentPath.replace('/es', '/en');
+  } else if (currentPath.startsWith('/en')) {
+    return currentPath.replace('/en', '/es');
+  }
+  // Si está en la raíz, asumimos español
+  return '/en' + currentPath;
+};
+
+const alternatePath = getAlternatePath();
+
+// Generar un ID único para evitar duplicados
+const uniqueId = `language-switch-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<div class="lang-switch">
-  <a
-    href={`/es${route}`}
-    class:list={['lang-option', { active: lang === 'es' }]}
-    aria-label="Cambiar a Español"
-  >
-    ES
-  </a>
-  <span class="lang-separator">/</span>
-  <a
-    href={`/en${route}`}
-    class:list={['lang-option', { active: lang === 'en' }]}
-    aria-label="Switch to English"
-  >
-    EN
-  </a>
+<div class="lang-toggle-wrapper">
+  <label class="lang-toggle">
+    <input 
+      type="checkbox" 
+      class="language-switch-input"
+      checked={lang === 'en'}
+      data-current-lang={lang}
+      data-alternate-path={alternatePath}
+    />
+    <span class="lang-slider">
+      <span class="lang-label lang-es">ES</span>
+      <span class="lang-label lang-en">EN</span>
+    </span>
+  </label>
 </div>
+
+<script>
+  function initLanguageSwitches() {
+    const toggles = document.querySelectorAll('.language-switch-input');
+    
+    toggles.forEach((toggle) => {
+      const input = toggle as HTMLInputElement;
+      
+      // Remover listeners previos para evitar duplicados
+      const newToggle = input.cloneNode(true) as HTMLInputElement;
+      input.parentNode?.replaceChild(newToggle, input);
+      
+      newToggle.addEventListener('change', () => {
+        const alternatePath = newToggle.dataset.alternatePath;
+        if (alternatePath) {
+          window.location.href = alternatePath;
+        }
+      });
+    });
+  }
+
+  // Inicializar al cargar la página
+  document.addEventListener('DOMContentLoaded', initLanguageSwitches);
+  
+  // Reinicializar en navegación de Astro
+  document.addEventListener('astro:page-load', initLanguageSwitches);
+</script>
