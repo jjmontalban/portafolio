@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import { wordpress, sitio, github } from "../../lib/icons";
-import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import { languages } from '../../i18n/ui';
+import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils';
+import { languages } from '../../lib/i18n/ui';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -42,7 +42,7 @@ const t = useTranslations(lang);
             </p>
             
             <div>
-              <a class="plugin-link-icon" href="https://github.com/jjmontalban/woocommerce-quantity-settings" target="_blank">
+              <a class="plugin-link-icon" href="https://github.com/jjmontalban/product-quantity-settings" target="_blank">
                 <svg {...github.attributes} set:html={github.body} />
                 <span class="sr-only">GitHub</span>
               </a>
