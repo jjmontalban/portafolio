@@ -1,0 +1,9 @@
+# robots.txt for jjmontalban.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jjmontalban.com/sitemap-index.xml
+
+# Disallow admin/private paths (if any in future)
+Disallow: /api/
