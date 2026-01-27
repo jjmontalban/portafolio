@@ -11,7 +11,7 @@ intro-detail:
   es: "Además, requerían un sistema de reservas online sincronizado en tiempo real y optimizado para usuarios que llegan desde redes sociales."
   en: "They also required an online booking system synchronized in real-time and optimized for users coming from social media."
 
-image: "/images/casos/caramelotattoo.png"
+image: "/images/casos/caramelotattoo-1.webp"
 
 problem:
   es: "El estudio necesitaba diferenciarse visualmente y ofrecer un sistema de reservas que evitara solapamientos de citas. La mayoría de visitas llegaban desde Instagram, por lo que la experiencia móvil debía ser rápida, directa y sin fricción."
@@ -20,7 +20,8 @@ problem:
 solution:
   es: "Se desarrolló un theme personalizado basado en Storefront, adaptando diseño, tipografía y fotografía al estilo del estudio. Además, se creó un plugin de reservas integrado con Google Calendar, con notificaciones automáticas para clientes y staff. Todo el flujo se diseñó con un enfoque mobile-first."
   en: "A custom theme based on Storefront was developed, adapting design, typography and photography to the studio's style. Additionally, a booking plugin integrated with Google Calendar was created, with automatic notifications for clients and staff. The entire flow was designed with a mobile-first approach."
-solution-image: "/images/casos/caramelotattoo.webp"
+
+solution-image: "/images/casos/caramelotattoo-2.webp"
 
 result:
   es: "La web refleja fielmente la identidad artística del estudio y las reservas se gestionan de forma automática sin errores ni solapamientos. Los clientes reservan fácilmente desde el móvil y el estudio mantiene su agenda siempre organizada."

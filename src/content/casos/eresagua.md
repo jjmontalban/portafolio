@@ -11,7 +11,7 @@ intro-detail:
   es: "El objetivo era maximizar la conversión eliminando el flujo tradicional de tienda y reduciendo al mínimo los clics hasta el pago."
   en: "The goal was to maximize conversion by eliminating the traditional store flow and reducing clicks to payment to a minimum."
 
-image: "/images/casos/eresagua.png"
+image: "/images/casos/eresagua-1.webp"
 
 problem:
   es: "El modelo clásico de eCommerce con catálogo y carrito no encajaba con un producto único. Era necesario diseñar una experiencia de compra directa, especialmente optimizada para móvil, que llevase al usuario del impacto inicial al pago en el menor número de pasos posible."
@@ -20,7 +20,8 @@ problem:
 solution:
   es: "Se desarrolló una landing orientada a conversión con propuesta clara y tres CTAs directos (Caja S, M y L). Cada CTA genera el pedido automáticamente y redirige al checkout de WooCommerce ya configurado, evitando el carrito. Todo el sistema se construyó sobre un theme y plugins a medida."
   en: "A conversion-oriented landing page was developed with a clear proposition and three direct CTAs (Box S, M and L). Each CTA automatically generates the order and redirects to the pre-configured WooCommerce checkout, bypassing the cart. The entire system was built on a custom theme and plugins."
-solution-image: "/images/casos/eresagua.webp"
+
+solution-image: "/images/casos/eresagua-2.webp"
 
 result:
   es: "Del impacto inicial al checkout en solo dos clics. La conversión aumentó, la experiencia móvil se volvió extremadamente rápida y el sistema quedó preparado para escalar sin rehacer la arquitectura."
