@@ -19,145 +19,148 @@ const t = useTranslations(lang);
   description={t('contacto.meta.description')}
 >
   <div class="container">
-    <h1>{t('contacto.title')}</h1>
-    <p>{t('contacto.intro')}</p>
+    <section>
 
-    <div class="contact-card">
-          <form class="contact-form" action="https://formspree.io/f/mzdbogkk" method="POST" >
-            <label for="name">{t('contacto.nombre')}</label>
-            <input id="name" name="name" type="text" placeholder={t('contacto.nombrePlaceholder')} required />
-            <label for="email">{t('contacto.email')}</label>
-            <input id="email" name="_replyto" type="email" placeholder={t('contacto.emailPlaceholder')} required />
-            <button type="button" class="toggle-optional cta" aria-expanded="false" aria-controls="optional-fields" data-show-text={t('contacto.masDetalles')} data-hide-text={t('contacto.ocultarDetalles')}>
-              {t('contacto.masDetalles')}
-            </button>
-            <div id="optional-fields" class="optional-fields" hidden>
-              <label for="project-type">{t('contacto.tipoProyecto')}</label>
-              <fieldset class="optional-group">
-                <label>
-                  <input type="checkbox" name="project_type[]" value="Web corporativa" />
-                  {t('contacto.webCorporativa')}
-                </label>
-                <label>
-                  <input type="checkbox" name="project_type[]" value="E-commerce" />
-                  {t('contacto.ecommerce')}
-                </label>
-                <label>
-                  <input type="checkbox" name="project_type[]" value="Plugin / desarrollo a medida" />
-                  {t('contacto.pluginMedida')}
-                </label>
-                <label>
-                  <input type="checkbox" name="project_type[]" value="Aplicación web / sistema a medida" />
-                  {t('contacto.appWeb')}
-                </label>
-                <label>
-                  <input type="checkbox" name="project_type[]" value="No lo tengo claro" />
-                  {t('contacto.noLoSeClaro')}
-                </label>
-              </fieldset>
-
-              <label for="has-website">{t('contacto.tieneWeb')}</label>
-              <select id="has-website" name="has_website">
-                <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-                <option value="Sí">{t('contacto.si')}</option>
-                <option value="No">{t('contacto.no')}</option>
-                <option value="En desarrollo">{t('contacto.enDesarrollo')}</option>
-              </select>
-
-              <div class="optional-dependent" data-show="has-website" hidden>
-                <label for="current-url">{t('contacto.urlActual')}</label>
-                <input id="current-url" name="current_url" type="url" />
-              </div>
-
-              <div class="optional-dependent" data-show="has-website" hidden>
-                <label for="current-hosting">{t('contacto.hostingActual')}</label>
-                <input
-                  id="current-hosting"
-                  name="current_hosting"
-                  type="text"
-                  placeholder={t('contacto.hostingPlaceholder')}
-                />
-              </div>
-
-              <div class="optional-dependent" data-show="has-website" hidden>
-                <label for="experience-level">
-                  {t('contacto.nivelExperiencia')}
-                </label>
-                <select id="experience-level" name="experience_level">
-                  <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-                  <option value="Ninguna">{t('contacto.ninguna')}</option>
-                  <option value="Básica (publicar contenidos)">
-                    {t('contacto.basica')}
-                  </option>
-                  <option value="Media (edición, ajustes, plugins)">
-                    {t('contacto.media')}
-                  </option>
-                  <option value="Avanzada">{t('contacto.avanzada')}</option>
-                </select>
-              </div>
-
-              <label for="agency-collab">
-                {t('contacto.colaboracionAgencia')}
+      <h1>{t('contacto.title')}</h1>
+      <p>{t('contacto.intro')}</p>
+      
+      <div class="contact-card">
+        <form class="contact-form" action="https://formspree.io/f/mzdbogkk" method="POST" >
+          <label for="name">{t('contacto.nombre')}</label>
+          <input id="name" name="name" type="text" placeholder={t('contacto.nombrePlaceholder')} required />
+          <label for="email">{t('contacto.email')}</label>
+          <input id="email" name="_replyto" type="email" placeholder={t('contacto.emailPlaceholder')} required />
+          <button type="button" class="toggle-optional cta" aria-expanded="false" aria-controls="optional-fields" data-show-text={t('contacto.masDetalles')} data-hide-text={t('contacto.ocultarDetalles')}>
+            {t('contacto.masDetalles')}
+          </button>
+          <div id="optional-fields" class="optional-fields" hidden>
+            <label for="project-type">{t('contacto.tipoProyecto')}</label>
+            <fieldset class="optional-group">
+              <label>
+                <input type="checkbox" name="project_type[]" value="Web corporativa" />
+                {t('contacto.webCorporativa')}
               </label>
-              <select id="agency-collab" name="agency_collaboration">
-                <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-                <option value="Sí">{t('contacto.si')}</option>
-                <option value="No">{t('contacto.no')}</option>
-              </select>
-
-              <div class="optional-dependent" data-show="agency-yes" hidden>
-                <label for="agency-name">{t('contacto.nombreAgencia')}</label>
-                <input id="agency-name" name="agency_name" type="text" />
-              </div>
-
-              <fieldset class="optional-dependent" data-show="agency-no" hidden>
-                <legend>{t('contacto.materialCorporativo')}</legend>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Logotipo" />
-                  {t('contacto.logotipo')}
-                </label>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Colores corporativos" />
-                  {t('contacto.coloresCorporativos')}
-                </label>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Tipografías" />
-                  {t('contacto.tipografias')}
-                </label>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Manual de marca" />
-                  {t('contacto.manualMarca')}
-                </label>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Fotografías profesionales" />
-                  {t('contacto.fotografiasProfesionales')}
-                </label>
-                <label>
-                  <input type="checkbox" name="brand_assets[]" value="Ninguno / por definir" />
-                  {t('contacto.ningunoPorDefinir')}
-                </label>
-              </fieldset>
-
-              <label for="message">{t('contacto.mensaje')}</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder={t('contacto.mensajePlaceholder')}
-              ></textarea>
+              <label>
+                <input type="checkbox" name="project_type[]" value="E-commerce" />
+                {t('contacto.ecommerce')}
+              </label>
+              <label>
+                <input type="checkbox" name="project_type[]" value="Plugin / desarrollo a medida" />
+                {t('contacto.pluginMedida')}
+              </label>
+              <label>
+                <input type="checkbox" name="project_type[]" value="Aplicación web / sistema a medida" />
+                {t('contacto.appWeb')}
+              </label>
+              <label>
+                <input type="checkbox" name="project_type[]" value="No lo tengo claro" />
+                {t('contacto.noLoSeClaro')}
+              </label>
+            </fieldset>
+            
+            <label for="has-website">{t('contacto.tieneWeb')}</label>
+            <select id="has-website" name="has_website">
+              <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
+              <option value="Sí">{t('contacto.si')}</option>
+              <option value="No">{t('contacto.no')}</option>
+              <option value="En desarrollo">{t('contacto.enDesarrollo')}</option>
+            </select>
+            
+            <div class="optional-dependent" data-show="has-website" hidden>
+              <label for="current-url">{t('contacto.urlActual')}</label>
+              <input id="current-url" name="current_url" type="url" />
             </div>
-
-            <input type="hidden" name="_subject" value={t('contacto.asuntoEmail')} />
-            <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
-            <input type="text" name="_gotcha" style="display:none" />
-            <label id="quick-submit-label" for="message">{t('contacto.quickSubmit')}</label>
-            <button type="submit" class="cta">
-              {t('contacto.enviar')}
-            </button>
-      </form>
+            
+            <div class="optional-dependent" data-show="has-website" hidden>
+              <label for="current-hosting">{t('contacto.hostingActual')}</label>
+              <input
+              id="current-hosting"
+              name="current_hosting"
+              type="text"
+              placeholder={t('contacto.hostingPlaceholder')}
+              />
+            </div>
+            
+            <div class="optional-dependent" data-show="has-website" hidden>
+              <label for="experience-level">
+                {t('contacto.nivelExperiencia')}
+              </label>
+              <select id="experience-level" name="experience_level">
+                <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
+                <option value="Ninguna">{t('contacto.ninguna')}</option>
+                <option value="Básica (publicar contenidos)">
+                  {t('contacto.basica')}
+                </option>
+                <option value="Media (edición, ajustes, plugins)">
+                  {t('contacto.media')}
+                </option>
+                <option value="Avanzada">{t('contacto.avanzada')}</option>
+              </select>
+            </div>
+            
+            <label for="agency-collab">
+              {t('contacto.colaboracionAgencia')}
+            </label>
+            <select id="agency-collab" name="agency_collaboration">
+              <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
+              <option value="Sí">{t('contacto.si')}</option>
+              <option value="No">{t('contacto.no')}</option>
+            </select>
+            
+            <div class="optional-dependent" data-show="agency-yes" hidden>
+              <label for="agency-name">{t('contacto.nombreAgencia')}</label>
+              <input id="agency-name" name="agency_name" type="text" />
+            </div>
+            
+            <fieldset class="optional-dependent" data-show="agency-no" hidden>
+              <legend>{t('contacto.materialCorporativo')}</legend>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Logotipo" />
+                {t('contacto.logotipo')}
+              </label>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Colores corporativos" />
+                {t('contacto.coloresCorporativos')}
+              </label>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Tipografías" />
+                {t('contacto.tipografias')}
+              </label>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Manual de marca" />
+                {t('contacto.manualMarca')}
+              </label>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Fotografías profesionales" />
+                {t('contacto.fotografiasProfesionales')}
+              </label>
+              <label>
+                <input type="checkbox" name="brand_assets[]" value="Ninguno / por definir" />
+                {t('contacto.ningunoPorDefinir')}
+              </label>
+            </fieldset>
+            
+            <label for="message">{t('contacto.mensaje')}</label>
+            <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder={t('contacto.mensajePlaceholder')}
+            ></textarea>
+          </div>
+          
+          <input type="hidden" name="_subject" value={t('contacto.asuntoEmail')} />
+          <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <label id="quick-submit-label" for="message">{t('contacto.quickSubmit')}</label>
+          <button type="submit" class="cta">
+            {t('contacto.enviar')}
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-
+    
+  </section>
   <script>
     const toggleButton = document.querySelector(".toggle-optional") as HTMLButtonElement | null;
     const optionalFields = document.getElementById("optional-fields");

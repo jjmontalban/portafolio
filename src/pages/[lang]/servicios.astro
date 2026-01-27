@@ -16,11 +16,12 @@ const t = useTranslations(lang);
 ---
 
 <Layout
-  title={t('servicios.meta.title')}
-  page="page-servicios"
-  description={t('servicios.meta.description')}
+title={t('servicios.meta.title')}
+page="page-servicios"
+description={t('servicios.meta.description')}
 >
-  <div class="container">
+<div class="container">
+    <section>
     <h1>{t('servicios.title')}</h1>
 
     <p>{t('servicios.lead')}</p>
@@ -75,6 +76,7 @@ const t = useTranslations(lang);
       </article>
     </section>
 
+</section>
     <ContactCTA
       title={t('servicios.cta.title')}
       text={t('servicios.cta.text')}

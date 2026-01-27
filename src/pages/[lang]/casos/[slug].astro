@@ -58,70 +58,70 @@ const localizedQuote = getLocalizedQuote(project.quote);
       <img src="/images/back.svg" alt={t('caso.volver')} />
       <span>{t('caso.volver')}</span>
     </a>
+    <section>
+      <h1>{getLocalizedText(project.title)}</h1>
+      <p>{getLocalizedText(project["intro-detail"])}</p>
 
-    <h1>{getLocalizedText(project.title)}</h1>
-    <p>{getLocalizedText(project["intro-detail"])}</p>
-
-    {project.image && (
-      <div class="case-hero">
-        <img src={project.image} alt={getLocalizedText(project.title)} loading="lazy" />
-      </div>
-    )}
-
-    {project.problem && (
-      <section>
-        <h2>{t('caso.problema')}</h2>
-        <p>{getLocalizedText(project.problem)}</p>
-      </section>
-    )}
-
-    {project.solution && (
-      <section>
-        <h2>{t('caso.solucion')}</h2>
-        <p>{getLocalizedText(project.solution)}</p>
-        {project["solution-image"] && (
-          <div class="case-hero">
-            <img src={project["solution-image"]} alt={`${t('caso.solucion')} ${getLocalizedText(project.title)}`} loading="lazy" />
-          </div>
-        )}
-      </section>
-    )}
-
-    {project.result && (
-      <section>
-        <h2>{t('caso.resultado')}</h2>
-        <p>{getLocalizedText(project.result)}</p>
-      </section>
-    )}
-
-    {localizedQuote && (
-      <blockquote>
-        <p class="case-quote-text">"{localizedQuote.text}"</p>
-        <p class="case-quote-author">— {localizedQuote.author}</p>
-      </blockquote>
-    )}
-
-    {project.tech && (
-      <div class="case-tech-centered">
-        <ul class="case-tech">
-          {project.tech.map((key: string) => (
-            ICONS[key] && (
-              <li>
-                <svg {...ICONS[key].attributes} set:html={ICONS[key].body} />
-                <span class="sr-only">{key}</span>
-              </li>
-            )
-          ))}
-        </ul>
-
-        <div class="case-tech-row">
-          <a class="cta" href={project.link} target="_blank" rel="noopener noreferrer">
-            {t('caso.verSitio')}
-          </a>
+      {project.image && (
+        <div class="case-hero">
+          <img src={project.image} alt={getLocalizedText(project.title)} loading="lazy" />
         </div>
-      </div>
-    )}
+      )}
 
+      {project.problem && (
+        <section>
+          <h2>{t('caso.problema')}</h2>
+          <p>{getLocalizedText(project.problem)}</p>
+        </section>
+      )}
+
+      {project.solution && (
+        <section>
+          <h2>{t('caso.solucion')}</h2>
+          <p>{getLocalizedText(project.solution)}</p>
+          {project["solution-image"] && (
+            <div class="case-hero">
+              <img src={project["solution-image"]} alt={`${t('caso.solucion')} ${getLocalizedText(project.title)}`} loading="lazy" />
+            </div>
+          )}
+        </section>
+      )}
+
+      {project.result && (
+        <section>
+          <h2>{t('caso.resultado')}</h2>
+          <p>{getLocalizedText(project.result)}</p>
+        </section>
+      )}
+
+      {localizedQuote && (
+        <blockquote>
+          <p class="case-quote-text">"{localizedQuote.text}"</p>
+          <p class="case-quote-author">— {localizedQuote.author}</p>
+        </blockquote>
+      )}
+
+      {project.tech && (
+        <div class="case-tech-centered">
+          <ul class="case-tech">
+            {project.tech.map((key: string) => (
+              ICONS[key] && (
+                <li>
+                  <svg {...ICONS[key].attributes} set:html={ICONS[key].body} />
+                  <span class="sr-only">{key}</span>
+                </li>
+              )
+            ))}
+          </ul>
+
+          <div class="case-tech-row">
+            <a class="cta" href={project.link} target="_blank" rel="noopener noreferrer">
+              {t('caso.verSitio')}
+            </a>
+          </div>
+        </div>
+      )}
+    </section>
     <ContactCTA
       title={t('caso.cta.title')}
       text={t('caso.cta.text')}

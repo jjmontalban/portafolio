@@ -35,58 +35,62 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
   description={t('casos.meta.description')}
 >
   <div class="container">
-    <h1>{t('casos.title')}</h1>
+    <section>
 
-    <p>{t('casos.lead')}</p>
+      <h1>{t('casos.title')}</h1>
 
-    <section class="cases-list">
-        {casos.map(({ slug, data }, index) => (
-          <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
-            <div class="case-image">
-              {data.image && (
-                <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
-              )}
-            </div>
+      <p>{t('casos.lead')}</p>
 
-            <div class="case-content">
-              <h2>{getLocalizedText(data.title)}</h2>
-
-              {data.intro && (
-                <p class="case-desc">{getLocalizedText(data.intro)}</p>
-              )}
-
-              <div class="case-tech-row">
-
-                <a href={`/${lang}/casos/${slug}`} class="cta">
-                  {t('casos.verDetalle')}
-                </a>
+      <section class="cases-list">
+          {casos.map(({ slug, data }, index) => (
+            <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+              <div class="case-image">
+                {data.image && (
+                  <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
+                )}
               </div>
-            </div>
-          </article>
-        ))}
-    </section>
 
-    <section class="other-cases">
-      <h2>{t('casos.otrosCasos')}</h2>
+              <div class="case-content">
+                <h2>{getLocalizedText(data.title)}</h2>
 
-      <div class="other-cases-grid">
-        {otrosCasos.map(({ data }) => (
-          <a
-            href={data.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="other-case-image">
-              <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
-            </div>
+                {data.intro && (
+                  <p class="case-desc">{getLocalizedText(data.intro)}</p>
+                )}
 
-            <div class="other-case-content">
-              <h2>{getLocalizedText(data.title)}</h2>
-              <p>{getLocalizedText(data.excerpt)}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+                <div class="case-tech-row">
+
+                  <a href={`/${lang}/casos/${slug}`} class="cta">
+                    {t('casos.verDetalle')}
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+      </section>
+
+      <section class="other-cases">
+        <h2>{t('casos.otrosCasos')}</h2>
+
+        <div class="other-cases-grid">
+          {otrosCasos.map(({ data }) => (
+            <a
+              href={data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="other-case-image">
+                <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
+              </div>
+
+              <div class="other-case-content">
+                <h2>{getLocalizedText(data.title)}</h2>
+                <p>{getLocalizedText(data.excerpt)}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+      
     </section>
 
     <ContactCTA
