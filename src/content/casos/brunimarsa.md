@@ -1,7 +1,7 @@
 ---
 title: "Brunimarsa.es"
 order: 1
-link: "https://brunimarsa.com"
+link: "https://brunimarsa.es"
 
 intro:
   es: "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid que captaba leads desde más de veinte formularios distintos."
@@ -39,5 +39,7 @@ tech:
   - php
   - javascript
   - mailchimp
-
+  - mysql
+  - css
+  - jquery
 ---

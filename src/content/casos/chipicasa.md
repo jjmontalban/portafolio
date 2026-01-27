@@ -37,6 +37,11 @@ quote:
 tech:
   - wordpress
   - php
+  - under
   - javascript
-  - mailchimp
+  - corel
+  - mysql
+  - css
+  - jquery
+  - gimp
 ---

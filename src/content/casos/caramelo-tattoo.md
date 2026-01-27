@@ -39,4 +39,10 @@ tech:
   - php
   - javascript
   - googlecalendar
+  - under
+  - corel
+  - mysql
+  - css
+  - jquery
+  - gimp
 ---

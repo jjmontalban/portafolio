@@ -2,7 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ContactCTA from "../../../components/ContactCTA.astro";
-import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under } from "../../../lib/icons";
+import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../../lib/icons";
 import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
 import { languages } from '../../../i18n/ui';
 import type { Lang } from '../../../i18n/utils';
@@ -27,7 +27,7 @@ const { caso } = Astro.props;
 const lang = getLangFromUrl(Astro.url) as Lang;
 const t = useTranslations(lang);
 const project = caso.data;
-const ICONS: Record<string, any> = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under };
+const ICONS: Record<string, any> = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery };
 
 // Helper to get localized content
 const getLocalizedText = (field: {es: string, en: string} | string | undefined): string => {
@@ -120,12 +120,12 @@ const localizedQuote = getLocalizedQuote(project.quote);
                 )
               ))}
             </ul>
-
-            <p class="case-tech-text">{t('caso.enProduccion')}</p>
-
-            <a class="case-external-cta" href={project.link} target="_blank" rel="noopener noreferrer">
-              {t('caso.verSitio')}
-            </a>
+            
+            <div class="case-tech-row">  
+              <a class="cta" href={project.link} target="_blank" rel="noopener noreferrer">
+                {t('caso.verSitio')}
+              </a> 
+            </div>
 
           </div>
         )}

@@ -38,5 +38,9 @@ tech:
   - wordpress
   - php
   - javascript
+  - jquery
+  - css
   - woocommerce
+  - gimp
+  - corel
 ---
