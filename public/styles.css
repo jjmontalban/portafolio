@@ -128,30 +128,6 @@ body.page-home .cta-primary:hover {
   color:#111;
 }
 
-
-
-/* ================================================================= */
-/*  HOME – CONTACT CTA                                               */
-/* ================================================================= */
-
-body.page-home .contact-cta {
-  background-color:#111;
-  color:#fff;
-}
-
-body.page-home .contact-cta h2 {
-  color:#000;
-  text-shadow:
-    -1px 0 #fff, 1px 0 #fff,
-    0 -1px #fff, 0 1px #fff,
-    -2px 2px #fff;
-}
-
-body.page-home .contact-cta p {
-  color:#fff;
-}
-
-
 /* ========================================================= */
 /* CONTACT CTA                                               */
 /* ========================================================= */
@@ -228,47 +204,8 @@ body.page-home {
 /* ========================= */
 /* Rule: only white + page color (var(--page-bg)) */
 
-/* Servicios */
-body.page-servicios {
-  --contact-bg:#ffffff;
-  --contact-fg:var(--page-bg);
-
-  --contact-title-color:#ffffff;
-  --contact-title-shadow:
-    -1px 0 var(--page-bg), 1px 0 var(--page-bg),
-    0 -1px var(--page-bg), 0 1px var(--page-bg),
-    -2px 2px var(--page-bg);
-
-  --contact-btn-bg:var(--page-bg);
-  --contact-btn-fg:#ffffff;
-  --contact-btn-border:var(--page-bg);
-
-  --contact-btn-bg-hover:#ffffff;
-  --contact-btn-fg-hover:var(--page-bg);
-  --contact-btn-border-hover:var(--page-bg);
-}
-
-/* Plugins */
-body.page-plugins {
-  --contact-bg:#ffffff;
-  --contact-fg:var(--page-bg);
-
-  --contact-title-color:#ffffff;
-  --contact-title-shadow:
-    -1px 0 var(--page-bg), 1px 0 var(--page-bg),
-    0 -1px var(--page-bg), 0 1px var(--page-bg),
-    -2px 2px var(--page-bg);
-
-  --contact-btn-bg:var(--page-bg);
-  --contact-btn-fg:#ffffff;
-  --contact-btn-border:var(--page-bg);
-
-  --contact-btn-bg-hover:#ffffff;
-  --contact-btn-fg-hover:var(--page-bg);
-  --contact-btn-border-hover:var(--page-bg);
-}
-
-/* Casos */
+body.page-servicios,
+body.page-plugins,
 body.page-casos {
   --contact-bg:#ffffff;
   --contact-fg:var(--page-bg);
@@ -347,17 +284,6 @@ body.page-home a.section-link-cases {
   color:#254ea5;
 }
 
-
-/* ================================================================= */
-/*  UTILITIES                                                        */
-/* ================================================================= */
-
-.text-white  { color:#fff!important; }
-.text-black  { color:#000!important; }
-.text-gray   { color:#a8a8a8!important; }
-.text-accent { color:#ffc300!important; }
-.text-bold   { font-weight:700!important; }
-.italic      { font-style:italic!important; }
 
 /* ================================================================= */
 /*  FOOTER                                                           */
@@ -789,59 +715,6 @@ body.page-contacto .lang-slider {
   }
 }
 
-  @media (max-width: 991px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition: opacity .25s ease, transform .25s ease;
-
-    position: fixed;
-    inset: 0;
-    top: 0;
-    padding-top: 96px;
-
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-  }
-
-  .nav-close {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 6px;
-  }
-
-  .nav-close-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-links a {
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  .nav-links.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .burger {
-    display: block;
-  }
-}
-
 /* ================================================================= */
 /*  LAYOUT GENERAL + ENTRADA DE CONTENIDO                             */
 /* ================================================================= */
@@ -1096,12 +969,6 @@ body.page-contacto .contact-form .cta {
   }
 }
 
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 body.page-servicios .service-icon {
   width: 56px;
   height: 56px;
@@ -1116,7 +983,6 @@ body.page-servicios .service-card > h2 {
 
 /* Texto descriptivo alineado a la izquierda */
 body.page-servicios .service-card > p {
-  font-size: ;
   text-align: left;
 }
 
@@ -1163,47 +1029,9 @@ body.page-servicios .service-card ul {
   margin: 0;
 }
 
-.plugin-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-}
-
-.plugin-tech-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.12);
-}
-
-.plugin-tech-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
 .plugin-desc {
   font-size: 15px;
   line-height: 1.6;
-}
-
-.plugin-links {
-  display: flex;
-  gap: 16px;
-  margin-top: auto;
-}
-
-.plugin-links .plugin-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.12);
 }
 
 .plugin-link-icon {

@@ -35,14 +35,11 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
   description={t('casos.meta.description')}
 >
   <div class="container">
-    <section class="content-container">
-      <h1>{t('casos.title')}</h1>
+    <h1>{t('casos.title')}</h1>
 
-      <p class="lead">
-        {t('casos.lead')}
-      </p>
+    <p>{t('casos.lead')}</p>
 
-      <div class="cases-list">
+    <section class="cases-list">
         {casos.map(({ slug, data }, index) => (
           <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
             <div class="case-image">
@@ -67,7 +64,6 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
             </div>
           </article>
         ))}
-      </div>
     </section>
 
     <section class="other-cases">
