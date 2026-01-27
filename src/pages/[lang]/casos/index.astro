@@ -2,9 +2,9 @@
 import Layout from "../../../layouts/Layout.astro";
 import ContactCTA from "../../../components/ContactCTA.astro";
 import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
-import { languages } from '../../../i18n/ui';
-import type { Lang } from '../../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../../lib/i18n/utils';
+import { languages } from '../../../lib/i18n/ui';
+import type { Lang } from '../../../lib/i18n/utils';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -90,7 +90,7 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
           ))}
         </div>
       </section>
-      
+
     </section>
 
     <ContactCTA

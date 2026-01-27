@@ -3,9 +3,9 @@ import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ContactCTA from "../../../components/ContactCTA.astro";
 import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../../lib/icons";
-import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
-import { languages } from '../../../i18n/ui';
-import type { Lang } from '../../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../../../lib/i18n/utils';
+import { languages } from '../../../lib/i18n/ui';
+import type { Lang } from '../../../lib/i18n/utils';
 
 export async function getStaticPaths() {
   const casos = await getCollection("casos");
