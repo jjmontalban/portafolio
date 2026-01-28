@@ -1045,6 +1045,11 @@ body.page-servicios .service-card ul {
   height: 35px;
 }
 
+.plugin-link-icon + .plugin-link-icon {
+  margin-left: 12px;
+}
+
+
 /* ================================================================= */
 /*  CASOS DESTACADOS                                                 */
 /* ================================================================= */
