@@ -2,10 +2,18 @@ import { ui, defaultLang, type UIKey } from './ui';
 
 export type Lang = keyof typeof ui;
 
+/**
+ * Get language from URL
+ * New structure: Spanish at root (/), English at /en/
+ */
 export function getLangFromUrl(url: URL): Lang {
-  const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as Lang;
-  return defaultLang;
+  const pathname = url.pathname;
+  // If path starts with /en, it's English
+  if (pathname.startsWith('/en/') || pathname === '/en') {
+    return 'en';
+  }
+  // Everything else is Spanish (root)
+  return 'es';
 }
 
 export function useTranslations(lang: Lang) {
@@ -14,32 +22,58 @@ export function useTranslations(lang: Lang) {
   };
 }
 
+/**
+ * Get route without language prefix
+ */
 export function getRouteFromUrl(url: URL): string {
   const pathname = url.pathname;
-  const parts = pathname.split('/').filter(Boolean);
 
-  // Remove lang prefix if present
-  if (parts[0] in ui) {
-    parts.shift();
+  // Remove /en prefix if present
+  if (pathname.startsWith('/en/')) {
+    return pathname.slice(3) || '/';
+  }
+  if (pathname === '/en') {
+    return '/';
   }
 
-  return '/' + parts.join('/');
+  return pathname;
 }
 
+/**
+ * Translate path to the target language
+ * Spanish: / (root), English: /en/
+ */
 export function translatePath(path: string, lang: Lang): string {
-  // Remove leading slash for processing
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  const parts = cleanPath.split('/').filter(Boolean);
+  // First, get the clean path without any language prefix
+  let cleanPath = path;
 
-  // Remove existing lang prefix if present
-  if (parts[0] in ui) {
-    parts.shift();
+  if (cleanPath.startsWith('/en/')) {
+    cleanPath = cleanPath.slice(3);
+  } else if (cleanPath === '/en') {
+    cleanPath = '/';
   }
 
-  // Add new lang prefix
-  return `/${lang}/${parts.join('/')}`.replace(/\/+$/, '') || `/${lang}`;
+  // Now add the appropriate prefix
+  if (lang === 'en') {
+    // English: add /en prefix
+    if (cleanPath === '/') {
+      return '/en/';
+    }
+    return '/en' + cleanPath;
+  }
+
+  // Spanish: use root (no prefix)
+  return cleanPath || '/';
 }
 
 export function getAlternateLanguage(currentLang: Lang): Lang {
   return currentLang === 'es' ? 'en' : 'es';
+}
+
+/**
+ * Get the base path for navigation links based on language
+ * Spanish: '', English: '/en'
+ */
+export function getLangPrefix(lang: Lang): string {
+  return lang === 'en' ? '/en' : '';
 }

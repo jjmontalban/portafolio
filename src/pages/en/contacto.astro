@@ -1,15 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils';
-import { languages } from '../../lib/i18n/ui';
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
 
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
-}
-
-const lang = getLangFromUrl(Astro.url);
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 ---
 
@@ -23,7 +17,7 @@ const t = useTranslations(lang);
 
       <h1>{t('contacto.title')}</h1>
       <p>{t('contacto.intro')}</p>
-      
+
       <div class="contact-card">
         <form class="contact-form" action="https://formspree.io/f/mzdbogkk" method="POST" >
           <label for="name">{t('contacto.nombre')}</label>
@@ -57,7 +51,7 @@ const t = useTranslations(lang);
                 {t('contacto.noLoSeClaro')}
               </label>
             </fieldset>
-            
+
             <label for="has-website">{t('contacto.tieneWeb')}</label>
             <select id="has-website" name="has_website">
               <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
@@ -65,12 +59,12 @@ const t = useTranslations(lang);
               <option value="No">{t('contacto.no')}</option>
               <option value="En desarrollo">{t('contacto.enDesarrollo')}</option>
             </select>
-            
+
             <div class="optional-dependent" data-show="has-website" hidden>
               <label for="current-url">{t('contacto.urlActual')}</label>
               <input id="current-url" name="current_url" type="url" />
             </div>
-            
+
             <div class="optional-dependent" data-show="has-website" hidden>
               <label for="current-hosting">{t('contacto.hostingActual')}</label>
               <input
@@ -80,7 +74,7 @@ const t = useTranslations(lang);
               placeholder={t('contacto.hostingPlaceholder')}
               />
             </div>
-            
+
             <div class="optional-dependent" data-show="has-website" hidden>
               <label for="experience-level">
                 {t('contacto.nivelExperiencia')}
@@ -97,7 +91,7 @@ const t = useTranslations(lang);
                 <option value="Avanzada">{t('contacto.avanzada')}</option>
               </select>
             </div>
-            
+
             <label for="agency-collab">
               {t('contacto.colaboracionAgencia')}
             </label>
@@ -106,12 +100,12 @@ const t = useTranslations(lang);
               <option value="Sí">{t('contacto.si')}</option>
               <option value="No">{t('contacto.no')}</option>
             </select>
-            
+
             <div class="optional-dependent" data-show="agency-yes" hidden>
               <label for="agency-name">{t('contacto.nombreAgencia')}</label>
               <input id="agency-name" name="agency_name" type="text" />
             </div>
-            
+
             <fieldset class="optional-dependent" data-show="agency-no" hidden>
               <legend>{t('contacto.materialCorporativo')}</legend>
               <label>
@@ -139,7 +133,7 @@ const t = useTranslations(lang);
                 {t('contacto.ningunoPorDefinir')}
               </label>
             </fieldset>
-            
+
             <label for="message">{t('contacto.mensaje')}</label>
             <textarea
             id="message"
@@ -148,7 +142,7 @@ const t = useTranslations(lang);
             placeholder={t('contacto.mensajePlaceholder')}
             ></textarea>
           </div>
-          
+
           <input type="hidden" name="_subject" value={t('contacto.asuntoEmail')} />
           <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
           <input type="text" name="_gotcha" style="display:none" />
@@ -159,7 +153,7 @@ const t = useTranslations(lang);
         </form>
       </div>
     </div>
-    
+
   </section>
   <script>
     const toggleButton = document.querySelector(".toggle-optional") as HTMLButtonElement | null;

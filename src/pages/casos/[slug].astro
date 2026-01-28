@@ -1,30 +1,21 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import ContactCTA from "../../../components/ContactCTA.astro";
-import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../../lib/icons";
-import { getLangFromUrl, useTranslations } from '../../../lib/i18n/utils';
-import { languages } from '../../../lib/i18n/ui';
-import type { Lang } from '../../../lib/i18n/utils';
+import ContactCTA from "../../components/ContactCTA.astro";
+import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../lib/icons";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
 
 export async function getStaticPaths() {
   const casos = await getCollection("casos");
-  const paths = [];
-
-  for (const lang of Object.keys(languages)) {
-    for (const caso of casos) {
-      paths.push({
-        params: { lang, slug: caso.slug },
-        props: { caso }
-      });
-    }
-  }
-
-  return paths;
+  return casos.map((caso) => ({
+    params: { slug: caso.slug },
+    props: { caso }
+  }));
 }
 
 const { caso } = Astro.props;
-const lang = getLangFromUrl(Astro.url) as Lang;
+const lang: Lang = 'es';
 const t = useTranslations(lang);
 const project = caso.data;
 const ICONS: Record<string, any> = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery };
@@ -54,7 +45,7 @@ const localizedQuote = getLocalizedQuote(project.quote);
   description={t('caso.meta.description')}
 >
   <div class="container">
-    <a href={`/${lang}/casos`}>
+    <a href="/casos">
       <img src="/images/back.svg" alt={t('caso.volver')} />
       <span>{t('caso.volver')}</span>
     </a>

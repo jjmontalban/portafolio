@@ -2,16 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import { wordpress, extensions, integrations, performance } from "../../lib/icons";
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils';
-import { languages } from '../../lib/i18n/ui';
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
 
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
-}
-
-const lang = getLangFromUrl(Astro.url);
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 ---
 

@@ -2,16 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import { wordpress, sitio, github } from "../../lib/icons";
-import { getLangFromUrl, useTranslations } from '../../lib/i18n/utils';
-import { languages } from '../../lib/i18n/ui';
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
 
-export function getStaticPaths() {
-  return Object.keys(languages).map((lang) => ({
-    params: { lang },
-  }));
-}
-
-const lang = getLangFromUrl(Astro.url);
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 ---
 
@@ -25,22 +19,22 @@ const t = useTranslations(lang);
     <section>
 
       <h1>{t('plugins.title')}</h1>
-      
+
       <p>{t('plugins.lead')}</p>
-      
+
       <section class="plugins-grid">
-        
+
         <!-- WooCommerce Quantity -->
         <article class="plugin-card">
           <img src="/images/plugins/plugin-quantity-settings-1.webp" alt="Woocommerce Quantity" class="plugin-image" />
-          
+
           <div class="plugin-body">
             <h2>{t('plugins.wooQuantity.title')}</h2>
-            
+
             <p class="plugin-desc">
               {t('plugins.wooQuantity.desc')}
             </p>
-            
+
             <div>
               <a class="plugin-link-icon" href="https://github.com/jjmontalban/product-quantity-settings" target="_blank">
                 <svg {...github.attributes} set:html={github.body} />
@@ -51,20 +45,20 @@ const t = useTranslations(lang);
                 <span class="sr-only">WordPress</span>
               </a>
             </div>
-            
+
           </div>
         </article>
-        
+
         <!-- EU VAT Number -->
         <article class="plugin-card">
           <img src="/images/plugins/eu-vat-number.webp" alt="EU VAT Number" class="plugin-image" />
           <div class="plugin-body">
-            
+
             <h2>{t('plugins.euVat.title')}</h2>
             <p class="plugin-desc">
               {t('plugins.euVat.desc')}
             </p>
-            
+
             <div>
               <a href="https://github.com/jjmontalban/simple-eu-vat-number-for-woocommerce" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -75,21 +69,21 @@ const t = useTranslations(lang);
                 <span class="sr-only">WordPress</span>
               </a>
             </div>
-            
+
           </div>
         </article>
-        
+
         <!-- Idealista Feed -->
         <article class="plugin-card">
           <img src="/images/plugins/idealista-feed.webp" alt="Idealista Feed" class="plugin-image" />
-          
+
           <div class="plugin-body">
-            
+
             <h2>{t('plugins.idealista.title')}</h2>
             <p class="plugin-desc">
               {t('plugins.idealista.desc')}
             </p>
-            
+
             <div>
               <a href="https://github.com/jjmontalban/idealista-feed" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -100,19 +94,19 @@ const t = useTranslations(lang);
                 <span class="sr-only">WordPress</span>
               </a>
             </div>
-            
+
           </div>
-          
+
         </article>
-        
+
         <!-- PS WhatsApp -->
         <article class="plugin-card">
           <img src="/images/plugins/whatsapp.webp" alt="PS WhatsApp" class="plugin-image" />
-          
+
           <div class="plugin-body">
             <h2>{t('plugins.psWhatsapp.title')}</h2>
             <p class="plugin-desc">{t('plugins.psWhatsapp.desc')}</p>
-            
+
             <div>
               <a href="#" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -120,18 +114,18 @@ const t = useTranslations(lang);
               </a>
             </div>
           </div>
-          
+
         </article>
-        
+
         <!-- Filmder -->
         <article class="plugin-card">
-          
+
           <img src="/images/plugins/filmder.webp" alt="Filmder" class="plugin-image" />
-          
+
           <div class="plugin-body">
             <h2>{t('plugins.filmder.title')}</h2>
             <p class="plugin-desc">{t('plugins.filmder.desc')}</p>
-            
+
             <div>
               <a href="https://github.com/jjmontalban/filmder-front" target="_blank" class="plugin-link-icon">
                 <svg {...github.attributes} set:html={github.body} />
@@ -146,20 +140,20 @@ const t = useTranslations(lang);
                 <span class="sr-only">Web</span>
               </a>
             </div>
-            
+
           </div>
-          
+
         </article>
-        
+
         <!-- User register date -->
         <article class="plugin-card">
-          
+
           <img src="/images/plugins/user-register-date.webp" alt="User register date" class="plugin-image" />
-          
+
           <div class="plugin-body">
             <h2>{t('plugins.userRegisterDate.title')}</h2>
             <p class="plugin-desc">{t('plugins.userRegisterDate.desc')}</p>
-            
+
             <div>
               <a href="https://wordpress.org/plugins/user-register-date/" target="_blank" class="plugin-link-icon">
                 <svg {...wordpress.attributes} set:html={wordpress.body} />
@@ -170,14 +164,14 @@ const t = useTranslations(lang);
                 <span class="sr-only">GitHub</span>
               </a>
             </div>
-            
+
           </div>
-          
+
         </article>
-        
+
       </section>
     </section>
-      
+
       <ContactCTA
       title={t('plugins.cta.title')}
       text={t('plugins.cta.text')}

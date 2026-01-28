@@ -1,0 +1,121 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ContactCTA from "../../../components/ContactCTA.astro";
+import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../../lib/icons";
+import { useTranslations } from '../../../lib/i18n/utils';
+import type { Lang } from '../../../lib/i18n/utils';
+
+export async function getStaticPaths() {
+  const casos = await getCollection("casos");
+  return casos.map((caso) => ({
+    params: { slug: caso.slug },
+    props: { caso }
+  }));
+}
+
+const { caso } = Astro.props;
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+const project = caso.data;
+const ICONS: Record<string, any> = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery };
+
+// Helper to get localized content
+const getLocalizedText = (field: {es: string, en: string} | string | undefined): string => {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field[lang] || field.es || '';
+};
+
+// Helper for quote
+const getLocalizedQuote = (quote: any) => {
+  if (!quote) return null;
+  if (quote.es && quote.en) {
+    return quote[lang] || quote.es;
+  }
+  return quote;
+};
+
+const localizedQuote = getLocalizedQuote(project.quote);
+---
+
+<Layout
+  title={`${getLocalizedText(project.title)} | JJ Montalban`}
+  page="page-casos"
+  description={t('caso.meta.description')}
+>
+  <div class="container">
+    <a href="/en/casos">
+      <img src="/images/back.svg" alt={t('caso.volver')} />
+      <span>{t('caso.volver')}</span>
+    </a>
+    <section>
+      <h1>{getLocalizedText(project.title)}</h1>
+      <p>{getLocalizedText(project["intro-detail"])}</p>
+
+      {project.image && (
+        <div class="case-hero">
+          <img src={project.image} alt={getLocalizedText(project.title)} loading="lazy" />
+        </div>
+      )}
+
+      {project.problem && (
+        <section>
+          <h2>{t('caso.problema')}</h2>
+          <p>{getLocalizedText(project.problem)}</p>
+        </section>
+      )}
+
+      {project.solution && (
+        <section>
+          <h2>{t('caso.solucion')}</h2>
+          <p>{getLocalizedText(project.solution)}</p>
+          {project["solution-image"] && (
+            <div class="case-hero">
+              <img src={project["solution-image"]} alt={`${t('caso.solucion')} ${getLocalizedText(project.title)}`} loading="lazy" />
+            </div>
+          )}
+        </section>
+      )}
+
+      {project.result && (
+        <section>
+          <h2>{t('caso.resultado')}</h2>
+          <p>{getLocalizedText(project.result)}</p>
+        </section>
+      )}
+
+      {localizedQuote && (
+        <blockquote>
+          <p class="case-quote-text">"{localizedQuote.text}"</p>
+          <p class="case-quote-author">— {localizedQuote.author}</p>
+        </blockquote>
+      )}
+
+      {project.tech && (
+        <div class="case-tech-centered">
+          <ul class="case-tech">
+            {project.tech.map((key: string) => (
+              ICONS[key] && (
+                <li>
+                  <svg {...ICONS[key].attributes} set:html={ICONS[key].body} />
+                  <span class="sr-only">{key}</span>
+                </li>
+              )
+            ))}
+          </ul>
+
+          <div class="case-tech-row">
+            <a class="cta" href={project.link} target="_blank" rel="noopener noreferrer">
+              {t('caso.verSitio')}
+            </a>
+          </div>
+        </div>
+      )}
+    </section>
+    <ContactCTA
+      title={t('caso.cta.title')}
+      text={t('caso.cta.text')}
+    />
+  </div>
+</Layout>

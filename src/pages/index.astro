@@ -1,31 +1,70 @@
 ---
-// This page redirects to the correct language based on browser preference
-// For static sites, we need client-side detection
+import Layout from "../layouts/Layout.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { useTranslations } from '../lib/i18n/utils';
+import type { Lang } from '../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
 ---
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="index, follow">
-  <title>Redirecting...</title>
-  <script>
-    (function() {
-      const supportedLangs = ['es', 'en'];
-      const defaultLang = 'es';
 
-      // Get browser language (e.g., "es-ES" -> "es")
-      const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
+<Layout
+  title={t('meta.title')}
+  page="page-home"
+  description={t('meta.description')}
+>
+  <div class="container">
 
-      // Check if browser language is supported, otherwise use default
-      const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
+    <!-- HERO -->
+    <section>
+      <h1>Joaquín J. Montalbán</h1>
 
-      // Redirect immediately
-      window.location.replace('/' + targetLang + '/');
-    })();
-  </script>
-  <noscript>
-    <meta http-equiv="refresh" content="0;url=/es/">
-  </noscript>
-</head>
-<body></body>
-</html>
+      <p>
+        {t('home.hero.intro')}
+      </p>
+      <p>{t('home.hero.colaboro')}</p>
+
+      <a class="cta cta-primary" href="/contacto">{t('home.hero.cta')}</a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section>
+      <h2>{t('home.servicios.title')}</h2>
+      <p>
+        {t('home.servicios.desc')}
+        <a class="section-link section-link-services" href="/servicios">
+          {t('home.servicios.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- PLUGINS / HERRAMIENTAS -->
+    <section>
+      <h2>{t('home.plugins.title')}</h2>
+      <p>
+        {t('home.plugins.desc')}
+        <a class="section-link section-link-plugins" href="/plugins">
+          {t('home.plugins.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- CASOS -->
+    <section>
+      <h2>{t('home.casos.title')}</h2>
+      <p>
+        {t('home.casos.desc')}
+        <a class="section-link section-link-cases" href="/casos">
+          {t('home.casos.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- CTA FINAL -->
+    <ContactCTA
+      title={t('home.cta.title')}
+      text={t('home.cta.text')}
+    />
+
+  </div>
+</Layout>

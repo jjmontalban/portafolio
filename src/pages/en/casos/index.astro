@@ -1,0 +1,94 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ContactCTA from "../../../components/ContactCTA.astro";
+import { getCollection } from "astro:content";
+import { useTranslations } from '../../../lib/i18n/utils';
+import type { Lang } from '../../../lib/i18n/utils';
+
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+
+const casos = (await getCollection("casos"))
+  .sort((a,b)=>a.data.order-b.data.order);
+
+const otrosCasos = (await getCollection("otros-casos"))
+  .sort((a,b)=>a.data.order-b.data.order);
+
+// Helper to get localized content
+const getLocalizedText = (field: {es: string, en: string} | string | undefined): string => {
+  if (!field) return '';
+  if (typeof field === 'string') return field;
+  return field[lang] || field.es || '';
+};
+---
+
+<Layout
+  title={t('casos.meta.title')}
+  page="page-casos"
+  description={t('casos.meta.description')}
+>
+  <div class="container">
+    <section>
+
+      <h1>{t('casos.title')}</h1>
+
+      <p>{t('casos.lead')}</p>
+
+      <section class="cases-list">
+          {casos.map(({ slug, data }, index) => (
+            <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+              <div class="case-image">
+                {data.image && (
+                  <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
+                )}
+              </div>
+
+              <div class="case-content">
+                <h2>{getLocalizedText(data.title)}</h2>
+
+                {data.intro && (
+                  <p class="case-desc">{getLocalizedText(data.intro)}</p>
+                )}
+
+                <div class="case-tech-row">
+
+                  <a href={`/en/casos/${slug}`} class="cta">
+                    {t('casos.verDetalle')}
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+      </section>
+
+      <section class="other-cases">
+        <h2>{t('casos.otrosCasos')}</h2>
+
+        <div class="other-cases-grid">
+          {otrosCasos.map(({ data }) => (
+            <a
+              href={data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="other-case-image">
+                <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
+              </div>
+
+              <div class="other-case-content">
+                <h2>{getLocalizedText(data.title)}</h2>
+                <p>{getLocalizedText(data.excerpt)}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </section>
+
+    <ContactCTA
+      title={t('casos.cta.title')}
+      text={t('casos.cta.text')}
+    />
+  </div>
+</Layout>
