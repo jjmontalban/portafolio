@@ -1193,7 +1193,7 @@ body.page-servicios .service-card ul {
 
 
 /* =============================== */
-/* CASE – TECH ICONS (DETAIL)      */
+/* CASE – TECH TAGS (DETAIL)       */
 /* =============================== */
 
 .case-tech-centered {
@@ -1202,25 +1202,35 @@ body.page-servicios .service-card ul {
   flex-direction:column;
   align-items:center;
   gap:24px;
+  max-width:100%;
 }
 
-.case-tech {
+.case-tech-tags {
   display:flex;
+  flex-wrap:wrap;
   align-items:center;
   justify-content:center;
-  gap:32px;
+  gap:12px;
   list-style:none;
   padding:0;
   margin:0;
+  max-width:100%;
 }
 
-.case-tech li {
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.tech-tag {
+  display:inline-block;
+  background-color:rgba(99, 102, 241, 0.15);
+  color:var(--text-primary);
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:0.875rem;
+  font-weight:500;
+  text-transform:capitalize;
+  border:1px solid rgba(99, 102, 241, 0.3);
+  transition:background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.case-tech li svg {
-  width:44px;
-  height:44px;
+.tech-tag:hover {
+  background-color:rgba(99, 102, 241, 0.25);
+  border-color:rgba(99, 102, 241, 0.5);
 }
