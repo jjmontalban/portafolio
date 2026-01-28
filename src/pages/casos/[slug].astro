@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import ContactCTA from "../../components/ContactCTA.astro";
-import { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery } from "../../lib/icons";
 import { useTranslations } from '../../lib/i18n/utils';
 import type { Lang } from '../../lib/i18n/utils';
 
@@ -18,7 +17,6 @@ const { caso } = Astro.props;
 const lang: Lang = 'es';
 const t = useTranslations(lang);
 const project = caso.data;
-const ICONS: Record<string, any> = { wordpress, php, mysql, javascript, woocommerce, mailchimp, googlecalendar, under, corel, css, jquery };
 
 // Helper to get localized content
 const getLocalizedText = (field: {es: string, en: string} | string | undefined): string => {
@@ -94,14 +92,9 @@ const localizedQuote = getLocalizedQuote(project.quote);
 
       {project.tech && (
         <div class="case-tech-centered">
-          <ul class="case-tech">
+          <ul class="case-tech-tags">
             {project.tech.map((key: string) => (
-              ICONS[key] && (
-                <li>
-                  <svg {...ICONS[key].attributes} set:html={ICONS[key].body} />
-                  <span class="sr-only">{key}</span>
-                </li>
-              )
+              <li class="tech-tag">{key}</li>
             ))}
           </ul>
 
