@@ -1,7 +1,7 @@
 ---
 import { x } from "../lib/icons";
 import LanguageSwitch from "./LanguageSwitch.astro";
-import { getLangFromUrl, useTranslations } from '../lib/i18n/utils';
+import { getLangFromUrl, useTranslations, getLangPrefix } from '../lib/i18n/utils';
 
 interface Props {
   current?: string;
@@ -10,10 +10,11 @@ interface Props {
 const { current } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const prefix = getLangPrefix(lang);
 ---
 
 <nav class="navbar">
-  <a href={`/${lang}`}>
+  <a href={prefix + '/'}>
     <img class="site-logo" src="/images/jj.webp" alt="JJ" width="40" height="40" fetchpriority="high" />
   </a>
 
@@ -29,11 +30,11 @@ const t = useTranslations(lang);
       <LanguageSwitch />
     </div>
 
-    <a href={`/${lang}`} class:list={{ selected: current === "home" }}>{t('nav.inicio')}</a>
-    <a href={`/${lang}/servicios`} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
-    <a href={`/${lang}/casos`} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
-    <a href={`/${lang}/plugins`} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
-    <a href={`/${lang}/contacto`} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
+    <a href={prefix + '/'} class:list={{ selected: current === "home" }}>{t('nav.inicio')}</a>
+    <a href={prefix + '/servicios'} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
+    <a href={prefix + '/casos'} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
+    <a href={prefix + '/plugins'} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
+    <a href={prefix + '/contacto'} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
 
     <!-- Language switch DESKTOP (al final de los enlaces) -->
     <div class="nav-lang-desktop">
