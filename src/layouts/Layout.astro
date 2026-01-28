@@ -18,8 +18,8 @@ const {
   title,
   page = "",
   description = t('meta.description'),
-  canonical = "https://jjmontalban.github.io",
-  ogImage = "https://jjmontalban.github.io/assets/og-profile.jpg",
+  canonical = "https://jjmontalban.com",
+  ogImage = "https://jjmontalban.com/assets/og-profile.jpg",
 } = Astro.props as Props;
 
 const currentPath = Astro.url?.pathname ?? "/";
@@ -72,13 +72,13 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
       "@type": "Person",
       "name": "JJMontalban",
       "jobTitle": t('meta.jobTitle'),
-      "url": "https://jjmontalban.github.io/",
+      "url": "https://jjmontalban.com/",
       "sameAs": [
         "https://github.com/jjmontalban",
         "https://www.linkedin.com/in/jjmontalban/",
         "https://profiles.wordpress.org/jjmontalban/"
       ],
-      "image": "https://jjmontalban.github.io/images/profile.jpg",
+      "image": "https://jjmontalban.com/images/profile.jpg",
       "description": t('meta.jobDescription'),
       "address": {
         "@type": "PostalAddress",
