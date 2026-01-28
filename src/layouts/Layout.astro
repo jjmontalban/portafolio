@@ -90,6 +90,11 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/jj.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/fonts/RobotoMono-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Cubano.ttf" as="font" type="font/ttf" crossorigin />
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="/styles.css" />
 
