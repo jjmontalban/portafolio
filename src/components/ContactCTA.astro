@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../lib/i18n/utils';
+import { getLangFromUrl, useTranslations, getLangPrefix } from '../lib/i18n/utils';
 
 interface Props {
   title: string;
@@ -9,6 +9,7 @@ interface Props {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const prefix = getLangPrefix(lang);
 
 const {
   title,
@@ -20,5 +21,5 @@ const {
 <section class="contact-cta">
   <h2>{title}</h2>
   <p>{text}</p>
-  <a class="cta" href={`/${lang}/contacto`}>{button}</a>
+  <a class="cta" href={`${prefix}/contacto`}>{button}</a>
 </section>
