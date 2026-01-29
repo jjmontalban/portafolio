@@ -3,7 +3,7 @@
 /* ================================================================= */
 @font-face {
   font-family: 'Cubano';
-  src: url('/fonts/Cubano.ttf') format('truetype');
+  src: url('/fonts/Cubano.woff2') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('/fonts/RobotoMono-Regular.ttf') format('truetype');
+  src: url('/fonts/RobotoMono-Regular.woff2') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
