@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { getLangFromUrl, useTranslations, translatePath } from '../lib/i18n/utils';
+import "../styles/styles.css";
 
 interface Props {
   title: string;
@@ -35,12 +36,11 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
 <html lang={lang}>
   <head>
 
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (deferred for performance) -->
     <script is:inline>
       (function() {
+        const gaId = 'G-FS8BJFW7H8';
         const urlParams = new URLSearchParams(window.location.search);
-        // Tu ID real extraído de la captura: G-FS8BJFW7H8
-        const gaId = 'G-FS8BJFW7H8'; 
 
         if (urlParams.get('admin') === 'true') {
           localStorage.setItem('exclude_ga', 'true');
@@ -51,14 +51,27 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
           window['ga-disable-' + gaId] = true;
           console.log('Google Analytics bloqueado para tráfico interno.');
         }
+
+        // Defer GTM loading until after page load for better LCP
+        function loadGTM() {
+          var w = window, d = document, s = 'script', l = 'dataLayer', i = 'GTM-WGK2TRNL';
+          w[l] = w[l] || [];
+          w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+          var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        }
+
+        if (document.readyState === 'complete') {
+          loadGTM();
+        } else {
+          window.addEventListener('load', loadGTM);
+        }
       })();
     </script>
-
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WGK2TRNL');</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
@@ -95,8 +108,6 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
     <link rel="preload" href="/fonts/RobotoMono-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Cubano.ttf" as="font" type="font/ttf" crossorigin />
 
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/styles.css" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
