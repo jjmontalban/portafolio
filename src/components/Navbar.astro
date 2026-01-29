@@ -1,7 +1,7 @@
 ---
 import { x } from "../lib/icons";
 import LanguageSwitch from "./LanguageSwitch.astro";
-import { getLangFromUrl, useTranslations, getLangPrefix } from '../lib/i18n/utils';
+import { getLangFromUrl, useTranslations, getLangPrefix, getLocalizedRoute } from '../lib/i18n/utils';
 
 interface Props {
   current?: string;
@@ -31,10 +31,10 @@ const prefix = getLangPrefix(lang);
     </div>
 
     <a href={prefix + '/'} class:list={{ selected: current === "home" }}>{t('nav.inicio')}</a>
-    <a href={prefix + '/servicios'} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
-    <a href={prefix + '/casos'} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
-    <a href={prefix + '/plugins'} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
-    <a href={prefix + '/contacto'} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
+    <a href={getLocalizedRoute(lang, 'services')} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
+    <a href={getLocalizedRoute(lang, 'cases')} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
+    <a href={getLocalizedRoute(lang, 'plugins')} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
+    <a href={getLocalizedRoute(lang, 'contact')} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
 
     <!-- Language switch DESKTOP (al final de los enlaces) -->
     <div class="nav-lang-desktop">

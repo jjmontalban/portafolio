@@ -1,27 +1,10 @@
 ---
-import { getLangFromUrl, translatePath } from '../lib/i18n/utils';
+import { getLangFromUrl, getAlternateRoute, getAlternateLanguage } from '../lib/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
-
-// Determinar la ruta alternativa
-// Spanish: root (/), English: /en/
-const getAlternatePath = () => {
-  if (currentPath.startsWith('/en/') || currentPath === '/en') {
-    // Currently English -> go to Spanish (remove /en)
-    if (currentPath === '/en' || currentPath === '/en/') {
-      return '/';
-    }
-    return currentPath.slice(3) || '/';
-  }
-  // Currently Spanish (root) -> go to English (add /en)
-  if (currentPath === '/') {
-    return '/en/';
-  }
-  return '/en' + currentPath;
-};
-
-const alternatePath = getAlternatePath();
+const targetLang = getAlternateLanguage(lang);
+const alternatePath = getAlternateRoute(currentPath, lang, targetLang);
 ---
 
 <div class="lang-toggle-wrapper">
