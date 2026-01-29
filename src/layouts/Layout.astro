@@ -103,8 +103,29 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <!-- Critical CSS inline for faster LCP -->
+    <style is:inline>
+      @font-face{font-family:'Cubano';src:url('/fonts/Cubano.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+      @font-face{font-family:'Roboto Mono';src:url('/fonts/RobotoMono-Regular.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+      :root{--shadow-deep-black:-1px 0 #000,1px 0 #000,0 -1px #000,0 1px #000,-2px 2px #000,-3px 3px #000,-4px 4px #000,-5px 5px #000,-6px 6px #000,-7px 7px #000,-8px 8px #000;--shadow-outline-white:-1px 0 #FFF,1px 0 #FFF,0 -1px #FFF,0 1px #FFF,-2px 2px #FFF}
+      html{-webkit-text-size-adjust:100%;text-size-adjust:100%;height:100%}
+      body{font-family:'Roboto Mono',monospace;font-weight:350;font-size:16px;line-height:1.6;max-width:88%;margin:auto;transition:background-color .35s ease,color .35s ease}
+      body.page-home{--page-bg:#fff;--page-fg:#111;--heading-color:#fff;--heading-shadow:var(--shadow-deep-black);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-deep-black);background-color:var(--page-bg);color:var(--page-fg)}
+      body.page-servicios{--page-bg:#6a00f4;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
+      body.page-casos{--page-bg:#254ea5;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
+      body.page-contacto{--page-bg:#7f1d1d;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
+      body.page-plugins{--page-bg:#0f766e;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
+      .navbar{font-family:"Cubano",sans-serif;display:flex;justify-content:space-between;align-items:center;padding:24px 0;background-color:transparent;position:relative}
+      .nav-links{display:flex;align-items:center}
+      .nav-links a{font-size:2.5em;position:relative;padding:8px 12px;font-weight:400;color:var(--nav-text-color);text-shadow:var(--nav-text-shadow)}
+      .site-logo{display:block;height:40px;width:auto}
+      .page-servicios .site-logo,.page-casos .site-logo,.page-plugins .site-logo,.page-contacto .site-logo{filter:invert(1)}
+      .burger{display:none}
+      @media(max-width:768px){.nav-links{display:none}.burger{display:block;background:none;border:none;font-size:32px;cursor:pointer;color:inherit}}
+    </style>
+
     <!-- Preload critical assets -->
-    <link rel="preload" href="/images/jj.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/images/jj.webp" as="image" type="image/webp" fetchpriority="high" />
     <link rel="preload" href="/fonts/RobotoMono-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Cubano.ttf" as="font" type="font/ttf" crossorigin />
 
