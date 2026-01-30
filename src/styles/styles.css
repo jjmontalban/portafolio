@@ -1136,7 +1136,8 @@ body.page-servicios .service-card ul {
 .page-servicios .site-logo,
 .page-casos .site-logo,
 .page-plugins .site-logo,
-.page-contacto .site-logo {
+.page-contacto .site-logo,
+.page-about .site-logo {
   filter: invert(1);
 }
 
@@ -1245,5 +1246,15 @@ body.page-servicios .service-card ul {
   .section-about {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .job__period {
+    margin-top: 0.15rem;
   }
 }
