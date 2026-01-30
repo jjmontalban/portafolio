@@ -32,7 +32,7 @@ const t = useTranslations(lang);
       <h2>{t('home.servicios.title')}</h2>
       <p>
         {t('home.servicios.desc')}
-        <a class="section-link section-link-services" href="/servicios">
+        <a class="section-link" href="/servicios">
           {t('home.servicios.link')}
         </a>
       </p>
@@ -43,7 +43,7 @@ const t = useTranslations(lang);
       <h2>{t('home.plugins.title')}</h2>
       <p>
         {t('home.plugins.desc')}
-        <a class="section-link section-link-plugins" href="/plugins">
+        <a class="section-link" href="/plugins">
           {t('home.plugins.link')}
         </a>
       </p>
@@ -54,10 +54,12 @@ const t = useTranslations(lang);
       <h2>{t('home.casos.title')}</h2>
       <p>
         {t('home.casos.desc')}
-        <a class="section-link section-link-cases" href="/casos">
+        <a class="section-link" href="/casos">
           {t('home.casos.link')}
         </a>
       </p>
+      <p>{t('home.sobre.desc')} <a class="section-link" href="/sobre">{t('home.sobre.link')}</a></p>
+
     </section>
 
     <!-- CTA FINAL -->

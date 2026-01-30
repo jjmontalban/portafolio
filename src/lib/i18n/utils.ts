@@ -9,12 +9,14 @@ export const routes = {
     contact: '/contacto',
     cases: '/casos',
     plugins: '/plugins',
+    about: '/sobre',
   },
   en: {
     services: '/services',
     contact: '/contact',
     cases: '/cases',
     plugins: '/plugins',
+    about: '/about',
   },
 } as const;
 

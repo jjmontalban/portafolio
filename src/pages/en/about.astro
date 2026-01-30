@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import ContactCTA from "../components/ContactCTA.astro";
-import { useTranslations } from '../lib/i18n/utils';
-import type { Lang } from '../lib/i18n/utils';
+import Layout from "../../layouts/Layout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
 
-const lang: Lang = 'es';
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 
 // Skills por categorías
@@ -56,14 +56,14 @@ const jobs = [
 ---
 
 <Layout 
-  title={t('meta.title')} 
+  title={`${t('about.title')} | JJ`} 
   page="page-about"
-  description={t('meta.description')}
+  description="Sobre mi trayectoria como ingeniero de software."
 >
   <div class="container">
     
     <section class="section-about">
-      <h2>Background</h2>
+      <h2>BACKGROUND</h2>
       <div>
         <p>{t('sobre.desc1')}</p>
         <p>{t('sobre.desc2')}</p>

@@ -253,40 +253,16 @@ body.page-contacto {
 /*  INLINE SECTION LINKS                                             */
 /* ================================================================= */
 
-/* Base */
 .section-link {
   font-weight:600;
-  text-decoration:underline;
-  color:var(--section-link-color);
+  text-decoration: none;
+  color:#6a00f4;
   transition:color .25s ease, text-decoration .25s ease;
 }
 
 .section-link:hover {
   color:var(--section-link-hover-color,#000);
-  text-decoration:none;
 }
-
-/* ================================================================= */
-/*  HOME – SECTION LINK COLORS                                       */
-/* ================================================================= */
-
-body.page-home a{
-text-decoration: none;
-}
-
-/* Variants */
-body.page-home a.section-link-services{
-  color:#6a00f4;
-}
-
-body.page-home a.section-link-plugins {
-  color:#0f766e;
-}
-
-body.page-home a.section-link-cases {
-  color:#254ea5;
-}
-
 
 /* ================================================================= */
 /*  FOOTER                                                           */
@@ -348,7 +324,7 @@ body.page-home a.section-link-cases {
 
  --shadow-outline-white:
     -1px 0 #FFF, 1px 0 #FFF,
-     0 -1px #FFF, 0 1px #FFF,
+    0 -1px #FFF, 0 1px #FFF,
     -2px 2px #FFF;
 }
 
@@ -375,7 +351,7 @@ body.page-home {
 /* =============================*/
 
 body.page-about {
-  --page-bg:#ece24e;
+  --page-bg:#fffaad;
   --page-fg:#111111;
 
   --heading-color:#ffffff;
@@ -387,8 +363,6 @@ body.page-about {
   background-color:var(--page-bg);
   color:var(--page-fg);
 }
-
-
 
 /* ================= */
 /*  SERVICIOS        */
@@ -461,20 +435,16 @@ body.page-plugins {
   color:var(--page-fg);
 }
 
-
-/* Herencia controlada */
 body[class^="page-"] p,
 body[class^="page-"] li,
 body[class^="page-"] span,
 body[class^="page-"] a {
   font-size: 20px;
-  color: inherit;
 }
 
 body[class^="page-"] * {
   border-color: inherit;
 }
-
 
 /* ================================================================= */
 /*  NAVBAR Y MENÚ RESPONSIVE                                         */
@@ -504,7 +474,6 @@ body[class^="page-"] * {
   text-shadow:var(--nav-text-shadow);
 }
 
-/* Burger */
 .burger {
   display: none;
   background: none;
@@ -522,18 +491,17 @@ body[class^="page-"] * {
   cursor: pointer;
 }
 
-/* Responsive ocultar contacto y inicio en desktop */
 @media (min-width: 991px) {
-  .nav-links a[href$="/contacto"]{
+  .nav-links a[href$="/contacto"],
+  .nav-links a[href$="/contact"]{
     display:none;
   }
 
-  .nav-links a[href="/es"],
-  .nav-links a[href="/en"]{
+  .nav-links a[href="/"],
+  .nav-links a[href="/en/"]{
     display:none;
   }
 
-  /* Desktop: mostrar switch al final de los enlaces */
   .nav-lang-desktop {
     display: flex;
     align-items: center;
@@ -546,12 +514,10 @@ body[class^="page-"] * {
 }
 
 @media (max-width: 991px) {
-  /* Móvil: ocultar switch desktop */
   .nav-lang-desktop {
     display: none;
   }
   
-  /* Móvil: mostrar switch dentro del menú */
   .nav-lang-mobile {
     display: flex;
     justify-content: center;
@@ -806,7 +772,6 @@ img {
   font-weight: 600;
 }
 
-
 /* ================================================================= */
 /*  CONTACTO – FORMULARIO                                            */
 /* ================================================================= */
@@ -821,13 +786,11 @@ img {
   gap: 16px;
 }
 
-/* Labels */
 .contact-form label {
   font-size: 14px;
   font-weight: 500;
 }
 
-/* Inputs y textarea */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -842,7 +805,6 @@ img {
   box-sizing: border-box;
 }
 
-/* Select */
 .contact-form select {
   width: 100%;
   padding: 12px 14px;
@@ -862,7 +824,6 @@ img {
   box-sizing: border-box;
 }
 
-/* Focus */
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
@@ -871,13 +832,11 @@ img {
   background-color: #fff;
 }
 
-/* Botón enviar */
 .contact-form .cta {
   align-self: flex-start;
   margin-top: 12px;
 }
 
-/* Botón enviar en página de contacto */
 body.page-contacto .contact-form .cta {
   background: transparent;
   color: white;
@@ -926,7 +885,6 @@ body.page-contacto .contact-form .cta {
   display: none;
 }
 
-/* Checkboxes personalizados */
 .contact-form fieldset label {
   display: flex;
   align-items: center;
@@ -940,7 +898,6 @@ body.page-contacto .contact-form .cta {
   opacity: .8;
 }
 
-/* Checkboxes "Tipo de proyecto" con fondo claro */
 .contact-form input[type="checkbox"] {
   width: 18px;
   height: 18px;
@@ -984,7 +941,6 @@ body.page-contacto .contact-form .cta {
   font-size: 16px !important;
 }
 
-/* Responsive */
 @media (min-width: 768px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -998,23 +954,18 @@ body.page-servicios .service-icon {
   display: block;
 }
 
-/* Título centrado */
 body.page-servicios .service-card > h2 {
   text-align: center;
 }
 
-/* Texto descriptivo alineado a la izquierda */
 body.page-servicios .service-card > p {
   text-align: left;
 }
 
-
-/* Listas SIEMPRE alineadas a la izquierda */
 body.page-servicios .service-card ul {
   text-align: left;
   margin-top: 24px;
 }
-
 
 /* ================================================================= */
 /*  PLUGINS                                                          */
@@ -1071,7 +1022,6 @@ body.page-servicios .service-card ul {
   margin-left: 12px;
 }
 
-
 /* ================================================================= */
 /*  CASOS DESTACADOS                                                 */
 /* ================================================================= */
@@ -1109,9 +1059,6 @@ body.page-servicios .service-card ul {
   object-fit:fill;
 }
 
-
-
-
 .case-content {
   display: flex;
   flex-direction: column;
@@ -1130,7 +1077,7 @@ body.page-servicios .service-card ul {
 
 .case-tech-row .cta {
   margin-top:0;
- background:#fff;
+  background:#fff;
   color:var(--page-bg);
   border:2px solid #fff;
 }
@@ -1140,7 +1087,6 @@ body.page-servicios .service-card ul {
   color:#fff;
 }
 
-/* Responsive */
 @media (max-width: 991px) {
   .case-item,
   .case-item.reverse {
@@ -1157,13 +1103,11 @@ body.page-servicios .service-card ul {
   margin-top: 60px;
 }
 
-
 .other-cases-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 32px;
 }
-
 
 .other-case-image img {
   width: 100%;
@@ -1179,9 +1123,6 @@ body.page-servicios .service-card ul {
   font-size: 1.5em;
 }
 
-
-
-
 /* ========================================================= */
 /* LOGO                                                      */
 /* ========================================================= */
@@ -1192,14 +1133,12 @@ body.page-servicios .service-card ul {
   width: auto;
 }
 
-/* Pages with dark background → invert logo */
 .page-servicios .site-logo,
 .page-casos .site-logo,
 .page-plugins .site-logo,
 .page-contacto .site-logo {
   filter: invert(1);
 }
-
 
 .sr-only {
   position:absolute;
@@ -1212,7 +1151,6 @@ body.page-servicios .service-card ul {
   white-space:nowrap;
   border:0;
 }
-
 
 /* =============================== */
 /* CASE – TECH TAGS (DETAIL)       */
@@ -1257,10 +1195,10 @@ body.page-servicios .service-card ul {
   border-color:rgba(99, 102, 241, 0.5);
 }
 
-
 /* ================================================================= */
 /*  SOBRE MÍ                                                         */
 /* ================================================================= */
+
 .section-about {
   display: grid;
   grid-template-columns: 250px 1fr;

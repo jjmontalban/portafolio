@@ -28,13 +28,15 @@ export const ui = {
     'home.hero.cta': 'Hablemos de tu proyecto',
     'home.servicios.title': 'Servicios',
     'home.servicios.desc': 'Desarrollo a medida, integraciones, e-commerce o cualquier mejora técnica sobre proyectos existentes.',
-    'home.servicios.link': 'Ver mis servicios',
+    'home.servicios.link': 'Ver mis servicios.',
     'home.plugins.title': 'Plugins y herramientas',
     'home.plugins.desc': 'Colaboro en la medida de lo que puedo con la comunidad y publico plugins WordPress, módulos PrestaShop y proyectos Open Source.',
-    'home.plugins.link': 'Chequea mis plugins y herramientas publicadas',
+    'home.plugins.link': 'Chequea mis plugins y herramientas publicadas.',
     'home.casos.title': 'Casos de éxito',
     'home.casos.desc': 'Ejemplos de proyectos reales en producción. Desarrollos a medida sobre distintas plataformas.',
-    'home.casos.link': 'Ver proyectos',
+    'home.casos.link': 'Ver proyectos.',
+    'home.sobre.desc': 'Si tras todo esto quieres conocer más sobre mi trayectoria profesional, puedes',
+    'home.sobre.link': 'ver mi perfil profesional.',
     'home.cta.title': '¿Tienes un problema técnico que resolver?',
     'home.cta.text': 'Cuéntame tu proyecto y vemos qué necesitas.',
 
@@ -106,6 +108,19 @@ export const ui = {
     'plugins.cta.title': '¿Tienes una idea?',
     'plugins.cta.text': 'Te la diseño y desarrollo.',
     'plugins.cta.button': 'Cuéntame',
+
+    // Sobre
+    'sobre.desc1': 'Soy JJ, ingeniero de software con más de diez años de experiencia colaborando con agencias, empresas y equipos técnicos en proyectos de desarrollo a medida, e-commerce e integraciones.',
+    'sobre.desc2': 'He pasado por roles puramente técnicos y también por posiciones de mayor responsabilidad como CTO, lo que me permite entender el contexto completo de un proyecto más allá del código.',
+    'sobre.languagesTitle': 'Lenguajes',
+    'sobre.frameworksTitle': 'Frameworks',
+    'sobre.devopsTitle': 'DevOps',
+    'sobre.toolsTitle': 'Herramientas',
+    'sobre.skillsTitle': 'Habilidades',
+    'sobre.experienceTitle': 'Experiencia',
+    'sobre.downloadCV': 'Descargar CV',
+
+
 
     // Contacto
     'contacto.meta.title': 'Contacto | JJ Montalban',
@@ -185,6 +200,8 @@ export const ui = {
     'home.casos.title': 'Success stories',
     'home.casos.desc': 'Examples of real projects in production. Custom developments on different platforms.',
     'home.casos.link': 'View projects',
+    'home.sobre.desc': 'If after all this you want to know more about my professional career, you can',
+    'home.sobre.link': 'view my professional profile.',
     'home.cta.title': 'Have a technical problem to solve?',
     'home.cta.text': "Tell me about your project and let's see what you need.",
 
@@ -257,6 +274,16 @@ export const ui = {
     'plugins.cta.text': "I'll design and develop it for you.",
     'plugins.cta.button': 'Tell me',
 
+    // Sobre
+    'sobre.desc1': 'I am JJ, a software engineer with over ten years of experience collaborating with agencies, companies and technical teams on custom development projects, e-commerce and integrations.',
+    'sobre.desc2': 'I have held purely technical roles as well as positions of greater responsibility such as CTO, which allows me to understand the full context of a project beyond the code.',
+    'sobre.languagesTitle': 'Languages',
+    'sobre.frameworksTitle': 'Frameworks',
+    'sobre.devopsTitle': 'DevOps',
+    'sobre.toolsTitle': 'Tools',
+    'sobre.skillsTitle': 'Skills',
+    'sobre.experienceTitle': 'Experience',
+    'sobre.downloadCV': 'Download CV',
     // Contacto
     'contacto.meta.title': 'Contact | JJ Montalban',
     'contacto.meta.description': 'Contact for specialized WordPress development in custom plugins, integrations and advanced technical improvements.',
