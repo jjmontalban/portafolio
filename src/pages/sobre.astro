@@ -1,58 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import { useTranslations } from '../lib/i18n/utils';
+import { useTranslations, getSkillCategories, getJobs } from '../lib/i18n/utils';
 import type { Lang } from '../lib/i18n/utils';
 
 const lang: Lang = 'es';
 const t = useTranslations(lang);
-
-// Skills por categorías
-const skillCategories = [
-  {
-    label: "Languages",
-    items: ["PHP", "Javascript(ES6)", "TypeScript", "SQL", "CSS", "HTML"]
-  },
-  {
-    label: "Frameworks",
-    items: ["WordPress", "Laravel", "jQuery", "Vue", "Astro", "Sass"]
-  },
-  {
-    label: "Tools",
-    items: ["Git", "PHPUnit", "Composer", "npm", "Jenkins", "Postman"]
-  },
-  {
-    label: "DevOps",
-    items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics"]
-  }
-];
-
-const jobs = [
-  {
-    company: "Fundación Telefónica",
-    link: "https://www.fundaciontelefonica.com/",
-    position: "Full Stack Engineer",
-    period: "Oct. 2024 - Presente"
-  },
-  {
-    company: "GalacticBlum",
-    link: "https://www.galacticblum.com/",
-    position: "Full Stack Engineer",
-    period: "Oct. 2019 - Sep. 2024"
-  },
-  {
-    company: "Piranha Designs",
-    link: "https://www.piranhadesigns.com/",
-    position: "Backend Developer",
-    period: "Mar. 2019 - Sep. 2019"
-  },
-  {
-    company: "Bloonde",
-    link: "https://www.bloonde.com/",
-    position: "Backend Developer",
-    period: "Feb. 2018 - Mar. 2019"
-  }
-];
+const skillCategories = getSkillCategories(t);
+const jobs = getJobs(t);
 ---
 
 <Layout 
@@ -75,7 +30,7 @@ const jobs = [
         <div class="skills-grid">
           {skillCategories.map(cat => (
             <div class="skill-column">
-              <span class="skill-label">{t(`sobre.${cat.label.toLowerCase()}Title`)}</span>
+              <span class="skill-label">{cat.label}</span>
               <ul>{cat.items.map(item => <li>{item}</li>)}</ul>
             </div>
           ))}

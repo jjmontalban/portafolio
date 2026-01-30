@@ -139,3 +139,63 @@ export function getAlternateRoute(currentPath: string, currentLang: Lang, target
   const prefix = targetLang === 'en' ? '/en' : '';
   return prefix + cleanPath;
 }
+
+/**
+ * Get skill categories with translated labels
+ */
+export function getSkillCategories(t: (key: UIKey) => string) {
+  return [
+    {
+      labelKey: 'languages',
+      label: t('sobre.languagesTitle'),
+      items: ["PHP", "Javascript(ES6)", "TypeScript", "SQL", "CSS", "HTML"]
+    },
+    {
+      labelKey: 'frameworks',
+      label: t('sobre.frameworksTitle'),
+      items: ["WordPress", "Laravel", "jQuery", "Vue", "Astro", "Sass"]
+    },
+    {
+      labelKey: 'tools',
+      label: t('sobre.toolsTitle'),
+      items: ["Git", "PHPUnit", "Composer", "npm", "Jenkins", "Postman"]
+    },
+    {
+      labelKey: 'devops',
+      label: t('sobre.devopsTitle'),
+      items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics"]
+    }
+  ];
+}
+
+/**
+ * Get jobs with translated position and period
+ */
+export function getJobs(t: (key: UIKey) => string) {
+  return [
+    {
+      company: "Fundación Telefónica",
+      link: "https://www.fundaciontelefonica.com/",
+      position: t('sobre.job1.position'),
+      period: t('sobre.job1.period')
+    },
+    {
+      company: "GalacticBlum",
+      link: "https://www.galacticblum.com/",
+      position: t('sobre.job2.position'),
+      period: t('sobre.job2.period')
+    },
+    {
+      company: "Piranha Designs",
+      link: "https://www.piranhadesigns.com/",
+      position: t('sobre.job3.position'),
+      period: t('sobre.job3.period')
+    },
+    {
+      company: "Bloonde",
+      link: "https://www.bloonde.com/",
+      position: t('sobre.job4.position'),
+      period: t('sobre.job4.period')
+    }
+  ];
+}
