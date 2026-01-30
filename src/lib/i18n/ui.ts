@@ -110,15 +110,14 @@ export const ui = {
     'plugins.cta.button': 'Cuéntame',
 
     // Sobre
-    'sobre.desc1': 'Soy JJ, ingeniero de software con más de diez años de experiencia colaborando con agencias, empresas y equipos técnicos en proyectos de desarrollo a medida, e-commerce e integraciones.',
-    'sobre.desc2': 'He pasado por roles puramente técnicos y también por posiciones de mayor responsabilidad como CTO, lo que me permite entender el contexto completo de un proyecto más allá del código.',
+    'sobre.desc1': 'En más de 10 años he pasado por la fotografía, el diseño, por roles puramente técnicos y también por posiciones de mayor responsabilidad. Algo que me ha obligado o permitido ahondar en temas de seo/sem, marketing, analítica...lo que me permite entender el contexto completo de un proyecto más allá del código.',
     'sobre.languagesTitle': 'Lenguajes',
     'sobre.frameworksTitle': 'Frameworks',
     'sobre.devopsTitle': 'DevOps',
     'sobre.toolsTitle': 'Herramientas',
     'sobre.skillsTitle': 'Habilidades',
     'sobre.experienceTitle': 'Experiencia',
-    'sobre.downloadCV': 'Descargar CV',
+    'sobre.downloadCV': 'Ver CV completo',
 
     // Sobre - Jobs
     'sobre.job1.position': 'Full Stack Engineer',
@@ -179,6 +178,11 @@ export const ui = {
 
     // CTA genérico
     'cta.default': 'Hablemos',
+
+    // Sobre CTA
+    'sobre.cta.title': '¿Aún quieres saber más?',
+    'sobre.cta.text': 'Contacta conmigo',
+    'sobre.cta.button': 'Hablemos',
   },
 
   en: {
@@ -285,15 +289,14 @@ export const ui = {
     'plugins.cta.button': 'Tell me',
 
     // Sobre
-    'sobre.desc1': 'I am JJ, a software engineer with over ten years of experience collaborating with agencies, companies and technical teams on custom development projects, e-commerce and integrations.',
-    'sobre.desc2': 'I have held purely technical roles as well as positions of greater responsibility such as CTO, which allows me to understand the full context of a project beyond the code.',
+    'sobre.desc1': 'In more than 10 years I have worked in photography, design, purely technical roles and also positions of greater responsibility. Something that has forced or allowed me to delve into SEO/SEM, marketing, analytics...which allows me to understand the full context of a project beyond the code.',
     'sobre.languagesTitle': 'Languages',
     'sobre.frameworksTitle': 'Frameworks',
     'sobre.devopsTitle': 'DevOps',
     'sobre.toolsTitle': 'Tools',
     'sobre.skillsTitle': 'Skills',
     'sobre.experienceTitle': 'Experience',
-    'sobre.downloadCV': 'Download CV',
+    'sobre.downloadCV': 'View full CV',
 
     // Sobre - Jobs
     'sobre.job1.position': 'Full Stack Engineer',
@@ -352,6 +355,11 @@ export const ui = {
 
     // CTA genérico
     'cta.default': "Let's talk",
+
+    // Sobre CTA
+    'sobre.cta.title': 'Still want to know more?',
+    'sobre.cta.text': 'Contact me',
+    'sobre.cta.button': "Let's talk",
   },
 } as const;
 

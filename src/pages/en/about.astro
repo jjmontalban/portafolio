@@ -21,7 +21,6 @@ const jobs = getJobs(t);
       <h2>BACKGROUND</h2>
       <div>
         <p>{t('sobre.desc1')}</p>
-        <p>{t('sobre.desc2')}</p>
       </div>
     </section>
 
@@ -58,9 +57,10 @@ const jobs = getJobs(t);
         
     </section>
 
-    <ContactCTA 
-      title={t('casos.cta.title')}
-      text={t('casos.cta.text')}
+    <ContactCTA
+      title={t('sobre.cta.title')}
+      text={t('sobre.cta.text')}
+      button={t('sobre.cta.button')}
     />
   </div>
 </Layout>
