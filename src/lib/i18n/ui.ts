@@ -120,6 +120,16 @@ export const ui = {
     'sobre.experienceTitle': 'Experiencia',
     'sobre.downloadCV': 'Descargar CV',
 
+    // Sobre - Jobs
+    'sobre.job1.position': 'Full Stack Engineer',
+    'sobre.job1.period': 'Oct. 2024 - Presente',
+    'sobre.job2.position': 'Full Stack Engineer',
+    'sobre.job2.period': 'Oct. 2019 - Sep. 2024',
+    'sobre.job3.position': 'Backend Developer',
+    'sobre.job3.period': 'Mar. 2019 - Sep. 2019',
+    'sobre.job4.position': 'Backend Developer',
+    'sobre.job4.period': 'Feb. 2018 - Mar. 2019',
+
 
 
     // Contacto
@@ -284,6 +294,17 @@ export const ui = {
     'sobre.skillsTitle': 'Skills',
     'sobre.experienceTitle': 'Experience',
     'sobre.downloadCV': 'Download CV',
+
+    // Sobre - Jobs
+    'sobre.job1.position': 'Full Stack Engineer',
+    'sobre.job1.period': 'Oct. 2024 - Present',
+    'sobre.job2.position': 'Full Stack Engineer',
+    'sobre.job2.period': 'Oct. 2019 - Sep. 2024',
+    'sobre.job3.position': 'Backend Developer',
+    'sobre.job3.period': 'Mar. 2019 - Sep. 2019',
+    'sobre.job4.position': 'Backend Developer',
+    'sobre.job4.period': 'Feb. 2018 - Mar. 2019',
+
     // Contacto
     'contacto.meta.title': 'Contact | JJ Montalban',
     'contacto.meta.description': 'Contact for specialized WordPress development in custom plugins, integrations and advanced technical improvements.',
