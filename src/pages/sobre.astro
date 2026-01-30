@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import { useTranslations } from '../lib/i18n/utils';
+import type { Lang } from '../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+
+// Skills por categorías
+const skillCategories = [
+  {
+    label: "Languages",
+    items: ["PHP", "Javascript (ES6)", "TypeScript", "jQuery", "SQL", "CSS/Sass", "HTML"]
+  },
+  {
+    label: "Frameworks",
+    items: ["WordPress", "Laravel", "Vue", "Astro"]
+  },
+  {
+    label: "Testing & Tools",
+    items: ["Git", "PHPUnit", "Composer", "npm", "Jenkins", "Postman",  "VSCode"]
+  },
+  {
+    label: "Infra & DevOps",
+    items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics"]
+  }
+];
+
+const jobs = [
+  {
+    company: "Fundación Telefónica",
+    link: "https://www.fundaciontelefonica.com/",
+    position: "Full Stack Engineer",
+    period: "Oct. 2024 - Presente"
+  },
+  {
+    company: "GalacticBlum",
+    link: "https://www.galacticblum.com/",
+    position: "Full Stack Engineer",
+    period: "Oct. 2019 - Sep. 2024"
+  },
+  {
+    company: "Piranha Designs",
+    link: "https://www.piranhadesigns.com/",
+    position: "Backend Developer",
+    period: "Mar. 2019 - Sep. 2019"
+  },
+  {
+    company: "Bloonde",
+    link: "https://www.bloonde.com/",
+    position: "Backend Developer",
+    period: "Feb. 2018 - Mar. 2019"
+  }
+];
+---
+
+<Layout 
+  title={`${t('about.title')} | JJ`} 
+  page="page-about"
+  description="Sobre mi trayectoria como ingeniero de software."
+>
+  <div class="container">
+    
+    <section class="section-about">
+      <h2>BACKGROUND</h2>
+      <div>
+        <p>
+          Soy JJ, ingeniero de software con más de diez años de experiencia colaborando con agencias, empresas y equipos técnicos
+          en proyectos de desarrollo a medida, e-commerce e integraciones.
+        </p>
+        <p>
+          He pasado por roles puramente técnicos y también por posiciones de mayor responsabilidad como <strong>CTO</strong>, lo que me permite entender
+          el contexto completo de un proyecto más allá del código. Actualmente trabajo en 
+          <a href="https://www.fundaciontelefonica.com/" target="_blank">Fundación Telefónica</a>.
+        </p>
+        <p>
+          Cuando no estoy frente a la pantalla, probablemente me encuentres con una cámara en mano. Mi interés por el diseño y la fotografía
+          me ayuda a crear productos digitales con una estética cuidada.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-about">
+      <h2>SKILLS</h2>
+        <div class="skills-grid">
+          {skillCategories.map(cat => (
+            <div class="skill-column">
+              <span class="skill-label">{cat.label}</span>
+              <ul>{cat.items.map(item => <li>{item}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+    </section>
+
+    <section class="section-about">
+      <h2>EXPERIENCE</h2>
+        <div>
+          {jobs.map(job => (
+            <div class="job-item">
+              <div class="job-header">
+                {job.link ? (
+                  <a href={job.link} target="_blank" class="job__company">{job.company}</a>
+                ) : (
+                  <span class="job__company">{job.company}</span>
+                )}
+                <span class="job__period">{job.period}</span>
+              </div>
+              <div>{job.position}</div>
+            </div>
+          ))}
+        <a href="https://www.linkedin.com/in/jjmontalban/" class="cta cta-primary">Ver CV completo</a>
+        </div>
+        
+    </section>
+
+    <ContactCTA 
+      title={t('casos.cta.title')}
+      text={t('casos.cta.text')}
+    />
+  </div>
+</Layout>

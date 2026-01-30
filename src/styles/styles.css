@@ -116,14 +116,16 @@ a:hover {
 /*  HOME – CTA PRINCIPAL                                             */
 /* ================================================================= */
 
-body.page-home .cta-primary {
+body.page-home .cta-primary,
+body.page-about .cta-primary {
   font-size:1.25em;
   background:#111;
   color:#fff;
   border:2px solid #111;
 }
 
-body.page-home .cta-primary:hover {
+body.page-home .cta-primary:hover,
+body.page-about .cta-primary:hover {
   background:#fff;
   color:#111;
 }
@@ -180,8 +182,28 @@ body.page-home .cta-primary:hover {
 /* ========================= */
 /* HOME: section bg dark, text white, h2 black with white outline,
    button white -> hover dark (same as your current behavior) */
-body.page-home {
+body.page-home{
   --contact-bg:#111111;
+  --contact-fg:#ffffff;
+
+  --contact-title-color:#000000;
+  --contact-title-shadow:
+    -1px 0 #ffffff, 1px 0 #ffffff,
+    0 -1px #ffffff, 0 1px #ffffff,
+    -2px 2px #ffffff;
+
+  --contact-btn-bg:#ffffff;
+  --contact-btn-fg:#111111;
+  --contact-btn-border:#ffffff;
+
+  --contact-btn-bg-hover:#111111;
+  --contact-btn-fg-hover:#ffffff;
+  --contact-btn-border-hover:#ffffff;
+}
+
+
+body.page-about {
+  --contact-bg:#000000;
   --contact-fg:#ffffff;
 
   --contact-title-color:#000000;
@@ -206,7 +228,8 @@ body.page-home {
 
 body.page-servicios,
 body.page-plugins,
-body.page-casos {
+body.page-casos,
+body.page-contacto {
   --contact-bg:#ffffff;
   --contact-fg:var(--page-bg);
 
@@ -222,26 +245,6 @@ body.page-casos {
 
   --contact-btn-bg-hover:#ffffff;
   --contact-btn-fg-hover:var(--page-bg);
-  --contact-btn-border-hover:var(--page-bg);
-}
-
-/* Contacto (section bg is the page color, text white) */
-body.page-contacto {
-  --contact-bg:var(--page-bg);
-  --contact-fg:#ffffff;
-
-  --contact-title-color:var(--page-bg);
-  --contact-title-shadow:
-    -1px 0 #ffffff, 1px 0 #ffffff,
-    0 -1px #ffffff, 0 1px #ffffff,
-    -2px 2px #ffffff;
-
-  --contact-btn-bg:#ffffff;
-  --contact-btn-fg:var(--page-bg);
-  --contact-btn-border:#ffffff;
-
-  --contact-btn-bg-hover:var(--page-bg);
-  --contact-btn-fg-hover:#ffffff;
   --contact-btn-border-hover:var(--page-bg);
 }
 
@@ -355,6 +358,24 @@ body.page-home a.section-link-cases {
 
 body.page-home {
   --page-bg:#ffffff;
+  --page-fg:#111111;
+
+  --heading-color:#ffffff;
+  --heading-shadow:var(--shadow-deep-black);
+
+  --nav-text-color:var(--page-bg);
+  --nav-text-shadow:var(--shadow-deep-black);
+
+  background-color:var(--page-bg);
+  color:var(--page-fg);
+}
+
+/* ============================ */
+/*  ABOUT                        */
+/* =============================*/
+
+body.page-about {
+  --page-bg:#ece24e;
   --page-fg:#111111;
 
   --heading-color:#ffffff;
@@ -679,7 +700,8 @@ body[class^="page-"] * {
   opacity: 0;
 }
 
-body.page-home .lang-slider {
+body.page-home .lang-slider,
+body.page-about .lang-slider {
   background-color: #111;
 }
 
@@ -1233,4 +1255,57 @@ body.page-servicios .service-card ul {
 .tech-tag:hover {
   background-color:rgba(99, 102, 241, 0.25);
   border-color:rgba(99, 102, 241, 0.5);
+}
+
+
+/* ================================================================= */
+/*  SOBRE MÍ                                                         */
+/* ================================================================= */
+.section-about {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  padding: 2rem 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skill-label {
+  display: block;
+  font-family: "Cubano", sans-serif;
+}
+
+.skill-column ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1em;
+}
+
+.job-item {
+  margin-bottom: 2.5rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.job__company {
+  font-family: "Cubano", sans-serif;
+}
+
+.job__period {
+  font-size: 0.85rem !important;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .section-about {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
