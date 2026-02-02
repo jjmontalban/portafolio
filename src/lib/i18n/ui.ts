@@ -174,7 +174,18 @@ export const ui = {
     'contacto.mensajePlaceholder': 'Cuéntame sobre tu proyecto',
     'contacto.quickSubmit': 'O bien, ya dale a',
     'contacto.enviar': 'Enviar',
+    'contacto.enviando': 'Enviando...',
     'contacto.asuntoEmail': 'Nuevo mensaje desde la web',
+    'contacto.exito.titulo': 'Mensaje enviado',
+    'contacto.exito.mensaje': 'Gracias por contactarme. Te responderé lo antes posible.',
+    'contacto.error.titulo': 'Error al enviar',
+    'contacto.error.mensaje': 'Ha ocurrido un error. Por favor, inténtalo de nuevo o escríbeme directamente.',
+    'contacto.error.email': 'Por favor, introduce un email válido',
+    'contacto.error.nombre': 'Por favor, introduce tu nombre',
+    'contacto.enviarOtro': 'Enviar otro mensaje',
+
+    // Accesibilidad
+    'a11y.skipToContent': 'Saltar al contenido principal',
 
     // CTA genérico
     'cta.default': 'Hablemos',
@@ -351,7 +362,18 @@ export const ui = {
     'contacto.mensajePlaceholder': 'Tell me about your project',
     'contacto.quickSubmit': 'Or just hit',
     'contacto.enviar': 'Send',
+    'contacto.enviando': 'Sending...',
     'contacto.asuntoEmail': 'New message from website',
+    'contacto.exito.titulo': 'Message sent',
+    'contacto.exito.mensaje': 'Thank you for contacting me. I will respond as soon as possible.',
+    'contacto.error.titulo': 'Error sending',
+    'contacto.error.mensaje': 'An error occurred. Please try again or contact me directly.',
+    'contacto.error.email': 'Please enter a valid email',
+    'contacto.error.nombre': 'Please enter your name',
+    'contacto.enviarOtro': 'Send another message',
+
+    // Accessibility
+    'a11y.skipToContent': 'Skip to main content',
 
     // CTA genérico
     'cta.default': "Let's talk",
