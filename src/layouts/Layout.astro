@@ -142,9 +142,10 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
   </head>
 
   <body class={page}>
+    <a href="#main-content" class="skip-link">{t('a11y.skipToContent')}</a>
     <Navbar current={page?.replace("page-", "")} />
 
-    <main class="main">
+    <main id="main-content" class="main">
       <slot />
     </main>
 
@@ -158,5 +159,32 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
     </script>
 
     <script src="/scripts/nav.js" defer></script>
+
+    <!-- Scroll Reveal Animation -->
+    <script>
+      const initReveal = () => {
+        const revealElements = document.querySelectorAll('.reveal');
+
+        if (revealElements.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach((el) => observer.observe(el));
+      };
+
+      // Run on initial load and after Astro page transitions
+      document.addEventListener('DOMContentLoaded', initReveal);
+      document.addEventListener('astro:page-load', initReveal);
+    </script>
   </body>
 </html>

@@ -36,7 +36,7 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
 
       <section class="cases-list">
           {casos.map(({ slug, data }, index) => (
-            <article class={`case-item ${index % 2 !== 0 ? "reverse" : ""}`}>
+            <article class={`case-item reveal ${index % 2 !== 0 ? "reverse" : ""}`}>
               <div class="case-image">
                 {data.image && (
                   <img src={data.image} alt={getLocalizedText(data.title)} loading="lazy" />
@@ -61,12 +61,13 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
           ))}
       </section>
 
-      <section class="other-cases">
+      <section class="other-cases reveal">
         <h2>{t('casos.otrosCasos')}</h2>
 
         <div class="other-cases-grid">
-          {otrosCasos.map(({ data }) => (
+          {otrosCasos.map(({ data }, index) => (
             <a
+              class={`reveal reveal-delay-${(index % 4) + 1}`}
               href={data.link}
               target="_blank"
               rel="noopener noreferrer"

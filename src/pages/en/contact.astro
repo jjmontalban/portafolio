@@ -19,11 +19,49 @@ const t = useTranslations(lang);
       <p>{t('contacto.intro')}</p>
 
       <div class="contact-card">
-        <form class="contact-form" action="https://formspree.io/f/mzdbogkk" method="POST" >
+        <!-- Success message -->
+        <div id="form-success" class="form-message form-success" hidden>
+          <h2>{t('contacto.exito.titulo')}</h2>
+          <p>{t('contacto.exito.mensaje')}</p>
+          <button type="button" class="cta" id="send-another">{t('contacto.enviarOtro')}</button>
+        </div>
+
+        <!-- Error message -->
+        <div id="form-error" class="form-message form-error" hidden>
+          <h2>{t('contacto.error.titulo')}</h2>
+          <p id="error-text">{t('contacto.error.mensaje')}</p>
+          <button type="button" class="cta" id="try-again">{t('contacto.enviar')}</button>
+        </div>
+
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="https://formspree.io/f/mzdbogkk"
+          method="POST"
+          novalidate
+        >
           <label for="name">{t('contacto.nombre')}</label>
-          <input id="name" name="name" type="text" placeholder={t('contacto.nombrePlaceholder')} required />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder={t('contacto.nombrePlaceholder')}
+            required
+            aria-describedby="name-error"
+          />
+          <span id="name-error" class="field-error" hidden>{t('contacto.error.nombre')}</span>
+
           <label for="email">{t('contacto.email')}</label>
-          <input id="email" name="_replyto" type="email" placeholder={t('contacto.emailPlaceholder')} required />
+          <input
+            id="email"
+            name="_replyto"
+            type="email"
+            placeholder={t('contacto.emailPlaceholder')}
+            required
+            aria-describedby="email-error"
+          />
+          <span id="email-error" class="field-error" hidden>{t('contacto.error.email')}</span>
+
           <button type="button" class="toggle-optional cta" aria-expanded="false" aria-controls="optional-fields" data-show-text={t('contacto.masDetalles')} data-hide-text={t('contacto.ocultarDetalles')}>
             {t('contacto.masDetalles')}
           </button>
@@ -31,7 +69,7 @@ const t = useTranslations(lang);
             <label for="project-type">{t('contacto.tipoProyecto')}</label>
             <fieldset class="optional-group">
               <label>
-                <input type="checkbox" name="project_type[]" value="Web corporativa" />
+                <input type="checkbox" name="project_type[]" value="Corporate website" />
                 {t('contacto.webCorporativa')}
               </label>
               <label>
@@ -39,15 +77,15 @@ const t = useTranslations(lang);
                 {t('contacto.ecommerce')}
               </label>
               <label>
-                <input type="checkbox" name="project_type[]" value="Plugin / desarrollo a medida" />
+                <input type="checkbox" name="project_type[]" value="Plugin / custom development" />
                 {t('contacto.pluginMedida')}
               </label>
               <label>
-                <input type="checkbox" name="project_type[]" value="Aplicación web / sistema a medida" />
+                <input type="checkbox" name="project_type[]" value="Web application / custom system" />
                 {t('contacto.appWeb')}
               </label>
               <label>
-                <input type="checkbox" name="project_type[]" value="No lo tengo claro" />
+                <input type="checkbox" name="project_type[]" value="Not sure" />
                 {t('contacto.noLoSeClaro')}
               </label>
             </fieldset>
@@ -55,9 +93,9 @@ const t = useTranslations(lang);
             <label for="has-website">{t('contacto.tieneWeb')}</label>
             <select id="has-website" name="has_website">
               <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-              <option value="Sí">{t('contacto.si')}</option>
+              <option value="Yes">{t('contacto.si')}</option>
               <option value="No">{t('contacto.no')}</option>
-              <option value="En desarrollo">{t('contacto.enDesarrollo')}</option>
+              <option value="In development">{t('contacto.enDesarrollo')}</option>
             </select>
 
             <div class="optional-dependent" data-show="has-website" hidden>
@@ -81,14 +119,14 @@ const t = useTranslations(lang);
               </label>
               <select id="experience-level" name="experience_level">
                 <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-                <option value="Ninguna">{t('contacto.ninguna')}</option>
-                <option value="Básica (publicar contenidos)">
+                <option value="None">{t('contacto.ninguna')}</option>
+                <option value="Basic (publish content)">
                   {t('contacto.basica')}
                 </option>
-                <option value="Media (edición, ajustes, plugins)">
+                <option value="Medium (editing, settings, plugins)">
                   {t('contacto.media')}
                 </option>
-                <option value="Avanzada">{t('contacto.avanzada')}</option>
+                <option value="Advanced">{t('contacto.avanzada')}</option>
               </select>
             </div>
 
@@ -97,7 +135,7 @@ const t = useTranslations(lang);
             </label>
             <select id="agency-collab" name="agency_collaboration">
               <option value="" selected>{t('contacto.seleccionaOpcion')}</option>
-              <option value="Sí">{t('contacto.si')}</option>
+              <option value="Yes">{t('contacto.si')}</option>
               <option value="No">{t('contacto.no')}</option>
             </select>
 
@@ -109,27 +147,27 @@ const t = useTranslations(lang);
             <fieldset class="optional-dependent" data-show="agency-no" hidden>
               <legend>{t('contacto.materialCorporativo')}</legend>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Logotipo" />
+                <input type="checkbox" name="brand_assets[]" value="Logo" />
                 {t('contacto.logotipo')}
               </label>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Colores corporativos" />
+                <input type="checkbox" name="brand_assets[]" value="Corporate colors" />
                 {t('contacto.coloresCorporativos')}
               </label>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Tipografías" />
+                <input type="checkbox" name="brand_assets[]" value="Fonts" />
                 {t('contacto.tipografias')}
               </label>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Manual de marca" />
+                <input type="checkbox" name="brand_assets[]" value="Brand manual" />
                 {t('contacto.manualMarca')}
               </label>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Fotografías profesionales" />
+                <input type="checkbox" name="brand_assets[]" value="Professional photos" />
                 {t('contacto.fotografiasProfesionales')}
               </label>
               <label>
-                <input type="checkbox" name="brand_assets[]" value="Ninguno / por definir" />
+                <input type="checkbox" name="brand_assets[]" value="None / to be defined" />
                 {t('contacto.ningunoPorDefinir')}
               </label>
             </fieldset>
@@ -144,10 +182,9 @@ const t = useTranslations(lang);
           </div>
 
           <input type="hidden" name="_subject" value={t('contacto.asuntoEmail')} />
-          <input type="hidden" name="_redirect" value="https://tudominio.com/gracias" />
           <input type="text" name="_gotcha" style="display:none" />
           <label id="quick-submit-label" for="message">{t('contacto.quickSubmit')}</label>
-          <button type="submit" class="cta">
+          <button type="submit" class="cta" id="submit-btn" data-text={t('contacto.enviar')} data-loading={t('contacto.enviando')}>
             {t('contacto.enviar')}
           </button>
         </form>
@@ -156,17 +193,155 @@ const t = useTranslations(lang);
 
   </section>
   <script>
+    const form = document.getElementById("contact-form") as HTMLFormElement | null;
+    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+    const formSuccess = document.getElementById("form-success");
+    const formError = document.getElementById("form-error");
+    const errorText = document.getElementById("error-text");
+    const sendAnother = document.getElementById("send-another");
+    const tryAgain = document.getElementById("try-again");
+    const nameInput = document.getElementById("name") as HTMLInputElement | null;
+    const emailInput = document.getElementById("email") as HTMLInputElement | null;
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+
     const toggleButton = document.querySelector(".toggle-optional") as HTMLButtonElement | null;
     const optionalFields = document.getElementById("optional-fields");
     const hasWebsiteSelect = document.getElementById("has-website") as HTMLSelectElement | null;
     const agencySelect = document.getElementById("agency-collab") as HTMLSelectElement | null;
     const quickSubmitLabel = document.getElementById("quick-submit-label");
 
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validate form
+    const validateForm = (): boolean => {
+      let isValid = true;
+
+      // Validate name
+      if (nameInput && nameError) {
+        if (!nameInput.value.trim()) {
+          nameError.hidden = false;
+          nameInput.classList.add("input-error");
+          isValid = false;
+        } else {
+          nameError.hidden = true;
+          nameInput.classList.remove("input-error");
+        }
+      }
+
+      // Validate email
+      if (emailInput && emailError) {
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+          emailError.hidden = false;
+          emailInput.classList.add("input-error");
+          isValid = false;
+        } else {
+          emailError.hidden = true;
+          emailInput.classList.remove("input-error");
+        }
+      }
+
+      return isValid;
+    };
+
+    // Clear validation errors on input
+    nameInput?.addEventListener("input", () => {
+      if (nameError && nameInput.value.trim()) {
+        nameError.hidden = true;
+        nameInput.classList.remove("input-error");
+      }
+    });
+
+    emailInput?.addEventListener("input", () => {
+      if (emailError && emailRegex.test(emailInput.value)) {
+        emailError.hidden = true;
+        emailInput.classList.remove("input-error");
+      }
+    });
+
+    // Form submission
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      // Show loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = submitBtn.dataset.loading || "Sending...";
+        submitBtn.classList.add("btn-loading");
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          // Show success message
+          form.hidden = true;
+          formSuccess?.removeAttribute("hidden");
+          formError?.setAttribute("hidden", "");
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        // Show error message
+        form.hidden = true;
+        formError?.removeAttribute("hidden");
+        formSuccess?.setAttribute("hidden", "");
+      } finally {
+        // Reset button state
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.text || "Send";
+          submitBtn.classList.remove("btn-loading");
+        }
+      }
+    });
+
+    // Send another message
+    sendAnother?.addEventListener("click", () => {
+      form?.reset();
+      form?.removeAttribute("hidden");
+      formSuccess?.setAttribute("hidden", "");
+
+      // Reset optional fields
+      optionalFields?.setAttribute("hidden", "");
+      if (toggleButton) {
+        toggleButton.textContent = toggleButton.dataset.showText || "More details";
+        toggleButton.setAttribute("aria-expanded", "false");
+      }
+      quickSubmitLabel?.removeAttribute("hidden");
+
+      // Reset dependent fields
+      document.querySelectorAll(".optional-dependent").forEach((field) => {
+        field.setAttribute("hidden", "");
+      });
+      if (hasWebsiteSelect) hasWebsiteSelect.value = "";
+      if (agencySelect) agencySelect.value = "";
+    });
+
+    // Try again after error
+    tryAgain?.addEventListener("click", () => {
+      form?.removeAttribute("hidden");
+      formError?.setAttribute("hidden", "");
+    });
+
+    // Optional fields toggle and dependencies
     const updateWebsiteDependencies = () => {
       if (!hasWebsiteSelect) {
         return;
       }
-      const shouldShow = ["Sí", "En desarrollo"].includes(hasWebsiteSelect.value);
+      const shouldShow = ["Yes", "In development"].includes(hasWebsiteSelect.value);
       document
         .querySelectorAll('[data-show="has-website"]')
         .forEach((field) => field.toggleAttribute("hidden", !shouldShow));
@@ -176,7 +351,7 @@ const t = useTranslations(lang);
       if (!agencySelect) {
         return;
       }
-      const isYes = agencySelect.value === "Sí";
+      const isYes = agencySelect.value === "Yes";
       document
         .querySelectorAll('[data-show="agency-yes"]')
         .forEach((field) => field.toggleAttribute("hidden", !isYes));
@@ -190,8 +365,8 @@ const t = useTranslations(lang);
           const isHidden = optionalFields.toggleAttribute("hidden");
 
           // Optional fields - use data attributes for translated text
-          const showText = toggleButton.dataset.showText || "Añadir más detalles (opcional)";
-          const hideText = toggleButton.dataset.hideText || "Ocultar detalles";
+          const showText = toggleButton.dataset.showText || "Add more details (optional)";
+          const hideText = toggleButton.dataset.hideText || "Hide details";
           toggleButton.textContent = isHidden ? showText : hideText;
           toggleButton.setAttribute("aria-expanded", String(!isHidden));
 
@@ -219,7 +394,7 @@ const t = useTranslations(lang);
       agencySelect.addEventListener("change", updateAgencyDependencies);
     }
 
-    // Asegurar que los campos condicionales estén ocultos al cargar la página
+    // Ensure conditional fields are hidden on page load
     document
       .querySelectorAll('.optional-dependent')
       .forEach((field) => field.setAttribute("hidden", ""));

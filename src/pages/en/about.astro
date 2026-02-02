@@ -10,21 +10,49 @@ const skillCategories = getSkillCategories(t);
 const jobs = getJobs(t);
 ---
 
-<Layout 
-  title={`${t('about.title')} | JJ`} 
+<Layout
+  title={t('meta.title')}
   page="page-about"
-  description="Sobre mi trayectoria como ingeniero de software."
+  description={t('meta.description')}
 >
+  <!-- Schema.org WorkExperience -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "JJMontalban",
+    "jobTitle": t('meta.jobTitle'),
+    "url": "https://jjmontalban.com/en/about",
+    "sameAs": [
+      "https://github.com/jjmontalban",
+      "https://www.linkedin.com/in/jjmontalban/",
+      "https://profiles.wordpress.org/jjmontalban/"
+    ],
+    "knowsAbout": skillCategories.flatMap(cat => cat.items),
+    "hasOccupation": jobs.map(job => ({
+      "@type": "Occupation",
+      "name": job.position,
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "Spain"
+      }
+    })),
+    "worksFor": {
+      "@type": "Organization",
+      "name": jobs[0].company,
+      "url": jobs[0].link
+    }
+  })} />
+
   <div class="container">
-    
-    <section class="section-about">
-      <h2>BACKGROUND</h2>
+
+    <section class="section-about reveal">
+      <h2>Background</h2>
       <div>
         <p>{t('sobre.desc1')}</p>
       </div>
     </section>
 
-    <section class="section-about">
+    <section class="section-about reveal">
       <h2>{t('sobre.skillsTitle')}</h2>
         <div class="skills-grid">
           {skillCategories.map(cat => (
@@ -36,7 +64,7 @@ const jobs = getJobs(t);
         </div>
     </section>
 
-    <section class="section-about">
+    <section class="section-about reveal">
       <h2>{t('sobre.experienceTitle')}</h2>
         <div>
           {jobs.map(job => (
@@ -54,7 +82,7 @@ const jobs = getJobs(t);
           ))}
         <a href="https://www.linkedin.com/in/jjmontalban/" class="cta cta-primary">{t('sobre.downloadCV')}</a>
         </div>
-        
+
     </section>
 
     <ContactCTA
