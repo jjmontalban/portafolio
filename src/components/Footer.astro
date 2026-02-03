@@ -1,5 +1,5 @@
 ---
-import { dev, wordpress, behance, github, linkedin } from "../lib/icons";
+import { dev, wordpress, behance, github, linkedin, unsplash } from "../lib/icons";
 ---
 <footer class="site-footer">
   <div class="site-footer__inner">
@@ -30,6 +30,13 @@ import { dev, wordpress, behance, github, linkedin } from "../lib/icons";
         <a class="site-footer__link" href="https://www.linkedin.com/in/jjmontalban/" aria-label="LinkedIn" rel="me">
           <svg {...linkedin.attributes} set:html={linkedin.body} />
           <span class="sr-only">LinkedIn profile</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="site-footer__link" href="https://unsplash.com/es/@jjmontalban" aria-label="Unsplash" rel="me">
+          <svg {...unsplash.attributes} set:html={unsplash.body} />
+          <span class="sr-only">Unsplash profile</span>
         </a>
       </li>
     </ul>

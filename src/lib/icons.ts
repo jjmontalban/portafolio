@@ -27,3 +27,4 @@ export const ps = iconToSVG(getIconData(simpleIcons, "photoshop"));
 export const css = iconToSVG(getIconData(simpleIcons, "csswizardry"));
 export const jquery = iconToSVG(getIconData(simpleIcons, "jquery"));
 export const gimp = iconToSVG(getIconData(simpleIcons, "gimp"));
+export const unsplash = iconToSVG(getIconData(simpleIcons, "unsplash"));
