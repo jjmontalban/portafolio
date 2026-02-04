@@ -153,12 +153,12 @@ export function getSkillCategories(t: (key: UIKey) => string) {
     {
       labelKey: 'frameworks',
       label: t('sobre.frameworksTitle'),
-      items: ["WordPress", "Laravel", "jQuery", "Vue", "Astro", "Sass"]
+      items: ["WordPress", "Laravel", "jQuery", "Vue", "Astro", "Sass", "PHPUnit" ]
     },
     {
       labelKey: 'tools',
       label: t('sobre.toolsTitle'),
-      items: ["Git", "PHPUnit", "Composer", "npm", "Jenkins", "Postman"]
+      items: ["Git", "Bash", "Composer", "npm", "Jenkins", "Postman"]
     },
     {
       labelKey: 'devops',
