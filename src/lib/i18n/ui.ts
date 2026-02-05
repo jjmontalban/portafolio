@@ -16,7 +16,7 @@ export const ui = {
     // Nav
     'nav.inicio': 'Inicio',
     'nav.servicios': 'Servicios',
-    'nav.casos': 'Casos',
+    'nav.casos': 'Proyectos',
     'nav.plugins': 'Plugins',
     'nav.contacto': 'Contacto',
     'nav.openMenu': 'Abrir menú',

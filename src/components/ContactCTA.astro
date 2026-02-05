@@ -3,7 +3,6 @@ import { getLangFromUrl, useTranslations, getLangPrefix } from '../lib/i18n/util
 
 interface Props {
   title: string;
-  text: string;
   button?: string;
 }
 
@@ -13,13 +12,11 @@ const prefix = getLangPrefix(lang);
 
 const {
   title,
-  text,
   button = t('cta.default')
 } = Astro.props;
 ---
 
 <section class="contact-cta">
   <h2>{title}</h2>
-  <p>{text}</p>
   <a class="cta" href={`${prefix}/contacto`}>{button}</a>
 </section>
