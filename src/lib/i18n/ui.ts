@@ -65,7 +65,7 @@ export const ui = {
     'servicios.rendimiento.li1': 'WPO y mejora de tiempos de carga',
     'servicios.rendimiento.li2': 'Mitigación de vulnerabilidades',
     'servicios.rendimiento.li3': 'Auditoría técnica y recomendaciones reales',
-    'servicios.cta.title': '¿Necesitas una solución a medida?',
+    'servicios.cta.title': '¿Una solución a medida?',
     'servicios.cta.text': 'Cuéntame qué problema técnico tienes y vemos cómo resolverlo.',
 
     // Casos

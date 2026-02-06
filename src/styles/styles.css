@@ -519,10 +519,7 @@ body[class^="page-"] * {
 
   /* Hide inicio, servicios, plugins on mobile */
   .nav-links a[href="/"],
-  .nav-links a[href="/en/"],
-  .nav-links a[href$="/servicios"],
-  .nav-links a[href$="/services"],
-  .nav-links a[href$="/plugins"] {
+  .nav-links a[href="/en/"] {
     display: none;
   }
 
@@ -1138,8 +1135,7 @@ body.page-servicios .service-card ul {
 .page-servicios .site-logo,
 .page-casos .site-logo,
 .page-plugins .site-logo,
-.page-contacto .site-logo,
-.page-about .site-logo {
+.page-contacto .site-logo {
   filter: invert(1);
 }
 
