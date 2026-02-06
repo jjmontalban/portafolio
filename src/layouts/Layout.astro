@@ -101,7 +101,7 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
       .site-logo{display:block;height:40px;width:auto}
       .page-servicios .site-logo,.page-casos .site-logo,.page-plugins .site-logo,.page-contacto .site-logo{filter:invert(1)}
       .burger{display:none}
-      @media(max-width:768px){.nav-links{display:none}.burger{display:block;background:none;border:none;font-size:32px;cursor:pointer;color:inherit}}
+      @media(max-width:991px){.nav-links{display:none}.burger{display:block;background:none;border:none;font-size:32px;cursor:pointer;color:inherit}}
     </style>
 
     <!-- Preload critical assets -->
@@ -142,7 +142,6 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
   </head>
 
   <body class={page}>
-    <a href="#main-content" class="skip-link">{t('a11y.skipToContent')}</a>
     <Navbar current={page?.replace("page-", "")} />
 
     <main id="main-content" class="main">
