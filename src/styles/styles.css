@@ -53,6 +53,8 @@ h1 {
   font-family: "Cubano", sans-serif;
   font-size: 3em;
   margin: 0 0 1rem 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 h2 {
