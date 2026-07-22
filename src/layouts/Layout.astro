@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { getLangFromUrl, useTranslations, translatePath } from '../lib/i18n/utils';
+import { getLangFromUrl, useTranslations, getAlternateRoute } from '../lib/i18n/utils';
 import "../styles/styles.css";
 
 interface Props {
@@ -28,7 +28,7 @@ const canonicalUrl = canonical.replace(/\/$/, "") + currentPath;
 
 // Alternate language URL for hreflang
 const alternateLang = lang === 'es' ? 'en' : 'es';
-const alternatePath = translatePath(currentPath, alternateLang);
+const alternatePath = getAlternateRoute(currentPath, lang, alternateLang);
 const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
 ---
 
