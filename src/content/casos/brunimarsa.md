@@ -1,10 +1,10 @@
 ---
 title: "Brunimarsa.es"
-order: 1
+order: 2
 link: "https://brunimarsa.es"
 
 intro:
-  es: "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid que captaba leads desde más de veinte formularios distintos."
+  es: "Brunimarsa es un servicio de asistencia sanitaria domiciliaria en Madrid para el que desarrollé una integración de captación de leads en WordPress."
   en: "Brunimarsa is a home healthcare service in Madrid that captured leads from over twenty different forms."
 
 intro-detail:
