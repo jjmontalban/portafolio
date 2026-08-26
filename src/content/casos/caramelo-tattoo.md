@@ -4,7 +4,7 @@ order: 3
 link: "https://caramelotattoo.com"
 
 intro:
-  es: "Caramelo Tattoo es un estudio de tatuajes que necesitaba una web con identidad visual potente y coherente con su estilo artístico."
+  es: "Caramelo Tattoo es un estudio de tatuajes para el que desarrollé un tema WordPress a medida y un sistema de reservas online."
   en: "Caramelo Tattoo is a tattoo studio that needed a website with a strong visual identity consistent with their artistic style."
 
 intro-detail:

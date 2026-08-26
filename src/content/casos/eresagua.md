@@ -4,7 +4,7 @@ order: 4
 link: "https://eresagua.com"
 
 intro:
-  es: "EresAgua es un proyecto de venta directa de un único producto distribuido en tres packs."
+  es: "EresAgua es un proyecto de venta directa sobre WooCommerce, con un único producto distribuido en tres packs."
   en: "EresAgua is a direct sales project for a single product distributed in three packs."
 
 intro-detail:

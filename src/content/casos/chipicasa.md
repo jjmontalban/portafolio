@@ -1,14 +1,14 @@
 ---
 title: "chipicasa.com"
-order: 2
+order: 1
 link: "https://chipicasa.com"
 
 intro:
-  es: "Chipicasa es una agencia inmobiliaria en Chipiona que necesitaba un sistema centralizado para gestionar propiedades, clientes y propietarios."
+  es: "Chipicasa es una agencia inmobiliaria en Chipiona para la que desarrollé un CRM completo dentro de WordPress, adaptado a su operativa diaria."
   en: "Chipicasa is a real estate agency in Chipiona that needed a centralized system to manage properties, clients and owners."
 
 intro-detail:
-  es: "Se desarrolló un CRM inmobiliario sobre WordPress con plugins y paneles a medida para el seguimiento de leads, informes y correos automatizados. Incluye feeds automáticos a Idealista, Fotocasa y Pisos.com para mantener los anuncios sincronizados."
+  es: "Desarrollé un CRM inmobiliario sobre WordPress con plugins y paneles a medida para gestionar propiedades, clientes, leads, informes y correos automatizados. También incluye feeds a Idealista, Fotocasa y Pisos.com para mantener los anuncios sincronizados."
   en: "A real estate CRM was developed on WordPress with custom plugins and panels for lead tracking, reports and automated emails. Includes automatic feeds to Idealista, Fotocasa and Pisos.com to keep listings synchronized."
 
 image: "/images/casos/chipicasa-1.webp"

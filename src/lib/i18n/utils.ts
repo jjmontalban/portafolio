@@ -143,7 +143,32 @@ export function getAlternateRoute(currentPath: string, currentLang: Lang, target
 /**
  * Get skill categories with translated labels
  */
-export function getSkillCategories(t: (key: UIKey) => string) {
+export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en') {
+  if (lang === 'es') {
+    return [
+      {
+        labelKey: 'languages',
+        label: t('sobre.languagesTitle'),
+        items: ["PHP", "JavaScript (ES6)", "TypeScript", "SQL", "CSS", "HTML"]
+      },
+      {
+        labelKey: 'frameworks',
+        label: t('sobre.frameworksTitle'),
+        items: ["WordPress", "WooCommerce", "PrestaShop", "Laravel", "Drupal", "Symfony", "Vue.js", "Astro", "jQuery", "PHPUnit", "Cypress"]
+      },
+      {
+        labelKey: 'tools',
+        label: t('sobre.toolsTitle'),
+        items: ["Git / Gitflow", "GitHub Actions", "GitLab", "Composer", "npm", "Jenkins", "Postman"]
+      },
+      {
+        labelKey: 'devops',
+        label: t('sobre.devopsTitle'),
+        items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "Linux"]
+      }
+    ];
+  }
+
   return [
     {
       labelKey: 'languages',
@@ -171,7 +196,45 @@ export function getSkillCategories(t: (key: UIKey) => string) {
 /**
  * Get jobs with translated position and period
  */
-export function getJobs(t: (key: UIKey) => string) {
+export function getJobs(t: (key: UIKey) => string, lang: Lang = 'en') {
+  if (lang === 'es') {
+    return [
+      {
+        company: "eXperience IT Solutions",
+        position: t('sobre.job1.position'),
+        period: t('sobre.job1.period')
+      },
+      {
+        company: "Galacticblum SL",
+        link: "https://www.galacticblum.com/",
+        position: t('sobre.job2.position'),
+        period: t('sobre.job2.period')
+      },
+      {
+        company: "Piranha Design",
+        link: "https://www.piranhadesigns.com/",
+        position: t('sobre.job3.position'),
+        period: t('sobre.job3.period')
+      },
+      {
+        company: "Bloonde",
+        link: "https://www.bloonde.com/",
+        position: t('sobre.job4.position'),
+        period: t('sobre.job4.period')
+      },
+      {
+        company: "Spanish-Slovak Chamber Commerce",
+        position: "Web Developer",
+        period: "Feb. 2013 - Oct. 2013"
+      },
+      {
+        company: "Evalfor",
+        position: "Software Developer",
+        period: "Ago. 2012 - Ene. 2013"
+      }
+    ];
+  }
+
   return [
     {
       company: "Fundación Telefónica",
