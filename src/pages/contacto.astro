@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { useTranslations } from '../lib/i18n/utils';
+import { useTranslations, getLocalizedRoute } from '../lib/i18n/utils';
 import type { Lang } from '../lib/i18n/utils';
 
 const lang: Lang = 'es';
@@ -203,6 +203,10 @@ const t = useTranslations(lang);
           <button type="submit" class="cta" id="submit-btn" data-text={t('contacto.enviar')} data-loading={t('contacto.enviando')}>
             {t('contacto.enviar')}
           </button>
+
+          <p class="form-privacy-notice">
+            {t('contacto.privacyNotice')} <a href={getLocalizedRoute(lang, 'privacy')}>{t('contacto.privacyNoticeLink')}</a>.
+          </p>
         </form>
       </div>
     </div>

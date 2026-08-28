@@ -305,6 +305,28 @@ body.page-contacto {
 
 }
 
+.site-footer__legal {
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  padding:0;
+  margin:0;
+  font-size:.85em;
+  opacity:.7;
+}
+
+.site-footer__legal-link {
+  color:inherit;
+  text-decoration:underline;
+}
+
+.site-footer__legal-link:hover {
+  opacity:.85;
+}
+
 /* ================================================================= */
 /*  PAGE COLOR SYSTEM                                                */
 /* ================================================================= */
@@ -838,6 +860,17 @@ img {
   margin-top: 12px;
 }
 
+.form-privacy-notice {
+  font-size: .8em;
+  opacity: .75;
+  margin-top: 8px;
+}
+
+.form-privacy-notice a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 body.page-contacto .contact-form .cta {
   background: transparent;
   color: white;
@@ -1240,6 +1273,24 @@ body.page-servicios .service-card ul {
 .job__period {
   font-size: 0.85rem !important;
   opacity: 0.6;
+}
+
+.legal-content {
+  max-width: 720px;
+  padding: 2rem 0;
+}
+
+.legal-content h2 {
+  margin-top: 2rem;
+  font-family: "Cubano", sans-serif;
+}
+
+.legal-content ul {
+  padding-left: 1.25rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.4rem;
 }
 
 @media (max-width: 768px) {

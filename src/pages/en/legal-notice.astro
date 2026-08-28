@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
+
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.aviso.meta.title')}
+  page="page-about"
+  description={t('legal.aviso.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.aviso.title')}</h1>
+
+      <h2>1. Identification</h2>
+      <p>
+        In compliance with Spanish law (article 10 of Law 34/2002, on
+        Information Society Services and Electronic Commerce - LSSICE), this
+        website, <strong>jjmontalban.com</strong>, is owned by:
+      </p>
+      <ul>
+        <li>Owner: Joaquín J. Montalbán</li>
+        <li>Trade name: jjmontalban</li>
+        <li>Location: Chipiona (Cádiz), Spain</li>
+        <li>Contact email: <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a></li>
+      </ul>
+
+      <h2>2. Purpose</h2>
+      <p>
+        This website is a professional portfolio. Its purpose is to showcase
+        services and projects (mainly WordPress, WooCommerce and PrestaShop
+        development) and to enable contact with potential clients through the
+        contact form. The site does not sell products or process direct
+        commercial transactions.
+      </p>
+
+      <h2>3. Terms of use</h2>
+      <p>
+        Access to and use of this website is free and does not require prior
+        registration. Users agree to make appropriate use of the content and
+        not to use it for unlawful purposes, to infringe third-party rights,
+        or to harm the operation of the site.
+      </p>
+
+      <h2>4. Intellectual property</h2>
+      <p>
+        The texts, images, source code, design and other content on this site
+        are the property of its owner or used with due authorization, unless
+        otherwise stated. Reproduction, in whole or in part, without express
+        authorization is prohibited.
+      </p>
+
+      <h2>5. Personal data</h2>
+      <p>
+        The processing of personal data submitted through the contact form is
+        detailed in the <a href="/en/privacy">Privacy Policy</a>.
+      </p>
+
+      <h2>6. Applicable law</h2>
+      <p>
+        These terms are governed by Spanish law. Any dispute arising from the
+        use of this website will be subject to the competent Spanish courts.
+      </p>
+    </section>
+  </div>
+</Layout>

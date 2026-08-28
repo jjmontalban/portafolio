@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
+
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.cookies.meta.title')}
+  page="page-about"
+  description={t('legal.cookies.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.cookies.title')}</h1>
+
+      <p>
+        <strong>jjmontalban.com</strong> does not use analytics, advertising
+        or tracking cookies. The site currently does not set any cookies or
+        store information in the browser (<code>localStorage</code> or
+        <code>sessionStorage</code>) to track your visit.
+      </p>
+
+      <p>
+        The contact form is submitted directly to Formspree via a browser
+        request, which does not involve installing any first-party cookies on
+        this site.
+      </p>
+
+      <p>
+        If any analytics tool or other cookie-based feature is added in the
+        future, this page will be updated and consent will be requested before
+        it is activated.
+      </p>
+
+      <p>
+        For more information on how data submitted through the contact form is
+        handled, see the <a href="/en/privacy">Privacy Policy</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

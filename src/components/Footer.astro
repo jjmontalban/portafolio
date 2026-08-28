@@ -1,5 +1,9 @@
 ---
 import { dev, wordpress, behance, github, linkedin, unsplash } from "../lib/icons";
+import { getLangFromUrl, useTranslations, getLocalizedRoute } from "../lib/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <footer class="site-footer">
   <div class="site-footer__inner">
@@ -39,6 +43,12 @@ import { dev, wordpress, behance, github, linkedin, unsplash } from "../lib/icon
           <span class="sr-only">Unsplash profile</span>
         </a>
       </li>
+    </ul>
+
+    <ul class="site-footer__legal" aria-label="Legal">
+      <li><a class="site-footer__legal-link" href={getLocalizedRoute(lang, 'legalNotice')}>{t('footer.legalNotice')}</a></li>
+      <li><a class="site-footer__legal-link" href={getLocalizedRoute(lang, 'privacy')}>{t('footer.privacy')}</a></li>
+      <li><a class="site-footer__legal-link" href={getLocalizedRoute(lang, 'cookies')}>{t('footer.cookies')}</a></li>
     </ul>
 
   </div>

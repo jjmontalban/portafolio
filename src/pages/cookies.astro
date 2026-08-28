@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from '../lib/i18n/utils';
+import type { Lang } from '../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.cookies.meta.title')}
+  page="page-about"
+  description={t('legal.cookies.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.cookies.title')}</h1>
+
+      <p>
+        <strong>jjmontalban.com</strong> no utiliza cookies de analítica,
+        publicidad ni seguimiento. Actualmente el sitio no instala ninguna
+        cookie ni guarda información en el navegador (<code>localStorage</code>
+        o <code>sessionStorage</code>) para rastrear tu visita.
+      </p>
+
+      <p>
+        El formulario de contacto se envía directamente a Formspree mediante
+        una petición del navegador, sin que esto implique la instalación de
+        cookies propias en este sitio.
+      </p>
+
+      <p>
+        Si en el futuro se incorporase alguna herramienta de analítica o
+        cualquier otro elemento que implique el uso de cookies, esta página se
+        actualizará y se solicitará el consentimiento correspondiente antes de
+        activarlas.
+      </p>
+
+      <p>
+        Para más información sobre cómo se tratan los datos que envías a
+        través del formulario de contacto, consulta la
+        <a href="/privacidad">Política de Privacidad</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

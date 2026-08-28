@@ -10,6 +10,9 @@ export const routes = {
     cases: '/casos',
     plugins: '/plugins',
     about: '/sobre',
+    legalNotice: '/aviso-legal',
+    privacy: '/privacidad',
+    cookies: '/cookies',
   },
   en: {
     services: '/services',
@@ -17,6 +20,9 @@ export const routes = {
     cases: '/cases',
     plugins: '/plugins',
     about: '/about',
+    legalNotice: '/legal-notice',
+    privacy: '/privacy',
+    cookies: '/cookies',
   },
 } as const;
 
@@ -164,7 +170,7 @@ export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en')
       {
         labelKey: 'devops',
         label: t('sobre.devopsTitle'),
-        items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "Linux"]
+        items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "Linux", "Vercel", "Heroku", "Node.js"]
       }
     ];
   }
@@ -188,7 +194,7 @@ export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en')
     {
       labelKey: 'devops',
       label: t('sobre.devopsTitle'),
-      items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics"]
+      items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics", "Vercel", "Heroku", "Node.js"]
     }
   ];
 }

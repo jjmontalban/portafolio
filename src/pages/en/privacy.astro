@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
+
+const lang: Lang = 'en';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.privacidad.meta.title')}
+  page="page-about"
+  description={t('legal.privacidad.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.privacidad.title')}</h1>
+
+      <h2>1. Data controller</h2>
+      <p>
+        Joaquín J. Montalbán ("jjmontalban"), based in Chipiona (Cádiz), Spain,
+        is the controller responsible for the personal data collected through
+        the contact form on <strong>jjmontalban.com</strong>. You can reach out
+        at any time at <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a>.
+      </p>
+
+      <h2>2. What data is collected</h2>
+      <p>
+        Through the contact form, the following data may be collected,
+        depending on the fields the user chooses to fill in:
+      </p>
+      <ul>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Type of project you're inquiring about</li>
+        <li>Whether you already have a website, and its URL</li>
+        <li>Current hosting provider</li>
+        <li>Experience level managing your current website</li>
+        <li>Whether you work with an agency or design studio, and its name</li>
+        <li>Available brand assets (logo, colors, fonts, brand manual, photos)</li>
+        <li>The free-text message written by the user</li>
+      </ul>
+
+      <h2>3. Purpose of processing</h2>
+      <p>
+        This data is used exclusively to respond to the inquiry or quote
+        request submitted through the form. It is not used to send unsolicited
+        marketing communications, nor shared with third parties for
+        advertising purposes.
+      </p>
+
+      <h2>4. Legal basis</h2>
+      <p>
+        The legal basis for this processing is the user's consent, given by
+        voluntarily filling in and submitting the contact form.
+      </p>
+
+      <h2>5. Data processor</h2>
+      <p>
+        Form submissions are handled through <strong>Formspree</strong>, a
+        third-party service that receives and forwards the form content by
+        email. Formspree acts as a data processor and only processes the data
+        to enable delivery of the message. You can review their own privacy
+        policy at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>.
+      </p>
+
+      <h2>6. Data retention</h2>
+      <p>
+        Data is kept only for as long as necessary to handle and respond to
+        the inquiry, and is not reused afterwards for other purposes.
+      </p>
+
+      <h2>7. Your rights</h2>
+      <p>
+        You can exercise your rights of access, rectification, erasure and
+        objection regarding your personal data by emailing
+        <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

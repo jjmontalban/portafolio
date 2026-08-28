@@ -22,6 +22,11 @@ export const ui = {
     'nav.openMenu': 'Abrir menú',
     'nav.closeMenu': 'Cerrar menú',
 
+    // Footer - legal
+    'footer.legalNotice': 'Aviso legal',
+    'footer.privacy': 'Privacidad',
+    'footer.cookies': 'Cookies',
+
     // Home
     'home.hero.intro': 'Hola, soy JJ, ingeniero de software especializado en WordPress y WooCommerce. Desarrollo soluciones a medida y resuelvo problemas técnicos en webs que ya están funcionando.',
     'home.hero.colaboro': 'También trabajo con PrestaShop, Laravel, Drupal y otros sistemas PHP. Acepto encargos puntuales por horas o bolsa de horas, tanto para negocios como para agencias e implementadores que necesitan apoyo técnico.',
@@ -183,6 +188,19 @@ export const ui = {
     'contacto.error.email': 'Por favor, introduce un email válido',
     'contacto.error.nombre': 'Por favor, introduce tu nombre',
     'contacto.enviarOtro': 'Enviar otro mensaje',
+    'contacto.privacyNotice': 'Al enviar este formulario aceptas la',
+    'contacto.privacyNoticeLink': 'Política de Privacidad',
+
+    // Legal
+    'legal.aviso.meta.title': 'Aviso Legal | JJMontalban',
+    'legal.aviso.meta.description': 'Aviso legal e identificación del titular de jjmontalban.com.',
+    'legal.aviso.title': 'Aviso Legal',
+    'legal.privacidad.meta.title': 'Política de Privacidad | JJMontalban',
+    'legal.privacidad.meta.description': 'Cómo se tratan los datos personales enviados a través del formulario de contacto de jjmontalban.com.',
+    'legal.privacidad.title': 'Política de Privacidad',
+    'legal.cookies.meta.title': 'Política de Cookies | JJMontalban',
+    'legal.cookies.meta.description': 'Información sobre el uso de cookies en jjmontalban.com.',
+    'legal.cookies.title': 'Política de Cookies',
 
     // Accesibilidad
     'a11y.skipToContent': 'Saltar al contenido principal',
@@ -211,6 +229,11 @@ export const ui = {
     'nav.contacto': 'Contact',
     'nav.openMenu': 'Open menu',
     'nav.closeMenu': 'Close menu',
+
+    // Footer - legal
+    'footer.legalNotice': 'Legal notice',
+    'footer.privacy': 'Privacy',
+    'footer.cookies': 'Cookies',
 
     // Home
     'home.hero.intro': "Hi, my name is JJ. I'm a software engineer with over 10 years of experience building solutions in PHP and JavaScript across multiple platforms.",
@@ -371,6 +394,19 @@ export const ui = {
     'contacto.error.email': 'Please enter a valid email',
     'contacto.error.nombre': 'Please enter your name',
     'contacto.enviarOtro': 'Send another message',
+    'contacto.privacyNotice': 'By submitting this form you accept the',
+    'contacto.privacyNoticeLink': 'Privacy Policy',
+
+    // Legal
+    'legal.aviso.meta.title': 'Legal Notice | JJMontalban',
+    'legal.aviso.meta.description': 'Legal notice and identification of the owner of jjmontalban.com.',
+    'legal.aviso.title': 'Legal Notice',
+    'legal.privacidad.meta.title': 'Privacy Policy | JJMontalban',
+    'legal.privacidad.meta.description': 'How personal data submitted through the jjmontalban.com contact form is handled.',
+    'legal.privacidad.title': 'Privacy Policy',
+    'legal.cookies.meta.title': 'Cookie Policy | JJMontalban',
+    'legal.cookies.meta.description': 'Information about the use of cookies on jjmontalban.com.',
+    'legal.cookies.title': 'Cookie Policy',
 
     // Accessibility
     'a11y.skipToContent': 'Skip to main content',

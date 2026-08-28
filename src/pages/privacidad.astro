@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from '../lib/i18n/utils';
+import type { Lang } from '../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.privacidad.meta.title')}
+  page="page-about"
+  description={t('legal.privacidad.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.privacidad.title')}</h1>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        Joaquín J. Montalbán ("jjmontalban"), con domicilio en Chipiona (Cádiz),
+        España, es el responsable del tratamiento de los datos personales que se
+        recogen a través del formulario de contacto de <strong>jjmontalban.com</strong>.
+        Puedes contactar en cualquier momento a través de
+        <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a>.
+      </p>
+
+      <h2>2. Qué datos se recogen</h2>
+      <p>
+        A través del formulario de contacto se recogen los siguientes datos, según
+        los campos que el usuario decida completar:
+      </p>
+      <ul>
+        <li>Nombre</li>
+        <li>Dirección de email</li>
+        <li>Tipo de proyecto sobre el que consulta</li>
+        <li>Si dispone o no de sitio web actual, y su URL</li>
+        <li>Hosting actual</li>
+        <li>Nivel de experiencia gestionando su web</li>
+        <li>Si colabora con una agencia o estudio de diseño, y el nombre de esta</li>
+        <li>Material corporativo disponible (logotipo, colores, tipografías, manual de marca, fotografías)</li>
+        <li>El mensaje libre escrito por el usuario</li>
+      </ul>
+
+      <h2>3. Finalidad del tratamiento</h2>
+      <p>
+        Los datos se utilizan exclusivamente para responder a la consulta o
+        solicitud de presupuesto realizada a través del formulario. No se utilizan
+        para enviar comunicaciones comerciales no solicitadas ni se ceden a
+        terceros con fines publicitarios.
+      </p>
+
+      <h2>4. Base legal</h2>
+      <p>
+        La base legal para este tratamiento es el consentimiento del usuario,
+        prestado al rellenar y enviar voluntariamente el formulario de contacto.
+      </p>
+
+      <h2>5. Encargado del tratamiento</h2>
+      <p>
+        El envío del formulario se gestiona a través de <strong>Formspree</strong>,
+        un servicio externo que recibe y reenvía por email el contenido del
+        formulario. Formspree actúa como encargado del tratamiento y procesa los
+        datos únicamente para permitir la recepción del mensaje. Puedes consultar
+        su propia política de privacidad en
+        <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>.
+      </p>
+
+      <h2>6. Conservación de los datos</h2>
+      <p>
+        Los datos se conservan únicamente durante el tiempo necesario para
+        gestionar y responder a la consulta, y no se reutilizan posteriormente
+        para otros fines.
+      </p>
+
+      <h2>7. Derechos del usuario</h2>
+      <p>
+        Puedes ejercer tus derechos de acceso, rectificación, supresión y
+        oposición sobre tus datos personales enviando un correo a
+        <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

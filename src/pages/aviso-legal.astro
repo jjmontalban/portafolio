@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { useTranslations } from '../lib/i18n/utils';
+import type { Lang } from '../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('legal.aviso.meta.title')}
+  page="page-about"
+  description={t('legal.aviso.meta.description')}
+>
+  <div class="container">
+    <section class="legal-content reveal">
+      <h1>{t('legal.aviso.title')}</h1>
+
+      <h2>1. Datos identificativos</h2>
+      <p>
+        En cumplimiento del deber de información recogido en el artículo 10 de la
+        Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información
+        y de Comercio Electrónico (LSSICE), se informa que este sitio web,
+        <strong>jjmontalban.com</strong>, es titularidad de:
+      </p>
+      <ul>
+        <li>Titular: Joaquín J. Montalbán</li>
+        <li>Nombre comercial: jjmontalban</li>
+        <li>Localidad: Chipiona (Cádiz), España</li>
+        <li>Email de contacto: <a href="mailto:jjmontalban@gmail.com">jjmontalban@gmail.com</a></li>
+      </ul>
+
+      <h2>2. Objeto</h2>
+      <p>
+        Este sitio web tiene carácter de portafolio profesional. Su finalidad es
+        mostrar servicios, proyectos y trabajos de desarrollo web (principalmente
+        WordPress, WooCommerce y PrestaShop) y facilitar el contacto con clientes
+        potenciales a través del formulario de contacto. El sitio no realiza venta
+        de productos ni transacciones comerciales directas.
+      </p>
+
+      <h2>3. Condiciones de uso</h2>
+      <p>
+        El acceso y uso de este sitio web es gratuito y no requiere registro previo.
+        El usuario se compromete a hacer un uso adecuado de los contenidos y a no
+        emplearlos para fines ilícitos, lesivos de derechos de terceros o que puedan
+        dañar el funcionamiento del sitio.
+      </p>
+
+      <h2>4. Propiedad intelectual</h2>
+      <p>
+        Los textos, imágenes, código fuente, diseño y demás contenidos de este sitio
+        son propiedad de su titular o se utilizan con la debida autorización, salvo
+        que se indique lo contrario. Queda prohibida su reproducción total o parcial
+        sin autorización expresa.
+      </p>
+
+      <h2>5. Datos personales</h2>
+      <p>
+        El tratamiento de los datos personales facilitados a través del formulario
+        de contacto se detalla en la <a href="/privacidad">Política de Privacidad</a>.
+      </p>
+
+      <h2>6. Legislación aplicable</h2>
+      <p>
+        Estas condiciones se rigen por la legislación española. Para cualquier
+        controversia derivada del uso de este sitio, las partes se someten a los
+        Juzgados y Tribunales que correspondan conforme a derecho.
+      </p>
+    </section>
+  </div>
+</Layout>

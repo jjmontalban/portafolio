@@ -36,24 +36,6 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
 <html lang={lang}>
   <head>
 
-    <!-- GA4 Internal Traffic Filter -->
-    <script is:inline>
-      (function() {
-        const gaId = 'G-FS8BJFW7H8';
-        const urlParams = new URLSearchParams(window.location.search);
-
-        if (urlParams.get('admin') === 'true') {
-          localStorage.setItem('exclude_ga', 'true');
-          alert('Filtro activado: Tus visitas a jjmontalban.com ya no se contarán en este navegador.');
-        }
-
-        if (localStorage.getItem('exclude_ga') === 'true') {
-          window['ga-disable-' + gaId] = true;
-          console.log('Google Analytics bloqueado para tráfico interno.');
-        }
-      })();
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
