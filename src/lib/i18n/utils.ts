@@ -24,14 +24,14 @@ export type RouteKey = keyof typeof routes.es;
 
 /**
  * Get language from URL
- * New structure: English at root (/), Spanish at /es/
+ * Structure: Spanish at root (/), English at /en/
  */
 export function getLangFromUrl(url: URL): Lang {
   const pathname = url.pathname;
-  if (pathname.startsWith('/es/') || pathname === '/es') {
-    return 'es';
+  if (pathname.startsWith('/en/') || pathname === '/en') {
+    return 'en';
   }
-  return 'en';
+  return 'es';
 }
 
 export function useTranslations(lang: Lang) {
@@ -45,39 +45,36 @@ export function useTranslations(lang: Lang) {
  */
 export function getRouteFromUrl(url: URL): string {
   const pathname = url.pathname;
-
-  // Remove /es prefix if present
-  if (pathname.startsWith('/es/')) {
+  if (pathname.startsWith('/en/')) {
     return pathname.slice(3) || '/';
   }
-  if (pathname === '/es') {
+  if (pathname === '/en') {
     return '/';
   }
-
   return pathname;
 }
 
 /**
  * Translate path to the target language
- * English: / (root), Spanish: /es/
+ * Spanish: / (root), English: /en/
  */
 export function translatePath(path: string, lang: Lang): string {
   let cleanPath = path;
 
-  if (cleanPath.startsWith('/es/')) {
+  if (cleanPath.startsWith('/en/')) {
     cleanPath = cleanPath.slice(3);
-  } else if (cleanPath === '/es') {
+  } else if (cleanPath === '/en') {
     cleanPath = '/';
   }
 
-  if (lang === 'es') {
+  if (lang === 'en') {
     if (cleanPath === '/') {
-      return '/es/';
+      return '/en/';
     }
-    return '/es' + cleanPath;
+    return '/en' + cleanPath;
   }
 
-  // English: use root (no prefix)
+  // Spanish: use root (no prefix)
   return cleanPath || '/';
 }
 
@@ -87,10 +84,10 @@ export function getAlternateLanguage(currentLang: Lang): Lang {
 
 /**
  * Get the base path for navigation links based on language
- * English: '', Spanish: '/es'
+ * Spanish: '', English: '/en'
  */
 export function getLangPrefix(lang: Lang): string {
-  return lang === 'es' ? '/es' : '';
+  return lang === 'en' ? '/en' : '';
 }
 
 /**
@@ -106,13 +103,13 @@ export function getLocalizedRoute(lang: Lang, routeKey: RouteKey): string {
  */
 export function getAlternateRoute(currentPath: string, currentLang: Lang, targetLang: Lang): string {
   // Handle home page
-  if (currentPath === '/' || currentPath === '/es' || currentPath === '/es/') {
-    return targetLang === 'es' ? '/es/' : '/';
+  if (currentPath === '/' || currentPath === '/en' || currentPath === '/en/') {
+    return targetLang === 'en' ? '/en/' : '/';
   }
 
   // Get the path without language prefix
   let cleanPath = currentPath;
-  if (cleanPath.startsWith('/es/')) {
+  if (cleanPath.startsWith('/en/')) {
     cleanPath = cleanPath.slice(3);
   }
 
@@ -124,20 +121,20 @@ export function getAlternateRoute(currentPath: string, currentLang: Lang, target
     if (cleanPath === route || cleanPath.startsWith(route + '/')) {
       const targetRoute = targetRoutes[key as RouteKey];
       const suffix = cleanPath.slice(route.length);
-      const prefix = targetLang === 'es' ? '/es' : '';
+      const prefix = targetLang === 'en' ? '/en' : '';
       return prefix + targetRoute + suffix;
     }
   }
 
   // Fallback: just add/remove prefix
-  const prefix = targetLang === 'es' ? '/es' : '';
+  const prefix = targetLang === 'en' ? '/en' : '';
   return prefix + cleanPath;
 }
 
 /**
  * Get skill categories with translated labels
  */
-export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en') {
+export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'es') {
   return [
     {
       labelKey: 'languages',
@@ -165,7 +162,7 @@ export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en')
 /**
  * Get jobs with translated position and period
  */
-export function getJobs(t: (key: UIKey) => string, lang: Lang = 'en') {
+export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
   if (lang === 'es') {
     return [
       {

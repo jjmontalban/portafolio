@@ -8,10 +8,10 @@ export const defaultLang = 'es';
 export const ui = {
   es: {
     // Meta
-    'meta.title': 'JJMontalban | Angular, React, TypeScript y Node.js',
-    'meta.description': 'Desarrollador full stack especializado en Angular, TypeScript, React y Node.js con NestJS. Mas de 10 anos construyendo aplicaciones web modernas.',
-    'meta.jobTitle': 'Desarrollador full stack | Angular, React y Node.js',
-    'meta.jobDescription': 'Desarrollador full stack especializado en Angular, TypeScript, React, Node.js y NestJS. Tambien desarrolla y mantiene soluciones WordPress cuando el proyecto lo requiere.',
+    'meta.title': 'JJMontalban | Ingeniero de software full stack',
+    'meta.description': 'Ingeniero de software full stack con más de 10 años de experiencia construyendo aplicaciones web.',
+    'meta.jobTitle': 'Ingeniero de software full stack',
+    'meta.jobDescription': 'Ingeniero de software full stack con más de 10 años de experiencia. Trabaja con Angular, TypeScript, React, Node.js y WordPress.',
 
     // Nav
     'nav.inicio': 'Inicio',
@@ -23,8 +23,8 @@ export const ui = {
     'nav.closeMenu': 'Cerrar menú',
 
     // Home
-    'home.hero.intro': 'Hola, soy JJ. Llevo mas de 10 anos construyendo aplicaciones web. Los ultimos anos he trabajado principalmente con Angular y TypeScript en el frontend, y con Node.js y NestJS en el backend.',
-    'home.hero.colaboro': 'Tambien trabajo con React y con WordPress cuando el proyecto lo requiere. Acepto encargos por proyecto o bolsa de horas, de forma remota y colaborativa.',
+    'home.hero.intro': 'Hola, soy JJ. Soy ingeniero de software full stack con más de 10 años de experiencia construyendo aplicaciones web.',
+    'home.hero.colaboro': 'He trabajado con distintas tecnologías a lo largo de mi carrera, incorporando TypeScript y Angular a proyectos existentes. Acepto encargos por proyecto o bolsa de horas, de forma remota.',
     'home.hero.cta': 'Hablemos de tu proyecto',
     'home.servicios.title': 'Servicios',
     'home.servicios.desc': 'Incidencias, desarrollo a medida, integraciones, e-commerce y mejoras técnicas sobre WordPress, WooCommerce y otros sistemas PHP.',
@@ -44,29 +44,29 @@ export const ui = {
     'servicios.meta.title': 'Servicios | JJMontalban',
     'servicios.meta.description': 'Desarrollo frontend con Angular y React, backend con Node.js y NestJS, integraciones y soporte en WordPress y otros sistemas PHP.',
     'servicios.title': 'Mi trabajo',
-    'servicios.lead': 'Desarrollo aplicaciones web modernas y resuelvo problemas tecnicos sobre sistemas existentes. El foco esta en Angular, React, TypeScript en el frontend y Node.js con NestJS en el backend.',
+    'servicios.lead': 'Desarrollo aplicaciones web modernas y resuelvo problemas técnicos sobre sistemas existentes. El foco está en Angular, React, TypeScript en el frontend y Node.js con NestJS en el backend.',
     'servicios.wordpress.title': 'Frontend moderno',
-    'servicios.wordpress.desc': 'Desarrollo de SPAs, interfaces y componentes con Angular, React y TypeScript. Tambien temas y plugins personalizados en WordPress cuando el proyecto lo requiere.',
+    'servicios.wordpress.desc': 'Desarrollo de SPAs, interfaces y componentes con Angular, React y TypeScript. También temas y plugins personalizados en WordPress cuando el proyecto lo requiere.',
     'servicios.wordpress.li1': 'Angular y TypeScript',
     'servicios.wordpress.li2': 'React y componentes modernos',
     'servicios.wordpress.li3': 'Temas y plugins WordPress personalizados',
     'servicios.mejoras.title': 'Backend y APIs',
-    'servicios.mejoras.desc': 'Desarrollo de APIs REST y servicios backend con Node.js y NestJS. Bases de datos, autenticacion y logica de negocio.',
+    'servicios.mejoras.desc': 'Desarrollo de APIs REST y servicios backend con Node.js y NestJS. Bases de datos, autenticación y lógica de negocio.',
     'servicios.mejoras.li1': 'Node.js y NestJS',
-    'servicios.mejoras.li2': 'APIs REST, autenticacion y seguridad',
+    'servicios.mejoras.li2': 'APIs REST, autenticación y seguridad',
     'servicios.mejoras.li3': 'Integraciones con bases de datos y servicios externos',
-    'servicios.integraciones.title': 'Integraciones y automatizacion',
+    'servicios.integraciones.title': 'Integraciones y automatización',
     'servicios.integraciones.desc': 'Conecto aplicaciones con APIs, plataformas externas y procesos internos para reducir trabajo manual y sincronizar datos.',
     'servicios.integraciones.li1': 'APIs REST y GraphQL',
-    'servicios.integraciones.li2': 'Importacion, exportacion y sincronizacion de datos',
-    'servicios.integraciones.li3': 'Automatizacion de flujos y notificaciones',
+    'servicios.integraciones.li2': 'Importación, exportación y sincronización de datos',
+    'servicios.integraciones.li3': 'Automatización de flujos y notificaciones',
     'servicios.rendimiento.title': 'Soporte en otros sistemas',
-    'servicios.rendimiento.desc': 'Ademas de Angular y Node.js, puedo incorporarme a trabajos sobre PrestaShop, Laravel, Drupal y WordPress. Soporte tecnico, auditoria y mejoras evolutivas.',
+    'servicios.rendimiento.desc': 'Además de Angular y Node.js, puedo incorporarme a trabajos sobre PrestaShop, Laravel, Drupal y WordPress. Soporte técnico, auditoría y mejoras evolutivas.',
     'servicios.rendimiento.li1': 'WordPress, WooCommerce y PrestaShop',
     'servicios.rendimiento.li2': 'Desarrollo backend con PHP y Laravel',
     'servicios.rendimiento.li3': 'Trabajo colaborativo con agencias e implementadores',
-    'servicios.cta.title': '¿Tienes una tarea tecnica concreta?',
-    'servicios.cta.text': 'Cuentame el problema, la plataforma y el alcance que necesitas.',
+    'servicios.cta.title': '¿Tienes una tarea técnica concreta?',
+    'servicios.cta.text': 'Cuéntame el problema, la plataforma y el alcance que necesitas.',
 
     // Casos
     'casos.meta.title': 'Casos de éxito | JJMontalban',
@@ -110,7 +110,7 @@ export const ui = {
     'plugins.cta.button': 'Cuéntame',
 
     // Sobre
-    'sobre.desc1': 'Soy desarrollador full stack. Durante mas de 10 anos he construido aplicaciones web en distintas tecnologias; en los ultimos anos mi trabajo principal esta en Angular y TypeScript en el frontend, y en Node.js con NestJS en el backend. Tambien trabajo con React y con WordPress cuando el proyecto lo requiere. Esta combinacion de frontend moderno, APIs REST y experiencia con plataformas consolidadas me permite incorporarme a proyectos desde distintos angulos.',
+    'sobre.desc1': 'Soy ingeniero de software full stack. Durante más de 10 años he construido aplicaciones web con distintas tecnologías. En los últimos años he incorporado TypeScript y Angular a proyectos existentes. También trabajo con React y WordPress cuando el proyecto lo requiere.',
     'sobre.languagesTitle': 'Lenguajes',
     'sobre.frameworksTitle': 'Frameworks',
     'sobre.devopsTitle': 'DevOps',
@@ -198,10 +198,10 @@ export const ui = {
 
   en: {
     // Meta
-    'meta.title': 'JJMontalban | Angular, React, TypeScript & Node.js developer',
-    'meta.description': 'Full stack developer specialised in Angular, TypeScript, React and Node.js with NestJS. Over 10 years building modern web applications.',
-    'meta.jobTitle': 'Full stack developer | Angular, React and Node.js',
-    'meta.jobDescription': 'Full stack developer specialised in Angular, TypeScript, React, Node.js and NestJS. Also develops and maintains WordPress solutions when the project requires it.',
+    'meta.title': 'JJMontalban | Full stack software engineer',
+    'meta.description': 'Full stack software engineer with over 10 years of experience building web applications.',
+    'meta.jobTitle': 'Full stack software engineer',
+    'meta.jobDescription': 'Full stack software engineer with over 10 years of experience. Works with Angular, TypeScript, React, Node.js and WordPress.',
 
     // Nav
     'nav.inicio': 'Home',
@@ -213,8 +213,8 @@ export const ui = {
     'nav.closeMenu': 'Close menu',
 
     // Home
-    'home.hero.intro': "Hi, I'm JJ — a full stack developer with over 10 years of experience. My main focus is Angular and TypeScript on the frontend, and Node.js with NestJS on the backend.",
-    'home.hero.colaboro': "I also work with React and WordPress when the project calls for it. I offer technical support by project or hour packages, working remotely. If you have a problem to solve, let's talk.",
+    'home.hero.intro': "Hi, I'm JJ — a full stack software engineer with over 10 years of experience building web applications.",
+    'home.hero.colaboro': "I have worked with a range of technologies throughout my career, adding TypeScript and Angular to existing projects. I take on project-based or hourly work, remotely.",
     'home.hero.cta': "Let's talk about your project",
     'home.servicios.title': 'Services',
     'home.servicios.desc': 'Custom development, integrations, e-commerce or any technical improvement on existing projects.',
@@ -300,7 +300,7 @@ export const ui = {
     'plugins.cta.button': 'Tell me',
 
     // Sobre
-    'sobre.desc1': "I am a full stack developer. Over the past 10+ years I have built web applications across different technology stacks. My main focus now is Angular and TypeScript on the frontend and Node.js with NestJS on the backend — I also work with React and WordPress when the project calls for it. This mix of modern frontend, REST APIs and established platform experience lets me plug into projects from different angles.",
+    'sobre.desc1': "I am a full stack software engineer. Over the past 10+ years I have built web applications across different technology stacks. In recent years I have added TypeScript and Angular to existing projects. I also work with React and WordPress when the project calls for it.",
     'sobre.languagesTitle': 'Languages',
     'sobre.frameworksTitle': 'Frameworks',
     'sobre.devopsTitle': 'DevOps',

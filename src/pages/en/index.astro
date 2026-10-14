@@ -18,52 +18,45 @@ const t = useTranslations(lang);
     <!-- HERO -->
     <section>
       <h1>Joaquín J. Montalbán</h1>
-
-      <p>
-        {t('home.hero.intro')}
-      </p>
+      <p>{t('home.hero.intro')}</p>
       <p>{t('home.hero.colaboro')}</p>
-
-      <a class="cta cta-primary" href="/en/contact">{t('home.hero.cta')}</a>
     </section>
 
-    <!-- SERVICIOS -->
+    <!-- SERVICES -->
     <section>
       <h2>{t('home.servicios.title')}</h2>
       <p>
         {t('home.servicios.desc')}
-        <a class="section-link section-link-services" href="/en/services">
-          {t('home.servicios.link')}
-        </a>
+        <a class="section-link" href="/en/services">{t('home.servicios.link')}</a>
       </p>
     </section>
 
-    <!-- PLUGINS / HERRAMIENTAS -->
+    <!-- PLUGINS -->
     <section>
       <h2>{t('home.plugins.title')}</h2>
       <p>
         {t('home.plugins.desc')}
-        <a class="section-link section-link-plugins" href="/en/plugins">
-          {t('home.plugins.link')}
-        </a>
+        <a class="section-link" href="/en/plugins">{t('home.plugins.link')}</a>
       </p>
     </section>
 
-    <!-- CASOS -->
+    <!-- CASES -->
     <section>
       <h2>{t('home.casos.title')}</h2>
       <p>
         {t('home.casos.desc')}
-        <a class="section-link section-link-cases" href="/en/cases">
-          {t('home.casos.link')}
-        </a>
+        <a class="section-link" href="/en/cases">{t('home.casos.link')}</a>
       </p>
     </section>
 
-    <!-- CTA FINAL -->
-    <ContactCTA
-      title={t('home.cta.title')}
-    />
+    <!-- ABOUT paragraph before final CTA -->
+    <p>
+      {t('home.sobre.desc')}
+      <a class="section-link" href="/en/about">{t('home.sobre.link')}</a>
+    </p>
+
+    <!-- FINAL CTA -->
+    <ContactCTA title={t('home.cta.title')} />
 
   </div>
 </Layout>
