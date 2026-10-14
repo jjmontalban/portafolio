@@ -259,6 +259,20 @@ body.page-contacto {
   color:var(--section-link-hover-color,#000);
 }
 
+body.page-servicios .section-link,
+body.page-casos .section-link,
+body.page-plugins .section-link,
+body.page-contacto .section-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.page-servicios .section-link:hover,
+body.page-casos .section-link:hover,
+body.page-plugins .section-link:hover,
+body.page-contacto .section-link:hover {
+  color: #fff;
+}
+
 /* ================================================================= */
 /*  FOOTER                                                           */
 /* ================================================================= */
