@@ -5,7 +5,7 @@ import { wordpress, sitio, github } from "../lib/icons";
 import { useTranslations } from '../lib/i18n/utils';
 import type { Lang } from '../lib/i18n/utils';
 
-const lang: Lang = 'es';
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 ---
 
@@ -17,6 +17,13 @@ const t = useTranslations(lang);
   <div class="container">
 
     <section>
+
+      <p class="section-nav">
+        <a class="section-link" href="/">← Home</a>
+        · <a class="section-link" href="/services">Services</a>
+        · <a class="section-link" href="/cases">Projects</a>
+        · <a class="section-link" href="/about">About</a>
+      </p>
 
       <h1>{t('plugins.title')}</h1>
 
@@ -170,6 +177,13 @@ const t = useTranslations(lang);
         </article>
 
       </section>
+
+      <p class="section-nav">
+        <a class="section-link" href="/services">Services</a>
+        · <a class="section-link" href="/cases">Projects</a>
+        · <a class="section-link" href="/about">About</a>
+        · <a class="section-link" href="/contact">Contact</a>
+      </p>
     </section>
 
       <ContactCTA

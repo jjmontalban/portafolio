@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('meta.title')}
+  page="page-home"
+  description={t('meta.description')}
+>
+  <div class="container">
+
+    <!-- HERO -->
+    <section>
+      <h1>Joaquín J. Montalbán</h1>
+
+      <p>
+        {t('home.hero.intro')}
+      </p>
+      <p>{t('home.hero.colaboro')}</p>
+
+      <a class="cta cta-primary" href="/es/contacto">{t('home.hero.cta')}</a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section>
+      <h2>{t('home.servicios.title')}</h2>
+      <p>
+        {t('home.servicios.desc')}
+        <a class="section-link" href="/es/servicios">
+          {t('home.servicios.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- PLUGINS / HERRAMIENTAS -->
+    <section>
+      <h2>{t('home.plugins.title')}</h2>
+      <p>
+        {t('home.plugins.desc')}
+        <a class="section-link" href="/es/plugins">
+          {t('home.plugins.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- CASOS -->
+    <section>
+      <h2>{t('home.casos.title')}</h2>
+      <p>
+        {t('home.casos.desc')}
+        <a class="section-link" href="/es/casos">
+          {t('home.casos.link')}
+        </a>
+      </p>
+    </section>
+
+    <!-- PERFIL PROFESIONAL -->
+    <section>
+      <h2>Perfil</h2>
+      <p>
+        {t('home.sobre.desc')}
+        <a class="section-link" href="/es/sobre">
+          {t('home.sobre.link')}
+        </a>
+      </p>
+      <a class="cta cta-primary" href="/es/sobre">{t('home.sobre.link')}</a>
+    </section>
+
+    <!-- CTA FINAL -->
+    <ContactCTA
+      title={t('home.cta.title')}
+    />
+
+  </div>
+</Layout>

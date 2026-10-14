@@ -49,9 +49,17 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
 
         if (localStorage.getItem('exclude_ga') === 'true') {
           window['ga-disable-' + gaId] = true;
-          console.log('Google Analytics bloqueado para tráfico interno.');
         }
       })();
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS8BJFW7H8" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FS8BJFW7H8', { anonymize_ip: true });
     </script>
 
     <meta charset="UTF-8" />
@@ -158,6 +166,50 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
     </script>
 
     <script src="/scripts/nav.js" defer></script>
+
+    <!-- GA4 Click Tracking -->
+    <script>
+      function initGATracking() {
+        // Track CTA button clicks
+        document.querySelectorAll('.cta, .cta-primary').forEach((el) => {
+          el.addEventListener('click', () => {
+            if (typeof gtag === 'undefined') return;
+            gtag('event', 'cta_click', {
+              event_category: 'engagement',
+              event_label: (el as HTMLElement).textContent?.trim() || '',
+              page_location: window.location.href,
+            });
+          });
+        });
+
+        // Track section navigation links
+        document.querySelectorAll('.section-link').forEach((el) => {
+          el.addEventListener('click', () => {
+            if (typeof gtag === 'undefined') return;
+            gtag('event', 'nav_click', {
+              event_category: 'navigation',
+              event_label: (el as HTMLAnchorElement).href || '',
+              link_text: (el as HTMLElement).textContent?.trim() || '',
+            });
+          });
+        });
+
+        // Track footer social links
+        document.querySelectorAll('.site-footer__link').forEach((el) => {
+          el.addEventListener('click', () => {
+            if (typeof gtag === 'undefined') return;
+            gtag('event', 'social_click', {
+              event_category: 'social',
+              event_label: (el as HTMLAnchorElement).getAttribute('aria-label') || '',
+              link_url: (el as HTMLAnchorElement).href || '',
+            });
+          });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', initGATracking);
+      document.addEventListener('astro:page-load', initGATracking);
+    </script>
 
     <!-- Scroll Reveal Animation -->
     <script>

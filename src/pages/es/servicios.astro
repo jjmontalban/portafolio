@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
+import { wordpress, extensions, integrations, performance } from "../../lib/icons";
+import { useTranslations } from '../../lib/i18n/utils';
+import type { Lang } from '../../lib/i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={t('servicios.meta.title')}
+  page="page-servicios"
+  description={t('servicios.meta.description')}
+>
+  <div class="container">
+
+    <section>
+      <p class="section-nav">
+        <a class="section-link" href="/es/">← Inicio</a>
+        · <a class="section-link" href="/es/plugins">Plugins</a>
+        · <a class="section-link" href="/es/casos">Proyectos</a>
+        · <a class="section-link" href="/es/sobre">Perfil</a>
+      </p>
+
+      <h1>{t('servicios.title')}</h1>
+      <p>{t('servicios.lead')}</p>
+
+      <section class="services-grid">
+        <article class="service-card reveal reveal-delay-1">
+          <svg class="service-icon" viewBox="0 0 24 24" set:html={wordpress.body} />
+          <span class="sr-only">frontend</span>
+          <h2>{t('servicios.wordpress.title')}</h2>
+          <p>{t('servicios.wordpress.desc')}</p>
+          <ul>
+            <li>{t('servicios.wordpress.li1')}</li>
+            <li>{t('servicios.wordpress.li2')}</li>
+            <li>{t('servicios.wordpress.li3')}</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-delay-2">
+          <svg class="service-icon" viewBox="0 0 24 24" set:html={extensions.body} />
+          <span class="sr-only">backend</span>
+          <h2>{t('servicios.mejoras.title')}</h2>
+          <p>{t('servicios.mejoras.desc')}</p>
+          <ul>
+            <li>{t('servicios.mejoras.li1')}</li>
+            <li>{t('servicios.mejoras.li2')}</li>
+            <li>{t('servicios.mejoras.li3')}</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-delay-3">
+          <svg class="service-icon" viewBox="0 0 24 24" set:html={integrations.body} />
+          <span class="sr-only">integraciones</span>
+          <h2>{t('servicios.integraciones.title')}</h2>
+          <p>{t('servicios.integraciones.desc')}</p>
+          <ul>
+            <li>{t('servicios.integraciones.li1')}</li>
+            <li>{t('servicios.integraciones.li2')}</li>
+            <li>{t('servicios.integraciones.li3')}</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal reveal-delay-4">
+          <svg class="service-icon" viewBox="0 0 24 24" set:html={performance.body} />
+          <span class="sr-only">soporte</span>
+          <h2>{t('servicios.rendimiento.title')}</h2>
+          <p>{t('servicios.rendimiento.desc')}</p>
+          <ul>
+            <li>{t('servicios.rendimiento.li1')}</li>
+            <li>{t('servicios.rendimiento.li2')}</li>
+            <li>{t('servicios.rendimiento.li3')}</li>
+          </ul>
+        </article>
+      </section>
+
+      <p class="section-nav">
+        <a class="section-link" href="/es/plugins">Plugins</a>
+        · <a class="section-link" href="/es/casos">Proyectos</a>
+        · <a class="section-link" href="/es/sobre">Perfil</a>
+        · <a class="section-link" href="/es/contacto">Contacto</a>
+      </p>
+    </section>
+
+    <ContactCTA title={t('servicios.cta.title')} />
+  </div>
+</Layout>

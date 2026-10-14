@@ -4,7 +4,7 @@ import ContactCTA from "../components/ContactCTA.astro";
 import { useTranslations } from '../lib/i18n/utils';
 import type { Lang } from '../lib/i18n/utils';
 
-const lang: Lang = 'es';
+const lang: Lang = 'en';
 const t = useTranslations(lang);
 ---
 
@@ -24,7 +24,7 @@ const t = useTranslations(lang);
       </p>
       <p>{t('home.hero.colaboro')}</p>
 
-      <a class="cta cta-primary" href="/contacto">{t('home.hero.cta')}</a>
+      <a class="cta cta-primary" href="/contact">{t('home.hero.cta')}</a>
     </section>
 
     <!-- SERVICIOS -->
@@ -32,7 +32,7 @@ const t = useTranslations(lang);
       <h2>{t('home.servicios.title')}</h2>
       <p>
         {t('home.servicios.desc')}
-        <a class="section-link" href="/servicios">
+        <a class="section-link section-link-services" href="/services">
           {t('home.servicios.link')}
         </a>
       </p>
@@ -43,7 +43,7 @@ const t = useTranslations(lang);
       <h2>{t('home.plugins.title')}</h2>
       <p>
         {t('home.plugins.desc')}
-        <a class="section-link" href="/plugins">
+        <a class="section-link section-link-plugins" href="/plugins">
           {t('home.plugins.link')}
         </a>
       </p>
@@ -54,12 +54,22 @@ const t = useTranslations(lang);
       <h2>{t('home.casos.title')}</h2>
       <p>
         {t('home.casos.desc')}
-        <a class="section-link" href="/casos">
+        <a class="section-link section-link-cases" href="/cases">
           {t('home.casos.link')}
         </a>
       </p>
-      <p>{t('home.sobre.desc')} <a class="section-link" href="/sobre">{t('home.sobre.link')}</a></p>
+    </section>
 
+    <!-- PERFIL PROFESIONAL -->
+    <section>
+      <h2>Background</h2>
+      <p>
+        {t('home.sobre.desc')}
+        <a class="section-link" href="/about">
+          {t('home.sobre.link')}
+        </a>
+      </p>
+      <a class="cta cta-primary" href="/about">{t('home.sobre.link')}</a>
     </section>
 
     <!-- CTA FINAL -->

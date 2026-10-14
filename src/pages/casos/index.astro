@@ -30,6 +30,13 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
   <div class="container">
     <section>
 
+      <p class="section-nav">
+        <a class="section-link" href="/es/">← Inicio</a>
+        · <a class="section-link" href="/es/servicios">Servicios</a>
+        · <a class="section-link" href="/es/plugins">Plugins</a>
+        · <a class="section-link" href="/es/sobre">Perfil</a>
+      </p>
+
       <h1>{t('casos.title')}</h1>
 
       <p>{t('casos.lead')}</p>
@@ -86,6 +93,13 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
       </section>
 
     </section>
+
+    <p class="section-nav" style="margin-bottom: 2rem;">
+      <a class="section-link" href="/es/servicios">Servicios</a>
+      · <a class="section-link" href="/es/plugins">Plugins</a>
+      · <a class="section-link" href="/es/sobre">Perfil</a>
+      · <a class="section-link" href="/es/contacto">Contacto</a>
+    </p>
 
     <ContactCTA
       title={t('casos.cta.title')}

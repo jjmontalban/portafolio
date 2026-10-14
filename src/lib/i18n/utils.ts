@@ -24,16 +24,14 @@ export type RouteKey = keyof typeof routes.es;
 
 /**
  * Get language from URL
- * New structure: Spanish at root (/), English at /en/
+ * New structure: English at root (/), Spanish at /es/
  */
 export function getLangFromUrl(url: URL): Lang {
   const pathname = url.pathname;
-  // If path starts with /en, it's English
-  if (pathname.startsWith('/en/') || pathname === '/en') {
-    return 'en';
+  if (pathname.startsWith('/es/') || pathname === '/es') {
+    return 'es';
   }
-  // Everything else is Spanish (root)
-  return 'es';
+  return 'en';
 }
 
 export function useTranslations(lang: Lang) {
@@ -48,11 +46,11 @@ export function useTranslations(lang: Lang) {
 export function getRouteFromUrl(url: URL): string {
   const pathname = url.pathname;
 
-  // Remove /en prefix if present
-  if (pathname.startsWith('/en/')) {
+  // Remove /es prefix if present
+  if (pathname.startsWith('/es/')) {
     return pathname.slice(3) || '/';
   }
-  if (pathname === '/en') {
+  if (pathname === '/es') {
     return '/';
   }
 
@@ -61,28 +59,25 @@ export function getRouteFromUrl(url: URL): string {
 
 /**
  * Translate path to the target language
- * Spanish: / (root), English: /en/
+ * English: / (root), Spanish: /es/
  */
 export function translatePath(path: string, lang: Lang): string {
-  // First, get the clean path without any language prefix
   let cleanPath = path;
 
-  if (cleanPath.startsWith('/en/')) {
+  if (cleanPath.startsWith('/es/')) {
     cleanPath = cleanPath.slice(3);
-  } else if (cleanPath === '/en') {
+  } else if (cleanPath === '/es') {
     cleanPath = '/';
   }
 
-  // Now add the appropriate prefix
-  if (lang === 'en') {
-    // English: add /en prefix
+  if (lang === 'es') {
     if (cleanPath === '/') {
-      return '/en/';
+      return '/es/';
     }
-    return '/en' + cleanPath;
+    return '/es' + cleanPath;
   }
 
-  // Spanish: use root (no prefix)
+  // English: use root (no prefix)
   return cleanPath || '/';
 }
 
@@ -92,10 +87,10 @@ export function getAlternateLanguage(currentLang: Lang): Lang {
 
 /**
  * Get the base path for navigation links based on language
- * Spanish: '', English: '/en'
+ * English: '', Spanish: '/es'
  */
 export function getLangPrefix(lang: Lang): string {
-  return lang === 'en' ? '/en' : '';
+  return lang === 'es' ? '/es' : '';
 }
 
 /**
@@ -111,13 +106,13 @@ export function getLocalizedRoute(lang: Lang, routeKey: RouteKey): string {
  */
 export function getAlternateRoute(currentPath: string, currentLang: Lang, targetLang: Lang): string {
   // Handle home page
-  if (currentPath === '/' || currentPath === '/en' || currentPath === '/en/') {
-    return targetLang === 'en' ? '/en/' : '/';
+  if (currentPath === '/' || currentPath === '/es' || currentPath === '/es/') {
+    return targetLang === 'es' ? '/es/' : '/';
   }
 
   // Get the path without language prefix
   let cleanPath = currentPath;
-  if (cleanPath.startsWith('/en/')) {
+  if (cleanPath.startsWith('/es/')) {
     cleanPath = cleanPath.slice(3);
   }
 
@@ -126,17 +121,16 @@ export function getAlternateRoute(currentPath: string, currentLang: Lang, target
   const targetRoutes = routes[targetLang];
 
   for (const [key, route] of Object.entries(currentRoutes)) {
-    // Check if path matches or starts with this route
     if (cleanPath === route || cleanPath.startsWith(route + '/')) {
       const targetRoute = targetRoutes[key as RouteKey];
       const suffix = cleanPath.slice(route.length);
-      const prefix = targetLang === 'en' ? '/en' : '';
+      const prefix = targetLang === 'es' ? '/es' : '';
       return prefix + targetRoute + suffix;
     }
   }
 
   // Fallback: just add/remove prefix
-  const prefix = targetLang === 'en' ? '/en' : '';
+  const prefix = targetLang === 'es' ? '/es' : '';
   return prefix + cleanPath;
 }
 
@@ -144,51 +138,26 @@ export function getAlternateRoute(currentPath: string, currentLang: Lang, target
  * Get skill categories with translated labels
  */
 export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'en') {
-  if (lang === 'es') {
-    return [
-      {
-        labelKey: 'languages',
-        label: t('sobre.languagesTitle'),
-        items: ["PHP", "JavaScript (ES6)", "TypeScript", "SQL", "CSS", "HTML"]
-      },
-      {
-        labelKey: 'frameworks',
-        label: t('sobre.frameworksTitle'),
-        items: ["WordPress", "WooCommerce", "PrestaShop", "Laravel", "Drupal", "Symfony", "Vue.js", "Astro", "jQuery", "PHPUnit", "Cypress"]
-      },
-      {
-        labelKey: 'tools',
-        label: t('sobre.toolsTitle'),
-        items: ["Git / Gitflow", "GitHub Actions", "GitLab", "Composer", "npm", "Jenkins", "Postman"]
-      },
-      {
-        labelKey: 'devops',
-        label: t('sobre.devopsTitle'),
-        items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "Linux"]
-      }
-    ];
-  }
-
   return [
     {
       labelKey: 'languages',
       label: t('sobre.languagesTitle'),
-      items: ["PHP", "Javascript(ES6)", "TypeScript", "SQL", "CSS", "HTML"]
+      items: ["TypeScript", "JavaScript (ES6)", "PHP", "HTML", "CSS", "SQL"]
     },
     {
       labelKey: 'frameworks',
       label: t('sobre.frameworksTitle'),
-      items: ["WordPress", "Laravel", "jQuery", "Vue", "Astro", "Sass", "PHPUnit" ]
+      items: ["Angular", "React", "NestJS", "Node.js", "WordPress", "Vue.js", "Astro", "Laravel"]
     },
     {
       labelKey: 'tools',
       label: t('sobre.toolsTitle'),
-      items: ["Git", "Bash", "Composer", "npm", "Jenkins", "Postman"]
+      items: ["Git / Gitflow", "GitHub Actions", "Docker", "npm", "Postman", "Composer"]
     },
     {
       labelKey: 'devops',
       label: t('sobre.devopsTitle'),
-      items: ["SSH", "Docker", "Nginx", "MySQL", "Plesk / cPanel", "AWS Basics"]
+      items: ["Docker", "Nginx", "Linux", "MySQL", "PostgreSQL", "GitLab CI"]
     }
   ];
 }
@@ -237,8 +206,7 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'en') {
 
   return [
     {
-      company: "Fundación Telefónica",
-      link: "https://www.fundaciontelefonica.com/",
+      company: "eXperience IT Solutions",
       position: t('sobre.job1.position'),
       period: t('sobre.job1.period')
     },
