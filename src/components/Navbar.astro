@@ -1,24 +1,9 @@
 ---
-import { x } from "../lib/icons";
 import LanguageSwitch from "./LanguageSwitch.astro";
-import { getLangFromUrl, useTranslations, getLangPrefix } from '../lib/i18n/utils';
+import { getLangFromUrl, getLangPrefix } from '../lib/i18n/utils';
 
-interface Props {
-  current?: string;
-}
-
-const { current } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const prefix = getLangPrefix(lang);
-
-const routes = {
-  home: lang === 'es' ? '/' : '/en/',
-  servicios: lang === 'es' ? '/servicios' : '/en/services',
-  casos: lang === 'es' ? '/casos' : '/en/cases',
-  plugins: lang === 'es' ? '/plugins' : '/en/plugins',
-  contacto: lang === 'es' ? '/contacto' : '/en/contact',
-};
 ---
 
 <nav class="navbar">
@@ -26,27 +11,7 @@ const routes = {
     <img class="site-logo" src="/images/jj.webp" alt="JJ" width="40" height="40" fetchpriority="high" />
   </a>
 
-  <button class="burger" aria-label={t('nav.openMenu')} aria-expanded="false" aria-controls="site-navigation" type="button">☰</button>
-
-  <div id="site-navigation" class="nav-links" role="navigation">
-    <button class="nav-close" aria-label={t('nav.closeMenu')} type="button">
-      <svg class="nav-close-icon" viewBox="0 0 24 24" set:html={x.body} />
-    </button>
-
-    <!-- Language switch MÓVIL (solo en menú móvil) -->
-    <div class="nav-lang-mobile">
-      <LanguageSwitch />
-    </div>
-
-    <a href={routes.home} class:list={{ selected: current === "home" }}>{t('nav.inicio')}</a>
-    <a href={routes.servicios} class:list={{ selected: current === "servicios" }}>{t('nav.servicios')}</a>
-    <a href={routes.casos} class:list={{ selected: current === "casos" }}>{t('nav.casos')}</a>
-    <a href={routes.plugins} class:list={{ selected: current === "plugins" }}>{t('nav.plugins')}</a>
-    <a href={routes.contacto} class:list={{ selected: current === "contacto" }}>{t('nav.contacto')}</a>
-
-    <!-- Language switch DESKTOP (al final de los enlaces) -->
-    <div class="nav-lang-desktop">
-      <LanguageSwitch />
-    </div>
+  <div class="nav-lang">
+    <LanguageSwitch />
   </div>
 </nav>
