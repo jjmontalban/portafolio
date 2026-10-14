@@ -189,9 +189,9 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
         period: t('sobre.job4.period')
       },
       {
-        company: "Spanish-Slovak Chamber Commerce",
+        company: "Spanish Chamber of Commerce",
         position: "Web Developer",
-        period: "Feb. 2013 - Oct. 2013"
+        period: "Feb. 2017 - Feb. 2018"
       },
       {
         company: "Evalfor",
