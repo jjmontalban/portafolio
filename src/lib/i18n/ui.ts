@@ -23,8 +23,8 @@ export const ui = {
     'nav.closeMenu': 'Cerrar menú',
 
     // Home
-    'home.hero.intro': 'Hola, soy JJ. Soy ingeniero de software full stack con más de 10 años de experiencia construyendo aplicaciones web.',
-    'home.hero.colaboro': 'He trabajado con distintas tecnologías a lo largo de mi carrera: Laravel, Drupal y otros sistemas PHP, y también incorporando front con TypeScript en Angular & Vuejs. Acepto encargos por proyecto o bolsa de horas, de forma remota.',
+    'home.hero.intro': 'Hola, soy JJ. Ingeniero de software full stack con más de 10 años construyendo aplicaciones web.',
+    'home.hero.colaboro': 'Ecosistemas PHP: WordPress, Laravel, Drupal. Desarrollo en front Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
     'home.hero.cta': 'Hablemos de tu proyecto',
     'home.servicios.title': 'Servicios',
     'home.servicios.desc': 'Incidencias, desarrollo a medida, integraciones, e-commerce y mejoras técnicas.',
@@ -35,8 +35,8 @@ export const ui = {
     'home.casos.title': 'Casos de éxito',
     'home.casos.desc': 'Proyectos reales en producción: CRM sobre WordPress, WooCommerce, integraciones y desarrollos a medida en distintas plataformas.',
     'home.casos.link': 'Ver proyectos.',
-    'home.sobre.desc': 'Si tras todo esto quieres conocer más sobre mi trayectoria profesional, puedes',
-    'home.sobre.link': 'ver mi perfil profesional.',
+    'home.sobre.desc': 'Para saber más',
+    'home.sobre.link': 'ver mi perfil.',
     'home.cta.title': '¿Tienes una tarea técnica pendiente?',
     'home.cta.text': 'Cuéntame qué necesitas resolver y vemos si puedo ayudarte.',
 
@@ -213,8 +213,8 @@ export const ui = {
     'nav.closeMenu': 'Close menu',
 
     // Home
-    'home.hero.intro': "Hi, I'm JJ — a full stack software engineer with over 10 years of experience building web applications.",
-    'home.hero.colaboro': "I have worked with a range of technologies throughout my career: Laravel, Drupal and other PHP systems, also incorporating frontend with TypeScript in Angular & Vue.js. I take on project-based or hourly work, remotely.",
+    'home.hero.intro': "Hi, I'm JJ. Full stack software engineer with over 10 years building web applications.",
+    'home.hero.colaboro': "PHP ecosystems: WordPress, Laravel, Drupal. Frontend development in Angular. Available for project-based or hourly work, remotely.",
     'home.hero.cta': "Let's talk about your project",
     'home.servicios.title': 'Services',
     'home.servicios.desc': 'Incidents, custom development, integrations, e-commerce and technical improvements.',
@@ -225,8 +225,8 @@ export const ui = {
     'home.casos.title': 'Success stories',
     'home.casos.desc': 'Real production projects: CRM on WordPress, WooCommerce, integrations and custom developments on different platforms.',
     'home.casos.link': 'View projects',
-    'home.sobre.desc': 'If after all this you want to know more about my professional career, you can',
-    'home.sobre.link': 'view my professional profile.',
+    'home.sobre.desc': 'To learn more',
+    'home.sobre.link': 'view my profile.',
     'home.cta.title': 'Have a technical problem to solve?',
     'home.cta.text': "Tell me about your project and let's see what you need.",
 
