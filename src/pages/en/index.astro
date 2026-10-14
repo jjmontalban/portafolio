@@ -20,6 +20,7 @@ const t = useTranslations(lang);
       <h1>Joaquín J. Montalbán</h1>
       <p>{t('home.hero.intro')}</p>
       <p>{t('home.hero.colaboro')}</p>
+      <p>{t('home.sobre.desc')} <a class="section-link" href="/en/about">{t('home.sobre.link')}</a></p>
     </section>
 
     <!-- SERVICES -->
@@ -48,12 +49,6 @@ const t = useTranslations(lang);
         <a class="section-link" href="/en/cases">{t('home.casos.link')}</a>
       </p>
     </section>
-
-    <!-- ABOUT paragraph before final CTA -->
-    <p>
-      {t('home.sobre.desc')}
-      <a class="section-link" href="/en/about">{t('home.sobre.link')}</a>
-    </p>
 
     <!-- FINAL CTA -->
     <ContactCTA title={t('home.cta.title')} />
