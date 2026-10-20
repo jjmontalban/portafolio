@@ -110,7 +110,7 @@ export const ui = {
     'plugins.cta.button': 'Cuéntame',
 
     // Sobre
-    'sobre.desc1': 'Soy ingeniero de software full stack. Durante más de 10 años he construido aplicaciones web con distintas tecnologías. En los últimos años he incorporado TypeScript y Angular a proyectos existentes. También trabajo con React y WordPress cuando el proyecto lo requiere.',
+    'sobre.desc1': 'Soy ingeniero de software full stack. Durante más de 10 años he construido aplicaciones web con distintas tecnologías. En los últimos años he incorporado TypeScript y Angular en front a proyectos con backend WordPress o Laravel.',
     'sobre.languagesTitle': 'Lenguajes',
     'sobre.frameworksTitle': 'Frameworks',
     'sobre.devopsTitle': 'DevOps',
@@ -236,7 +236,7 @@ export const ui = {
     'servicios.title': 'My work',
     'servicios.lead': 'I build modern web applications and solve technical problems on existing systems. Main focus on Angular, React, TypeScript on the frontend and Node.js with NestJS on the backend.',
     'servicios.wordpress.title': 'Modern Frontend',
-    'servicios.wordpress.desc': 'Building SPAs, interfaces and components with Angular, React and TypeScript. Also custom WordPress themes and plugins when the project requires it.',
+    'servicios.wordpress.desc': 'Building SPAs, interfaces and components with Angular, React and TypeScript in frontend and PHP (Laravel & WordPress) in backend.',
     'servicios.wordpress.li1': 'Angular and TypeScript',
     'servicios.wordpress.li2': 'React and modern components',
     'servicios.wordpress.li3': 'Custom WordPress themes and plugins',
