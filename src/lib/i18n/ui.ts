@@ -24,7 +24,7 @@ export const ui = {
 
     // Home
     'home.hero.intro': 'Hola, soy JJ. Ingeniero de software full stack con más de 10 años construyendo aplicaciones web.',
-    'home.hero.colaboro': 'Ecosistemas PHP: WordPress, Laravel, Drupal. Desarrollo en front Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
+    'home.hero.colaboro': 'Ecosistemas PHP: WordPress & Laravel. Desarrollo en front con Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
     'home.hero.cta': 'Hablemos de tu proyecto',
     'home.servicios.title': 'Servicios',
     'home.servicios.desc': 'Incidencias, desarrollo a medida, integraciones, e-commerce y mejoras técnicas.',

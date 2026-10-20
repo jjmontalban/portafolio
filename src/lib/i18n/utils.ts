@@ -139,22 +139,22 @@ export function getSkillCategories(t: (key: UIKey) => string, lang: Lang = 'es')
     {
       labelKey: 'languages',
       label: t('sobre.languagesTitle'),
-      items: ["TypeScript", "JavaScript (ES6)", "PHP", "HTML", "CSS", "SQL"]
+      items: ["PHP", "Js (ES6)", "Ts", "Scss", "SQL"]
     },
     {
       labelKey: 'frameworks',
       label: t('sobre.frameworksTitle'),
-      items: ["Angular", "React", "NestJS", "Node.js", "WordPress", "Vue.js", "Astro", "Laravel"]
+      items: ["WordPress", "Laravel","Angular", "NestJS", "Node.js", "Vue.js", "Astro", ]
     },
     {
       labelKey: 'tools',
       label: t('sobre.toolsTitle'),
-      items: ["Git / Gitflow", "GitHub Actions", "Docker", "npm", "Postman", "Composer"]
+      items: ["Git / Gitflow", "Actions", "Docker", "npm", "Composer"]
     },
     {
       labelKey: 'devops',
       label: t('sobre.devopsTitle'),
-      items: ["Docker", "Nginx", "Linux", "MySQL", "PostgreSQL", "GitLab CI"]
+      items: ["Bash", "MySQL", "Jenkins", "Docker"]
     }
   ];
 }
