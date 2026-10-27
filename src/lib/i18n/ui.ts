@@ -14,7 +14,8 @@ export const ui = {
     'meta.jobDescription': 'Ingeniero de software full stack con más de 10 años de experiencia. Trabaja con Angular, TypeScript, React, Node.js y WordPress.',
 
     // Home
-    'home.intro': 'Hola, soy JJ 👋. Ingeniero de software full stack con más de 10 años entregando WordPress complejo en producción. Hoy integro la IA en sitios existentes y migro a headless con Angular o Astro. Actualmente trabajo por cuenta ajena, pero también ayudo a emprendedores y empresas a digitalizar su negocio. Trabajo por proyecto o bolsas de horas. Para saber más,',
+    'home.intro': 'Hola, soy JJ 👋. Ingeniero de software full stack con más de 10 años entregando WordPress complejo en producción. Hoy integro la IA en sitios existentes y migro a headless con Angular o Astro.',
+    'home.work': 'Actualmente trabajo por cuenta ajena, pero también ayudo a emprendedores y empresas a digitalizar su negocio. Trabajo por proyecto o bolsas de horas. Para saber más,',
     'home.intro.link': 'revisa mi perfil',
     'home.services': 'Resuelvo incidencias, desarrollo a medida e integraciones, e-commerce y mejoras técnicas. Puedes',
     'home.services.link': 'ver todos mis servicios',
@@ -41,7 +42,7 @@ export const ui = {
     'servicios.meta.title': 'Servicios | JJMontalban',
     'servicios.meta.description': 'Desarrollo frontend con Angular y React, backend con Node.js y NestJS, integraciones y soporte en WordPress y otros sistemas PHP.',
     'servicios.title': 'Mi trabajo',
-    'servicios.lead': 'Desarrollo aplicaciones web modernas y resuelvo problemas técnicos sobre sistemas existentes. El foco está en Angular, React, TypeScript en el frontend y Node.js con NestJS en el backend.',
+    'servicios.lead': 'Desarrollo aplicaciones web modernas y resuelvo problemas técnicos sobre sistemas existentes.',
     'servicios.wordpress.title': 'Frontend moderno',
     'servicios.wordpress.desc': 'Desarrollo de SPAs, interfaces y componentes con Angular, React y TypeScript. También temas y plugins personalizados en WordPress cuando el proyecto lo requiere.',
     'servicios.wordpress.li1': 'Angular y TypeScript',
@@ -201,6 +202,13 @@ export const ui = {
     'meta.jobDescription': 'Full stack software engineer with over 10 years of experience. Works with Angular, TypeScript, React, Node.js and WordPress.',
 
     // Home
+    'home.intro': "Hi, I'm JJ 👋. Full stack software engineer with over 10 years delivering complex WordPress in production. Today I integrate AI into existing sites and migrate to headless with Angular or Astro.",
+    'home.work': 'I currently work as an employee, but I also help entrepreneurs and businesses digitalize their business. I work on a project basis or with hour packages. To learn more,',
+    'home.intro.link': 'check out my profile',
+    'home.services': 'I fix issues, build custom developments and integrations, e-commerce and technical improvements. You can',
+    'home.services.link': 'see all my services',
+    'home.plugins': 'I publish WordPress plugins for the community, WooCommerce extensions, PrestaShop modules and Open Source projects born from real problems. Check out my',
+    'home.plugins.link2': 'published plugins and tools',
     'home.hero.intro': "Hi, I'm JJ. Full stack software engineer with over 10 years building web applications.",
     'home.hero.colaboro': "PHP ecosystems: WordPress, Laravel, Drupal. Frontend development in Angular. Available for project-based or hourly work, remotely.",
     'home.hero.cta': "Let's talk about your project",
@@ -222,7 +230,7 @@ export const ui = {
     'servicios.meta.title': 'Services | JJMontalban',
     'servicios.meta.description': 'Frontend development with Angular and React, backend with Node.js and NestJS, integrations and support on WordPress and other systems.',
     'servicios.title': 'My work',
-    'servicios.lead': 'I build modern web applications and solve technical problems on existing systems. Main focus on Angular, React, TypeScript on the frontend and Node.js with NestJS on the backend.',
+    'servicios.lead': 'I build modern web applications and solve technical problems on existing systems.',
     'servicios.wordpress.title': 'Modern Frontend',
     'servicios.wordpress.desc': 'Building SPAs, interfaces and components with Angular, React and TypeScript in frontend and PHP (Laravel & WordPress) in backend.',
     'servicios.wordpress.li1': 'Angular and TypeScript',
