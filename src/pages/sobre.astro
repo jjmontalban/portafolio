@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ContactCTA from "../components/ContactCTA.astro";
 import { useTranslations, getSkillCategories, getJobs } from '../lib/i18n/utils';
 import type { Lang } from '../lib/i18n/utils';
 
@@ -60,13 +59,6 @@ const jobPostingSchema = jobs.map((job, index) => ({
   <div class="container">
 
     <section class="section-about reveal">
-      <h2>Perfil</h2>
-      <div>
-        <p>{t('sobre.desc1')}</p>
-      </div>
-    </section>
-
-    <section class="section-about reveal">
       <h2>{t('sobre.skillsTitle')}</h2>
         <div class="skills-grid">
           {skillCategories.map(cat => (
@@ -99,9 +91,5 @@ const jobPostingSchema = jobs.map((job, index) => ({
         
     </section>
 
-    <ContactCTA
-      title={t('sobre.cta.title')}
-      button={t('sobre.cta.button')}
-    />
   </div>
 </Layout>

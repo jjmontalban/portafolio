@@ -1,6 +1,5 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import ContactCTA from "../../../components/ContactCTA.astro";
 import { getCollection } from "astro:content";
 import { useTranslations } from '../../../lib/i18n/utils';
 import type { Lang } from '../../../lib/i18n/utils';
@@ -79,6 +78,5 @@ const getLocalizedText = (field: {es: string, en: string} | string | undefined):
 
     </section>
 
-    <ContactCTA title={t('casos.cta.title')} />
   </div>
 </Layout>

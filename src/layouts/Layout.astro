@@ -104,12 +104,9 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
       body.page-contacto{--page-bg:#7f1d1d;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
       body.page-plugins{--page-bg:#0f766e;--page-fg:#fff;--heading-color:var(--page-bg);--heading-shadow:var(--shadow-outline-white);--nav-text-color:var(--page-bg);--nav-text-shadow:var(--shadow-outline-white);background-color:var(--page-bg);color:var(--page-fg)}
       .navbar{font-family:"Cubano",sans-serif;display:flex;justify-content:space-between;align-items:center;padding:24px 0;background-color:transparent;position:relative}
-      .nav-links{display:flex;align-items:center}
-      .nav-links a{font-size:2.5em;position:relative;padding:8px 12px;font-weight:400;color:var(--nav-text-color);text-shadow:var(--nav-text-shadow)}
+      .nav-lang{display:flex;align-items:center}
       .site-logo{display:block;height:40px;width:auto}
-      .page-servicios .site-logo,.page-casos .site-logo,.page-plugins .site-logo,.page-contacto .site-logo{filter:invert(1)}
-      .burger{display:none}
-      @media(max-width:991px){.nav-links{display:none}.burger{display:block;background:none;border:none;font-size:32px;cursor:pointer;color:inherit}}
+      .page-servicios .site-logo,.page-casos .site-logo,.page-plugins .site-logo,.page-contacto .site-logo{filter:invert(1);mix-blend-mode:screen}
     </style>
 
     <!-- Preload critical assets -->
@@ -150,7 +147,7 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
   </head>
 
   <body class={page}>
-    <Navbar current={page?.replace("page-", "")} />
+    <Navbar />
 
     <main id="main-content" class="main">
       <slot />
@@ -164,8 +161,6 @@ const alternateUrl = canonical.replace(/\/$/, "") + alternatePath;
         document.documentElement.classList.add("page-enter");
       });
     </script>
-
-    <script src="/scripts/nav.js" defer></script>
 
     <!-- GA4 Click Tracking -->
     <script>
