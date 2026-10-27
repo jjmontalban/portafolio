@@ -14,12 +14,13 @@ export const ui = {
     'meta.jobDescription': 'Ingeniero de software full stack con más de 10 años de experiencia. Trabaja con Angular, TypeScript, React, Node.js y WordPress.',
 
     // Home
-    'home.intro': 'Hola, soy JJ 👋. Ingeniero de software full stack con más de 10 años entregando WordPress complejo en producción. Hoy integro la IA en sitios existentes y migro a headless con Angular o Astro.',
-    'home.work': 'Actualmente trabajo por cuenta ajena, pero también ayudo a emprendedores y empresas a digitalizar su negocio. Trabajo por proyecto o bolsas de horas. Para saber más,',
+    'home.intro': 'Hola, soy JJ 👋. Ingeniero de software full stack con más de 10 años entregando WordPress complejo en producción. Hoy integro la IA en sitios existentes y migro a headless con Angular o Astro. Para saber más,',
+    'home.work': 'Actualmente trabajo por cuenta ajena, pero también ayudo a emprendedores y empresas a digitalizar su negocio. Trabajo por proyecto o bolsas de horas.',
+    'home.cta': 'Reserva 30 minutos',
     'home.intro.link': 'revisa mi perfil',
     'home.services': 'Resuelvo incidencias, desarrollo a medida e integraciones, e-commerce y mejoras técnicas. Puedes',
     'home.services.link': 'ver todos mis servicios',
-    'home.plugins': 'Publico plugins WordPress para la comunidad, extensiones WooCommerce, módulos PrestaShop y proyectos Open Source que parten de problemas reales. Chequea mis',
+    'home.plugins': 'Publico plugins WordPress para la comunidad, extensiones WooCommerce, módulos PrestaShop y proyectos Open Source. Chequea mis',
     'home.plugins.link2': 'plugins y herramientas publicadas',
     'home.hero.intro': 'Hola, soy JJ. Ingeniero de software full stack con más de 10 años construyendo aplicaciones web.',
     'home.hero.colaboro': 'Ecosistemas PHP: WordPress & Laravel. Desarrollo en front con Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
@@ -202,12 +203,13 @@ export const ui = {
     'meta.jobDescription': 'Full stack software engineer with over 10 years of experience. Works with Angular, TypeScript, React, Node.js and WordPress.',
 
     // Home
-    'home.intro': "Hi, I'm JJ 👋. Full stack software engineer with over 10 years delivering complex WordPress in production. Today I integrate AI into existing sites and migrate to headless with Angular or Astro.",
-    'home.work': 'I currently work as an employee, but I also help entrepreneurs and businesses digitalize their business. I work on a project basis or with hour packages. To learn more,',
+    'home.intro': "Hi, I'm JJ 👋. Full stack software engineer with over 10 years delivering complex WordPress in production. Today I integrate AI into existing sites and migrate to headless with Angular or Astro. To learn more,",
+    'home.work': 'I currently work as an employee, but I also help entrepreneurs and businesses digitalize their business. I work on a project basis or with hour packages.',
+    'home.cta': 'Book 30 minutes',
     'home.intro.link': 'check out my profile',
     'home.services': 'I fix issues, build custom developments and integrations, e-commerce and technical improvements. You can',
     'home.services.link': 'see all my services',
-    'home.plugins': 'I publish WordPress plugins for the community, WooCommerce extensions, PrestaShop modules and Open Source projects born from real problems. Check out my',
+    'home.plugins': 'I publish WordPress plugins for the community, WooCommerce extensions, PrestaShop modules and Open Source projects. Check out my',
     'home.plugins.link2': 'published plugins and tools',
     'home.hero.intro': "Hi, I'm JJ. Full stack software engineer with over 10 years building web applications.",
     'home.hero.colaboro': "PHP ecosystems: WordPress, Laravel, Drupal. Frontend development in Angular. Available for project-based or hourly work, remotely.",

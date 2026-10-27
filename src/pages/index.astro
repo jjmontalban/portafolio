@@ -16,15 +16,15 @@ const t = useTranslations(lang);
     <section>
       <h1>Joaquín J. Montalbán</h1>
 
-      <p>{t('home.intro')}</p>
+      <p>{t('home.intro')} <a class="section-link" href={getLocalizedRoute(lang, 'about')}>{t('home.intro.link')}</a>.</p>
 
-      <p>{t('home.work')} <a class="section-link" href={getLocalizedRoute(lang, 'about')}>{t('home.intro.link')}</a>.</p>
+      <p>{t('home.work')}</p>
+
+      <a class="cta cta-primary" href={getLocalizedRoute(lang, 'contact')}>{t('home.cta')}</a>
 
       <p>{t('home.services')} <a class="section-link" href={getLocalizedRoute(lang, 'services')}>{t('home.services.link')}</a>.</p>
 
       <p>{t('home.plugins')} <a class="section-link" href={getLocalizedRoute(lang, 'plugins')}>{t('home.plugins.link2')}</a>.</p>
-
-      <a class="cta cta-primary" href={getLocalizedRoute(lang, 'contact')}>{t('cta.default')}</a>
     </section>
   </div>
 </Layout>
