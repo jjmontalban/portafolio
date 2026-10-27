@@ -440,11 +440,20 @@ body.page-plugins {
   color:var(--page-fg);
 }
 
-body[class^="page-"] p,
 body[class^="page-"] li,
 body[class^="page-"] span,
 body[class^="page-"] a {
   font-size: 20px;
+}
+
+body[class^="page-"] p {
+  font-size: 25px;
+}
+
+/* Inline elements inside paragraphs follow the paragraph size */
+body[class^="page-"] p a,
+body[class^="page-"] p span {
+  font-size: inherit;
 }
 
 body[class^="page-"] * {
@@ -1007,7 +1016,9 @@ body.page-servicios .service-card ul {
 .page-casos .site-logo,
 .page-plugins .site-logo,
 .page-contacto .site-logo {
+  /* White outline; screen blend lets the page color show through the inner fill */
   filter: invert(1);
+  mix-blend-mode: screen;
 }
 
 .sr-only {
