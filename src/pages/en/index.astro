@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import ContactCTA from "../../components/ContactCTA.astro";
 import { useTranslations } from '../../lib/i18n/utils';
 import type { Lang } from '../../lib/i18n/utils';
 
@@ -50,8 +49,6 @@ const t = useTranslations(lang);
       </p>
     </section>
 
-    <!-- FINAL CTA -->
-    <ContactCTA title={t('home.cta.title')} />
 
   </div>
 </Layout>

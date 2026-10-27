@@ -1,7 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import ContactCTA from "../../../components/ContactCTA.astro";
 import { useTranslations } from '../../../lib/i18n/utils';
 import type { Lang } from '../../../lib/i18n/utils';
 
@@ -132,8 +131,5 @@ const localizedQuote = getLocalizedQuote(project.quote);
         </div>
       )}
     </section>
-    <ContactCTA
-      title={t('caso.cta.title')}
-    />
   </div>
 </Layout>

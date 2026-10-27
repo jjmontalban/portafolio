@@ -39,10 +39,6 @@ body {
   transition: background-color .35s ease, color .35s ease;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
 p, li, span, a {
   font-family: inherit;
   font-weight: 350;
@@ -456,7 +452,7 @@ body[class^="page-"] * {
 }
 
 /* ================================================================= */
-/*  NAVBAR Y MENÚ RESPONSIVE                                         */
+/*  NAVBAR (LOGO + LANGUAGE SWITCH)                                  */
 /* ================================================================= */
 
 .navbar {
@@ -469,126 +465,9 @@ body[class^="page-"] * {
   position: relative;
 }
 
-.nav-links {
+.nav-lang {
   display: flex;
   align-items: center;
-}
-
-.nav-links a {
-  font-size: 2.5em !important;
-  position: relative;
-  padding: 8px 12px;
-  font-weight: 400;
-  color:var(--nav-text-color) !important;
-  text-shadow:var(--nav-text-shadow);
-}
-
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 32px;
-  cursor: pointer;
-  color: inherit;
-}
-
-.nav-close {
-  display: none;
-  border: none;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-@media (min-width: 991px) {
-  .nav-links a[href$="/contacto"],
-  .nav-links a[href$="/contact"]{
-    display:none;
-  }
-
-  .nav-links a[href="/"],
-  .nav-links a[href="/en/"]{
-    display:none;
-  }
-
-  .nav-lang-desktop {
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
-  }
-  
-  .nav-lang-mobile {
-    display: none;
-  }
-}
-
-@media (max-width: 991px) {
-  .nav-lang-desktop {
-    display: none;
-  }
-
-  .nav-lang-mobile {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  /* Hide inicio, servicios, plugins on mobile */
-  .nav-links a[href="/"],
-  .nav-links a[href="/en/"] {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition: opacity .25s ease, transform .25s ease;
-
-    position: fixed;
-    inset: 0;
-    top: 0;
-    padding-top: 96px;
-
-    background: rgba(0,0,0,.35);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-  }
-
-  .nav-close {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 6px;
-  }
-
-  .nav-close-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-links a {
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  .nav-links.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .burger {
-    display: block;
-  }
 }
 
 /* ================================================================= */
@@ -693,30 +572,6 @@ body.page-contacto .lang-slider {
   background-color: var(--page-bg);
 }
 
-@media (max-width: 991px) {
-  .nav-lang-mobile .lang-toggle {
-    width: 74px;
-    height: 37px;
-  }
-  
-  .nav-lang-mobile .lang-slider::before {
-    height: 29px;
-    width: 29px;
-    left: 4px;
-  }
-  
-  .nav-lang-mobile .lang-toggle input:checked + .lang-slider::before {
-    left: calc(100% - 33px);
-  }
-  
-  .nav-lang-mobile .lang-label {
-    font-size: 1.2em;
-  }
-  
-  .nav-lang-mobile .lang-slider {
-    padding: 0 12px;
-  }
-}
 
 /* ================================================================= */
 /*  LAYOUT GENERAL + ENTRADA DE CONTENIDO                             */

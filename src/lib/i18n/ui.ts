@@ -13,16 +13,13 @@ export const ui = {
     'meta.jobTitle': 'Ingeniero de software full stack',
     'meta.jobDescription': 'Ingeniero de software full stack con más de 10 años de experiencia. Trabaja con Angular, TypeScript, React, Node.js y WordPress.',
 
-    // Nav
-    'nav.inicio': 'Inicio',
-    'nav.servicios': 'Servicios',
-    'nav.casos': 'Proyectos',
-    'nav.plugins': 'Plugins',
-    'nav.contacto': 'Contacto',
-    'nav.openMenu': 'Abrir menú',
-    'nav.closeMenu': 'Cerrar menú',
-
     // Home
+    'home.intro': 'Hola, soy JJ 👋. Ingeniero de software full stack con más de 10 años entregando WordPress complejo en producción. Hoy integro la IA en sitios existentes y migro a headless con Angular o Astro. Actualmente trabajo por cuenta ajena, pero también ayudo a emprendedores y empresas a digitalizar su negocio. Trabajo por proyecto o bolsas de horas. Para saber más,',
+    'home.intro.link': 'revisa mi perfil',
+    'home.services': 'Resuelvo incidencias, desarrollo a medida e integraciones, e-commerce y mejoras técnicas. Puedes',
+    'home.services.link': 'ver todos mis servicios',
+    'home.plugins': 'Publico plugins WordPress para la comunidad, extensiones WooCommerce, módulos PrestaShop y proyectos Open Source que parten de problemas reales. Chequea mis',
+    'home.plugins.link2': 'plugins y herramientas publicadas',
     'home.hero.intro': 'Hola, soy JJ. Ingeniero de software full stack con más de 10 años construyendo aplicaciones web.',
     'home.hero.colaboro': 'Ecosistemas PHP: WordPress & Laravel. Desarrollo en front con Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
     'home.hero.cta': 'Hablemos de tu proyecto',
@@ -202,15 +199,6 @@ export const ui = {
     'meta.description': 'Full stack software engineer with over 10 years of experience building web applications.',
     'meta.jobTitle': 'Full stack software engineer',
     'meta.jobDescription': 'Full stack software engineer with over 10 years of experience. Works with Angular, TypeScript, React, Node.js and WordPress.',
-
-    // Nav
-    'nav.inicio': 'Home',
-    'nav.servicios': 'Services',
-    'nav.casos': 'Projects',
-    'nav.plugins': 'Plugins',
-    'nav.contacto': 'Contact',
-    'nav.openMenu': 'Open menu',
-    'nav.closeMenu': 'Close menu',
 
     // Home
     'home.hero.intro': "Hi, I'm JJ. Full stack software engineer with over 10 years building web applications.",
