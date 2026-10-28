@@ -196,7 +196,7 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
       {
         company: "Evalfor",
         position: "Software Developer",
-        period: "Ago. 2012 - Ene. 2013"
+        period: "Ago. 2016 - Ene. 2017"
       }
     ];
   }
@@ -224,6 +224,16 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
       link: "https://www.bloonde.com/",
       position: t('sobre.job4.position'),
       period: t('sobre.job4.period')
+    },
+    {
+      company: "Spanish Chamber of Commerce",
+      position: "Web Developer",
+      period: "Feb. 2017 - Feb. 2018"
+    },
+    {
+      company: "Evalfor",
+      position: "Software Developer",
+      period: "Aug. 2016 - Jan. 2017"
     }
   ];
 }

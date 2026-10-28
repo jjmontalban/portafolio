@@ -22,6 +22,8 @@ export const ui = {
     'home.services.link': 'ver todos mis servicios',
     'home.plugins': 'Publico plugins WordPress para la comunidad, extensiones WooCommerce, módulos PrestaShop y proyectos Open Source. Chequea mis',
     'home.plugins.link2': 'plugins y herramientas publicadas',
+    'home.casos.more': 'O puedes comprobar',
+    'home.casos.link2': 'casos reales de algunos de mis trabajos',
     'home.hero.intro': 'Hola, soy JJ. Ingeniero de software full stack con más de 10 años construyendo aplicaciones web.',
     'home.hero.colaboro': 'Ecosistemas PHP: WordPress & Laravel. Desarrollo en front con Angular. Trabajo por proyecto o bolsa de horas, en remoto.',
     'home.hero.cta': 'Hablemos de tu proyecto',
@@ -116,7 +118,7 @@ export const ui = {
     'sobre.toolsTitle': 'Herramientas',
     'sobre.skillsTitle': 'Habilidades',
     'sobre.experienceTitle': 'Experiencia',
-    'sobre.downloadCV': 'Ver perfil completo en LinkedIn',
+    'sobre.downloadCV': 'Ver CV completo',
 
     // Sobre - Jobs
     'sobre.job1.position': 'Full Stack Engineer',
@@ -211,6 +213,8 @@ export const ui = {
     'home.services.link': 'see all my services',
     'home.plugins': 'I publish WordPress plugins for the community, WooCommerce extensions, PrestaShop modules and Open Source projects. Check out my',
     'home.plugins.link2': 'published plugins and tools',
+    'home.casos.more': 'Or you can check out',
+    'home.casos.link2': 'real cases from some of my work',
     'home.hero.intro': "Hi, I'm JJ. Full stack software engineer with over 10 years building web applications.",
     'home.hero.colaboro': "PHP ecosystems: WordPress, Laravel, Drupal. Frontend development in Angular. Available for project-based or hourly work, remotely.",
     'home.hero.cta': "Let's talk about your project",
