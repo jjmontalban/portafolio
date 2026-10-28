@@ -168,35 +168,41 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
       {
         company: "eXperience IT Solutions",
         position: t('sobre.job1.position'),
-        period: t('sobre.job1.period')
+        period: t('sobre.job1.period'),
+        location: "Madrid"
       },
       {
         company: "Galacticblum SL",
         link: "https://www.galacticblum.com/",
         position: t('sobre.job2.position'),
-        period: t('sobre.job2.period')
+        period: t('sobre.job2.period'),
+        location: "Chipiona"
       },
       {
         company: "Piranha Design",
         link: "https://www.piranhadesigns.com/",
         position: t('sobre.job3.position'),
-        period: t('sobre.job3.period')
+        period: t('sobre.job3.period'),
+        location: "Gibraltar"
       },
       {
         company: "Bloonde",
         link: "https://www.bloonde.com/",
         position: t('sobre.job4.position'),
-        period: t('sobre.job4.period')
+        period: t('sobre.job4.period'),
+        location: "Sevilla"
       },
       {
         company: "Spanish Chamber of Commerce",
         position: "Web Developer",
-        period: "Feb. 2017 - Feb. 2018"
+        period: "Feb. 2017 - Feb. 2018",
+        location: "Bratislava"
       },
       {
         company: "Evalfor",
         position: "Software Developer",
-        period: "Ago. 2016 - Ene. 2017"
+        period: "Ago. 2016 - Ene. 2017",
+        location: "Puerto Real"
       }
     ];
   }
@@ -205,35 +211,41 @@ export function getJobs(t: (key: UIKey) => string, lang: Lang = 'es') {
     {
       company: "eXperience IT Solutions",
       position: t('sobre.job1.position'),
-      period: t('sobre.job1.period')
+      period: t('sobre.job1.period'),
+      location: "Madrid"
     },
     {
       company: "GalacticBlum",
       link: "https://www.galacticblum.com/",
       position: t('sobre.job2.position'),
-      period: t('sobre.job2.period')
+      period: t('sobre.job2.period'),
+      location: "Chipiona"
     },
     {
       company: "Piranha Designs",
       link: "https://www.piranhadesigns.com/",
       position: t('sobre.job3.position'),
-      period: t('sobre.job3.period')
+      period: t('sobre.job3.period'),
+      location: "Gibraltar"
     },
     {
       company: "Bloonde",
       link: "https://www.bloonde.com/",
       position: t('sobre.job4.position'),
-      period: t('sobre.job4.period')
+      period: t('sobre.job4.period'),
+      location: "Seville"
     },
     {
       company: "Spanish Chamber of Commerce",
       position: "Web Developer",
-      period: "Feb. 2017 - Feb. 2018"
+      period: "Feb. 2017 - Feb. 2018",
+      location: "Bratislava"
     },
     {
       company: "Evalfor",
       position: "Software Developer",
-      period: "Aug. 2016 - Jan. 2017"
+      period: "Aug. 2016 - Jan. 2017",
+      location: "Puerto Real"
     }
   ];
 }

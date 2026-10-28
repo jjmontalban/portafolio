@@ -31,8 +31,8 @@ const jobs = getJobs(t, lang);
       "@type": "Occupation",
       "name": job.position,
       "occupationLocation": {
-        "@type": "Country",
-        "name": "Spain"
+        "@type": "City",
+        "name": job.location
       }
     })),
     "worksFor": {
@@ -70,6 +70,7 @@ const jobs = getJobs(t, lang);
                 <span class="job__period">{job.period}</span>
               </div>
               <div>{job.position}</div>
+              <div class="job__location">{job.location}</div>
             </div>
           ))}
         <a href="https://www.linkedin.com/in/jjmontalban/" class="cta cta-primary">{t('sobre.downloadCV')}</a>
