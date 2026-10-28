@@ -35,13 +35,6 @@ const jobs = getJobs(t, lang);
   <div class="container">
 
     <section class="section-about reveal">
-      <h2>Background</h2>
-      <div>
-        <p>{t('sobre.desc1')}</p>
-      </div>
-    </section>
-
-    <section class="section-about reveal">
       <h2>{t('sobre.skillsTitle')}</h2>
       <div class="skills-grid">
         {skillCategories.map(cat => (
@@ -67,6 +60,7 @@ const jobs = getJobs(t, lang);
               <span class="job__period">{job.period}</span>
             </div>
             <div>{job.position}</div>
+            <div class="job__location">{job.location}</div>
           </div>
         ))}
         <a href="https://www.linkedin.com/in/jjmontalban/" class="cta cta-primary" target="_blank">{t('sobre.downloadCV')}</a>

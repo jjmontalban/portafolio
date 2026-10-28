@@ -480,104 +480,51 @@ body[class^="page-"] * {
 }
 
 /* ================================================================= */
-/*  LANGUAGE TOGGLE SWITCH                                           */
+/*  LANGUAGE SWITCH                                                  */
 /* ================================================================= */
 
-.lang-toggle-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.lang-toggle {
+.lang-switch {
   margin-top: 0.6em;
-  position: relative;
-  display: inline-block;
-  width: 66px;
-  height: 37px;
-  cursor: pointer;
-}
-
-.lang-toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  position: absolute;
-}
-
-.lang-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--nav-text-color);
-  transition: background-color 0.3s ease;
-  border-radius: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-}
-
-.lang-slider::before {
-  content: "";
-  position: absolute;
-  height: 24px;
-  width: 24px;
-  left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-  transition: left 0.3s ease;
+  gap: 8px;
+  padding: 9px 12px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-.lang-toggle input:checked + .lang-slider::before {
-  left: calc(100% - 28px);
-}
-
-.lang-label {
-  font-size: 11px;
+  background-color: var(--nav-text-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
   font-weight: 700;
-  color: #ffffff !important;
-  text-shadow: none;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-  pointer-events: none;
   line-height: 1;
-  user-select: none;
 }
 
-.lang-es {
-  opacity: 0;
+.lang-link,
+.lang-sep {
+  color: #ffffff !important;
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
-.lang-en {
+.lang-link:hover,
+.lang-link.is-active {
   opacity: 1;
 }
 
-.lang-toggle input:checked ~ .lang-slider .lang-es {
-  opacity: 1;
+.lang-link.is-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.lang-toggle input:checked ~ .lang-slider .lang-en {
-  opacity: 0;
-}
-
-body.page-home .lang-slider,
-body.page-about .lang-slider {
+body.page-home .lang-switch,
+body.page-about .lang-switch {
   background-color: #111;
 }
 
-body.page-servicios .lang-slider,
-body.page-casos .lang-slider,
-body.page-plugins .lang-slider,
-body.page-contacto .lang-slider {
+body.page-servicios .lang-switch,
+body.page-casos .lang-switch,
+body.page-plugins .lang-switch,
+body.page-contacto .lang-switch {
   background-color: var(--page-bg);
 }
 
@@ -1083,7 +1030,7 @@ body.page-servicios .service-card ul {
 .section-about {
   display: grid;
   grid-template-columns: 250px 1fr;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .skills-grid {
@@ -1117,7 +1064,8 @@ body.page-servicios .service-card ul {
   font-family: "Cubano", sans-serif;
 }
 
-.job__period {
+.job__period,
+.job__location {
   font-size: 0.85rem !important;
   opacity: 0.6;
 }

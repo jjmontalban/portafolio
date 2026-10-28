@@ -5,8 +5,8 @@ import type { Lang } from '../../lib/i18n/utils';
 
 const lang: Lang = 'en';
 const t = useTranslations(lang);
-const skillCategories = getSkillCategories(t);
-const jobs = getJobs(t);
+const skillCategories = getSkillCategories(t, lang);
+const jobs = getJobs(t, lang);
 ---
 
 <Layout
@@ -31,8 +31,8 @@ const jobs = getJobs(t);
       "@type": "Occupation",
       "name": job.position,
       "occupationLocation": {
-        "@type": "Country",
-        "name": "Spain"
+        "@type": "City",
+        "name": job.location
       }
     })),
     "worksFor": {
@@ -43,13 +43,6 @@ const jobs = getJobs(t);
   })} />
 
   <div class="container">
-
-    <section class="section-about reveal">
-      <h2>Background</h2>
-      <div>
-        <p>{t('sobre.desc1')}</p>
-      </div>
-    </section>
 
     <section class="section-about reveal">
       <h2>{t('sobre.skillsTitle')}</h2>
@@ -77,6 +70,7 @@ const jobs = getJobs(t);
                 <span class="job__period">{job.period}</span>
               </div>
               <div>{job.position}</div>
+              <div class="job__location">{job.location}</div>
             </div>
           ))}
         <a href="https://www.linkedin.com/in/jjmontalban/" class="cta cta-primary">{t('sobre.downloadCV')}</a>

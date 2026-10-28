@@ -5,47 +5,18 @@ const lang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 const targetLang = getAlternateLanguage(lang);
 const alternatePath = getAlternateRoute(currentPath, lang, targetLang);
+const hrefs = { [lang]: currentPath, [targetLang]: alternatePath };
 ---
 
-<div class="lang-toggle-wrapper">
-  <label class="lang-toggle">
-    <input
-      type="checkbox"
-      class="language-switch-input"
-      checked={lang === 'en'}
-      data-current-lang={lang}
-      data-alternate-path={alternatePath}
-    />
-    <span class="lang-slider">
-      <span class="lang-label lang-es">ES</span>
-      <span class="lang-label lang-en">EN</span>
-    </span>
-  </label>
-</div>
-
-<script>
-  function initLanguageSwitches() {
-    const toggles = document.querySelectorAll('.language-switch-input');
-
-    toggles.forEach((toggle) => {
-      const input = toggle as HTMLInputElement;
-
-      // Remover listeners previos para evitar duplicados
-      const newToggle = input.cloneNode(true) as HTMLInputElement;
-      input.parentNode?.replaceChild(newToggle, input);
-
-      newToggle.addEventListener('change', () => {
-        const alternatePath = newToggle.dataset.alternatePath;
-        if (alternatePath) {
-          window.location.href = alternatePath;
-        }
-      });
-    });
-  }
-
-  // Inicializar al cargar la página
-  document.addEventListener('DOMContentLoaded', initLanguageSwitches);
-
-  // Reinicializar en navegación de Astro
-  document.addEventListener('astro:page-load', initLanguageSwitches);
-</script>
+<nav class="lang-switch" aria-label="Language">
+  {(['es', 'en'] as const).map((code, i) => (
+    <>
+      {i > 0 && <span class="lang-sep" aria-hidden="true">|</span>}
+      {code === lang ? (
+        <span class="lang-link is-active" aria-current="true" lang={code}>{code.toUpperCase()}</span>
+      ) : (
+        <a class="lang-link" href={hrefs[code]} hreflang={code} lang={code}>{code.toUpperCase()}</a>
+      )}
+    </>
+  ))}
+</nav>
