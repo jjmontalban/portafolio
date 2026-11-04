@@ -1,42 +1,49 @@
 ---
-import { dev, wordpress, behance, github, linkedin, unsplash } from "../lib/icons";
+import { dev, wordpress, behance, github, linkedin, unsplash, chess } from "../lib/icons";
 ---
 <footer class="site-footer">
   <div class="site-footer__inner">
 
     <ul class="site-footer__social" aria-label="Perfiles sociales">
       <li>
-        <a class="site-footer__link" href="https://profiles.wordpress.org/jjmontalban/" aria-label="WordPress" rel="me">
+        <a class="site-footer__link" href="https://profiles.wordpress.org/jjmontalban/" aria-label="WordPress" target="_blank" rel="me noopener noreferrer">
           <svg {...wordpress.attributes} set:html={wordpress.body} />
           <span class="sr-only">WordPress profile</span>
         </a>
       </li>
 
       <li>
-        <a class="site-footer__link" href="https://www.behance.net/jjmontalban" aria-label="Behance" rel="me">
+        <a class="site-footer__link" href="https://www.behance.net/jjmontalban" aria-label="Behance" target="_blank" rel="me noopener noreferrer">
           <svg {...behance.attributes} set:html={behance.body} />
           <span class="sr-only">Behance profile</span>
         </a>
       </li>
 
       <li>
-        <a class="site-footer__link" href="https://github.com/jjmontalban" aria-label="GitHub" rel="me">
+        <a class="site-footer__link" href="https://github.com/jjmontalban" aria-label="GitHub" target="_blank" rel="me noopener noreferrer">
           <svg {...github.attributes} set:html={github.body} />
           <span class="sr-only">GitHub profile</span>
         </a>
       </li>
 
       <li>
-        <a class="site-footer__link" href="https://www.linkedin.com/in/jjmontalban/" aria-label="LinkedIn" rel="me">
+        <a class="site-footer__link" href="https://www.linkedin.com/in/jjmontalban/" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">
           <svg {...linkedin.attributes} set:html={linkedin.body} />
           <span class="sr-only">LinkedIn profile</span>
         </a>
       </li>
 
       <li>
-        <a class="site-footer__link" href="https://unsplash.com/es/@jjmontalban" aria-label="Unsplash" rel="me">
+        <a class="site-footer__link" href="https://unsplash.com/es/@jjmontalban" aria-label="Unsplash" target="_blank" rel="me noopener noreferrer">
           <svg {...unsplash.attributes} set:html={unsplash.body} />
           <span class="sr-only">Unsplash profile</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="site-footer__link" href="https://www.chess.com/member/jjmontalban" aria-label="Chess.com" target="_blank" rel="me noopener noreferrer">
+          <svg {...chess.attributes} set:html={chess.body} />
+          <span class="sr-only">Chess.com profile</span>
         </a>
       </li>
     </ul>
