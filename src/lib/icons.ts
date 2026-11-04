@@ -28,3 +28,5 @@ export const css = iconToSVG(getIconData(simpleIcons, "csswizardry"));
 export const jquery = iconToSVG(getIconData(simpleIcons, "jquery"));
 export const gimp = iconToSVG(getIconData(simpleIcons, "gimp"));
 export const unsplash = iconToSVG(getIconData(simpleIcons, "unsplash"));
+// MDI glyphs have ~2px padding; crop viewBox so it matches simple-icons size
+export const chess = iconToSVG({ ...getIconData(mdiIcons, "chess-knight")!, left: 2, top: 2, width: 20, height: 20 });
